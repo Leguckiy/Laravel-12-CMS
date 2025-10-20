@@ -42,6 +42,14 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get the user's full name.
+     */
+    public function getFullnameAttribute(): string
+    {
+        return trim($this->firstname . ' ' . $this->lastname);
+    }
+
+    /**
      * Get the user group that owns the user.
      */
     public function userGroup(): BelongsTo
