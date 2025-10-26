@@ -20,12 +20,26 @@ class AdminComposer
      */
     public function compose(View $view): void
     {
-        $adminUser = Auth::guard('admin')->user();
+        $request = request();
+        $controller = $request->route()->getController();
         
+        if ($controller) {
+            if (method_exists($controller, 'getBreadcrumbs')) {
+                $breadcrumbs = $controller->getBreadcrumbs();
+            }
+            
+            if (method_exists($controller, 'getTitle')) {
+                $title = $controller->getTitle();
+            }
+        }
+
+        $adminUser = Auth::guard('admin')->user();
+
         $view->with([
             'adminUser' => $adminUser,
             'menuItems' => $this->menuService->getMenuItems(),
-            'currentRoute' => request()->route() ? request()->route()->getName() : null
+            'breadcrumbs' => $breadcrumbs ?? [],
+            'title' => $title ?? ''
         ]);
     }
 }

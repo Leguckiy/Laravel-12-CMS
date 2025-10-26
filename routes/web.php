@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [LoginController::class, 'showLoginForm'])->name('admin.login');
@@ -13,5 +14,7 @@ Route::prefix('admin')->group(function () {
         })->name('admin.dashboard');
 
         Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
+
+        Route::resource('user', UserController::class)->names('admin.user');
     });
 });

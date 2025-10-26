@@ -90,7 +90,7 @@ class AdminMenuService
                         'children' => [
                             [
                                 'name' => 'Users',
-                                'route' => '',
+                                'route' => 'admin.user.index',
                                 'children' => []
                             ],
                             [
