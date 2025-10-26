@@ -19,7 +19,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                        <a href="#" class="dropdown-item">
+                        <a href="{{ route('admin.user.edit', $adminUser->id) }}" class="dropdown-item">
                             <i class="fas fa-user-circle fa-fw"></i>
                             Your Profile
                         </a>
