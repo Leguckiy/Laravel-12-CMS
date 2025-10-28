@@ -19,7 +19,7 @@ class DetailActions extends Component
         public ?string $itemName = null
     ) {
         if ($this->baseName && $this->id) {
-            $baseRoute = 'admin.' . str_replace('_', '.', $this->baseName);
+            $baseRoute = 'admin.' . $this->baseName;
 
             $this->editRoute = $this->editRoute ?? route($baseRoute . '.edit', $this->id);
             $this->destroyRoute = $this->destroyRoute ?? route($baseRoute . '.destroy', $this->id);
