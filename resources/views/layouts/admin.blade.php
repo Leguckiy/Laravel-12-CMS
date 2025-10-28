@@ -42,5 +42,5 @@
 </div>
 
 @push('scripts')
-    @stack('scripts')
+    <script src="{{ asset('js/admin.js') }}"></script>
 @endpush

@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Hidden form for delete operations -->
-    <form id="delete-form" method="POST" style="display: none;">
+    <form id="delete-form" method="POST" class="d-none">
         @csrf
         @method('DELETE')
     </form>
@@ -43,10 +43,13 @@
                                             </a>
                                         @endcanEdit
                                         @canEdit('admin.user_group.destroy')
-                                            <button type="button" 
-                                                    class="btn btn-outline-danger" 
-                                                    onclick="deleteUserGroup({{ $userGroup->id }})"
-                                                    title="Delete user group">
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-danger"
+                                                data-delete-url="{{ route('admin.user_group.destroy', $userGroup->id) }}"
+                                                data-confirm="Are you sure you want to delete this user group?"
+                                                title="Delete user group"
+                                            >
                                                 <i class="fa-solid fa-trash"></i>
                                             </button>
                                         @endcanEdit
@@ -61,15 +64,4 @@
     </div>
 @endsection
 
-@push('scripts')
-<script>
-function deleteUserGroup(userGroupId) {
-    if (confirm('Are you sure you want to delete this user group?')) {
-        // Use the hidden form for delete operation
-        const form = document.getElementById('delete-form');
-        form.action = `/admin/user_group/${userGroupId}`;
-        form.submit();
-    }
-}
-</script>
-@endpush
+ 

@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Hidden form for delete operations -->
-    <form id="delete-form" method="POST" style="display: none;">
+    <form id="delete-form" method="POST" class="d-none">
         @csrf
         @method('DELETE')
     </form>
@@ -32,7 +32,12 @@
                     </a>
                 @endcanEdit
                 @canEdit('admin.user_group.destroy')
-                    <button type="button" class="btn btn-danger" onclick="deleteUser({{ $userGroup->id }})">
+                    <button 
+                        type="button"
+                        class="btn btn-danger"
+                        data-delete-url="{{ route('admin.user_group.destroy', $userGroup->id) }}"
+                        data-confirm="Are you sure you want to delete this user group?"
+                    >
                         <i class="fa-solid fa-trash"></i>
                         <span>Delete User group</span>
                     </button>

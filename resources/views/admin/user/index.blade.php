@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Hidden form for delete operations -->
-    <form id="delete-form" method="POST" style="display: none;">
+    <form id="delete-form" method="POST" class="d-none">
         @csrf
         @method('DELETE')
     </form>
@@ -55,10 +55,13 @@
                                             </a>
                                         @endcanEdit
                                         @canEdit('admin.user.destroy')
-                                            <button type="button" 
-                                                    class="btn btn-outline-danger" 
-                                                    onclick="deleteUser({{ $user->id }})"
-                                                    title="Delete user">
+                                            <button 
+                                                type="button"
+                                                class="btn btn-outline-danger"
+                                                data-delete-url="{{ route('admin.user.destroy', $user->id) }}"
+                                                data-confirm="Are you sure you want to delete this user?"
+                                                title="Delete user"
+                                            >
                                                 <i class="fa-solid fa-trash"></i>
                                             </button>
                                         @endcanEdit
@@ -73,15 +76,4 @@
     </div>
 @endsection
 
-@push('scripts')
-<script>
-function deleteUser(userId) {
-    if (confirm('Are you sure you want to delete this user?')) {
-        // Use the hidden form for delete operation
-        const form = document.getElementById('delete-form');
-        form.action = `/admin/user/${userId}`;
-        form.submit();
-    }
-}
-</script>
-@endpush
+ 
