@@ -34,7 +34,7 @@
                                 <td>{{ $user->username }}</td>
                                 <td>{{ $user->fullname }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->userGroup->name }}</td>
+                                <td>{{ $user->userGroup?->name ?? 'No group' }}</td>
                                 <td>
                                     <x-admin.status-badge :status="$user->status" />
                                 </td>

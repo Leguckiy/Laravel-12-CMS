@@ -20,7 +20,7 @@ class AdminUserRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            'user_group_id' => 'required|exists:user_groups,id',
+            'user_group_id' => 'nullable|exists:user_groups,id',
             'username' => 'required|string|max:255',
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
@@ -54,7 +54,7 @@ class AdminUserRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'user_group_id.required' => 'Please select a user group.',
+            'user_group_id.exists' => 'Selected user group does not exist.',
             'username.required' => 'Username is required.',
             'username.unique' => 'This username is already taken.',
             'password.required' => 'Password is required.',

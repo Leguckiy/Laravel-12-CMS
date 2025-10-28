@@ -26,7 +26,7 @@
                         </tr>
                         <tr>
                             <td class="fw-bold">User Group:</td>
-                            <td>{{ $user->userGroup->name }}</td>
+                            <td>{{ $user->userGroup?->name ?? 'No group' }}</td>
                         </tr>
                         <tr>
                             <td class="fw-bold">Status:</td>
