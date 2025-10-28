@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Auth;
+
 class AdminMenuService
 {
     protected $menuItems = [];
@@ -11,6 +13,7 @@ class AdminMenuService
     {
         $this->currentRoute = request()->route()?->getName();
         $this->initializeMenu();
+        $this->filterByPermissions($this->menuItems);
         $this->setActiveStates($this->menuItems);
     }
 
@@ -54,5 +57,70 @@ class AdminMenuService
     public function getMenuItems(): array
     {
         return $this->menuItems;
+    }
+
+    /**
+     * Remove menu items the current admin user cannot view.
+     * A parent is kept only if it has own viewable route or at least one viewable child.
+     */
+    protected function filterByPermissions(array &$items): bool
+    {
+        $user = Auth::guard('admin')->user();
+        $hasVisible = false;
+        $permissionsMapping = config('admin.permissions_mapping', []);
+
+        foreach ($items as $index => &$item) {
+            $childrenVisible = false;
+            $hadChildren = !empty($item['children']);
+            if ($hadChildren) {
+                $childrenVisible = $this->filterByPermissions($item['children']);
+            }
+
+            // If item HAD children but after filtering there are none, hide the item
+            if ($hadChildren && empty($item['children'])) {
+                unset($items[$index]);
+                continue;
+            }
+
+            // Default: show items that are not in permissions_mapping
+            $selfVisible = true;
+            
+            if (!empty($item['route']) && $user && $user->userGroup) {
+                $routeName = $item['route'];
+                $parts = explode('.', $routeName);
+                
+                // Only check permissions for routes that are in permissions_mapping
+                if (count($parts) >= 3 && $parts[0] === 'admin' && isset($permissionsMapping[$parts[1]])) {
+                    // This route IS in permissions_mapping - check permissions
+                    $selfVisible = $user->userGroup->hasPermissionForRoute($routeName, 'view');
+                }
+                // If route is NOT in permissions_mapping, keep $selfVisible = true (always show)
+            }
+
+            // If item has no route and no visible children, hide it
+            if (empty($item['route']) && empty($item['children'])) {
+                // No route and no children - show by default
+                $hasVisible = true;
+            } elseif (empty($item['route']) && !empty($item['children'])) {
+                // No route but has children - keep only if children are visible
+                if (!$childrenVisible) {
+                    unset($items[$index]);
+                    continue;
+                }
+                $hasVisible = true;
+            } elseif (!empty($item['route'])) {
+                // Has route - check if it's viewable
+                if ($selfVisible || $childrenVisible) {
+                    $hasVisible = true;
+                } else {
+                    unset($items[$index]);
+                }
+            }
+        }
+
+        // Reindex
+        $items = array_values($items);
+
+        return $hasVisible;
     }
 }

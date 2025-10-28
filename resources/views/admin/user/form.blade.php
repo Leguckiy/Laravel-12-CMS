@@ -19,7 +19,7 @@
                 @if(isset($user))
                     @method('PUT')
                 @endif
-                <x-input-field type="text" name="username" label="Username" placeholder="Username" :value="$user->username ?? ''" :required="true"/>
+                <x-input-field type="text" name="username" label="User name" placeholder="User name" :value="$user->username ?? ''" :required="true"/>
                 <x-select-field name="user_group_id" label="User group" :options="$userGroupsOptions" :value="$user->user_group_id ?? ''"/>
                 <x-input-field type="text" name="firstname" label="First name" placeholder="First name" :value="$user->firstname ?? ''" :required="true"/>
                 <x-input-field type="text" name="lastname" label="Last name" placeholder="Last name" :value="$user->lastname ?? ''" :required="true"/>

@@ -13,8 +13,21 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             'auth.admin' => \App\Http\Middleware\AdminAuthenticate::class,
+            'admin.permission' => \App\Http\Middleware\AdminPermissionMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        // Handle 403 errors for admin routes
+        $exceptions->render(function (\Illuminate\Auth\Access\AuthorizationException $e, $request) {
+            if ($request->is('admin/*') || $request->routeIs('admin.*')) {
+                return response()->view('admin.permission_denied', [], 403);
+            }
+        });
+        
+        // Handle 403 HTTP exceptions (from abort(403))
+        $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\HttpException $e, $request) {
+            if ($e->getStatusCode() === 403 && ($request->is('admin/*') || $request->routeIs('admin.*'))) {
+                return response()->view('admin.permission_denied', [], 403);
+            }
+        });
     })->create();

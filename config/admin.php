@@ -80,7 +80,7 @@ return [
                         ],
                         [
                             'name' => 'User groups',
-                            'route' => '',
+                            'route' => 'admin.user_group.index',
                             'children' => []
                         ]
                     ]
@@ -118,5 +118,10 @@ return [
                 ]
             ]
         ]
+    ],
+
+    'permissions_mapping' => [
+        'user' => 'user/user',
+        'user_group' => 'user/user_group',
     ]
 ];

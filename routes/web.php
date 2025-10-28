@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\UserGroupController;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [LoginController::class, 'showLoginForm'])->name('admin.login');
@@ -15,6 +16,15 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
-        Route::resource('user', UserController::class)->names('admin.user');
+        // ACL convention for admin routes:
+        // - Route names must follow: admin.{module}.{action}
+        // - Ability inference (AdminPermissionMiddleware::detectAbility):
+        //   *.index, *.show => 'view'; everything else => 'edit'
+        // - Module is taken from the second segment (e.g., admin.user.edit => module 'user')
+        // Keep names consistent to ensure permissions resolve correctly.
+        Route::middleware('admin.permission')->group(function () {
+            Route::resource('user', UserController::class)->names('admin.user');
+            Route::resource('user_group', UserGroupController::class)->names('admin.user_group');
+        });
     });
 });

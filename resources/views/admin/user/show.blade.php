@@ -35,11 +35,7 @@
                         <tr>
                             <td class="fw-bold">Status:</td>
                             <td>
-                                @if($user->status)
-                                    <span class="badge bg-success">Active</span>
-                                @else
-                                    <span class="badge bg-danger">Inactive</span>
-                                @endif
+                                <x-status-badge :status="$user->status" />
                             </td>
                         </tr>
                         <tr>
@@ -64,12 +60,16 @@
             </div>
             
             <div class="mt-4">
-                <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-primary">
-                    <i class="fa-solid fa-edit"></i> Edit User
-                </a>
-                <button type="button" class="btn btn-danger" onclick="deleteUser({{ $user->id }})">
-                    <i class="fa-solid fa-trash"></i> Delete User
-                </button>
+                @canEdit('admin.user.edit')
+                    <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-primary">
+                        <i class="fa-solid fa-edit"></i> Edit User
+                    </a>
+                @endcanEdit
+                @canEdit('admin.user.destroy')
+                    <button type="button" class="btn btn-danger" onclick="deleteUser({{ $user->id }})">
+                        <i class="fa-solid fa-trash"></i> Delete User
+                    </button>
+                @endcanEdit
                 <a href="{{ route('admin.user.index') }}" class="btn btn-secondary">
                     <i class="fa-solid fa-arrow-left"></i> Back to List
                 </a>
