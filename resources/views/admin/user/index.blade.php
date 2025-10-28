@@ -4,7 +4,10 @@
     <x-admin.delete-form />
     
     <div class="action mb-2">
-        <x-admin.action-button-add baseName="user" />
+        <x-admin.action-button-add 
+            permission="admin.user.create"
+            text="Add User" 
+        />
     </div>
     <div class="card">
         <div class="card-header">
