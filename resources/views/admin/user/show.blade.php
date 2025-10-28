@@ -31,7 +31,7 @@
                         <tr>
                             <td class="fw-bold">Status:</td>
                             <td>
-                                <x-status-badge :status="$user->status" />
+                                <x-admin.status-badge :status="$user->status" />
                             </td>
                         </tr>
                         <tr>

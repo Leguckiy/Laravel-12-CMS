@@ -12,7 +12,7 @@
     <div id="content">
         <div class="page-header">
             <div class="container-fluid">
-                <x-breadcrumb :items="$breadcrumbs ?? []" />
+                <x-admin.breadcrumb :items="$breadcrumbs ?? []" />
             </div>
             <div class="container-fluid">
                 <h1>

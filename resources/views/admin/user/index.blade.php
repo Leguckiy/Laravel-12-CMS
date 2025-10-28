@@ -33,7 +33,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->userGroup->name }}</td>
                                 <td>
-                                    <x-status-badge :status="$user->status" />
+                                    <x-admin.status-badge :status="$user->status" />
                                 </td>
                                 <td>{{ $user->created_at->format('d.m.Y') }}</td>
                                 <td class="text-end">

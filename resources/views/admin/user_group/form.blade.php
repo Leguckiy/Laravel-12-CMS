@@ -23,7 +23,7 @@
                 @if(isset($userGroup))
                     @method('PUT')
                 @endif
-                <x-input-field type="text" name="name" label="User group name" placeholder="User group name" :value="$userGroup->name ?? ''" :required="true"/>
+                <x-admin.input-field type="text" name="name" label="User group name" placeholder="User group name" :value="$userGroup->name ?? ''" :required="true"/>
                 
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Permissions</label>
