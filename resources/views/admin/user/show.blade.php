@@ -1,11 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <!-- Hidden form for delete operations -->
-    <form id="delete-form" method="POST" class="d-none">
-        @csrf
-        @method('DELETE')
-    </form>
+    <x-admin.delete-form />
     
     <div class="card">
         <div class="card-header">
@@ -59,26 +55,11 @@
                 @endif
             </div>
             
-            <div class="mt-4">
-                @canEdit('admin.user.edit')
-                    <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-primary">
-                        <i class="fa-solid fa-edit"></i> Edit User
-                    </a>
-                @endcanEdit
-                @canEdit('admin.user.destroy')
-                    <button
-                        type="button"
-                        class="btn btn-danger"
-                        data-delete-url="{{ route('admin.user.destroy', $user->id) }}"
-                        data-confirm="Are you sure you want to delete this user?"
-                    >
-                        <i class="fa-solid fa-trash"></i> Delete User
-                    </button>
-                @endcanEdit
-                <a href="{{ route('admin.user.index') }}" class="btn btn-secondary">
-                    <i class="fa-solid fa-arrow-left"></i> Back to List
-                </a>
-            </div>
+            <x-admin.detail-actions 
+                :id="$user->id"
+                baseName="user"
+                itemName="User"
+            />
         </div>
     </div>
 @endsection

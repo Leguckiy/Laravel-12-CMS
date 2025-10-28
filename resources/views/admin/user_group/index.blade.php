@@ -1,16 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-    <!-- Hidden form for delete operations -->
-    <form id="delete-form" method="POST" class="d-none">
-        @csrf
-        @method('DELETE')
-    </form>
+    <x-admin.delete-form />
     
     <div class="action mb-2">
-        @canEdit('admin.user_group.create')
-            <a class="btn btn-primary" href="{{ route('admin.user_group.create') }}">Add user group</a>
-        @endcanEdit
+        <x-admin.action-button-add baseName="user_group" text="Add user group" />
     </div>
     <div class="card">
         <div class="card-header">
@@ -31,29 +25,11 @@
                             <tr>
                                 <td>{{ $userGroup->name }}</td>
                                 <td class="text-end">
-                                    <div class="btn-group actions" role="group">
-                                        @canView('admin.user_group.show')
-                                            <a href="{{ route('admin.user_group.show', $userGroup->id) }}" class="btn btn-outline-info" title="View user group">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </a>
-                                        @endcanView
-                                        @canEdit('admin.user_group.edit')
-                                            <a href="{{ route('admin.user_group.edit', $userGroup->id) }}" class="btn btn-outline-primary" title="Edit user group">
-                                                <i class="fa-solid fa-edit"></i>
-                                            </a>
-                                        @endcanEdit
-                                        @canEdit('admin.user_group.destroy')
-                                            <button
-                                                type="button"
-                                                class="btn btn-outline-danger"
-                                                data-delete-url="{{ route('admin.user_group.destroy', $userGroup->id) }}"
-                                                data-confirm="Are you sure you want to delete this user group?"
-                                                title="Delete user group"
-                                            >
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        @endcanEdit
-                                    </div>
+                                    <x-admin.action-buttons-row 
+                                        :id="$userGroup->id"
+                                        baseName="user_group"
+                                        itemName="user group"
+                                    />
                                 </td>
                             </tr>
                         @endforeach

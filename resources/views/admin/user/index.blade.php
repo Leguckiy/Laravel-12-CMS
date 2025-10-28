@@ -1,16 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-    <!-- Hidden form for delete operations -->
-    <form id="delete-form" method="POST" class="d-none">
-        @csrf
-        @method('DELETE')
-    </form>
+    <x-admin.delete-form />
     
     <div class="action mb-2">
-        @canEdit('admin.user.create')
-            <a class="btn btn-primary" href="{{ route('admin.user.create') }}">Add user</a>
-        @endcanEdit
+        <x-admin.action-button-add baseName="user" />
     </div>
     <div class="card">
         <div class="card-header">
@@ -43,29 +37,10 @@
                                 </td>
                                 <td>{{ $user->created_at->format('d.m.Y') }}</td>
                                 <td class="text-end">
-                                    <div class="btn-group actions" role="group">
-                                        @canView('admin.user.show')
-                                            <a href="{{ route('admin.user.show', $user->id) }}" class="btn btn-outline-info" title="View user">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </a>
-                                        @endcanView
-                                        @canEdit('admin.user.edit')
-                                            <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-outline-primary" title="Edit user">
-                                                <i class="fa-solid fa-edit"></i>
-                                            </a>
-                                        @endcanEdit
-                                        @canEdit('admin.user.destroy')
-                                            <button 
-                                                type="button"
-                                                class="btn btn-outline-danger"
-                                                data-delete-url="{{ route('admin.user.destroy', $user->id) }}"
-                                                data-confirm="Are you sure you want to delete this user?"
-                                                title="Delete user"
-                                            >
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        @endcanEdit
-                                    </div>
+                                    <x-admin.action-buttons-row 
+                                        :id="$user->id"
+                                        baseName="user"
+                                    />
                                 </td>
                             </tr>
                         @endforeach

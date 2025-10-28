@@ -73,18 +73,10 @@
                     </div>
                 </div>
                 
-                <div class="row">
-                    <div class="col-sm-10 offset-sm-2">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fa-solid fa-save"></i>
-                            {{ isset($userGroup) ? 'Update' : 'Save' }}
-                        </button>
-                        <a href="{{ route('admin.user_group.index') }}" class="btn btn-secondary">
-                            <i class="fa-solid fa-times"></i>
-                            Cancel
-                        </a>
-                    </div>
-                </div>
+                <x-admin.form-actions 
+                    :isEdit="isset($userGroup)"
+                    :backRoute="route('admin.user_group.index')"
+                />
             </form>
         </div>
     </div>

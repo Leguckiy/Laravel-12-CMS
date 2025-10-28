@@ -28,18 +28,10 @@
                 <x-input-field type="password" name="password" label="Password" placeholder="Password" value="" :required="true"/>
                 <x-input-field type="password" name="confirm" label="Confirm" placeholder="Confirm" value="" :required="true"/>
                 <x-switch-field name="status" label="Status" :value="$user->status ?? false"/>
-                <div class="row">
-                    <div class="col-sm-10 offset-sm-2">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fa-solid fa-save"></i>
-                            {{ isset($user) ? 'Update' : 'Save' }}
-                        </button>
-                        <a href="{{ route('admin.user.index') }}" class="btn btn-secondary">
-                            <i class="fa-solid fa-times"></i>
-                            Cancel
-                        </a>
-                    </div>
-                </div>
+                <x-admin.form-actions 
+                    :isEdit="isset($user)"
+                    :backRoute="route('admin.user.index')"
+                />
             </form>
         </div>
     </div>
