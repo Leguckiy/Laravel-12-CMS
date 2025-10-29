@@ -1,9 +1,5 @@
 @extends('layouts.admin')
 
-@php
-    use Illuminate\Support\Str;
-@endphp
-
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">

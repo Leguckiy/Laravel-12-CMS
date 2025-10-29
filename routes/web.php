@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserGroupController;
@@ -25,6 +26,7 @@ Route::prefix('admin')->group(function () {
         Route::middleware('admin.permission')->group(function () {
             Route::resource('user', UserController::class)->names('admin.user');
             Route::resource('user_group', UserGroupController::class)->names('admin.user_group');
+            Route::resource('language', LanguageController::class)->names('admin.language');
         });
     });
 });

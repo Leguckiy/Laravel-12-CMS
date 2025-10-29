@@ -91,7 +91,7 @@ return [
                     'children' => [
                         [
                             'name' => 'Languages',
-                            'route' => '',
+                            'route' => 'admin.language.index',
                             'children' => []
                         ],
                         [
@@ -123,5 +123,6 @@ return [
     'permissions_mapping' => [
         'user' => 'user/user',
         'user_group' => 'user/user_group',
+        'language' => 'localisation/language',
     ]
 ];
