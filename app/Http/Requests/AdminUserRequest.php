@@ -21,6 +21,7 @@ class AdminUserRequest extends FormRequest
     {
         $rules = [
             'user_group_id' => 'nullable|exists:user_groups,id',
+            'language_id' => 'nullable|exists:languages,id',
             'username' => 'required|string|max:255',
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
@@ -55,6 +56,7 @@ class AdminUserRequest extends FormRequest
     {
         return [
             'user_group_id.exists' => 'Selected user group does not exist.',
+            'language_id.exists' => 'Selected language does not exist.',
             'username.required' => 'Username is required.',
             'username.unique' => 'This username is already taken.',
             'password.required' => 'Password is required.',

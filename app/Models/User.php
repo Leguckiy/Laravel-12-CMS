@@ -17,6 +17,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'user_group_id',
+        'language_id',
         'username',
         'password',
         'firstname',
@@ -55,5 +56,13 @@ class User extends Authenticatable
     public function userGroup(): BelongsTo
     {
         return $this->belongsTo(UserGroup::class, 'user_group_id');
+    }
+
+    /**
+     * Get the language selected by the user.
+     */
+    public function language(): BelongsTo
+    {
+        return $this->belongsTo(Language::class, 'language_id');
     }
 }

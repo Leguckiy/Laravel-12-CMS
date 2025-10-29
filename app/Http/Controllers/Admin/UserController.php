@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Requests\AdminUserRequest;
+use App\Models\Language;
 use App\Models\User;
 use App\Models\UserGroup;
 use Illuminate\Http\RedirectResponse;
@@ -44,7 +45,12 @@ class UserController extends AdminController
             return ['id' => $group->id, 'name' => $group->name];
         })->toArray();
         
-        return view('admin.user.form', compact('userGroups', 'userGroupsOptions'));
+        $languages = Language::where('status', true)->orderBy('sort_order')->get();
+        $languagesOptions = $languages->map(function($language) {
+            return ['id' => $language->id, 'name' => $language->name];
+        })->toArray();
+        
+        return view('admin.user.form', compact('userGroups', 'userGroupsOptions', 'languagesOptions'));
     }
 
     /**
@@ -67,7 +73,7 @@ class UserController extends AdminController
      */
     public function show(User $user): View
     {
-        $user->load('userGroup');
+        $user->load(['userGroup', 'language']);
         
         return view('admin.user.show', compact('user'));
     }
@@ -82,7 +88,12 @@ class UserController extends AdminController
             return ['id' => $group->id, 'name' => $group->name];
         })->toArray();
         
-        return view('admin.user.form', compact('user', 'userGroups', 'userGroupsOptions'));
+        $languages = Language::where('status', true)->orderBy('sort_order')->get();
+        $languagesOptions = $languages->map(function($language) {
+            return ['id' => $language->id, 'name' => $language->name];
+        })->toArray();
+        
+        return view('admin.user.form', compact('user', 'userGroupsOptions', 'languagesOptions'));
     }
 
     /**

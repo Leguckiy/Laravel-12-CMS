@@ -29,6 +29,10 @@
                             <td>{{ $user->userGroup?->name ?? 'No group' }}</td>
                         </tr>
                         <tr>
+                            <td class="fw-bold">Language:</td>
+                            <td>{{ $user->language?->name ?? 'No language' }}</td>
+                        </tr>
+                        <tr>
                             <td class="fw-bold">Status:</td>
                             <td>
                                 <x-admin.status-badge :status="$user->status" />

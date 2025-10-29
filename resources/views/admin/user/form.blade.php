@@ -21,6 +21,7 @@
                 @endif
                 <x-admin.input-field type="text" name="username" label="User name" placeholder="User name" :value="$user->username ?? ''" :required="true"/>
                 <x-admin.select-field name="user_group_id" label="User group" :options="$userGroupsOptions" :value="$user->user_group_id ?? ''"/>
+                <x-admin.select-field name="language_id" label="Language" :options="$languagesOptions" :value="$user->language_id ?? ''"/>
                 <x-admin.input-field type="text" name="firstname" label="First name" placeholder="First name" :value="$user->firstname ?? ''" :required="true"/>
                 <x-admin.input-field type="text" name="lastname" label="Last name" placeholder="Last name" :value="$user->lastname ?? ''" :required="true"/>
                 <x-admin.input-field type="email" name="email" label="Email" placeholder="Email" :value="$user->email ?? ''" :required="true"/>
