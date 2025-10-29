@@ -6,26 +6,26 @@
     <div class="action mb-2">
         <x-admin.action-button-add 
             permission="admin.user.create"
-            text="Add User" 
+            :text="__('admin.add_user')" 
         />
     </div>
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-list"></i>
-            <span>User list</span>
+            <span>{{ __('admin.user_list') }}</span>
         </div>
         <div id="user" class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>User name</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>User group</th>
-                            <th>Status</th>
-                            <th>Date added</th>
-                            <th class="text-end">Action</th>
+                            <th>{{ __('admin.user_name') }}</th>
+                            <th>{{ __('admin.name') }}</th>
+                            <th>{{ __('admin.email') }}</th>
+                            <th>{{ __('admin.user_group') }}</th>
+                            <th>{{ __('admin.status') }}</th>
+                            <th>{{ __('admin.date_added') }}</th>
+                            <th class="text-end">{{ __('admin.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,7 +34,7 @@
                                 <td>{{ $user->username }}</td>
                                 <td>{{ $user->fullname }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->userGroup?->name ?? 'No group' }}</td>
+                                <td>{{ $user->userGroup?->name ?? __('admin.no_group') }}</td>
                                 <td>
                                     <x-admin.status-badge :status="$user->status" />
                                 </td>
@@ -43,6 +43,8 @@
                                     <x-admin.action-buttons-row 
                                         :id="$user->id"
                                         baseName="user"
+                                        :itemName="__('admin.user')"
+                                        :confirmText="__('admin.delete_confirm', ['item' => __('admin.user')])"
                                     />
                                 </td>
                             </tr>

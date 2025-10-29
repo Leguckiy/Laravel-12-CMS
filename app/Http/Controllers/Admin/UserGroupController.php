@@ -12,16 +12,16 @@ class UserGroupController extends AdminController
 {
     protected array $breadcrumbs = [
         [
-            'title' => 'Home',
+            'title' => 'home',
             'route' => 'admin.dashboard',
         ],
         [
-            'title' => 'User groups',
+            'title' => 'user_groups',
             'route' => 'admin.user_group.index',
         ],
     ];
 
-    protected string $title = 'User groups';
+    protected string $title = 'user_groups';
 
     /**
      * Display a listing of the resource.
@@ -60,7 +60,7 @@ class UserGroupController extends AdminController
             'permission' => $permission,
         ]);
         
-        return redirect()->route('admin.user_group.index')->with('success', 'User group created successfully.');
+        return redirect()->route('admin.user_group.index')->with('success', __('admin.created_successfully'));
     }
 
     /**
@@ -98,7 +98,7 @@ class UserGroupController extends AdminController
             'permission' => $permission,
         ]);
         
-        return redirect()->route('admin.user_group.index')->with('success', 'User group updated successfully.');
+        return redirect()->route('admin.user_group.index')->with('success', __('admin.updated_successfully'));
     }
 
     /**
@@ -108,7 +108,7 @@ class UserGroupController extends AdminController
     {
         $userGroup->delete();
 
-        return redirect()->route('admin.user_group.index')->with('success', 'User group deleted successfully.');
+        return redirect()->route('admin.user_group.index')->with('success', __('admin.deleted_successfully'));
     }
 
     /**

@@ -20,6 +20,31 @@ class AdminMenuService
     protected function initializeMenu(): void
     {
         $this->menuItems = config('admin.menu', []);
+        $this->translateMenuItems($this->menuItems);
+    }
+
+    /**
+     * Recursively translate menu item names.
+     */
+    protected function translateMenuItems(array &$items): void
+    {
+        foreach ($items as &$item) {
+            if (!empty($item['name'])) {
+                $translationKey = "admin.{$item['name']}";
+                $translated = __($translationKey);
+                // If translation not found (returns same key), use formatted key as fallback
+                if ($translated === $translationKey) {
+                    // Format key: menu_dashboard -> Menu Dashboard
+                    $item['name'] = ucwords(str_replace(['_', '-'], ' ', $item['name']));
+                } else {
+                    $item['name'] = $translated;
+                }
+            }
+            
+            if (!empty($item['children'])) {
+                $this->translateMenuItems($item['children']);
+            }
+        }
     }
 
     protected function setActiveStates(array &$items): bool

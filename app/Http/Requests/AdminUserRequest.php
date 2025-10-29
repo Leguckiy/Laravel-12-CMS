@@ -55,19 +55,19 @@ class AdminUserRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'user_group_id.exists' => 'Selected user group does not exist.',
-            'language_id.exists' => 'Selected language does not exist.',
-            'username.required' => 'Username is required.',
-            'username.unique' => 'This username is already taken.',
-            'password.required' => 'Password is required.',
-            'password.min' => 'Password must be at least 6 characters.',
-            'confirm.required' => 'Password confirmation is required.',
-            'confirm.same' => 'Password confirmation does not match.',
-            'firstname.required' => 'First name is required.',
-            'lastname.required' => 'Last name is required.',
-            'email.required' => 'Email is required.',
-            'email.email' => 'Please enter a valid email address.',
-            'email.unique' => 'This email is already registered.',
+            'user_group_id.exists' => __('validation.user_group_id.exists'),
+            'language_id.exists' => __('validation.language_id.exists'),
+            'username.required' => __('validation.username.required'),
+            'username.unique' => __('validation.username.unique'),
+            'password.required' => __('validation.password.required'),
+            'password.min' => __('validation.password.min'),
+            'confirm.required' => __('validation.confirm.required'),
+            'confirm.same' => __('validation.confirm.same'),
+            'firstname.required' => __('validation.firstname.required'),
+            'lastname.required' => __('validation.lastname.required'),
+            'email.required' => __('validation.email.required'),
+            'email.email' => __('validation.email.email'),
+            'email.unique' => __('validation.email.unique'),
         ];
     }
 }

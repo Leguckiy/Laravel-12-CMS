@@ -14,16 +14,16 @@ class UserController extends AdminController
 {
     protected array $breadcrumbs = [
         [
-            'title' => 'Home',
+            'title' => 'home',
             'route' => 'admin.dashboard',
         ],
         [
-            'title' => 'Users',
+            'title' => 'users',
             'route' => 'admin.user.index',
         ],
     ];
 
-    protected string $title = 'Users';
+    protected string $title = 'users';
 
     /**
      * Display a listing of the resource.
@@ -65,7 +65,7 @@ class UserController extends AdminController
         
         User::create($validated);
 
-        return redirect()->route('admin.user.index')->with('success', 'User created successfully.');
+        return redirect()->route('admin.user.index')->with('success', __('admin.created_successfully'));
     }
 
     /**
@@ -113,7 +113,7 @@ class UserController extends AdminController
 
         $user->update($validated);
 
-        return redirect()->route('admin.user.index')->with('success', 'User updated successfully.');
+        return redirect()->route('admin.user.index')->with('success', __('admin.updated_successfully'));
     }
 
     /**
@@ -123,6 +123,6 @@ class UserController extends AdminController
     {
         $user->delete();
 
-        return redirect()->route('admin.user.index')->with('success', 'User deleted successfully.');
+        return redirect()->route('admin.user.index')->with('success', __('admin.deleted_successfully'));
     }
 }

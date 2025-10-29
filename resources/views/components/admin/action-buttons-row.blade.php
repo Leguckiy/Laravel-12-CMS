@@ -13,21 +13,21 @@
     <x-admin.button-view 
         :route="$showRoute" 
         :permission="$showPermission" 
-        :title="'View ' . $itemName"
+        :title="__('admin.view_item', ['item' => $itemName])"
         variant="icon"
     />
     
     <x-admin.button-edit 
         :route="$editRoute" 
         :permission="$editPermission" 
-        :title="'Edit ' . $itemName"
+        :title="__('admin.edit_item', ['item' => $itemName])"
         variant="icon"
     />
     
     <x-admin.button-delete 
         :route="$destroyRoute" 
         :permission="$destroyPermission" 
-        :title="'Delete ' . $itemName"
+        :title="__('admin.delete_item', ['item' => $itemName])"
         :confirmText="$confirmText"
         variant="icon"
     />

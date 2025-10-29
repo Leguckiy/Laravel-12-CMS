@@ -12,14 +12,14 @@
     <x-admin.button-edit 
         :route="$editRoute" 
         :permission="$editPermission" 
-        :title="'Edit ' . $itemName"
+        :title="__('admin.edit_item', ['item' => $itemName])"
         variant="text"
     />
     
     <x-admin.button-delete 
         :route="$destroyRoute" 
         :permission="$destroyPermission" 
-        :title="'Delete ' . $itemName"
+        :title="__('admin.delete_item', ['item' => $itemName])"
         :confirmText="$confirmText"
         variant="text"
     />

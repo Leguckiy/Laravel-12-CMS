@@ -1,9 +1,9 @@
 @props(['status'])
 
 @if($status)
-    <span class="badge bg-success">Active</span>
+    <span class="badge bg-success">{{ __('admin.active') }}</span>
 @else
-    <span class="badge bg-danger">Inactive</span>
+    <span class="badge bg-danger">{{ __('admin.inactive') }}</span>
 @endif
 
 

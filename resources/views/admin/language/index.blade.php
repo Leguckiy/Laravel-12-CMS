@@ -6,24 +6,24 @@
     <div class="action mb-2">
         <x-admin.action-button-add 
             permission="admin.language.create"
-            text="Add language" 
+            :text="__('admin.add_language')" 
         />
     </div>
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-list"></i>
-            <span>Language list</span>
+            <span>{{ __('admin.language_list') }}</span>
         </div>
         <div id="language" class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Language name</th>
-                            <th>Code</th>
-                            <th>Sort order</th>
-                            <th>Status</th>
-                            <th class="text-end">Action</th>
+                            <th>{{ __('admin.language_name') }}</th>
+                            <th>{{ __('admin.code') }}</th>
+                            <th>{{ __('admin.sort_order') }}</th>
+                            <th>{{ __('admin.status') }}</th>
+                            <th class="text-end">{{ __('admin.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +39,8 @@
                                     <x-admin.action-buttons-row 
                                         :id="$language->id"
                                         baseName="language"
+                                        :itemName="__('admin.language')"
+                                        :confirmText="__('admin.delete_confirm', ['item' => __('admin.language')])"
                                     />
                                 </td>
                             </tr>

@@ -12,16 +12,16 @@ class LanguageController extends AdminController
 {
     protected array $breadcrumbs = [
         [
-            'title' => 'Home',
+            'title' => 'home',
             'route' => 'admin.dashboard',
         ],
         [
-            'title' => 'Languages',
+            'title' => 'languages',
             'route' => 'admin.language.index',
         ],
     ];
 
-    protected string $title = 'Languages';
+    protected string $title = 'languages';
 
     /**
      * Display a listing of the resource.
@@ -50,7 +50,7 @@ class LanguageController extends AdminController
         
         Language::create($validated);
 
-        return redirect()->route('admin.language.index')->with('success', 'Language created successfully.');
+        return redirect()->route('admin.language.index')->with('success', __('admin.created_successfully'));
     }
 
     /**
@@ -78,7 +78,7 @@ class LanguageController extends AdminController
         
         $language->update($validated);
 
-        return redirect()->route('admin.language.index')->with('success', 'Language updated successfully.');
+        return redirect()->route('admin.language.index')->with('success', __('admin.updated_successfully'));
     }
 
     /**
@@ -88,6 +88,6 @@ class LanguageController extends AdminController
     {
         $language->delete();
 
-        return redirect()->route('admin.language.index')->with('success', 'Language deleted successfully.');
+        return redirect()->route('admin.language.index')->with('success', __('admin.deleted_successfully'));
     }
 }

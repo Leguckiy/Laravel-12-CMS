@@ -41,14 +41,14 @@ class AdminLanguageRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'Language name is required.',
-            'code.required' => 'Language code is required.',
-            'code.max' => 'Language code must not exceed 5 characters.',
-            'code.unique' => 'This language code is already taken.',
-            'sort_order.required' => 'Sort order is required.',
-            'sort_order.integer' => 'Sort order must be a number.',
-            'sort_order.min' => 'Sort order must be at least 0.',
-            'status.boolean' => 'Status must be a boolean value.',
+            'name.required' => __('validation.language_name.required'),
+            'code.required' => __('validation.code.required'),
+            'code.max' => __('validation.code.max'),
+            'code.unique' => __('validation.code.unique'),
+            'sort_order.required' => __('validation.sort_order.required'),
+            'sort_order.integer' => __('validation.sort_order.integer'),
+            'sort_order.min' => __('validation.sort_order.min'),
+            'status.boolean' => __('validation.status.boolean'),
         ];
     }
 }

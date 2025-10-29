@@ -6,14 +6,14 @@
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
-            <span>User group details</span>
+            <span>{{ __('admin.user_group_details') }}</span>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8">
                     <table class="table table-borderless">
                         <tr>
-                            <td class="fw-bold" style="width: 150px;">Name:</td>
+                            <td class="fw-bold" style="width: 150px;">{{ __('admin.name') }}:</td>
                             <td>{{ $userGroup->name }}</td>
                         </tr>
                     </table>
@@ -23,7 +23,8 @@
             <x-admin.detail-actions 
                 :id="$userGroup->id"
                 baseName="user_group"
-                itemName="User group"
+                :itemName="__('admin.user_group')"
+                :confirmText="__('admin.delete_confirm', ['item' => __('admin.user_group')])"
             />
         </div>
     </div>

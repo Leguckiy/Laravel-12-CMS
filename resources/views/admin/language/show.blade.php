@@ -6,26 +6,26 @@
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
-            <span>Language details</span>
+            <span>{{ __('admin.language_details') }}</span>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8">
                     <table class="table table-borderless">
                         <tr>
-                            <td class="fw-bold" style="width: 150px;">Name:</td>
+                            <td class="fw-bold" style="width: 150px;">{{ __('admin.name') }}:</td>
                             <td>{{ $language->name }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 150px;">Code:</td>
+                            <td class="fw-bold" style="width: 150px;">{{ __('admin.code') }}:</td>
                             <td>{{ $language->code }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 150px;">Sort order:</td>
+                            <td class="fw-bold" style="width: 150px;">{{ __('admin.sort_order') }}:</td>
                             <td>{{ $language->sort_order }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold">Status:</td>
+                            <td class="fw-bold">{{ __('admin.status') }}:</td>
                             <td>
                                 <x-admin.status-badge :status="$language->status" />
                             </td>
@@ -37,6 +37,8 @@
             <x-admin.detail-actions 
                 :id="$language->id"
                 baseName="language"
+                :itemName="__('admin.language')"
+                :confirmText="__('admin.delete_confirm', ['item' => __('admin.language')])"
             />
         </div>
     </div>

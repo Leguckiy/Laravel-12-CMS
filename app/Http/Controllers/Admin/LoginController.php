@@ -27,7 +27,7 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Неверный логин или пароль',
+            'email' => __('admin.invalid_credentials'),
         ]);
     }
 

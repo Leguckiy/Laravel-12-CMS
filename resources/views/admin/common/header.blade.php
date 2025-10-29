@@ -21,14 +21,14 @@
                     <li>
                         <a href="{{ route('admin.user.edit', $adminUser->id) }}" class="dropdown-item">
                             <i class="fas fa-user-circle fa-fw"></i>
-                            Your Profile
+                            {{ __('admin.your_profile') }}
                         </a>
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
                         <a href="{{ url('/') }}" target="_blank" class="dropdown-item">
                             <i class="fas fa-external-link-alt fa-fw"></i>
-                            Go to website
+                            {{ __('admin.go_to_website') }}
                         </a>
                     </li>
                 </ul>
@@ -37,7 +37,7 @@
             <li id="nav-logout" class="nav-item d-flex align-items-center">
                 <a href="{{ route('admin.logout') }}" class="nav-link">
                     <i class="fas fa-sign-out-alt"></i>
-                    <span class="d-none d-md-inline">Logout</span>
+                    <span class="d-none d-md-inline">{{ __('admin.logout') }}</span>
                 </a>
             </li>
         </ul>

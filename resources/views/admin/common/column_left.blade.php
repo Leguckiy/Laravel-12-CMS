@@ -1,5 +1,5 @@
 <nav id="column-left">
-    <div id="navigation"><span class="fa-solid fa-bars"></span> Navigation</div>
+    <div id="navigation"><span class="fa-solid fa-bars"></span> {{ __('admin.navigation') }}</div>
     <ul id="menu">
         @foreach($menuItems as $index => $menu)
             <li id="{{ $menu['id'] }}" @class(['active' => $menu['is_active']])>

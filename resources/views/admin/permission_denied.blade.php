@@ -9,12 +9,12 @@
                     <div class="mb-4">
                         <i class="fa-solid fa-triangle-exclamation text-danger" style="font-size: 72px;"></i>
                     </div>
-                    <h1 class="text-danger mb-3">Permission Denied!</h1>
+                    <h1 class="text-danger mb-3">{{ __('admin.permission_denied') }}</h1>
                     <p class="text-muted mb-4">
-                        You do not have permission to access this page, please refer to your system administrator.
+                        {{ __('admin.permission_denied_message') }}
                     </p>
                     <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">
-                        <i class="fa-solid fa-home"></i> Go to Dashboard
+                        <i class="fa-solid fa-home"></i> {{ __('admin.go_to_dashboard') }}
                     </a>
                 </div>
             </div>

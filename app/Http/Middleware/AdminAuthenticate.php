@@ -23,8 +23,19 @@ class AdminAuthenticate
 
         // Set user's language preference
         $user = Auth::guard('admin')->user();
+        
         if ($user?->language?->code) {
-            App::setLocale($user->language->code);
+            $locale = $user->language->code;
+            // Check if locale directory exists, otherwise use config default
+            $localePath = lang_path($locale);
+            if (is_dir($localePath)) {
+                App::setLocale($locale);
+            } else {
+                App::setLocale(config('app.locale', 'en'));
+            }
+        } else {
+            // If user has no language, use default from config
+            App::setLocale(config('app.locale', 'en'));
         }
 
         return $next($request);

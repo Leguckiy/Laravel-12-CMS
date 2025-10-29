@@ -4,24 +4,24 @@ return [
     'menu' => [
         [
             'id' => 'menu-dashboard',
-            'name' => 'Dashboard',
+            'name' => 'menu_dashboard',
             'icon' => 'fas fa-home',
             'route' => 'admin.dashboard',
             'children' => []
         ],
         [
             'id' => 'menu-catalog',
-            'name' => 'Catalog',
+            'name' => 'menu_catalog',
             'icon' => 'fas fa-box',
             'route' => '',
             'children' => [
                 [
-                    'name' => 'Categories',
+                    'name' => 'menu_catalog_categories',
                     'route' => '',
                     'children' => []
                 ],
                 [
-                    'name' => 'Products',
+                    'name' => 'menu_catalog_products',
                     'route' => '',
                     'children' => []
                 ]
@@ -29,12 +29,12 @@ return [
         ],
         [
             'id' => 'menu-sale',
-            'name' => 'Sales',
+            'name' => 'menu_sales',
             'icon' => 'fas fa-shopping-cart',
             'route' => '',
             'children' => [
                 [
-                    'name' => 'Orders',
+                    'name' => 'menu_sales_orders',
                     'route' => '',
                     'children' => []
                 ]
@@ -42,17 +42,17 @@ return [
         ],
         [
             'id' => 'menu-customer',
-            'name' => 'Customers',
+            'name' => 'menu_customers',
             'icon' => 'fas fa-user',
             'route' => '',
             'children' => [
                 [
-                    'name' => 'Customers',
+                    'name' => 'menu_customers_list',
                     'route' => '',
                     'children' => []
                 ],
                 [
-                    'name' => 'Customer Groups',
+                    'name' => 'menu_customers_groups',
                     'route' => '',
                     'children' => []
                 ]
@@ -60,57 +60,57 @@ return [
         ],
         [
             'id' => 'menu-settings',
-            'name' => 'Settings',
+            'name' => 'menu_settings',
             'icon' => 'fas fa-cog',
             'route' => '',
             'children' => [
                 [
-                    'name' => 'Settings',
+                    'name' => 'menu_settings_general',
                     'route' => '',
                     'children' => []
                 ],
                 [
-                    'name' => 'Users',
+                    'name' => 'menu_settings_users',
                     'route' => '',
                     'children' => [
                         [
-                            'name' => 'Users',
+                            'name' => 'users',
                             'route' => 'admin.user.index',
                             'children' => []
                         ],
                         [
-                            'name' => 'User groups',
+                            'name' => 'user_groups',
                             'route' => 'admin.user_group.index',
                             'children' => []
                         ]
                     ]
                 ],
                 [
-                    'name' => 'Localisation',
+                    'name' => 'menu_settings_localisation',
                     'route' => '',
                     'children' => [
                         [
-                            'name' => 'Languages',
+                            'name' => 'languages',
                             'route' => 'admin.language.index',
                             'children' => []
                         ],
                         [
-                            'name' => 'Currencies',
+                            'name' => 'menu_settings_localisation_currencies',
                             'route' => '',
                             'children' => []
                         ],
                         [
-                            'name' => 'Stock Statuses',
+                            'name' => 'menu_settings_localisation_stock_statuses',
                             'route' => '',
                             'children' => []
                         ],
                         [
-                            'name' => 'Order Statuses',
+                            'name' => 'menu_settings_localisation_order_statuses',
                             'route' => '',
                             'children' => []
                         ],
                         [
-                            'name' => 'Countries',
+                            'name' => 'menu_settings_localisation_countries',
                             'route' => '',
                             'children' => []
                         ]

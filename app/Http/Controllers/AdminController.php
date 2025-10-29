@@ -10,11 +10,14 @@ class AdminController extends Controller
 
     public function getBreadcrumbs(): array
     {
-        return $this->breadcrumbs;
+        return array_map(function($item) {
+            $item['title'] = __("admin.{$item['title']}");
+            return $item;
+        }, $this->breadcrumbs);
     }
 
     public function getTitle(): string
     {
-        return $this->title;
+        return __("admin.{$this->title}");
     }
 }
