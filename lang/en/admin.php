@@ -71,6 +71,8 @@ return [
     'go_to_dashboard' => 'Go to Dashboard',
     'your_profile' => 'Your Profile',
     'go_to_website' => 'Go to website',
+    'not_found' => 'Page Not Found',
+    'not_found_message' => 'The page you are looking for could not be found.',
     
     // Languages
     'languages' => 'Languages',

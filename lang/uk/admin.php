@@ -71,6 +71,8 @@ return [
     'go_to_dashboard' => 'Перейти до панелі керування',
     'your_profile' => 'Ваш профіль',
     'go_to_website' => 'Перейти на сайт',
+    'not_found' => 'Сторінку не знайдено',
+    'not_found_message' => 'Сторінку, яку ви шукаєте, не вдалося знайти.',
     
     // Languages
     'languages' => 'Мови',

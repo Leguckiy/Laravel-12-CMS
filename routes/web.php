@@ -28,5 +28,10 @@ Route::prefix('admin')->group(function () {
             Route::resource('user_group', UserGroupController::class)->names('admin.user_group');
             Route::resource('language', LanguageController::class)->names('admin.language');
         });
+
+        // Fallback for unknown admin routes (404 within admin area)
+        Route::fallback(function () {
+            return response()->view('admin.not_found', [], 404);
+        });
     });
 });
