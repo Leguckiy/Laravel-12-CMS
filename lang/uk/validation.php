@@ -33,6 +33,18 @@ return [
     'name.max' => 'Поле не повинно перевищувати :max символів.',
     'permissions.array' => 'Дозволи мають бути масивом.',
     
+    // Currency validation
+    'currency_title.required' => 'Назва валюти є обов\'язковою.',
+    'currency_code.required' => 'Код валюти є обов\'язковим.',
+    'currency_code.min' => 'Код валюти має містити рівно 3 символи.',
+    'currency_code.max' => 'Код валюти не повинен перевищувати 3 символи.',
+    'currency_code.unique' => 'Цей код валюти вже використовується.',
+    'decimal_place.required' => 'Кількість знаків після коми є обов\'язковою.',
+    'decimal_place.integer' => 'Кількість знаків після коми має бути числом.',
+    'decimal_place.min' => 'Кількість знаків після коми повинна бути не менше 0.',
+    'decimal_place.max' => 'Кількість знаків після коми не повинна перевищувати 8.',
+    'value.numeric' => 'Значення має бути числом.',
+    
     // Standard Laravel validation messages
     'required' => 'Поле :attribute є обов\'язковим.',
     'string' => 'Поле :attribute має бути рядком.',

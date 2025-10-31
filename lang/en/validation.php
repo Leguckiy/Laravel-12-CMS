@@ -33,6 +33,18 @@ return [
     'name.max' => 'The field must not exceed :max characters.',
     'permissions.array' => 'Permissions must be an array.',
     
+    // Currency validation
+    'currency_title.required' => 'Currency title is required.',
+    'currency_code.required' => 'Currency code is required.',
+    'currency_code.min' => 'Currency code must be 3 characters.',
+    'currency_code.max' => 'Currency code must not exceed 3 characters.',
+    'currency_code.unique' => 'This currency code is already taken.',
+    'decimal_place.required' => 'Decimal place is required.',
+    'decimal_place.integer' => 'Decimal place must be a number.',
+    'decimal_place.min' => 'Decimal place must be at least 0.',
+    'decimal_place.max' => 'Decimal place must not exceed 8.',
+    'value.numeric' => 'Value must be a number.',
+    
     // Standard Laravel validation messages
     'required' => 'The :attribute field is required.',
     'string' => 'The :attribute must be a string.',

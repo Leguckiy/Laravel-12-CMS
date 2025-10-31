@@ -26,4 +26,3 @@
     
     <x-admin.button-back :route="$backRoute" />
 </div>
-

@@ -30,6 +30,19 @@ return [
     'edit_item' => 'Редагувати :item',
     'delete_item' => 'Видалити :item',
     'delete_confirm' => 'Ви впевнені, що хочете видалити :item?',
+    'form_errors' => 'Будь ласка, перевірте форму на помилки!',
+    'welcome_to_dashboard' => 'Ласкаво просимо на панель керування',
+    'permission_denied' => 'Доступ заборонено!',
+    'permission_denied_message' => 'У вас немає дозволу на доступ до цієї сторінки, зверніться до системного адміністратора.',
+    'go_to_dashboard' => 'Перейти до панелі керування',
+    'go_to_website' => 'Перейти на сайт',
+    'not_found' => 'Сторінку не знайдено',
+    'not_found_message' => 'Сторінку, яку ви шукаєте, не вдалося знайти.',
+    'value' => 'Значення',
+    'date_updated' => 'Дата оновлення',
+    'sort_order' => 'Порядок сортування',
+    'created' => 'Створено',
+    'updated' => 'Оновлено',
     
     // Messages
     'created_successfully' => 'Успішно створено',
@@ -55,43 +68,39 @@ return [
     'no_group' => 'Без групи',
     'no_language' => 'Мова не вибрана',
     'edit_user' => 'Редагувати користувача',
-    'edit_language' => 'Редагувати мову',
-    'edit_user_group' => 'Редагувати групу користувача',
     'user_group_name' => 'Назва групи користувача',
-    'form_errors' => 'Будь ласка, перевірте форму на помилки!',
-    'permissions' => 'Дозволи',
-    'access' => 'Доступ',
-    'modify' => 'Редагування',
     'no_admin_routes' => 'Маршрути адміністратора не знайдено',
-    'navigation' => 'Навігація',
-    'welcome_to_dashboard' => 'Ласкаво просимо на панель керування',
     'user_photo' => 'Фото користувача',
-    'permission_denied' => 'Доступ заборонено!',
-    'permission_denied_message' => 'У вас немає дозволу на доступ до цієї сторінки, зверніться до системного адміністратора.',
-    'go_to_dashboard' => 'Перейти до панелі керування',
     'your_profile' => 'Ваш профіль',
-    'go_to_website' => 'Перейти на сайт',
-    'not_found' => 'Сторінку не знайдено',
-    'not_found_message' => 'Сторінку, яку ви шукаєте, не вдалося знайти.',
+    'user_details' => 'Деталі користувача',
+
+    // Currencies
+    'currencies' => 'Валюти',
+    'currency' => 'Валюта',
+    'currency_list' => 'Список валют',
+    'add_currency' => 'Додати валюту',
+    'edit_currency' => 'Редагувати валюту',
+    'currency_title' => 'Назва валюти',
     
     // Languages
     'languages' => 'Мови',
     'language' => 'Мова',
     'language_list' => 'Список мов',
     'add_language' => 'Додати мову',
+    'edit_language' => 'Редагувати мову',
     'language_name' => 'Назва мови',
-    'sort_order' => 'Порядок сортування',
+    'language_details' => 'Деталі мови',
     
     // User Groups
     'user_groups' => 'Групи користувачів',
     'user_group' => 'Група користувача',
     'user_group_list' => 'Список груп користувачів',
     'add_user_group' => 'Додати групу користувача',
-    'user_details' => 'Деталі користувача',
+    'edit_user_group' => 'Редагувати групу користувача',
     'user_group_details' => 'Деталі групи користувача',
-    'language_details' => 'Деталі мови',
-    'created' => 'Створено',
-    'updated' => 'Оновлено',
+    'permissions' => 'Дозволи',
+    'access' => 'Доступ',
+    'modify' => 'Редагування',
     
     // Login
     'login' => 'Вхід',
@@ -101,6 +110,7 @@ return [
     'invalid_credentials' => 'Невірний логін або пароль',
     
     // Menu
+    'navigation' => 'Навігація',
     'menu_dashboard' => 'Панель керування',
     'menu_catalog' => 'Каталог',
     'menu_catalog_categories' => 'Категорії',
@@ -119,4 +129,3 @@ return [
     'menu_settings_localisation_order_statuses' => 'Статуси замовлень',
     'menu_settings_localisation_countries' => 'Країни',
 ];
-

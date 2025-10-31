@@ -5,5 +5,3 @@
 @else
     <span class="badge bg-danger">{{ __('admin.inactive') }}</span>
 @endif
-
-

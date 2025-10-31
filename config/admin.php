@@ -96,7 +96,7 @@ return [
                         ],
                         [
                             'name' => 'menu_settings_localisation_currencies',
-                            'route' => '',
+                            'route' => 'admin.currency.index',
                             'children' => []
                         ],
                         [
@@ -124,5 +124,6 @@ return [
         'user' => 'user/user',
         'user_group' => 'user/user_group',
         'language' => 'localisation/language',
+        'currency' => 'localisation/currency',
     ]
 ];

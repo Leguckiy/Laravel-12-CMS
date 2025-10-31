@@ -5,42 +5,44 @@
     
     <div class="action mb-2">
         <x-admin.action-button-add 
-            permission="admin.language.create"
-            :text="__('admin.add_language')" 
+            permission="admin.currency.create"
+            :text="__('admin.add_currency')" 
         />
     </div>
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-list"></i>
-            <span>{{ __('admin.language_list') }}</span>
+            <span>{{ __('admin.currency_list') }}</span>
         </div>
-        <div id="language" class="card-body">
+        <div id="currency" class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>{{ __('admin.language_name') }}</th>
+                            <th>{{ __('admin.currency_title') }}</th>
                             <th>{{ __('admin.code') }}</th>
-                            <th>{{ __('admin.sort_order') }}</th>
+                            <th>{{ __('admin.value') }}</th>
                             <th>{{ __('admin.status') }}</th>
+                            <th>{{ __('admin.date_updated') }}</th>
                             <th class="text-end">{{ __('admin.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($languages as $language)
+                        @foreach ($currencies as $currency)
                             <tr>
-                                <td>{{ $language->name }}</td>
-                                <td>{{ $language->code }}</td>
-                                <td>{{ $language->sort_order }}</td>
+                                <td>{{ $currency->title }}</td>
+                                <td>{{ $currency->code }}</td>
+                                <td>{{ $currency->value }}</td>
                                 <td>
-                                    <x-admin.status-badge :status="$language->status" />
+                                    <x-admin.status-badge :status="$currency->status" />
                                 </td>
+                                <td>{{ $currency->updated_at->format('d.m.Y') }}</td>
                                 <td class="text-end">
                                     <x-admin.action-buttons-row 
-                                        :id="$language->id"
-                                        baseName="language"
-                                        :itemName="__('admin.language')"
-                                        :confirmText="__('admin.delete_confirm', ['item' => __('admin.language')])"
+                                        :id="$currency->id"
+                                        baseName="currency"
+                                        :itemName="__('admin.currency')"
+                                        :confirmText="__('admin.delete_confirm', ['item' => __('admin.currency')])"
                                     />
                                 </td>
                             </tr>

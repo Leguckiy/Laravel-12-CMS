@@ -6,4 +6,3 @@
         <span>{{ $text ?? __('admin.back_to_list') }}</span>
     </a>
 @endif
-

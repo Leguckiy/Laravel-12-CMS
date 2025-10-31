@@ -30,6 +30,19 @@ return [
     'edit_item' => 'Edit :item',
     'delete_item' => 'Delete :item',
     'delete_confirm' => 'Are you sure you want to delete :item?',
+    'form_errors' => 'Please check the form for errors!',
+    'welcome_to_dashboard' => 'Welcome to dashboard page',
+    'permission_denied' => 'Permission Denied!',
+    'permission_denied_message' => 'You do not have permission to access this page, please refer to your system administrator.',
+    'go_to_dashboard' => 'Go to Dashboard',
+    'go_to_website' => 'Go to website',
+    'not_found' => 'Page Not Found',
+    'not_found_message' => 'The page you are looking for could not be found.',
+    'value' => 'Value',
+    'date_updated' => 'Date updated',
+    'sort_order' => 'Sort order',
+    'created' => 'Created',
+    'updated' => 'Updated',
     
     // Messages
     'created_successfully' => 'Created successfully',
@@ -55,43 +68,39 @@ return [
     'no_group' => 'No group',
     'no_language' => 'No language',
     'edit_user' => 'Edit User',
-    'edit_language' => 'Edit Language',
-    'edit_user_group' => 'Edit User group',
     'user_group_name' => 'User group name',
-    'form_errors' => 'Please check the form for errors!',
-    'permissions' => 'Permissions',
-    'access' => 'Access',
-    'modify' => 'Modify',
     'no_admin_routes' => 'No admin routes found',
-    'navigation' => 'Navigation',
-    'welcome_to_dashboard' => 'Welcome to dashboard page',
     'user_photo' => 'User photo',
-    'permission_denied' => 'Permission Denied!',
-    'permission_denied_message' => 'You do not have permission to access this page, please refer to your system administrator.',
-    'go_to_dashboard' => 'Go to Dashboard',
     'your_profile' => 'Your Profile',
-    'go_to_website' => 'Go to website',
-    'not_found' => 'Page Not Found',
-    'not_found_message' => 'The page you are looking for could not be found.',
+    'user_details' => 'User Details',
+
+    // Currencies
+    'currencies' => 'Currencies',
+    'currency' => 'Currency',
+    'currency_list' => 'Currency list',
+    'add_currency' => 'Add Currency',
+    'edit_currency' => 'Edit Currency',
+    'currency_title' => 'Currency title',
     
     // Languages
     'languages' => 'Languages',
     'language' => 'Language',
     'language_list' => 'Language list',
-    'add_language' => 'Add language',
+    'add_language' => 'Add Language',
+    'edit_language' => 'Edit Language',
     'language_name' => 'Language name',
-    'sort_order' => 'Sort order',
+    'language_details' => 'Language details',
     
     // User Groups
     'user_groups' => 'User groups',
     'user_group' => 'User group',
     'user_group_list' => 'User group list',
-    'add_user_group' => 'Add user group',
-    'user_details' => 'User Details',
+    'add_user_group' => 'Add User group',
+    'edit_user_group' => 'Edit User group',
     'user_group_details' => 'User group details',
-    'language_details' => 'Language details',
-    'created' => 'Created',
-    'updated' => 'Updated',
+    'permissions' => 'Permissions',
+    'access' => 'Access',
+    'modify' => 'Modify',
     
     // Login
     'login' => 'Login',
@@ -101,6 +110,7 @@ return [
     'invalid_credentials' => 'Invalid username or password',
     
     // Menu
+    'navigation' => 'Navigation',
     'menu_dashboard' => 'Dashboard',
     'menu_catalog' => 'Catalog',
     'menu_catalog_categories' => 'Categories',
@@ -119,4 +129,3 @@ return [
     'menu_settings_localisation_order_statuses' => 'Order Statuses',
     'menu_settings_localisation_countries' => 'Countries',
 ];
-

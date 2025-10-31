@@ -18,5 +18,3 @@
         @enderror
     </div>
 </div>
-
-

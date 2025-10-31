@@ -3,4 +3,3 @@
     @csrf
     @method('DELETE')
 </form>
-
