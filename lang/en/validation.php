@@ -45,6 +45,12 @@ return [
     'decimal_place.max' => 'Decimal place must not exceed 8.',
     'value.numeric' => 'Value must be a number.',
     
+    // Stock Status validation
+    'stock_status_name.required' => 'Stock status name is required.',
+    'stock_status_name.string' => 'Stock status name must be a string.',
+    'stock_status_name.max' => 'Stock status name must not exceed :max characters.',
+    'stock_status_name.unique' => 'This stock status name already exists for this language.',
+    
     // Standard Laravel validation messages
     'required' => 'The :attribute field is required.',
     'string' => 'The :attribute must be a string.',

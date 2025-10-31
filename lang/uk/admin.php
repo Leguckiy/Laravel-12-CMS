@@ -108,7 +108,16 @@ return [
     'login_to_admin' => 'Вхід до панелі керування',
     'password' => 'Пароль',
     'invalid_credentials' => 'Невірний логін або пароль',
-    
+
+    // Stock status
+    'stock_status' => 'Статус складу',
+    'stock_statuses' => 'Статуси складу',
+    'stock_status_list' => 'Список статусів складу',
+    'add_stock_status' => 'Додати статус складу',
+    'edit_stock_status' => 'Редагувати статус складу',
+    'stock_status_name' => 'Назва статусу складу',
+    'stock_status_details' => 'Деталі статусу складу',
+
     // Menu
     'navigation' => 'Навігація',
     'menu_dashboard' => 'Панель керування',

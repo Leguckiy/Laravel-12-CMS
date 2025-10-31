@@ -108,7 +108,16 @@ return [
     'login_to_admin' => 'Login to the admin panel',
     'password' => 'Password',
     'invalid_credentials' => 'Invalid username or password',
-    
+
+    // Stock status
+    'stock_status' => 'Stock status',
+    'stock_statuses' => 'Stock statuses',
+    'stock_status_list' => 'Stock status list',
+    'add_stock_status' => 'Add Stock status',
+    'edit_stock_status' => 'Edit Stock status',
+    'stock_status_name' => 'Stock status name',
+    'stock_status_details' => 'Stock status details',
+
     // Menu
     'navigation' => 'Navigation',
     'menu_dashboard' => 'Dashboard',

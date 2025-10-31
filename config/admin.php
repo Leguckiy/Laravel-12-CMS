@@ -101,7 +101,7 @@ return [
                         ],
                         [
                             'name' => 'menu_settings_localisation_stock_statuses',
-                            'route' => '',
+                            'route' => 'admin.stock_status.index',
                             'children' => []
                         ],
                         [
@@ -125,5 +125,6 @@ return [
         'user_group' => 'user/user_group',
         'language' => 'localisation/language',
         'currency' => 'localisation/currency',
+        'stock_status' => 'localisation/stock_status',
     ]
 ];

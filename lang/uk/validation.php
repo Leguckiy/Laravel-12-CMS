@@ -45,6 +45,12 @@ return [
     'decimal_place.max' => 'Кількість знаків після коми не повинна перевищувати 8.',
     'value.numeric' => 'Значення має бути числом.',
     
+    // Stock Status validation
+    'stock_status_name.required' => 'Назва статусу наявності є обов\'язковою.',
+    'stock_status_name.string' => 'Назва статусу наявності має бути рядком.',
+    'stock_status_name.max' => 'Назва статусу наявності не повинна перевищувати :max символів.',
+    'stock_status_name.unique' => 'Ця назва статусу наявності вже існує для цієї мови.',
+    
     // Standard Laravel validation messages
     'required' => 'Поле :attribute є обов\'язковим.',
     'string' => 'Поле :attribute має бути рядком.',

@@ -38,6 +38,9 @@ class AdminAuthenticate
             App::setLocale(config('app.locale', 'en'));
         }
 
+        // Make language_id available for controllers
+        $request->attributes->set('language_id', $user?->language_id);
+
         return $next($request);
     }
 }

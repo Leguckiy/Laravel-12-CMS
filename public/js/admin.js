@@ -40,6 +40,39 @@
         initializeAdminActions();
     }
 
+    function initializeMultilangFields() {
+        document.querySelectorAll('.multilang-selector').forEach(function(selector) {
+            const fieldName = selector.dataset.fieldName;
+            const groups = document.querySelectorAll('.multilang-group[data-field-name="' + fieldName + '"], .multilang-text-group[data-field-name="' + fieldName + '"]');
+            
+            if (groups.length > 0) {
+                selector.addEventListener('change', function() {
+                    const selectedLangId = this.value;
+                    
+                    groups.forEach(function(group) {
+                        const groupLangId = group.dataset.langId;
+                        if (groupLangId === selectedLangId) {
+                            group.classList.remove('d-none');
+                        } else {
+                            group.classList.add('d-none');
+                        }
+                    });
+                });
+            }
+        });
+    }
+
+    function initializeAll() {
+        initializeAdminActions();
+        initializeMultilangFields();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeAll);
+    } else {
+        initializeAll();
+    }
+
     window.AdminUI = Object.freeze({
         deleteViaForm: function (url) {
             submitDelete(url);
