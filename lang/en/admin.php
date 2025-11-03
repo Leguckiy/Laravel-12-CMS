@@ -81,6 +81,10 @@ return [
     'add_currency' => 'Add Currency',
     'edit_currency' => 'Edit Currency',
     'currency_title' => 'Currency title',
+    'symbol_left' => 'Symbol Left',
+    'symbol_right' => 'Symbol Right',
+    'decimal_place' => 'Decimal Place',
+    'currency_details' => 'Currency details',
     
     // Languages
     'languages' => 'Languages',

@@ -21,10 +21,10 @@
                 @endif
                 <x-admin.input-field type="text" name="title" :label="__('admin.currency_title')" :placeholder="__('admin.currency_title')" :value="$currency->title ?? ''" :required="true"/>
                 <x-admin.input-field type="text" name="code" :label="__('admin.code')" :placeholder="__('admin.code')" :value="$currency->code ?? ''" :required="true"/>
-                <x-admin.input-field type="text" name="symbol_left" label="Symbol Left" placeholder="Symbol Left" :value="$currency->symbol_left ?? ''"/>
-                <x-admin.input-field type="text" name="symbol_right" label="Symbol Right" placeholder="Symbol Right" :value="$currency->symbol_right ?? ''"/>
-                <x-admin.input-field type="number" name="decimal_place" label="Decimal Place" placeholder="Decimal Place" :value="$currency->decimal_place ?? ''"/>
-                <x-admin.input-field type="text" name="value" label="Value" placeholder="Value" :value="$currency->value ?? ''"/>
+                <x-admin.input-field type="text" name="symbol_left" :label="__('admin.symbol_left')" :placeholder="__('admin.symbol_left')" :value="$currency->symbol_left ?? ''"/>
+                <x-admin.input-field type="text" name="symbol_right" :label="__('admin.symbol_right')" :placeholder="__('admin.symbol_right')" :value="$currency->symbol_right ?? ''"/>
+                <x-admin.input-field type="number" name="decimal_place" :label="__('admin.decimal_place')" :placeholder="__('admin.decimal_place')" :value="$currency->decimal_place ?? ''"/>
+                <x-admin.input-field type="text" name="value" :label="__('admin.value')" :placeholder="__('admin.value')" :value="$currency->value ?? ''"/>
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="$currency->status ?? false"/>
                 <x-admin.form-actions 
                     :isEdit="isset($currency)"

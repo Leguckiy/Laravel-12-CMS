@@ -81,6 +81,10 @@ return [
     'add_currency' => 'Додати валюту',
     'edit_currency' => 'Редагувати валюту',
     'currency_title' => 'Назва валюти',
+    'symbol_left' => 'Символ ліворуч',
+    'symbol_right' => 'Символ праворуч',
+    'decimal_place' => 'Кількість знаків після коми',
+    'currency_details' => 'Деталі валюти',
     
     // Languages
     'languages' => 'Мови',

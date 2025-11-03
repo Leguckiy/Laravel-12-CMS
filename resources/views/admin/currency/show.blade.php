@@ -6,34 +6,34 @@
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
-            <span>Currency Details</span>
+            <span>{{ __('admin.currency_details') }}</span>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8">
                     <table class="table table-borderless">
                         <tr>
-                            <td class="fw-bold" style="width: 180px;">{{ __('admin.name') }}:</td>
+                            <td class="fw-bold">{{ __('admin.name') }}:</td>
                             <td>{{ $currency->title }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 180px;">{{ __('admin.code') }}:</td>
+                            <td class="fw-bold">{{ __('admin.code') }}:</td>
                             <td>{{ $currency->code }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 180px;">Symbol Left:</td>
+                            <td class="fw-bold">{{ __('admin.symbol_left') }}:</td>
                             <td>{{ $currency->symbol_left }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 180px;">Symbol Right:</td>
+                            <td class="fw-bold">{{ __('admin.symbol_right') }}:</td>
                             <td>{{ $currency->symbol_right }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 180px;">Decimal Place:</td>
+                            <td class="fw-bold">{{ __('admin.decimal_place') }}:</td>
                             <td>{{ $currency->decimal_place }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 180px;">Value:</td>
+                            <td class="fw-bold">{{ __('admin.value') }}:</td>
                             <td>{{ $currency->value }}</td>
                         </tr>
                         <tr>
@@ -59,8 +59,8 @@
             <x-admin.detail-actions 
                 :id="$currency->currency_id ?? $currency->id"
                 baseName="currency"
-                :itemName="'Currency'"
-                :confirmText="__('admin.delete_confirm', ['item' => 'Currency'])"
+                :itemName="__('admin.currency')"
+                :confirmText="__('admin.delete_confirm', ['item' => __('admin.currency')])"
             />
         </div>
     </div>

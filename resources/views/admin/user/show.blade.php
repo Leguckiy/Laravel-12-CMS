@@ -13,7 +13,7 @@
                 <div class="col-md-8">
                     <table class="table table-borderless">
                         <tr>
-                            <td class="fw-bold" style="width: 150px;">{{ __('admin.user_name') }}:</td>
+                            <td class="fw-bold">{{ __('admin.user_name') }}:</td>
                             <td>{{ $user->username }}</td>
                         </tr>
                         <tr>

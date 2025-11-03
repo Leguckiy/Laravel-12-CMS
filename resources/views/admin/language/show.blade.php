@@ -13,15 +13,15 @@
                 <div class="col-md-8">
                     <table class="table table-borderless">
                         <tr>
-                            <td class="fw-bold" style="width: 150px;">{{ __('admin.name') }}:</td>
+                            <td class="fw-bold">{{ __('admin.name') }}:</td>
                             <td>{{ $language->name }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 150px;">{{ __('admin.code') }}:</td>
+                            <td class="fw-bold">{{ __('admin.code') }}:</td>
                             <td>{{ $language->code }}</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold" style="width: 150px;">{{ __('admin.sort_order') }}:</td>
+                            <td class="fw-bold">{{ __('admin.sort_order') }}:</td>
                             <td>{{ $language->sort_order }}</td>
                         </tr>
                         <tr>
