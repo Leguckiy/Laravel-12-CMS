@@ -122,6 +122,15 @@ return [
     'stock_status_name' => 'Stock status name',
     'stock_status_details' => 'Stock status details',
 
+    // Order status
+    'order_status' => 'Order status',
+    'order_statuses' => 'Order statuses',
+    'order_status_list' => 'Order status list',
+    'add_order_status' => 'Add Order status',
+    'edit_order_status' => 'Edit Order status',
+    'order_status_name' => 'Order status name',
+    'order_status_details' => 'Order status details',
+
     // Menu
     'navigation' => 'Navigation',
     'menu_dashboard' => 'Dashboard',

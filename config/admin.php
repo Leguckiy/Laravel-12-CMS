@@ -106,7 +106,7 @@ return [
                         ],
                         [
                             'name' => 'menu_settings_localisation_order_statuses',
-                            'route' => '',
+                            'route' => 'admin.order_status.index',
                             'children' => []
                         ],
                         [
@@ -126,5 +126,6 @@ return [
         'language' => 'localisation/language',
         'currency' => 'localisation/currency',
         'stock_status' => 'localisation/stock_status',
+        'order_status' => 'localisation/order_status',
     ]
 ];

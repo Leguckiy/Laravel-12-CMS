@@ -122,6 +122,15 @@ return [
     'stock_status_name' => 'Назва статусу складу',
     'stock_status_details' => 'Деталі статусу складу',
 
+    // Order status
+    'order_status' => 'Статус замовлення',
+    'order_statuses' => 'Статуси замовлення',
+    'order_status_list' => 'Список статусів замовлення',
+    'add_order_status' => 'Додати статус замовлення',
+    'edit_order_status' => 'Редагувати статус замовлення',
+    'order_status_name' => 'Назва статусу замовлення',
+    'order_status_details' => 'Деталі статусу замовлення',
+
     // Menu
     'navigation' => 'Навігація',
     'menu_dashboard' => 'Панель керування',

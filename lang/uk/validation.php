@@ -50,6 +50,12 @@ return [
     'stock_status_name.string' => 'Назва статусу наявності має бути рядком.',
     'stock_status_name.max' => 'Назва статусу наявності не повинна перевищувати :max символів.',
     'stock_status_name.unique' => 'Ця назва статусу наявності вже існує для цієї мови.',
+
+    // Order Status validation
+    'order_status_name.required' => 'Назва статусу замовлення є обов\'язковою.',
+    'order_status_name.string' => 'Назва статусу замовлення має бути рядком.',
+    'order_status_name.max' => 'Назва статусу замовлення не повинна перевищувати :max символів.',
+    'order_status_name.unique' => 'Ця назва статусу замовлення вже існує для цієї мови.',
     
     // Standard Laravel validation messages
     'required' => 'Поле :attribute є обов\'язковим.',

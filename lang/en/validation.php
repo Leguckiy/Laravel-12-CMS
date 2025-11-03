@@ -50,6 +50,12 @@ return [
     'stock_status_name.string' => 'Stock status name must be a string.',
     'stock_status_name.max' => 'Stock status name must not exceed :max characters.',
     'stock_status_name.unique' => 'This stock status name already exists for this language.',
+
+    // Order Status validation
+    'order_status_name.required' => 'Order status name is required.',
+    'order_status_name.string' => 'Order status name must be a string.',
+    'order_status_name.max' => 'Order status name must not exceed :max characters.',
+    'order_status_name.unique' => 'This order status name already exists for this language.',
     
     // Standard Laravel validation messages
     'required' => 'The :attribute field is required.',
