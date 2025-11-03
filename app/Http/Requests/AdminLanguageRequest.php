@@ -52,4 +52,3 @@ class AdminLanguageRequest extends FormRequest
         ];
     }
 }
-

@@ -69,4 +69,3 @@ class AdminStockStatusRequest extends FormRequest
         return $messages;
     }
 }
-

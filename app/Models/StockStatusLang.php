@@ -16,4 +16,3 @@ class StockStatusLang extends Model
         'name',
     ];
 }
-

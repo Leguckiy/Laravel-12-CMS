@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CurrencyController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\OrderStatusController;
 use App\Http\Controllers\Admin\StockStatusController;
 use App\Http\Controllers\Admin\UserController;
@@ -33,6 +34,7 @@ Route::prefix('admin')->group(function () {
             Route::resource('currency', CurrencyController::class)->names('admin.currency');
             Route::resource('stock_status', StockStatusController::class)->names('admin.stock_status');
             Route::resource('order_status', OrderStatusController::class)->names('admin.order_status');
+            Route::resource('country', CountryController::class)->names('admin.country');
         });
 
         // Fallback for unknown admin routes (404 within admin area)

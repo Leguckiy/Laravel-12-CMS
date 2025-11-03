@@ -43,6 +43,8 @@ return [
     'sort_order' => 'Порядок сортування',
     'created' => 'Створено',
     'updated' => 'Оновлено',
+    'required' => 'Обов\'язковий',
+    'not_required' => 'Не обов\'язковий',
     
     // Messages
     'created_successfully' => 'Успішно створено',
@@ -130,6 +132,18 @@ return [
     'edit_order_status' => 'Редагувати статус замовлення',
     'order_status_name' => 'Назва статусу замовлення',
     'order_status_details' => 'Деталі статусу замовлення',
+
+    // Country
+    'country' => 'Країна',
+    'countries' => 'Країни',
+    'country_list' => 'Список країн',
+    'add_country' => 'Додати країну',
+    'edit_country' => 'Редагувати країну',
+    'country_name' => 'Назва країни',
+    'iso_code_2' => 'Код ISO (2)',
+    'iso_code_3' => 'Код ISO (3)',
+    'postcode_required' => 'Індекс обов\'язковий',
+    'country_details' => 'Деталі країни',
 
     // Menu
     'navigation' => 'Навігація',

@@ -69,4 +69,3 @@ class AdminOrderStatusRequest extends FormRequest
         return $messages;
     }
 }
-

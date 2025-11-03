@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OrderStatusLang extends Model
+class CountryLang extends Model
 {
-    protected $table = 'order_statuses_lang';
+    protected $table = 'countries_lang';
     
     public $timestamps = false;
     
     protected $fillable = [
-        'order_status_id',
+        'country_id',
         'language_id',
         'name',
     ];

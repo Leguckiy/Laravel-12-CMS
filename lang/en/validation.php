@@ -51,6 +51,15 @@ return [
     'stock_status_name.max' => 'Stock status name must not exceed :max characters.',
     'stock_status_name.unique' => 'This stock status name already exists for this language.',
 
+    // Country validation
+    'name.unique' => 'This country name already exists for this language.',
+    'iso_code_2.string' => 'ISO code (2) must be a string.',
+    'iso_code_2.alpha' => 'ISO code (2) may contain letters only.',
+    'iso_code_2.size' => 'ISO code (2) must be exactly :size characters.',
+    'iso_code_3.string' => 'ISO code (3) must be a string.',
+    'iso_code_3.alpha' => 'ISO code (3) may contain letters only.',
+    'iso_code_3.size' => 'ISO code (3) must be exactly :size characters.',
+
     // Order Status validation
     'order_status_name.required' => 'Order status name is required.',
     'order_status_name.string' => 'Order status name must be a string.',

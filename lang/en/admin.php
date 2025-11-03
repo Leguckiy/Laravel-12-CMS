@@ -43,7 +43,9 @@ return [
     'sort_order' => 'Sort order',
     'created' => 'Created',
     'updated' => 'Updated',
-    
+    'required' => 'Required',
+    'not_required' => 'Not required',
+
     // Messages
     'created_successfully' => 'Created successfully',
     'updated_successfully' => 'Updated successfully',
@@ -130,6 +132,18 @@ return [
     'edit_order_status' => 'Edit Order status',
     'order_status_name' => 'Order status name',
     'order_status_details' => 'Order status details',
+
+    // Country
+    'country' => 'Country',
+    'countries' => 'Countries',
+    'country_list' => 'Country list',
+    'add_country' => 'Add Country',
+    'edit_country' => 'Edit Country',
+    'country_name' => 'Country name',
+    'iso_code_2' => 'ISO Code (2)',
+    'iso_code_3' => 'ISO Code (3)',
+    'postcode_required' => 'Postcode Required',
+    'country_details' => 'Country details',
 
     // Menu
     'navigation' => 'Navigation',

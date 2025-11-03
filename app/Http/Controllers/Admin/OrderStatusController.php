@@ -17,7 +17,7 @@ class OrderStatusController extends AdminController
         ],
         [
             'title' => 'order_statuses',
-            'route' => 'admin.order_statuses.index',
+            'route' => 'admin.order_status.index',
         ],
     ];
 

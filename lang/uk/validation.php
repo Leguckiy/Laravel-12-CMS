@@ -51,6 +51,15 @@ return [
     'stock_status_name.max' => 'Назва статусу наявності не повинна перевищувати :max символів.',
     'stock_status_name.unique' => 'Ця назва статусу наявності вже існує для цієї мови.',
 
+    // Country validation
+    'name.unique' => 'Ця назва країни вже існує для цієї мови.',
+    'iso_code_2.string' => 'ISO-код (2) має бути рядком.',
+    'iso_code_2.alpha' => 'ISO-код (2) може містити лише літери.',
+    'iso_code_2.size' => 'ISO-код (2) має містити рівно :size символи.',
+    'iso_code_3.string' => 'ISO-код (3) має бути рядком.',
+    'iso_code_3.alpha' => 'ISO-код (3) може містити лише літери.',
+    'iso_code_3.size' => 'ISO-код (3) має містити рівно :size символи.',
+
     // Order Status validation
     'order_status_name.required' => 'Назва статусу замовлення є обов\'язковою.',
     'order_status_name.string' => 'Назва статусу замовлення має бути рядком.',
