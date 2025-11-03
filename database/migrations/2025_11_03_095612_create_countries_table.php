@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('iso_code_2', 2)->nullable();
             $table->string('iso_code_3', 3)->nullable();
             $table->tinyInteger('postcode_required')->default(0);
-            $table->tinyInteger('status')->default(0);
+            $table->boolean('status')->default(0);
         });
         
         Schema::create('countries_lang', function (Blueprint $table) {
