@@ -7,10 +7,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class OrderStatus extends Model
 {
+    /**
+     * The table associated with the model.
+     */
     protected $table = 'order_statuses';
     
+    /**
+     * Indicates if the model should be timestamped.
+     */
     public $timestamps = false;
     
+    /**
+     * The attributes that are mass assignable.
+     */
     protected $fillable = [];
 
     /**
@@ -40,5 +49,15 @@ class OrderStatus extends Model
     public function getName(int $languageId): ?string
     {
         return $this->translations()->where('language_id', $languageId)->value('name');
+    }
+
+    /**
+     * The "booted" method of the model.
+     */
+    protected static function booted(): void
+    {
+        static::deleting(function (OrderStatus $orderStatus) {
+            $orderStatus->translations()->delete();
+        });
     }
 }

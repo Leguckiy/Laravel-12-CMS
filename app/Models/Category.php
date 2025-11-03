@@ -46,4 +46,14 @@ class Category extends Model
     {
         return $this->translations()->where('language_id', $languageId)->first();
     }
+
+    /**
+     * The "booted" method of the model.
+     */
+    protected static function booted(): void
+    {
+        static::deleting(function (Category $category) {
+            $category->translations()->delete();
+        });
+    }
 }

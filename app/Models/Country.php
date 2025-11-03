@@ -63,4 +63,14 @@ class Country extends Model
     {
         return $this->translations()->where('language_id', $languageId)->value('name');
     }
+
+    /**
+     * The "booted" method of the model.
+     */
+    protected static function booted(): void
+    {
+        static::deleting(function (Country $country) {
+            $country->translations()->delete();
+        });
+    }
 }
