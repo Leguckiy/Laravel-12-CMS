@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
-use App\Http\Requests\AdminStockStatusRequest;
+use App\Http\Requests\Admin\StockStatusRequest;
 use App\Models\StockStatus;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -56,7 +56,7 @@ class StockStatusController extends AdminController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AdminStockStatusRequest $request): RedirectResponse
+    public function store(StockStatusRequest $request): RedirectResponse
     {
         $nameData = $request->input('name', []);
 
@@ -105,7 +105,7 @@ class StockStatusController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminStockStatusRequest $request, StockStatus $stockStatus): RedirectResponse
+    public function update(StockStatusRequest $request, StockStatus $stockStatus): RedirectResponse
     {
         $nameData = $request->input('name', []);
 

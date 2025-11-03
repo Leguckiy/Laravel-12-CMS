@@ -1,30 +1,23 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class AdminStockStatusRequest extends FormRequest
+class StockStatusRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     */
     public function rules(): array
     {
         $stockStatus = $this->route('stock_status');
         $stockStatusId = $stockStatus ? $stockStatus->id : null;
         $rules = [];
 
-        // Get all language IDs from request
         $nameData = $this->input('name', []);
         
         foreach ($nameData as $languageId => $value) {
@@ -32,8 +25,6 @@ class AdminStockStatusRequest extends FormRequest
                 ->where('language_id', $languageId);
             
             if ($stockStatusId) {
-                // When updating, exclude records with current stock_status_id and language_id
-                // Since we have composite primary key, we need to exclude manually
                 $uniqueRule->where(function ($query) use ($stockStatusId, $languageId) {
                     $query->where('stock_status_id', '!=', $stockStatusId)
                           ->orWhere('language_id', '!=', $languageId);
@@ -51,9 +42,6 @@ class AdminStockStatusRequest extends FormRequest
         return $rules;
     }
 
-    /**
-     * Get custom validation messages.
-     */
     public function messages(): array
     {
         $messages = [];
@@ -69,3 +57,5 @@ class AdminStockStatusRequest extends FormRequest
         return $messages;
     }
 }
+
+

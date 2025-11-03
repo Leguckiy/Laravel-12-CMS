@@ -1,22 +1,16 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminCurrencyRequest extends FormRequest
+class CurrencyRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     */
     public function rules(): array
     {
         $rules = [
@@ -28,7 +22,6 @@ class AdminCurrencyRequest extends FormRequest
             'status' => 'boolean',
         ];
 
-        // Unique validation for code field
         $currencyId = $this->route('currency') ? $this->route('currency')->id : null;
         $codeRules = 'required|string|min:3|max:3';
         $rules['code'] = $currencyId
@@ -38,9 +31,6 @@ class AdminCurrencyRequest extends FormRequest
         return $rules;
     }
 
-    /**
-     * Custom messages (optional, using generic ones by default)
-     */
     public function messages(): array
     {
         return [
@@ -58,3 +48,5 @@ class AdminCurrencyRequest extends FormRequest
         ];
     }
 }
+
+

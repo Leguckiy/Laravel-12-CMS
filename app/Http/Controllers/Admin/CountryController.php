@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
-use App\Http\Requests\AdminCountryRequest;
+use App\Http\Requests\Admin\CountryRequest;
 use App\Models\Country;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -56,7 +56,7 @@ class CountryController extends AdminController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AdminCountryRequest $request): RedirectResponse
+    public function store(CountryRequest $request): RedirectResponse
     {
         $nameData = $request->input('name', []);
 
@@ -112,7 +112,7 @@ class CountryController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminCountryRequest $request, Country $country): RedirectResponse
+    public function update(CountryRequest $request, Country $country): RedirectResponse
     {
         // Update base country fields (do not pass translations array)
         $country->update($request->only([

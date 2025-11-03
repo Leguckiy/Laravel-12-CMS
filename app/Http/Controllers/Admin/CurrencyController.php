@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
-use App\Http\Requests\AdminCurrencyRequest;
+use App\Http\Requests\Admin\CurrencyRequest;
 use App\Models\Currency;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -44,7 +44,7 @@ class CurrencyController extends AdminController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AdminCurrencyRequest $request): RedirectResponse
+    public function store(CurrencyRequest $request): RedirectResponse
     {
         $validated = $request->validated();
 
@@ -72,7 +72,7 @@ class CurrencyController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminCurrencyRequest $request, Currency $currency): RedirectResponse
+    public function update(CurrencyRequest $request, Currency $currency): RedirectResponse
     {
         $validated = $request->validated();
 

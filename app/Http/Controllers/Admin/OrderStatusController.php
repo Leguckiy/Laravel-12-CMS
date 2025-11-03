@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
-use App\Http\Requests\AdminOrderStatusRequest;
+use App\Http\Requests\Admin\OrderStatusRequest;
 use App\Models\OrderStatus;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -56,7 +56,7 @@ class OrderStatusController extends AdminController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AdminOrderStatusRequest $request): RedirectResponse
+    public function store(OrderStatusRequest $request): RedirectResponse
     {
         $nameData = $request->input('name', []);
 
@@ -105,7 +105,7 @@ class OrderStatusController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminOrderStatusRequest $request, OrderStatus $orderStatus): RedirectResponse
+    public function update(OrderStatusRequest $request, OrderStatus $orderStatus): RedirectResponse
     {
         $nameData = $request->input('name', []);
 

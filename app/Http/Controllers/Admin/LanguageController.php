@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
-use App\Http\Requests\AdminLanguageRequest;
+use App\Http\Requests\Admin\LanguageRequest;
 use App\Models\Language;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -44,7 +44,7 @@ class LanguageController extends AdminController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AdminLanguageRequest $request): RedirectResponse
+    public function store(LanguageRequest $request): RedirectResponse
     {
         $validated = $request->validated();
         
@@ -72,7 +72,7 @@ class LanguageController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminLanguageRequest $request, Language $language): RedirectResponse
+    public function update(LanguageRequest $request, Language $language): RedirectResponse
     {
         $validated = $request->validated();
         

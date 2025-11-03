@@ -1,22 +1,16 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminUserRequest extends FormRequest
+class UserRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     */
     public function rules(): array
     {
         $rules = [
@@ -30,18 +24,14 @@ class AdminUserRequest extends FormRequest
             'status' => 'boolean',
         ];
 
-        // Password validation rules
         if ($this->isMethod('post')) {
-            // Creating new user - password is required
             $rules['password'] = 'required|string|min:6';
             $rules['confirm'] = 'required|same:password';
         } else {
-            // Updating user - password is optional
             $rules['password'] = 'nullable|string|min:6';
             $rules['confirm'] = 'nullable|same:password';
         }
 
-        // Unique validation rules
         $userId = $this->route('user') ? $this->route('user')->id : null;
         $rules['username'] .= $userId ? "|unique:users,username,{$userId}" : '|unique:users';
         $rules['email'] .= $userId ? "|unique:users,email,{$userId}" : '|unique:users';
@@ -49,9 +39,6 @@ class AdminUserRequest extends FormRequest
         return $rules;
     }
 
-    /**
-     * Get custom messages for validator errors.
-     */
     public function messages(): array
     {
         return [
@@ -71,3 +58,5 @@ class AdminUserRequest extends FormRequest
         ];
     }
 }
+
+

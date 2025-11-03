@@ -1,22 +1,16 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminLanguageRequest extends FormRequest
+class LanguageRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     */
     public function rules(): array
     {
         $rules = [
@@ -25,7 +19,6 @@ class AdminLanguageRequest extends FormRequest
             'status' => 'boolean',
         ];
 
-        // Unique validation for code field
         $languageId = $this->route('language') ? $this->route('language')->id : null;
         $codeRules = 'required|string|max:5';
         $rules['code'] = $languageId 
@@ -35,9 +28,6 @@ class AdminLanguageRequest extends FormRequest
         return $rules;
     }
 
-    /**
-     * Get custom messages for validator errors.
-     */
     public function messages(): array
     {
         return [
@@ -52,3 +42,5 @@ class AdminLanguageRequest extends FormRequest
         ];
     }
 }
+
+

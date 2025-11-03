@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
-use App\Http\Requests\AdminUserRequest;
+use App\Http\Requests\Admin\UserRequest;
 use App\Models\Language;
 use App\Models\User;
 use App\Models\UserGroup;
@@ -56,7 +56,7 @@ class UserController extends AdminController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AdminUserRequest $request): RedirectResponse
+    public function store(UserRequest $request): RedirectResponse
     {
         $validated = $request->validated();
         
@@ -99,7 +99,7 @@ class UserController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminUserRequest $request, User $user): RedirectResponse
+    public function update(UserRequest $request, User $user): RedirectResponse
     {
         $validated = $request->validated();
         
