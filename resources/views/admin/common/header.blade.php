@@ -1,7 +1,7 @@
 <header id="header" class="navbar navbar-expand navbar-light bg-light">
     <div class="container-fluid">
         <a href="{{ route('admin.dashboard') }}" class="navbar-brand d-none d-lg-block">
-            <img src="{{ asset('images/logo.svg') }}" alt="{{ config('app.name') }}" title="{{ config('app.name') }}" height="40"/>
+            <img src="{{ asset('images/admin/logo.svg') }}" alt="{{ config('app.name') }}" title="{{ config('app.name') }}" height="40"/>
         </a>
         <button type="button" id="button-menu" class="btn btn-link d-inline-block d-lg-none">
             <i class="fas fa-bars"></i>

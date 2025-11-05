@@ -3,7 +3,7 @@
 @section('meta-title', $title)
 
 @push('styles')
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin/main.css') }}" rel="stylesheet">
 @endpush
 
 <div id="container">
@@ -42,5 +42,5 @@
 </div>
 
 @push('scripts')
-    <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('js/admin/main.js') }}"></script>
 @endpush
