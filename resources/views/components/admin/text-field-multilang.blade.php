@@ -1,12 +1,26 @@
-@props(['label', 'value' => '', 'languages', 'currentLanguageId' => null, 'fieldName' => 'text-field'])
+@props([
+    'label',
+    'value' => '',
+    'languages',
+    'currentLanguageId' => null,
+    'fieldName' => 'text-field',
+    'allowHtml' => false,
+])
 
 <div class="col-sm-3 fw-bold">{{ $label }}:</div>
 <div class="col-sm-9">
     <div class="row">
         <div class="col-sm-8">
-            @foreach($languages as $index => $language)
+                @foreach($languages as $index => $language)
+                @php
+                    $content = is_array($value) ? ($value[$language->id] ?? '') : '';
+                @endphp
                 <div class="multilang-text-group {{ $language->id === ($currentLanguageId ?? $languages->first()->id) ? '' : 'd-none' }}" data-lang-id="{{ $language->id }}" data-field-name="{{ $fieldName }}">
-                    {{ is_array($value) ? ($value[$language->id] ?? '') : '' }}
+                    @if($allowHtml)
+                        {!! $content !!}
+                    @else
+                        {{ $content }}
+                    @endif
                 </div>
             @endforeach
         </div>

@@ -9,6 +9,7 @@
     @stack('styles')
 </head>
 <body>
+    @yield('body')
     <script src="{{ asset('js/library/bootstrap.bundle.min.js') }}"></script>
     @stack('scripts')
 </body>

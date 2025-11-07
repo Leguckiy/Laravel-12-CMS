@@ -46,6 +46,8 @@
                     :value="$translations['description'] ?? []" 
                     :languages="$languages"
                     :currentLanguageId="$currentLanguageId"
+                    :autoloadRte="true"
+                    :rteHeight="320"
                 />
                 <x-admin.input-field-multilang
                     type="text" 

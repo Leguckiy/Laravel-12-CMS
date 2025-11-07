@@ -6,6 +6,7 @@
     <link href="{{ asset('css/admin/main.css') }}" rel="stylesheet">
 @endpush
 
+@section('body')
 <div id="container">
     @include('admin.common.header')
     @include('admin.common.column_left')
@@ -40,7 +41,12 @@
     </div>
     @include('admin.common.footer')
 </div>
+@endsection
 
 @push('scripts')
+    <script>
+        window.TinyMceBaseUrl = "{{ asset('js/library/tinymce') }}";
+    </script>
+    <script src="{{ asset('js/library/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('js/admin/main.js') }}"></script>
 @endpush

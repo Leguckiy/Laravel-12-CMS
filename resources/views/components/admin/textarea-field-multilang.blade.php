@@ -1,4 +1,15 @@
-@props(['name', 'label', 'placeholder' => '', 'rows' => '', 'value' => [], 'required' => false, 'languages', 'currentLanguageId' => null])
+@props([
+    'name',
+    'label',
+    'placeholder' => '',
+    'rows' => '',
+    'value' => [],
+    'required' => false,
+    'languages',
+    'currentLanguageId' => null,
+    'autoloadRte' => false,
+    'rteHeight' => null,
+])
 
 <div class="row mb-3 {{ $required ? 'required' : '' }}">
     <label class="col-sm-2 col-form-label">
@@ -13,8 +24,10 @@
                             name="{{ $name }}[{{ $language->id }}]" 
                             placeholder="{{ $placeholder }}" 
                             id="input-{{ str_replace(['[', ']'], ['-', ''], $name) }}-{{ $language->id }}"
-                            class="form-control @error($name . '.' . $language->id) is-invalid @enderror"
+                            class="form-control{{ $autoloadRte ? ' js-rte' : '' }} @error($name . '.' . $language->id) is-invalid @enderror"
                             @if($rows) rows="{{ $rows }}" @endif
+                            @if($autoloadRte) data-autoload-rte="true" @endif
+                            @if($rteHeight) data-rte-height="{{ $rteHeight }}" @endif
                         >{{ old($name . '.' . $language->id, $value[$language->id] ?? '') }}</textarea>
                         <div id="error-{{ $name }}-{{ $language->id }}" class="invalid-feedback">
                             @error($name . '.' . $language->id)

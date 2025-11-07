@@ -33,7 +33,8 @@
                     :value="$translations['description'] ?? []"
                     :languages="$languages"
                     :currentLanguageId="$currentLanguageId"
-                    fieldName="friendly_url"
+                    fieldName="description"
+                    :allowHtml="true"
                 />
             </div>
             <div class="row mt-1">

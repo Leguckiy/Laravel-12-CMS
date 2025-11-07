@@ -34,16 +34,14 @@
         document.addEventListener('click', onClick, false);
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeAdminActions);
-    } else {
-        initializeAdminActions();
-    }
-
     function initializeMultilangFields() {
         // Find all language selectors
         const allSelectors = document.querySelectorAll('.multilang-selector');
         
+        if (!allSelectors.length) {
+            return;
+        }
+
         // Find all multilingual field groups
         const allGroups = document.querySelectorAll('.multilang-group, .multilang-text-group');
         
@@ -59,6 +57,11 @@
             });
         }
         
+        const initialLang = allSelectors[0].value;
+        if (initialLang) {
+            updateAllGroups(initialLang);
+        }
+
         // Attach change handler to every selector
         allSelectors.forEach(function(selector) {
             selector.addEventListener('change', function() {
@@ -77,9 +80,55 @@
         });
     }
 
+    function initializeRichTextEditors() {
+        if (!window.tinymce) {
+            return;
+        }
+
+        const editors = Array.prototype.slice.call(document.querySelectorAll('textarea[data-autoload-rte="true"]'))
+            .filter(function(textarea) {
+                return textarea.dataset.rteInitialized !== 'true';
+            });
+
+        if (!editors.length) {
+            return;
+        }
+
+        editors.forEach(function(textarea) {
+            textarea.dataset.rteInitialized = 'true';
+
+            var heightAttr = textarea.dataset.rteHeight;
+            var requestedHeight = heightAttr ? parseInt(heightAttr, 10) : 260;
+            var editorHeight = Number.isFinite(requestedHeight) ? requestedHeight : 260;
+
+            var baseUrl = window.TinyMceBaseUrl || '/js/library/tinymce';
+
+            window.tinymce.init({
+                target: textarea,
+                base_url: baseUrl,
+                suffix: '.min',
+                license_key: 'gpl',
+                menubar: false,
+                branding: false,
+                convert_urls: false,
+                height: editorHeight,
+                plugins: 'link lists code table',
+                toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright | bullist numlist | link table | removeformat | code',
+                language: document.documentElement.getAttribute('lang') || 'en',
+                setup: function(editor) {
+                    editor.on('change keyup', function() {
+                        editor.save();
+                        textarea.dispatchEvent(new Event('input', { bubbles: true }));
+                    });
+                }
+            });
+        });
+    }
+
     function initializeAll() {
         initializeAdminActions();
         initializeMultilangFields();
+        initializeRichTextEditors();
     }
 
     if (document.readyState === 'loading') {
