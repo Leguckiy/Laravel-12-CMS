@@ -23,7 +23,7 @@ class CategoryRequest extends FormRequest
         $category = $this->route('category');
         $categoryId = $category ? $category->id : null;
         $rules = [
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
             'sort_order' => 'nullable|integer|min:0',
             'status' => 'boolean',
         ];
@@ -106,8 +106,9 @@ class CategoryRequest extends FormRequest
             $messages["meta_description.{$languageId}.max"] = __('validation.meta_description.max', ['max' => 255]);
         }
 
-        $messages['image.string'] = __('validation.image.string');
-        $messages['image.max'] = __('validation.image.max', ['max' => 255]);
+        $messages['image.image'] = __('validation.image.image');
+        $messages['image.mimes'] = __('validation.image.mimes', ['values' => 'jpg, jpeg, png, webp, gif']);
+        $messages['image.max'] = __('validation.image.max', ['max' => 2048]);
         
         $messages['sort_order.integer'] = __('validation.sort_order.integer');
         $messages['sort_order.min'] = __('validation.sort_order.min', ['min' => 0]);

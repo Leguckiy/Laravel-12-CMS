@@ -49,6 +49,7 @@ return [
     'description' => 'Опис',
     'meta_tag_title' => 'Мета-тег Title',
     'meta_tag_description' => 'Мета-тег Description',
+    'image_placeholder' => 'Зображення не вибране',
     
     // Messages
     'created_successfully' => 'Успішно створено',
@@ -156,6 +157,8 @@ return [
     'add_category' => 'Додати категорію',
     'edit_category' => 'Редагувати категорію',
     'category_name' => 'Назва категорії',
+    'category_cover_image' => 'Зображення категорії',
+    'category_cover_image_help' => 'Основне зображення, що відображається на сторінці категорії.',
     'category_details' => 'Деталі країни',
 
     // Menu

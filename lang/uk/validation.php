@@ -63,8 +63,11 @@ return [
     'meta_title.max' => 'Meta title не повинен перевищувати :max символів.',
     'meta_description.string' => 'Meta description має бути рядком.',
     'meta_description.max' => 'Meta description не повинен перевищувати :max символів.',
-    'image.string' => 'Шлях до зображення має бути рядком.',
-    'image.max' => 'Шлях до зображення не повинен перевищувати :max символів.',
+
+    // Image validation
+    'image.image' => 'Файл повинен бути зображенням.',
+    'image.mimes' => 'Зображення має бути у форматі: :values.',
+    'image.max' => 'Розмір зображення не повинен перевищувати :max кілобайт.',
 
     // Country validation
     'name.unique' => 'Ця назва країни вже існує для цієї мови.',

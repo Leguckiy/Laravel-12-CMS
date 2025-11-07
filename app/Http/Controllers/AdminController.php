@@ -41,4 +41,14 @@ class AdminController extends Controller
             ->orderBy('id')
             ->get();
     }
+
+    /**
+     * Get default language id based on app locale.
+     */
+    protected function getDefaultLanguageId(): ?int
+    {
+        return Language::where('status', true)
+            ->where('code', config('app.locale'))
+            ->value('id');
+    }
 }

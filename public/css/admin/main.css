@@ -202,3 +202,20 @@ td.required:before {
 .btn-group.actions {
     gap: 3px;
 }
+
+.image-upload-field {
+    background-color: #fbfbfb;
+}
+
+.image-upload-preview {
+    width: 160px;
+    min-height: 160px;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.image-upload-preview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

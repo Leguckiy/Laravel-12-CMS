@@ -63,8 +63,11 @@ return [
     'meta_title.max' => 'Meta title must not exceed :max characters.',
     'meta_description.string' => 'Meta description must be a string.',
     'meta_description.max' => 'Meta description must not exceed :max characters.',
-    'image.string' => 'Image path must be a string.',
-    'image.max' => 'Image path must not exceed :max characters.',
+
+    // Image validation
+    'image.image' => 'Image must be a valid image file.',
+    'image.mimes' => 'Image must be a file of type: :values.',
+    'image.max' => 'Image size must not exceed :max kilobytes.',
 
     // Country validation
     'name.unique' => 'This country name already exists for this language.',

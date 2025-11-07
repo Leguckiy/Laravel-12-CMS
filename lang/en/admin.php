@@ -49,6 +49,7 @@ return [
     'description' => 'Description',
     'meta_tag_title' => 'Meta Tag Title',
     'meta_tag_description' => 'Meta Tag Description',
+    'image_placeholder' => 'No image selected',
 
     // Messages
     'created_successfully' => 'Created successfully',
@@ -156,6 +157,8 @@ return [
     'add_category' => 'Add Category',
     'edit_category' => 'Edit Category',
     'category_name' => 'Category name',
+    'category_cover_image' => 'Category cover image',
+    'category_cover_image_help' => 'Main image displayed on the category page.',
     'category_details' => 'Category details',
 
     // Menu

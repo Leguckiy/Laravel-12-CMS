@@ -14,7 +14,7 @@
             <span>{{ isset($category) ? __('admin.edit_category') : __('admin.add_category') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($category) ? route('admin.category.update', $category->id) : route('admin.category.store') }}" method="POST">
+            <form id="form-user-group" action="{{ isset($category) ? route('admin.category.update', $category->id) : route('admin.category.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if(isset($category))
                     @method('PUT')
@@ -69,7 +69,12 @@
                     :currentLanguageId="$currentLanguageId"
                     :required="false"
                 />
-                <x-admin.input-field type="text" name="image" :label="__('admin.image')" :placeholder="__('admin.image')" :value="$category->image ?? ''"/>
+                <x-admin.image-upload-field
+                    name="image"
+                    :label="__('admin.category_cover_image')"
+                    :current-path="$category->image_path ?? null"
+                    :note="__('admin.category_cover_image_help')"
+                />
                 <x-admin.input-field type="number" name="sort_order" :label="__('admin.sort_order')" :value="$category->sort_order ?? '0'"/>
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="$category->status ?? false"/>
                 <x-admin.form-actions 

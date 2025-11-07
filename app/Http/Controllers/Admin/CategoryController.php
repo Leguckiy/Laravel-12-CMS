@@ -6,7 +6,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Requests\Admin\CategoryRequest;
 use App\Models\Category;
 use App\Models\CategoryLang;
+use App\Services\AdminImageUploader;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class CategoryController extends AdminController
@@ -23,6 +25,8 @@ class CategoryController extends AdminController
     ];
 
     protected string $title = 'categories';
+
+    private ?ImageUploader $imageUploader = null;
 
     /**
      * Display a listing of the resource.
@@ -77,14 +81,14 @@ class CategoryController extends AdminController
         $metaTitleData = $request->input('meta_title', []);
         $metaDescriptionData = $request->input('meta_description', []);
 
+        $categoryData = [
+            'image' => $this->handleImageUpload($request),
+            'sort_order' => (int) $request->input('sort_order', 0),
+            'status' => (bool) $request->input('status', false),
+        ];
+
         // Create main category record
-        $category = Category::create(
-            $request->only([
-                'image',
-                'sort_order',
-                'status',
-            ])
-        );
+        $category = Category::create($categoryData);
 
         // Create translations for all languages
         foreach ($nameData as $languageId => $name) {
@@ -150,12 +154,12 @@ class CategoryController extends AdminController
      */
     public function update(CategoryRequest $request, Category $category): RedirectResponse
     {
-        // Update base category fields
-        $category->update($request->only([
-            'image',
-            'sort_order',
-            'status',
-        ]));
+        $category->update([
+            'image' => $this->handleImageUpload($request, $category),
+            'sort_order' => (int) $request->input('sort_order', 0),
+            'status' => (bool) $request->input('status', false),
+        ]);
+
         // Delete all existing translations and create new ones
         $category->translations()->delete();
         
@@ -190,4 +194,49 @@ class CategoryController extends AdminController
         
         return redirect()->route('admin.category.index')->with('success', __('admin.deleted_successfully'));
     }
+
+    /**
+     * Handle category image upload, optionally removing the previous image and resizing the new one.
+     */
+    private function handleImageUpload(CategoryRequest $request, ?Category $category = null): ?string
+    {
+        $imageUploader = new AdminImageUploader();
+        $currentFilename = $category?->image;
+        $currentPath = $category?->image_path;
+        $remove = $request->boolean('image_remove');
+
+        if ($remove && $currentFilename) {
+            $imageUploader->delete($currentPath ?? Category::IMAGE_DIRECTORY . '/' . $currentFilename);
+            $currentFilename = null;
+        }
+
+        if ($request->hasFile('image')) {
+            if ($currentFilename) {
+                $imageUploader->delete($currentPath ?? Category::IMAGE_DIRECTORY . '/' . $currentFilename);
+            }
+
+            $slugData = $request->input('slug', []);
+            $defaultLanguageId = $this->getDefaultLanguageId();
+            $baseSlug = null;
+            if (is_array($slugData)) {
+                $baseSlug = $slugData[$defaultLanguageId] ?? reset($slugData);
+            }
+
+            $imageName = $baseSlug ? Str::slug((string) $baseSlug) : 'category';
+
+            $width = (int) config('image_sizes.category.image.width');
+            $height = (int) config('image_sizes.category.image.height');
+
+            $currentFilename = $imageUploader->uploadImage(
+                $imageName,
+                Category::IMAGE_DIRECTORY,
+                $request->file('image'),
+                $width,
+                $height
+            );
+        }
+
+        return $currentFilename;
+    }
+
 }

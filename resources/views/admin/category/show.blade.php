@@ -60,7 +60,11 @@
                     <span>{{ __('admin.image') }}:</span>
                 </div>
                 <div class="col-sm-9">
-                    <span>{{ $category->image }}</span>
+                    @if ($category->image_url)
+                        <img src="{{ $category->image_url }}" alt="{{ $category->name ?? '' }}" class="img-fluid rounded border">
+                    @else
+                        <span class="text-muted">{{ __('admin.image_placeholder') }}</span>
+                    @endif
                 </div>
             </div>
             <div class="row mt-2">

@@ -80,6 +80,42 @@
         });
     }
 
+    function initializeImageUploadFields() {
+        const fields = document.querySelectorAll('[data-image-field]');
+        if (!fields.length) {
+            return;
+        }
+
+        fields.forEach(function(field) {
+            const removeButton = field.querySelector('[data-image-remove-trigger]');
+            if (!removeButton) {
+                return;
+            }
+
+            removeButton.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const hiddenInput = field.querySelector('[data-image-remove-input]');
+                if (hiddenInput) {
+                    hiddenInput.value = '1';
+                }
+
+                const preview = field.querySelector('[data-image-preview]');
+                if (preview) {
+                    const emptyText = preview.getAttribute('data-image-empty-text') || '';
+                    preview.innerHTML = '<span class="text-muted small">' + emptyText + '</span>';
+                }
+
+                const fileInput = field.querySelector('input[type="file"]');
+                if (fileInput) {
+                    fileInput.value = '';
+                }
+
+                removeButton.remove();
+            });
+        });
+    }
+
     function initializeRichTextEditors() {
         if (!window.tinymce) {
             return;
@@ -128,6 +164,7 @@
     function initializeAll() {
         initializeAdminActions();
         initializeMultilangFields();
+        initializeImageUploadFields();
         initializeRichTextEditors();
     }
 
