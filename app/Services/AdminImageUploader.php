@@ -46,9 +46,11 @@ class AdminImageUploader
         $computedWidth = $width ?? 800;
         $computedHeight = $height ?? 800;
 
+        $background = config('media.background_color', '#ffffff');
+
         $image = $this->manager->read($file->getPathname())
             ->orient()
-            ->cover($computedWidth, $computedHeight);
+            ->contain($computedWidth, $computedHeight, $background);
 
         $encodeOptions = match ($normalisedFormat) {
             'jpg', 'webp' => [85],
