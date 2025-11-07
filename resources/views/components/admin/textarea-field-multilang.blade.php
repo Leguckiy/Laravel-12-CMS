@@ -1,4 +1,4 @@
-@props(['type' => 'text', 'name', 'label', 'placeholder' => '', 'value' => [], 'required' => false, 'languages', 'currentLanguageId' => null])
+@props(['name', 'label', 'placeholder' => '', 'rows' => '', 'value' => [], 'required' => false, 'languages', 'currentLanguageId' => null])
 
 <div class="row mb-3 {{ $required ? 'required' : '' }}">
     <label class="col-sm-2 col-form-label">
@@ -9,14 +9,13 @@
             <div class="col-sm-10">
                 @foreach($languages as $index => $language)
                     <div class="input-group multilang-group {{ $language->id === ($currentLanguageId ?? $languages->first()->id) ? '' : 'd-none' }}" data-lang-id="{{ $language->id }}" data-field-name="{{ $name }}">
-                        <input 
-                            type="{{ $type }}" 
+                        <textarea
                             name="{{ $name }}[{{ $language->id }}]" 
-                            value="{{ old($name . '.' . $language->id, $value[$language->id] ?? '') }}" 
                             placeholder="{{ $placeholder }}" 
                             id="input-{{ str_replace(['[', ']'], ['-', ''], $name) }}-{{ $language->id }}"
                             class="form-control @error($name . '.' . $language->id) is-invalid @enderror"
-                        />
+                            @if($rows) rows="{{ $rows }}" @endif
+                        >{{ old($name . '.' . $language->id, $value[$language->id] ?? '') }}</textarea>
                         <div id="error-{{ $name }}-{{ $language->id }}" class="invalid-feedback">
                             @error($name . '.' . $language->id)
                                 {{ $message }}

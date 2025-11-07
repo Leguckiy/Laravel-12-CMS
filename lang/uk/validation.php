@@ -51,6 +51,21 @@ return [
     'stock_status_name.max' => 'Назва статусу наявності не повинна перевищувати :max символів.',
     'stock_status_name.unique' => 'Ця назва статусу наявності вже існує для цієї мови.',
 
+    // Category validation
+    'slug.required' => 'Slug є обов\'язковим.',
+    'slug.string' => 'Slug має бути рядком.',
+    'slug.max' => 'Slug не повинен перевищувати :max символів.',
+    'slug.regex' => 'Slug може містити лише малі літери, цифри та дефіси.',
+    'slug.unique' => 'Цей slug вже існує для цієї мови.',
+    'description.string' => 'Опис має бути рядком.',
+    'meta_title.required' => 'Meta title є обов\'язковим.',
+    'meta_title.string' => 'Meta title має бути рядком.',
+    'meta_title.max' => 'Meta title не повинен перевищувати :max символів.',
+    'meta_description.string' => 'Meta description має бути рядком.',
+    'meta_description.max' => 'Meta description не повинен перевищувати :max символів.',
+    'image.string' => 'Шлях до зображення має бути рядком.',
+    'image.max' => 'Шлях до зображення не повинен перевищувати :max символів.',
+
     // Country validation
     'name.unique' => 'Ця назва країни вже існує для цієї мови.',
     'iso_code_2.string' => 'ISO-код (2) має бути рядком.',
@@ -80,4 +95,3 @@ return [
         'permissions' => 'Дозволи',
     ],
 ];
-

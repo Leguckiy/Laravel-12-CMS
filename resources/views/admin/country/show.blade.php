@@ -19,34 +19,34 @@
                 />
             </div>
             <div class="row mt-1">
-                <div class="col-sm-2">
-                    <span>{{ __('admin.iso_code_2') }}</span>
+                <div class="col-sm-3">
+                    <span>{{ __('admin.iso_code_2') }}:</span>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <span>{{ $country->iso_code_2 }}</span>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-sm-2">
-                    <span>{{ __('admin.iso_code_3') }}</span>
+                <div class="col-sm-3">
+                    <span>{{ __('admin.iso_code_3') }}:</span>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <span>{{ $country->iso_code_3 }}</span>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-sm-2">
-                    <span>{{ __('admin.postcode_required') }}</span>
+                <div class="col-sm-3">
+                    <span>{{ __('admin.postcode_required') }}:</span>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <span>{{ $country->postcode_required ? __('admin.required') : __('admin.not_required') }}</span>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-sm-2">
-                    <span>{{ __('admin.status') }}</span>
+                <div class="col-sm-3">
+                    <span>{{ __('admin.status') }}:</span>
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                     <x-admin.status-badge :status="$country->status" />
                 </div>
             </div>

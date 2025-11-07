@@ -45,6 +45,10 @@ return [
     'updated' => 'Оновлено',
     'required' => 'Обов\'язковий',
     'not_required' => 'Не обов\'язковий',
+    'friendly_url' => 'Дружній URL',
+    'description' => 'Опис',
+    'meta_tag_title' => 'Мета-тег Title',
+    'meta_tag_description' => 'Мета-тег Description',
     
     // Messages
     'created_successfully' => 'Успішно створено',
@@ -144,6 +148,15 @@ return [
     'iso_code_3' => 'Код ISO (3)',
     'postcode_required' => 'Індекс обов\'язковий',
     'country_details' => 'Деталі країни',
+
+    // Category
+    'category' => 'Категорія',
+    'categories' => 'Категорії',
+    'category_list' => 'Список категорій',
+    'add_category' => 'Додати категорію',
+    'edit_category' => 'Редагувати категорію',
+    'category_name' => 'Назва категорії',
+    'category_details' => 'Деталі країни',
 
     // Menu
     'navigation' => 'Навігація',

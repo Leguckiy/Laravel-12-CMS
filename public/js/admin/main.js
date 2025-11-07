@@ -41,24 +41,39 @@
     }
 
     function initializeMultilangFields() {
-        document.querySelectorAll('.multilang-selector').forEach(function(selector) {
-            const fieldName = selector.dataset.fieldName;
-            const groups = document.querySelectorAll('.multilang-group[data-field-name="' + fieldName + '"], .multilang-text-group[data-field-name="' + fieldName + '"]');
-            
-            if (groups.length > 0) {
-                selector.addEventListener('change', function() {
-                    const selectedLangId = this.value;
-                    
-                    groups.forEach(function(group) {
-                        const groupLangId = group.dataset.langId;
-                        if (groupLangId === selectedLangId) {
-                            group.classList.remove('d-none');
-                        } else {
-                            group.classList.add('d-none');
-                        }
-                    });
+        // Find all language selectors
+        const allSelectors = document.querySelectorAll('.multilang-selector');
+        
+        // Find all multilingual field groups
+        const allGroups = document.querySelectorAll('.multilang-group, .multilang-text-group');
+        
+        // Update group visibility based on selected language
+        function updateAllGroups(selectedLangId) {
+            allGroups.forEach(function(group) {
+                const groupLangId = group.dataset.langId;
+                if (groupLangId === selectedLangId) {
+                    group.classList.remove('d-none');
+                } else {
+                    group.classList.add('d-none');
+                }
+            });
+        }
+        
+        // Attach change handler to every selector
+        allSelectors.forEach(function(selector) {
+            selector.addEventListener('change', function() {
+                const selectedLangId = this.value;
+                
+                // Sync all selectors to the newly chosen language
+                allSelectors.forEach(function(otherSelector) {
+                    if (otherSelector !== selector) {
+                        otherSelector.value = selectedLangId;
+                    }
                 });
-            }
+                
+                // Toggle multilingual groups visibility
+                updateAllGroups(selectedLangId);
+            });
         });
     }
 

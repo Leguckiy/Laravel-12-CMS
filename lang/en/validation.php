@@ -51,6 +51,21 @@ return [
     'stock_status_name.max' => 'Stock status name must not exceed :max characters.',
     'stock_status_name.unique' => 'This stock status name already exists for this language.',
 
+    // Category validation
+    'slug.required' => 'Slug is required.',
+    'slug.string' => 'Slug must be a string.',
+    'slug.max' => 'Slug must not exceed :max characters.',
+    'slug.regex' => 'Slug may only contain lowercase letters, numbers, and hyphens.',
+    'slug.unique' => 'This slug already exists for this language.',
+    'description.string' => 'Description must be a string.',
+    'meta_title.required' => 'Meta title is required.',
+    'meta_title.string' => 'Meta title must be a string.',
+    'meta_title.max' => 'Meta title must not exceed :max characters.',
+    'meta_description.string' => 'Meta description must be a string.',
+    'meta_description.max' => 'Meta description must not exceed :max characters.',
+    'image.string' => 'Image path must be a string.',
+    'image.max' => 'Image path must not exceed :max characters.',
+
     // Country validation
     'name.unique' => 'This country name already exists for this language.',
     'iso_code_2.string' => 'ISO code (2) must be a string.',
@@ -80,4 +95,3 @@ return [
         'permissions' => 'Permissions',
     ],
 ];
-

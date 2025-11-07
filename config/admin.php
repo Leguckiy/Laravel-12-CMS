@@ -17,7 +17,7 @@ return [
             'children' => [
                 [
                     'name' => 'menu_catalog_categories',
-                    'route' => '',
+                    'route' => 'admin.category.index',
                     'children' => []
                 ],
                 [
@@ -128,5 +128,6 @@ return [
         'stock_status' => 'localisation/stock_status',
         'order_status' => 'localisation/order_status',
         'country' => 'localisation/country',
+        'category' => 'catalog/category',
     ]
 ];

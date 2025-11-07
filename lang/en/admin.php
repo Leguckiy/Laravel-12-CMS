@@ -45,6 +45,10 @@ return [
     'updated' => 'Updated',
     'required' => 'Required',
     'not_required' => 'Not required',
+    'friendly_url' => 'Friendly URL',
+    'description' => 'Description',
+    'meta_tag_title' => 'Meta Tag Title',
+    'meta_tag_description' => 'Meta Tag Description',
 
     // Messages
     'created_successfully' => 'Created successfully',
@@ -144,6 +148,15 @@ return [
     'iso_code_3' => 'ISO Code (3)',
     'postcode_required' => 'Postcode Required',
     'country_details' => 'Country details',
+
+    // Category
+    'category' => 'Category',
+    'categories' => 'Categories',
+    'category_list' => 'Category list',
+    'add_category' => 'Add Category',
+    'edit_category' => 'Edit Category',
+    'category_name' => 'Category name',
+    'category_details' => 'Category details',
 
     // Menu
     'navigation' => 'Navigation',

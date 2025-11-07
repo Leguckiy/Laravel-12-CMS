@@ -1,7 +1,7 @@
 @props(['label', 'value' => '', 'languages', 'currentLanguageId' => null, 'fieldName' => 'text-field'])
 
-<div class="col-sm-2 fw-bold">{{ $label }}:</div>
-<div class="col-sm-10">
+<div class="col-sm-3 fw-bold">{{ $label }}:</div>
+<div class="col-sm-9">
     <div class="row">
         <div class="col-sm-8">
             @foreach($languages as $index => $language)
