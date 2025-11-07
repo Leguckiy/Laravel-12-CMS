@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\AdminController;
 use App\Http\Requests\Admin\StockStatusRequest;
 use App\Models\StockStatus;
+use App\Models\StockStatusLang;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -109,10 +110,14 @@ class StockStatusController extends AdminController
     {
         $nameData = $request->input('name', []);
 
+        $stockStatus->translations()->delete();
+
         foreach ($nameData as $languageId => $name) {
-            $stockStatus->translations()
-                ->where('language_id', $languageId)
-                ->update(['name' => $name]);
+            StockStatusLang::create([
+                'stock_status_id' => (int) $stockStatus->id,
+                'language_id' => (int) $languageId,
+                'name' => $name,
+            ]);
         }
 
         return redirect()->route('admin.stock_status.index')->with('success', __('admin.updated_successfully'));

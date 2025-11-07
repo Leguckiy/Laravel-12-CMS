@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\AdminController;
 use App\Http\Requests\Admin\OrderStatusRequest;
 use App\Models\OrderStatus;
+use App\Models\OrderStatusLang;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -109,10 +110,14 @@ class OrderStatusController extends AdminController
     {
         $nameData = $request->input('name', []);
 
+        $orderStatus->translations()->delete();
+
         foreach ($nameData as $languageId => $name) {
-            $orderStatus->translations()
-                ->where('language_id', $languageId)
-                ->update(['name' => $name]);
+            OrderStatusLang::create([
+                'order_status_id' => (int) $orderStatus->id,
+                'language_id' => (int) $languageId,
+                'name' => $name,
+            ]);
         }
 
         return redirect()->route('admin.order_status.index')->with('success', __('admin.updated_successfully'));

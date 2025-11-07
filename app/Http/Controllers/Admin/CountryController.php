@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\AdminController;
 use App\Http\Requests\Admin\CountryRequest;
 use App\Models\Country;
+use App\Models\CountryLang;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -124,11 +125,15 @@ class CountryController extends AdminController
 
         $nameData = $request->input('name', []);
 
-        // Update translations per language
+        // Replace translations per language
+        $country->translations()->delete();
+
         foreach ($nameData as $languageId => $name) {
-            $country->translations()
-                ->where('language_id', $languageId)
-                ->update(['name' => $name]);
+            CountryLang::create([
+                'country_id' => (int) $country->id,
+                'language_id' => (int) $languageId,
+                'name' => $name,
+            ]);
         }
 
         return redirect()->route('admin.country.index')->with('success', __('admin.updated_successfully'));
