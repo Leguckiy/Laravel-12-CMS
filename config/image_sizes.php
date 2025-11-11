@@ -1,10 +1,12 @@
 <?php
 
 return [
+    'small' => [
+        'width' => 80,
+        'height' => 80,
+    ],
     'category' => [
-        'image' => [
-            'width' => 300,
-            'height' => 300,
-        ],
+        'width' => 300,
+        'height' => 300,
     ],
 ];

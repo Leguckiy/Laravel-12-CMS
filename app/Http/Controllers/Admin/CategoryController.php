@@ -26,8 +26,6 @@ class CategoryController extends AdminController
 
     protected string $title = 'categories';
 
-    private ?ImageUploader $imageUploader = null;
-
     /**
      * Display a listing of the resource.
      */
@@ -200,43 +198,39 @@ class CategoryController extends AdminController
      */
     private function handleImageUpload(CategoryRequest $request, ?Category $category = null): ?string
     {
-        $imageUploader = new AdminImageUploader();
+        $uploader = new AdminImageUploader();
         $currentFilename = $category?->image;
-        $currentPath = $category?->image_path;
-        $remove = $request->boolean('image_remove');
+        $currentPath = $category?->image_path ?? ($currentFilename ? Category::IMAGE_DIRECTORY . '/' . $currentFilename : null);
 
-        if ($remove && $currentFilename) {
-            $imageUploader->delete($currentPath ?? Category::IMAGE_DIRECTORY . '/' . $currentFilename);
+        if ($request->boolean('image_remove')) {
+            $this->deleteCategoryImage($uploader, $currentPath);
             $currentFilename = null;
+            $currentPath = null;
         }
 
-        if ($request->hasFile('image')) {
-            if ($currentFilename) {
-                $imageUploader->delete($currentPath ?? Category::IMAGE_DIRECTORY . '/' . $currentFilename);
-            }
-
-            $slugData = $request->input('slug', []);
-            $defaultLanguageId = $this->getDefaultLanguageId();
-            $baseSlug = null;
-            if (is_array($slugData)) {
-                $baseSlug = $slugData[$defaultLanguageId] ?? reset($slugData);
-            }
-
-            $imageName = $baseSlug ? Str::slug((string) $baseSlug) : 'category';
-
-            $width = (int) config('image_sizes.category.image.width');
-            $height = (int) config('image_sizes.category.image.height');
-
-            $currentFilename = $imageUploader->uploadImage(
-                $imageName,
-                Category::IMAGE_DIRECTORY,
-                $request->file('image'),
-                $width,
-                $height
-            );
+        if (!$request->hasFile('image')) {
+            return $currentFilename;
         }
 
-        return $currentFilename;
+        $this->deleteCategoryImage($uploader, $currentPath);
+
+        $slug = data_get($request->input('slug', []), $this->getDefaultLanguageId())
+            ?? collect($request->input('slug', []))->first()
+            ?? 'category';
+
+        return $uploader->uploadImage(
+            Str::slug((string) $slug),
+            Category::IMAGE_DIRECTORY,
+            $request->file('image'),
+            (int) config('image_sizes.category.width'),
+            (int) config('image_sizes.category.height')
+        );
     }
 
+    private function deleteCategoryImage(AdminImageUploader $uploader, ?string $path): void
+    {
+        if ($path) {
+            $uploader->delete($path);
+        }
+    }
 }
