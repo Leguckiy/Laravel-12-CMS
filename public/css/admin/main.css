@@ -219,3 +219,7 @@ td.required:before {
     height: auto;
     display: block;
 }
+
+table tr {
+    vertical-align: middle;
+}
