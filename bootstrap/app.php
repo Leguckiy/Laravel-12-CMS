@@ -17,6 +17,12 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+        $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, $request) {
+            if ($request->is('admin/*') || $request->routeIs('admin.*')) {
+                return response()->view('admin.not_found', [], 404);
+            }
+        });
+
         // Handle 403 errors for admin routes
         $exceptions->render(function (\Illuminate\Auth\Access\AuthorizationException $e, $request) {
             if ($request->is('admin/*') || $request->routeIs('admin.*')) {

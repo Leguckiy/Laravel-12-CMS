@@ -39,6 +39,9 @@ return [
     'not_found' => 'Page Not Found',
     'not_found_message' => 'The page you are looking for could not be found.',
     'value' => 'Value',
+    'values' => 'Values',
+    'manage_values' => 'Manage values',
+    'open_list' => 'Open list',
     'date_updated' => 'Date updated',
     'sort_order' => 'Sort order',
     'created' => 'Created',
@@ -161,12 +164,31 @@ return [
     'category_cover_image_help' => 'Main image displayed on the category page.',
     'category_details' => 'Category details',
 
+    // Feature
+    'feature' => 'Feature',
+    'features' => 'Features',
+    'feature_values' => 'Feature values',
+    'feature_list' => 'Feature list',
+    'add_feature' => 'Add Feature',
+    'edit_feature' => 'Edit Feature',
+    'feature_name' => 'Feature name',
+    'feature_details' => 'Feature details',
+
+    // Feature value
+    'feature_value' => 'Feature value',
+    'feature_value_list' => 'Feature value list',
+    'add_feature_value' => 'Add Feature value',
+    'edit_feature_value' => 'Edit Feature value',
+    'feature_value_name' => 'Feature name value',
+    'feature_value_details' => 'Feature value details',
+
     // Menu
     'navigation' => 'Navigation',
     'menu_dashboard' => 'Dashboard',
     'menu_catalog' => 'Catalog',
     'menu_catalog_categories' => 'Categories',
     'menu_catalog_products' => 'Products',
+    'menu_catalog_features' => 'Features',
     'menu_sales' => 'Sales',
     'menu_sales_orders' => 'Orders',
     'menu_customers' => 'Customers',

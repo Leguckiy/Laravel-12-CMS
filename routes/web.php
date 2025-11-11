@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\FeatureController;
+use App\Http\Controllers\Admin\FeatureValueController;
 use App\Http\Controllers\Admin\OrderStatusController;
 use App\Http\Controllers\Admin\StockStatusController;
 use App\Http\Controllers\Admin\UserController;
@@ -37,6 +39,10 @@ Route::prefix('admin')->group(function () {
             Route::resource('order_status', OrderStatusController::class)->names('admin.order_status');
             Route::resource('country', CountryController::class)->names('admin.country');
             Route::resource('category', CategoryController::class)->names('admin.category');
+            Route::resource('feature', FeatureController::class)->names('admin.feature');
+            Route::resource('feature.value', FeatureValueController::class)
+                ->names('admin.feature_value')
+                ->parameters(['value' => 'feature_value']);
         });
 
         // Fallback for unknown admin routes (404 within admin area)

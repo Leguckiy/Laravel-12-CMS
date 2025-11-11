@@ -24,6 +24,11 @@ return [
                     'name' => 'menu_catalog_products',
                     'route' => '',
                     'children' => []
+                ],
+                [
+                    'name' => 'menu_catalog_features',
+                    'route' => 'admin.feature.index',
+                    'children' => []
                 ]
             ]
         ],
@@ -129,5 +134,7 @@ return [
         'order_status' => 'localisation/order_status',
         'country' => 'localisation/country',
         'category' => 'catalog/category',
+        'feature' => 'catalog/features',
+        'feature_value' => 'catalog/feature_values',
     ]
 ];

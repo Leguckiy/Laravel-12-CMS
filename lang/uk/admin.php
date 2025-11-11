@@ -39,6 +39,9 @@ return [
     'not_found' => 'Сторінку не знайдено',
     'not_found_message' => 'Сторінку, яку ви шукаєте, не вдалося знайти.',
     'value' => 'Значення',
+    'values' => 'Значення',
+    'manage_values' => 'Керувати значеннями',
+    'open_list' => 'Відкрити список',
     'date_updated' => 'Дата оновлення',
     'sort_order' => 'Порядок сортування',
     'created' => 'Створено',
@@ -161,12 +164,31 @@ return [
     'category_cover_image_help' => 'Основне зображення, що відображається на сторінці категорії.',
     'category_details' => 'Деталі країни',
 
+    // Feature
+    'feature' => 'Характеристика',
+    'features' => 'Характеристики',
+    'feature_values' => 'Значення характеристики',
+    'feature_list' => 'Список характеристик',
+    'add_feature' => 'Додати характеристику',
+    'edit_feature' => 'Редагувати характеристику',
+    'feature_name' => 'Назва характеристики',
+    'feature_details' => 'Детылі характеристики',
+
+    // Feature value
+    'feature_value' => 'Значення характеристики',
+    'feature_value_list' => 'Список значень характеристики',
+    'add_feature_value' => 'Додати значення характеристики',
+    'edit_feature_value' => 'редагувати значення характеристики',
+    'feature_value_name' => 'Назва значення характеристики',
+    'feature_value_details' => 'Детылі значення характеристики',
+
     // Menu
     'navigation' => 'Навігація',
     'menu_dashboard' => 'Панель керування',
     'menu_catalog' => 'Каталог',
     'menu_catalog_categories' => 'Категорії',
     'menu_catalog_products' => 'Товари',
+    'menu_catalog_features' => 'Характеристики',
     'menu_sales' => 'Продажі',
     'menu_sales_orders' => 'Замовлення',
     'menu_customers' => 'Клієнти',

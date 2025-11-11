@@ -83,6 +83,17 @@ return [
     'order_status_name.string' => 'Назва статусу замовлення має бути рядком.',
     'order_status_name.max' => 'Назва статусу замовлення не повинна перевищувати :max символів.',
     'order_status_name.unique' => 'Ця назва статусу замовлення вже існує для цієї мови.',
+
+    // Feature validation
+    'feature_name.required' => 'Характеристика є обов\'язковою.',
+    'feature_name.string' => 'Характеристика має бути рядком.',
+    'feature_name.max' => 'Характеристика не повинна перевищувати :max символів.',
+    'feature_name.unique' => 'Ця характеристика вже існує для цієї мови.',
+
+    // Feature value validation
+    'feature_value.required' => 'Назва характеристики є обов\'язковою.',
+    'feature_value.string' => 'Назва характеристики має бути рядком.',
+    'feature_value.max' => 'Назва характеристики не повинна перевищувати :max символів.',
     
     // Standard Laravel validation messages
     'required' => 'Поле :attribute є обов\'язковим.',

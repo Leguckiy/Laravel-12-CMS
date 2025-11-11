@@ -12,10 +12,15 @@ class AdminController extends Controller
 
     public function getBreadcrumbs(): array
     {
-        return array_map(function($item) {
+        return array_map(function ($item) {
+            $shouldTranslate = $item['translate'] ?? true;
+
+            if ($shouldTranslate && isset($item['title'])) {
             $item['title'] = __("admin.{$item['title']}");
+            }
+
             return $item;
-        }, $this->breadcrumbs);
+        }, $this->breadcrumbs ?? []);
     }
 
     public function getTitle(): string

@@ -5,7 +5,9 @@
         <ol class="breadcrumb">
             @foreach($items as $index => $item)
                 <li class="breadcrumb-item">
-                    @if(!empty($item['route']) && Route::has($item['route']))
+                    @if(!empty($item['url']))
+                        <a href="{{ $item['url'] }}">{{ $item['title'] }}</a>
+                    @elseif(!empty($item['route']) && Route::has($item['route']))
                         <a href="{{ route($item['route']) }}">{{ $item['title'] }}</a>
                     @else
                         <span>{{ $item['title'] }}</span>

@@ -83,6 +83,17 @@ return [
     'order_status_name.string' => 'Order status name must be a string.',
     'order_status_name.max' => 'Order status name must not exceed :max characters.',
     'order_status_name.unique' => 'This order status name already exists for this language.',
+
+    // Feature validation
+    'feature_name.required' => 'Feature name is required.',
+    'feature_name.string' => 'Feature name must be a string.',
+    'feature_name.max' => 'Feature name must not exceed :max characters.',
+    'feature_name.unique' => 'This feature name already exists for this language.',
+
+    // Feature value validation
+    'feature_value.required' => 'Feature value name is required.',
+    'feature_value.string' => 'Feature value name must be a string.',
+    'feature_value.max' => 'Feature value name must not exceed :max characters.',
     
     // Standard Laravel validation messages
     'required' => 'The :attribute field is required.',
