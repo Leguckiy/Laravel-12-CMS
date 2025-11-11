@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\UserRequest;
 use App\Models\Language;
 use App\Models\User;
 use App\Models\UserGroup;
+use App\Services\AdminImageUploader;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -59,11 +60,16 @@ class UserController extends AdminController
     public function store(UserRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-        
+
         // Remove confirm field as it's not needed in database
-        unset($validated['confirm']);
-        
-        User::create($validated);
+        unset($validated['confirm'], $validated['image']);
+
+        $user = User::create($validated);
+
+        $image = $this->handleAvatarUpload($request, $user);
+        if ($image !== $user->image) {
+            $user->update(['image' => $image]);
+        }
 
         return redirect()->route('admin.user.index')->with('success', __('admin.created_successfully'));
     }
@@ -102,14 +108,16 @@ class UserController extends AdminController
     public function update(UserRequest $request, User $user): RedirectResponse
     {
         $validated = $request->validated();
-        
+
         // Remove password from validation if empty
         if (empty($validated['password'])) {
             unset($validated['password']);
         }
         
         // Remove confirm field as it's not needed in database
-        unset($validated['confirm']);
+        unset($validated['confirm'], $validated['image']);
+
+        $validated['image'] = $this->handleAvatarUpload($request, $user);
 
         $user->update($validated);
 
@@ -124,5 +132,37 @@ class UserController extends AdminController
         $user->delete();
 
         return redirect()->route('admin.user.index')->with('success', __('admin.deleted_successfully'));
+    }
+
+    private function handleAvatarUpload(UserRequest $request, User $user): ?string
+    {
+        $uploader = new AdminImageUploader();
+        $currentFilename = $user->image;
+        $currentPath = $user->image_path;
+
+        if ($request->boolean('image_remove') && $currentPath) {
+            $uploader->delete($currentPath);
+            $currentFilename = null;
+            $currentPath = null;
+        }
+
+        if (!$request->hasFile('image')) {
+            return $currentFilename;
+        }
+
+        if ($currentPath) {
+            $uploader->delete($currentPath);
+        }
+
+        $width = (int) config('image_sizes.small.width');
+        $height = (int) config('image_sizes.small.height');
+
+        return $uploader->uploadImage(
+            'user_' . $user->id,
+            User::IMAGE_DIRECTORY,
+            $request->file('image'),
+            $width,
+            $height
+        );
     }
 }

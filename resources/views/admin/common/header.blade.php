@@ -9,9 +9,19 @@
         <ul class="nav navbar-nav">
             <li id="nav-profile" class="nav-item dropdown">
                 <a href="#" data-bs-toggle="dropdown" class="nav-link">
-                    <div class="avatar-sm bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center me-2">
-                        <i class="fas fa-user"></i>
-                    </div>
+                    @if ($adminUser->image_url)
+                        <img
+                            src="{{ $adminUser->image_url }}"
+                            alt="{{ $adminUser->fullname }}"
+                            class="rounded-circle me-2"
+                            width="36"
+                            height="36"
+                        >
+                    @else
+                        <div class="avatar-sm bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center me-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    @endif
                     <span class="d-none d-md-inline d-lg-inline">
                         <span>{{ $adminUser->fullname }}</span>
                         <i class="fa-solid fa-caret-down fa-fw"></i>

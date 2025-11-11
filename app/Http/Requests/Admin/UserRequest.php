@@ -20,7 +20,7 @@ class UserRequest extends FormRequest
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'image' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:5120',
             'status' => 'boolean',
         ];
 

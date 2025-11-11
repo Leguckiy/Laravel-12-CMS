@@ -50,12 +50,12 @@
                         @endif
                     </table>
                 </div>
-                @if($user->image)
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <img src="{{ $user->image }}" class="img-fluid rounded" alt="{{ __('admin.user_photo') }}" style="max-height: 200px;">
+                @if($user->image_url)
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <img src="{{ $user->image_url }}" class="rounded-circle border" alt="{{ __('admin.user_photo') }}" style="width: 160px; height: 160px; object-fit: cover;">
+                        </div>
                     </div>
-                </div>
                 @endif
             </div>
             

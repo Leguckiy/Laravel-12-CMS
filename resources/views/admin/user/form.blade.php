@@ -14,7 +14,7 @@
             <span>{{ isset($user) ? __('admin.edit_user') : __('admin.add_user') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user" action="{{ isset($user) ? route('admin.user.update', $user->id) : route('admin.user.store') }}" method="POST">
+            <form id="form-user" action="{{ isset($user) ? route('admin.user.update', $user->id) : route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if(isset($user))
                     @method('PUT')
@@ -25,7 +25,11 @@
                 <x-admin.input-field type="text" name="firstname" :label="__('admin.first_name')" :placeholder="__('admin.first_name')" :value="$user->firstname ?? ''" :required="true"/>
                 <x-admin.input-field type="text" name="lastname" :label="__('admin.last_name')" :placeholder="__('admin.last_name')" :value="$user->lastname ?? ''" :required="true"/>
                 <x-admin.input-field type="email" name="email" :label="__('admin.email')" :placeholder="__('admin.email')" :value="$user->email ?? ''" :required="true"/>
-                <x-admin.input-field type="text" name="image" :label="__('admin.image')" :placeholder="__('admin.image')" :value="$user->image ?? ''"/>
+                <x-admin.image-upload-field
+                    name="image"
+                    :label="__('admin.image')"
+                    :current-path="$user->image_path ?? null"
+                />
                 <x-admin.input-field type="password" name="password" :label="__('admin.password')" :placeholder="__('admin.password')" value="" :required="true"/>
                 <x-admin.input-field type="password" name="confirm" :label="__('admin.confirm')" :placeholder="__('admin.confirm')" value="" :required="true"/>
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="$user->status ?? false"/>
