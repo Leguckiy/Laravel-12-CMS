@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\FeatureValueController;
 use App\Http\Controllers\Admin\OrderStatusController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\StockStatusController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserGroupController;
@@ -43,6 +44,7 @@ Route::prefix('admin')->group(function () {
             Route::resource('feature.value', FeatureValueController::class)
                 ->names('admin.feature_value')
                 ->parameters(['value' => 'feature_value']);
+            Route::resource('product', ProductController::class)->names('admin.product');
         });
 
         // Fallback for unknown admin routes (404 within admin area)

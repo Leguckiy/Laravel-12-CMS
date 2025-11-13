@@ -31,6 +31,14 @@ class StockStatus extends Model
     }
 
     /**
+     * Get all products that use this stock status.
+     */
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class, 'stock_status_id');
+    }
+
+    /**
      * Get all names for different languages.
      * 
      * @return array [language_id => name]

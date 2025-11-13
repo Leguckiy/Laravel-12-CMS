@@ -9,4 +9,8 @@ return [
         'width' => 300,
         'height' => 300,
     ],
+    'product' => [
+        'width' => 800,
+        'height' => 800,
+    ],
 ];

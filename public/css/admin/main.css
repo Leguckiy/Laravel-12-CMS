@@ -223,3 +223,19 @@ td.required:before {
 table tr {
     vertical-align: middle;
 }
+
+.nav-tabs {
+    margin-bottom: 25px;
+}
+
+.nav-tabs > li > a {
+    color: #a5a5a5;
+}
+
+.form-label, .col-form-label {
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 0;
+}

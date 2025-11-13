@@ -53,6 +53,11 @@ return [
     'meta_tag_title' => 'Мета-тег Title',
     'meta_tag_description' => 'Мета-тег Description',
     'image_placeholder' => 'Зображення не вибране',
+    'price' => 'Ціна',
+    'quantity' => 'Кількість',
+    'no_items' => 'Немає елементів',
+    'pre_defined_value' => 'Попередньо визначено',
+    'select_value' => 'Виберіть значення',
     
     // Messages
     'created_successfully' => 'Успішно створено',
@@ -131,6 +136,7 @@ return [
     'edit_stock_status' => 'Редагувати статус складу',
     'stock_status_name' => 'Назва статусу складу',
     'stock_status_details' => 'Деталі статусу складу',
+    'stock_status_cannot_delete' => 'Неможливо видалити статус наявності, оскільки він використовується в :count товар(ів).',
 
     // Order status
     'order_status' => 'Статус замовлення',
@@ -162,7 +168,21 @@ return [
     'category_name' => 'Назва категорії',
     'category_cover_image' => 'Зображення категорії',
     'category_cover_image_help' => 'Основне зображення, що відображається на сторінці категорії.',
-    'category_details' => 'Деталі країни',
+    'no_categories' => 'Немає категорій',
+    'category_details' => 'Деталі категорії',
+
+    // Product
+    'product' => 'Товар',
+    'products' => 'Товари',
+    'product_list' => 'Список товарів',
+    'add_product' => 'Додати товар',
+    'edit_product' => 'Редагувати товар',
+    'product_name' => 'Назва товару',
+    'product_reference' => 'Артикул',
+    'out_of_stock_status' => 'Статус при відсутності',
+    'product_cover_image' => 'Зображення товара',
+    'product_cover_image_help' => 'Основне зображення, що відображається на сторінці товару.',
+    'product_details' => 'Деталі товару',
 
     // Feature
     'feature' => 'Характеристика',
@@ -173,6 +193,7 @@ return [
     'edit_feature' => 'Редагувати характеристику',
     'feature_name' => 'Назва характеристики',
     'feature_details' => 'Детылі характеристики',
+    'select_feature' => 'Виберіть характеристику',
 
     // Feature value
     'feature_value' => 'Значення характеристики',
@@ -202,4 +223,11 @@ return [
     'menu_settings_localisation_stock_statuses' => 'Статуси наявності',
     'menu_settings_localisation_order_statuses' => 'Статуси замовлень',
     'menu_settings_localisation_countries' => 'Країни',
+
+    // Tabs
+    'tab_general' => 'Основне',
+    'tab_data' => 'Дані',
+    'tab_links' => 'Зв\'язки',
+    'tab_features' => 'Характеристики',
+    'tab_image' => 'Зображення',
 ];

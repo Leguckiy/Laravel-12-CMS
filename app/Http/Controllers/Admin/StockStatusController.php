@@ -128,8 +128,19 @@ class StockStatusController extends AdminController
      */
     public function destroy(StockStatus $stockStatus): RedirectResponse
     {
+        // Check if stock status is used in products
+        $productsCount = $stockStatus->products()->count();
+
+        if ($productsCount > 0) {
+            return redirect()
+                ->route('admin.stock_status.index')
+                ->with('error', __('admin.stock_status_cannot_delete', ['count' => $productsCount]));
+        }
+
         $stockStatus->delete();
         
-        return redirect()->route('admin.stock_status.index')->with('success', __('admin.deleted_successfully'));
+        return redirect()
+            ->route('admin.stock_status.index')
+            ->with('success', __('admin.deleted_successfully'));
     }
 }

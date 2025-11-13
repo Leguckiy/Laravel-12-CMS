@@ -95,6 +95,9 @@ return [
     'feature_value.string' => 'Назва характеристики має бути рядком.',
     'feature_value.max' => 'Назва характеристики не повинна перевищувати :max символів.',
     
+    // Product feature validation
+    'duplicate_feature_combination' => 'Комбінація :attribute та значення вже використовується.',
+    
     // Standard Laravel validation messages
     'required' => 'Поле :attribute є обов\'язковим.',
     'string' => 'Поле :attribute має бути рядком.',

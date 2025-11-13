@@ -22,7 +22,7 @@ return [
                 ],
                 [
                     'name' => 'menu_catalog_products',
-                    'route' => '',
+                    'route' => 'admin.product.index',
                     'children' => []
                 ],
                 [
@@ -134,6 +134,7 @@ return [
         'order_status' => 'localisation/order_status',
         'country' => 'localisation/country',
         'category' => 'catalog/category',
+        'product' => 'catalog/product',
         'feature' => 'catalog/features',
         'feature_value' => 'catalog/feature_values',
     ]

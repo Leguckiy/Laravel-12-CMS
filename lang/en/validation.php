@@ -95,6 +95,9 @@ return [
     'feature_value.string' => 'Feature value name must be a string.',
     'feature_value.max' => 'Feature value name must not exceed :max characters.',
     
+    // Product feature validation
+    'duplicate_feature_combination' => 'The combination of :attribute and value is already used.',
+    
     // Standard Laravel validation messages
     'required' => 'The :attribute field is required.',
     'string' => 'The :attribute must be a string.',

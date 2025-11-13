@@ -53,6 +53,11 @@ return [
     'meta_tag_title' => 'Meta Tag Title',
     'meta_tag_description' => 'Meta Tag Description',
     'image_placeholder' => 'No image selected',
+    'price' => 'Price',
+    'quantity' => 'Quantity',
+    'no_items' => 'No items',
+    'pre_defined_value' => 'Pre-defined value',
+    'select_value' => 'Select value',
 
     // Messages
     'created_successfully' => 'Created successfully',
@@ -131,6 +136,7 @@ return [
     'edit_stock_status' => 'Edit Stock status',
     'stock_status_name' => 'Stock status name',
     'stock_status_details' => 'Stock status details',
+    'stock_status_cannot_delete' => 'Cannot delete stock status because it is currently assigned to :count product(s).',
 
     // Order status
     'order_status' => 'Order status',
@@ -162,7 +168,21 @@ return [
     'category_name' => 'Category name',
     'category_cover_image' => 'Category cover image',
     'category_cover_image_help' => 'Main image displayed on the category page.',
+    'no_categories' => 'No categories',
     'category_details' => 'Category details',
+
+    // Product
+    'product' => 'Product',
+    'products' => 'Products',
+    'product_list' => 'Product list',
+    'add_product' => 'Add Product',
+    'edit_product' => 'Edit Product',
+    'product_name' => 'Product name',
+    'product_reference' => 'Reference',
+    'out_of_stock_status' => 'Out of stock status',
+    'product_cover_image' => 'Product cover image',
+    'product_cover_image_help' => 'Main image displayed on the product page.',
+    'product_details' => 'Product details',
 
     // Feature
     'feature' => 'Feature',
@@ -173,6 +193,7 @@ return [
     'edit_feature' => 'Edit Feature',
     'feature_name' => 'Feature name',
     'feature_details' => 'Feature details',
+    'select_feature' => 'Select feature',
 
     // Feature value
     'feature_value' => 'Feature value',
@@ -202,4 +223,11 @@ return [
     'menu_settings_localisation_stock_statuses' => 'Stock Statuses',
     'menu_settings_localisation_order_statuses' => 'Order Statuses',
     'menu_settings_localisation_countries' => 'Countries',
+
+    // Tabs
+    'tab_general' => 'General',
+    'tab_data' => 'Data',
+    'tab_links' => 'Links',
+    'tab_features' => 'Features',
+    'tab_image' => 'Image',
 ];
