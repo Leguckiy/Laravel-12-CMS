@@ -29,7 +29,7 @@ class CountryController extends AdminController
      */
     public function index(): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $countries = Country::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
@@ -37,6 +37,7 @@ class CountryController extends AdminController
 
         $countries->getCollection()->transform(function ($country) {
             $country->name = $country->translations->first()?->name ?? '';
+
             return $country;
         });
 
@@ -49,9 +50,8 @@ class CountryController extends AdminController
     public function create(): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
-        
-        return view('admin.country.form', compact('languages', 'currentLanguageId'));
+
+        return view('admin.country.form', compact('languages'));
     }
 
     /**
@@ -88,12 +88,11 @@ class CountryController extends AdminController
     public function show(Country $country): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Get all translations for this stock status
         $translations = $country->getNames();
 
-        return view('admin.country.show', compact('country', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.country.show', compact('country', 'languages', 'translations'));
     }
 
     /**
@@ -102,12 +101,11 @@ class CountryController extends AdminController
     public function edit(Country $country): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Get all translations for this stock status
         $translations = $country->getNames();
 
-        return view('admin.country.form', compact('country', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.country.form', compact('country', 'languages', 'translations'));
     }
 
     /**
@@ -145,7 +143,7 @@ class CountryController extends AdminController
     public function destroy(Country $country): RedirectResponse
     {
         $country->delete();
-        
+
         return redirect()->route('admin.country.index')->with('success', __('admin.deleted_successfully'));
     }
 }

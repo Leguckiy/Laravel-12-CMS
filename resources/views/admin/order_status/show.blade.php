@@ -14,7 +14,7 @@
                     :label="__('admin.order_status_name')"
                     :value="$translations ?? ''"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="order_status_name"
                 />
             </div>

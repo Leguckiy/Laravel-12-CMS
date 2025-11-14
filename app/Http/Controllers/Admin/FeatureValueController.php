@@ -40,7 +40,7 @@ class FeatureValueController extends AdminController
 
     public function index(Feature $feature): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId() ?? $this->getDefaultLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $values = $feature->values()
             ->with(['translations' => function ($query) use ($currentLanguageId) {
@@ -66,12 +66,10 @@ class FeatureValueController extends AdminController
     public function create(Feature $feature): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId() ?? $this->getDefaultLanguageId();
 
         return view('admin.feature_value.form', [
             'feature' => $feature,
             'languages' => $languages,
-            'currentLanguageId' => $currentLanguageId,
         ]);
     }
 
@@ -100,7 +98,6 @@ class FeatureValueController extends AdminController
         $this->ensureFeatureMatches($feature, $featureValue);
 
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId() ?? $this->getDefaultLanguageId();
 
         $translations = $featureValue->translations()
             ->pluck('value', 'language_id')
@@ -111,7 +108,6 @@ class FeatureValueController extends AdminController
             'featureValue' => $featureValue,
             'languages' => $languages,
             'translations' => $translations,
-            'currentLanguageId' => $currentLanguageId,
         ]);
     }
 
@@ -120,7 +116,6 @@ class FeatureValueController extends AdminController
         $this->ensureFeatureMatches($feature, $featureValue);
 
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId() ?? $this->getDefaultLanguageId();
 
         $translations = $featureValue->translations()
             ->pluck('value', 'language_id')
@@ -131,7 +126,6 @@ class FeatureValueController extends AdminController
             'featureValue' => $featureValue,
             'languages' => $languages,
             'translations' => $translations,
-            'currentLanguageId' => $currentLanguageId,
         ]);
     }
 
@@ -193,12 +187,12 @@ class FeatureValueController extends AdminController
     {
         $feature->loadMissing('translations');
 
-        $currentLanguageId = $this->getCurrentLanguageId() ?? $this->getDefaultLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $translation = $feature->translations
             ->firstWhere('language_id', $currentLanguageId)
             ?? $feature->translations->first();
 
-        return $translation?->name ?? __('admin.feature') . ' #' . $feature->id;
+        return $translation?->name ?? __('admin.feature').' #'.$feature->id;
     }
 }

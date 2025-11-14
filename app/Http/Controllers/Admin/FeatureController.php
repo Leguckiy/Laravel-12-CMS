@@ -29,16 +29,17 @@ class FeatureController extends AdminController
      */
     public function index(): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $features = Feature::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
         }])
-        ->withCount('values')
-        ->paginate(15);
+            ->withCount('values')
+            ->paginate(15);
 
         $features->getCollection()->transform(function ($feature) {
             $feature->name = $feature->translations->first()?->name ?? '';
+
             return $feature;
         });
 
@@ -51,9 +52,8 @@ class FeatureController extends AdminController
     public function create(): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
-        
-        return view('admin.feature.form', compact('languages', 'currentLanguageId'));
+
+        return view('admin.feature.form', compact('languages'));
     }
 
     /**
@@ -65,7 +65,7 @@ class FeatureController extends AdminController
 
         // Create main feature record
         $feature = Feature::create([
-            'sort_order' => $request->input('sort_order')
+            'sort_order' => $request->input('sort_order'),
         ]);
 
         // Create translations for all languages
@@ -85,12 +85,11 @@ class FeatureController extends AdminController
     public function show(Feature $feature): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Get all translations for this feature
         $translations = $feature->getNames();
 
-        return view('admin.feature.show', compact('feature', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.feature.show', compact('feature', 'languages', 'translations'));
     }
 
     /**
@@ -99,12 +98,11 @@ class FeatureController extends AdminController
     public function edit(Feature $feature): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Get all translations for this feature
         $translations = $feature->getNames();
 
-        return view('admin.feature.form', compact('feature', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.feature.form', compact('feature', 'languages', 'translations'));
     }
 
     /**
@@ -115,7 +113,7 @@ class FeatureController extends AdminController
         $nameData = $request->input('name', []);
 
         $feature->update([
-            'sort_order' => $request->input('sort_order')
+            'sort_order' => $request->input('sort_order'),
         ]);
 
         $feature->translations()->delete();
@@ -137,7 +135,7 @@ class FeatureController extends AdminController
     public function destroy(Feature $feature): RedirectResponse
     {
         $feature->delete();
-        
+
         return redirect()->route('admin.feature.index')->with('success', __('admin.deleted_successfully'));
     }
 }

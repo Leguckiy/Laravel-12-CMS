@@ -2,44 +2,41 @@
 
 namespace App\Http\View\Composers;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
 use App\Services\AdminMenuService;
+use App\Support\AdminContext;
+use Illuminate\View\View;
 
 class AdminComposer
 {
-    protected $menuService;
+    public function __construct(
+        protected AdminMenuService $menuService,
+        protected AdminContext $context,
+    ) {}
 
-    public function __construct(AdminMenuService $menuService)
-    {
-        $this->menuService = $menuService;
-    }
-
-    /**
-     * Bind data to the view.
-     */
     public function compose(View $view): void
     {
         $request = request();
-        $controller = $request->route()->getController();
-        
-        if ($controller) {
-            if (method_exists($controller, 'getBreadcrumbs')) {
+        $breadcrumbs = [];
+        $title = '';
+
+        if ($route = $request->route()) {
+            $controller = $route->getController();
+
+            if ($controller && method_exists($controller, 'getBreadcrumbs')) {
                 $breadcrumbs = $controller->getBreadcrumbs();
             }
-            
-            if (method_exists($controller, 'getTitle')) {
+
+            if ($controller && method_exists($controller, 'getTitle')) {
                 $title = $controller->getTitle();
             }
         }
 
-        $adminUser = Auth::guard('admin')->user();
-
         $view->with([
-            'adminUser' => $adminUser,
+            'adminUser' => $this->context->user,
+            'adminLanguage' => $this->context->language,
             'menuItems' => $this->menuService->getMenuItems(),
-            'breadcrumbs' => $breadcrumbs ?? [],
-            'title' => $title ?? ''
+            'breadcrumbs' => $breadcrumbs,
+            'title' => $title,
         ]);
     }
 }

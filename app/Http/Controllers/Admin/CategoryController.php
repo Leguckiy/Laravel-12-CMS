@@ -31,7 +31,7 @@ class CategoryController extends AdminController
      */
     public function index(): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $categories = Category::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
@@ -39,6 +39,7 @@ class CategoryController extends AdminController
 
         $categories->getCollection()->transform(function ($category) {
             $category->name = $category->translations->first()?->name ?? '';
+
             return $category;
         });
 
@@ -51,8 +52,7 @@ class CategoryController extends AdminController
     public function create(): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
-        
+
         // Initialize empty arrays for all multilingual fields
         $translations = [];
         $translations['name'] = [];
@@ -60,10 +60,9 @@ class CategoryController extends AdminController
         $translations['description'] = [];
         $translations['meta_title'] = [];
         $translations['meta_description'] = [];
-        
+
         return view('admin.category.form', compact(
-            'languages', 
-            'currentLanguageId',
+            'languages',
             'translations'
         ));
     }
@@ -124,7 +123,6 @@ class CategoryController extends AdminController
         $category->load('translations');
 
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
         $translations = [];
 
         $fields = [
@@ -132,7 +130,7 @@ class CategoryController extends AdminController
             'slug',
             'description',
             'meta_title',
-            'meta_description'
+            'meta_description',
         ];
 
         foreach ($fields as $field) {
@@ -142,7 +140,6 @@ class CategoryController extends AdminController
         return [
             'category' => $category,
             'languages' => $languages,
-            'currentLanguageId' => $currentLanguageId,
             'translations' => $translations,
         ];
     }
@@ -160,13 +157,13 @@ class CategoryController extends AdminController
 
         // Delete all existing translations and create new ones
         $category->translations()->delete();
-        
+
         $nameData = $request->input('name', []);
         $slugData = $request->input('slug', []);
         $descriptionData = $request->input('description', []);
         $metaTitleData = $request->input('meta_title', []);
         $metaDescriptionData = $request->input('meta_description', []);
-        
+
         // Create translations for all languages
         foreach ($nameData as $languageId => $name) {
             CategoryLang::create([
@@ -189,7 +186,7 @@ class CategoryController extends AdminController
     public function destroy(Category $category): RedirectResponse
     {
         $category->delete();
-        
+
         return redirect()->route('admin.category.index')->with('success', __('admin.deleted_successfully'));
     }
 
@@ -198,9 +195,9 @@ class CategoryController extends AdminController
      */
     private function handleImageUpload(CategoryRequest $request, ?Category $category = null): ?string
     {
-        $uploader = new AdminImageUploader();
+        $uploader = new AdminImageUploader;
         $currentFilename = $category?->image;
-        $currentPath = $category?->image_path ?? ($currentFilename ? Category::IMAGE_DIRECTORY . '/' . $currentFilename : null);
+        $currentPath = $category?->image_path ?? ($currentFilename ? Category::IMAGE_DIRECTORY.'/'.$currentFilename : null);
 
         if ($request->boolean('image_remove')) {
             $this->deleteCategoryImage($uploader, $currentPath);
@@ -208,13 +205,13 @@ class CategoryController extends AdminController
             $currentPath = null;
         }
 
-        if (!$request->hasFile('image')) {
+        if (! $request->hasFile('image')) {
             return $currentFilename;
         }
 
         $this->deleteCategoryImage($uploader, $currentPath);
 
-        $slug = data_get($request->input('slug', []), $this->getDefaultLanguageId())
+        $slug = data_get($request->input('slug', []), $this->context->language->id)
             ?? collect($request->input('slug', []))->first()
             ?? 'category';
 

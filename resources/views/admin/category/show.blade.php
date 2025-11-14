@@ -14,7 +14,7 @@
                     :label="__('admin.category_name')"
                     :value="$translations['name'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="category_name"
                 />
             </div>
@@ -23,7 +23,7 @@
                     :label="__('admin.friendly_url')"
                     :value="$translations['slug'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="slug"
                 />
             </div>
@@ -32,7 +32,7 @@
                     :label="__('admin.description')"
                     :value="$translations['description'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="description"
                     :allowHtml="true"
                 />
@@ -42,7 +42,7 @@
                     :label="__('admin.meta_tag_title')"
                     :value="$translations['meta_title'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="meta_title"
                 />
             </div>
@@ -51,7 +51,7 @@
                     :label="__('admin.meta_tag_description')"
                     :value="$translations['meta_description'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="meta_description"
                 />
             </div>

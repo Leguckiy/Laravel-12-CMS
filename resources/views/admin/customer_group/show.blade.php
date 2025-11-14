@@ -14,7 +14,7 @@
                     :label="__('admin.customer_group_name')"
                     :value="$translations['name'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="customer_group_name"
                 />
             </div>
@@ -23,7 +23,7 @@
                     :label="__('admin.description')"
                     :value="$translations['description'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="description"
                     :allowHtml="true"
                 />

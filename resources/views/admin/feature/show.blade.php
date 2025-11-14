@@ -14,7 +14,7 @@
                     :label="__('admin.feature_name')"
                     :value="$translations ?? ''"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="feature_name"
                 />
             </div>

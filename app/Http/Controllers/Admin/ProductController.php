@@ -34,7 +34,7 @@ class ProductController extends AdminController
      */
     public function index(): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $products = Product::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
@@ -42,6 +42,7 @@ class ProductController extends AdminController
 
         $products->getCollection()->transform(function ($product) {
             $product->name = $product->translations->first()?->name ?? '';
+
             return $product;
         });
 
@@ -109,7 +110,7 @@ class ProductController extends AdminController
         ]);
 
         $data = $this->prepareProductFormData($product);
-        $currentLanguageId = $data['currentLanguageId'];
+        $currentLanguageId = $this->context->language->id;
 
         $stockStatusName = $product->stockStatus?->translations
             ->firstWhere('language_id', $currentLanguageId)?->name
@@ -211,22 +212,18 @@ class ProductController extends AdminController
     public function destroy(Product $product): RedirectResponse
     {
         $product->delete();
-        
+
         return redirect()->route('admin.product.index')->with('success', __('admin.deleted_successfully'));
     }
 
     /**
      * Handle product image upload, optionally removing the previous image and resizing the new one.
-     * 
-     * @param ProductRequest $request
-     * @param Product|null $product
-     * @return string|null
      */
     private function handleImageUpload(ProductRequest $request, ?Product $product = null): ?string
     {
-        $uploader = new AdminImageUploader();
+        $uploader = new AdminImageUploader;
         $currentFilename = $product?->image;
-        $currentPath = $product?->image_path ?? ($currentFilename ? Product::IMAGE_DIRECTORY . '/' . $currentFilename : null);
+        $currentPath = $product?->image_path ?? ($currentFilename ? Product::IMAGE_DIRECTORY.'/'.$currentFilename : null);
 
         if ($request->boolean('image_remove')) {
             $this->deleteProductImage($uploader, $currentPath);
@@ -234,13 +231,13 @@ class ProductController extends AdminController
             $currentPath = null;
         }
 
-        if (!$request->hasFile('image')) {
+        if (! $request->hasFile('image')) {
             return $currentFilename;
         }
 
         $this->deleteProductImage($uploader, $currentPath);
 
-        $slug = data_get($request->input('slug', []), $this->getDefaultLanguageId())
+        $slug = data_get($request->input('slug', []), $this->context->language->id)
             ?? collect($request->input('slug', []))->first()
             ?? 'product';
 
@@ -255,10 +252,6 @@ class ProductController extends AdminController
 
     /**
      * Save product categories by syncing them.
-     * 
-     * @param Product $product
-     * @param array $categories
-     * @return void
      */
     private function saveCategories(Product $product, array $categories): void
     {
@@ -272,10 +265,6 @@ class ProductController extends AdminController
 
     /**
      * Save product features by detaching all existing and attaching new ones.
-     * 
-     * @param Product $product
-     * @param array $features
-     * @return void
      */
     private function saveFeatures(Product $product, array $features): void
     {
@@ -294,14 +283,11 @@ class ProductController extends AdminController
 
     /**
      * Prepare form data for product create/edit forms.
-     * 
-     * @param Product|null $product
-     * @return array
      */
     private function prepareProductFormData(?Product $product = null): array
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $stockStatusOptions = $this->getStockStatusOptions($currentLanguageId);
 
@@ -349,7 +335,6 @@ class ProductController extends AdminController
         return compact(
             'product',
             'languages',
-            'currentLanguageId',
             'translations',
             'stockStatusOptions',
             'categories',
@@ -361,9 +346,6 @@ class ProductController extends AdminController
 
     /**
      * Get stock status options formatted for select field.
-     * 
-     * @param int $currentLanguageId
-     * @return array
      */
     private function getStockStatusOptions(int $currentLanguageId): array
     {
@@ -381,9 +363,6 @@ class ProductController extends AdminController
 
     /**
      * Get feature options with their values formatted for form.
-     * 
-     * @param int $currentLanguageId
-     * @return array
      */
     private function getFeatureOptions(int $currentLanguageId): array
     {
@@ -414,10 +393,6 @@ class ProductController extends AdminController
 
     /**
      * Delete product image from storage.
-     * 
-     * @param AdminImageUploader $uploader
-     * @param string|null $path
-     * @return void
      */
     private function deleteProductImage(AdminImageUploader $uploader, ?string $path): void
     {

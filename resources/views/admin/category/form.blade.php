@@ -26,7 +26,7 @@
                     :placeholder="__('admin.category_name')" 
                     :value="$translations['name'] ?? []" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :required="true"
                 />
                 <x-admin.input-field-multilang
@@ -36,7 +36,7 @@
                     :placeholder="__('admin.friendly_url')" 
                     :value="$translations['slug'] ?? []" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :required="true"
                 />
                 <x-admin.textarea-field-multilang
@@ -45,7 +45,7 @@
                     :placeholder="__('admin.description')"
                     :value="$translations['description'] ?? []" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :autoloadRte="true"
                     :rteHeight="320"
                 />
@@ -56,7 +56,7 @@
                     :placeholder="__('admin.meta_tag_title')"
                     :value="$translations['meta_title'] ?? []" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :required="true"
                 />
                 <x-admin.textarea-field-multilang
@@ -66,7 +66,7 @@
                     rows="3"
                     :value="$translations['meta_description'] ?? []" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :required="false"
                 />
                 <x-admin.image-upload-field

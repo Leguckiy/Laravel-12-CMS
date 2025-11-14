@@ -33,7 +33,7 @@
                     :placeholder="__('admin.feature_value_name')"
                     :value="$translations ?? ''" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :required="true"
                 />
 

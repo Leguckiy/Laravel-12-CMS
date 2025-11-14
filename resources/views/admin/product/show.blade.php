@@ -14,7 +14,7 @@
                     :label="__('admin.product_name')"
                     :value="$translations['name'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="product_name"
                 />
             </div>
@@ -23,7 +23,7 @@
                     :label="__('admin.friendly_url')"
                     :value="$translations['slug'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="slug"
                 />
             </div>
@@ -32,7 +32,7 @@
                     :label="__('admin.description')"
                     :value="$translations['description'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="description"
                     :allowHtml="true"
                 />
@@ -42,7 +42,7 @@
                     :label="__('admin.meta_tag_title')"
                     :value="$translations['meta_title'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="meta_title"
                 />
             </div>
@@ -51,7 +51,7 @@
                     :label="__('admin.meta_tag_description')"
                     :value="$translations['meta_description'] ?? []"
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     fieldName="meta_description"
                 />
             </div>
@@ -125,7 +125,7 @@
                 </div>
                 <div class="col-sm-9">
                     @if ($product->image_url)
-                        <img src="{{ $product->image_url }}" alt="{{ $translations['name'][$currentLanguageId] ?? '' }}" class="img-fluid rounded border" style="max-width: 400px; max-height: 400px;">
+                        <img src="{{ $product->image_url }}" alt="{{ $translations['name'][$adminLanguage->id] ?? '' }}" class="img-fluid rounded border" style="max-width: 400px; max-height: 400px;">
                     @else
                         <span class="text-muted">{{ __('admin.image_placeholder') }}</span>
                     @endif

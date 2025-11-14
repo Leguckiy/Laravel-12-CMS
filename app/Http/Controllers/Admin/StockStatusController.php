@@ -29,7 +29,7 @@ class StockStatusController extends AdminController
      */
     public function index(): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $stockStatuses = StockStatus::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
@@ -37,6 +37,7 @@ class StockStatusController extends AdminController
 
         $stockStatuses->getCollection()->transform(function ($status) {
             $status->name = $status->translations->first()?->name ?? '';
+
             return $status;
         });
 
@@ -49,9 +50,8 @@ class StockStatusController extends AdminController
     public function create(): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
-        
-        return view('admin.stock_status.form', compact('languages', 'currentLanguageId'));
+
+        return view('admin.stock_status.form', compact('languages'));
     }
 
     /**
@@ -81,12 +81,11 @@ class StockStatusController extends AdminController
     public function show(StockStatus $stockStatus): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Get all translations for this stock status
         $translations = $stockStatus->getNames();
 
-        return view('admin.stock_status.show', compact('stockStatus', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.stock_status.show', compact('stockStatus', 'languages', 'translations'));
     }
 
     /**
@@ -95,12 +94,11 @@ class StockStatusController extends AdminController
     public function edit(StockStatus $stockStatus): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Get all translations for this stock status
         $translations = $stockStatus->getNames();
 
-        return view('admin.stock_status.form', compact('stockStatus', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.stock_status.form', compact('stockStatus', 'languages', 'translations'));
     }
 
     /**
@@ -138,7 +136,7 @@ class StockStatusController extends AdminController
         }
 
         $stockStatus->delete();
-        
+
         return redirect()
             ->route('admin.stock_status.index')
             ->with('success', __('admin.deleted_successfully'));

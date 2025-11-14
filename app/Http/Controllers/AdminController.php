@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Language;
+use App\Support\AdminContext;
 
 class AdminController extends Controller
 {
@@ -10,13 +11,20 @@ class AdminController extends Controller
 
     protected string $title;
 
+    protected AdminContext $context;
+
+    public function __construct(AdminContext $context)
+    {
+        $this->context = $context;
+    }
+
     public function getBreadcrumbs(): array
     {
         return array_map(function ($item) {
             $shouldTranslate = $item['translate'] ?? true;
 
             if ($shouldTranslate && isset($item['title'])) {
-            $item['title'] = __("admin.{$item['title']}");
+                $item['title'] = __("admin.{$item['title']}");
             }
 
             return $item;
@@ -29,14 +37,6 @@ class AdminController extends Controller
     }
 
     /**
-     * Get current user's language_id from request attributes.
-     */
-    protected function getCurrentLanguageId(): ?int
-    {
-        return request()->attributes->get('language_id');
-    }
-
-    /**
      * Get list of all active languages.
      */
     protected function getLanguages()
@@ -45,15 +45,5 @@ class AdminController extends Controller
             ->orderBy('sort_order')
             ->orderBy('id')
             ->get();
-    }
-
-    /**
-     * Get default language id based on app locale.
-     */
-    protected function getDefaultLanguageId(): ?int
-    {
-        return Language::where('status', true)
-            ->where('code', config('app.locale'))
-            ->value('id');
     }
 }

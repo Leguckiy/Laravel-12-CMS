@@ -26,7 +26,7 @@
                     :placeholder="__('admin.customer_group_name')" 
                     :value="$translations['name'] ?? ''" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :required="true"
                 />
                 <x-admin.input-field-multilang
@@ -36,7 +36,7 @@
                     :placeholder="__('admin.description')" 
                     :value="$translations['description'] ?? ''" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                 />
                 <x-admin.switch-field name="approval" :label="__('admin.customer_group_approval')" :value="$customerGroup->approval ?? false"/>
                 <x-admin.input-field type="number" name="sort_order" :label="__('admin.sort_order')" :value="$customerGroup->sort_order ?? '1'"/>

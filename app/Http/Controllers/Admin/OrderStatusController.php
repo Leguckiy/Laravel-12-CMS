@@ -29,7 +29,7 @@ class OrderStatusController extends AdminController
      */
     public function index(): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $orderStatuses = OrderStatus::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
@@ -37,6 +37,7 @@ class OrderStatusController extends AdminController
 
         $orderStatuses->getCollection()->transform(function ($status) {
             $status->name = $status->translations->first()?->name ?? '';
+
             return $status;
         });
 
@@ -49,9 +50,8 @@ class OrderStatusController extends AdminController
     public function create(): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
-        
-        return view('admin.order_status.form', compact('languages', 'currentLanguageId'));
+
+        return view('admin.order_status.form', compact('languages'));
     }
 
     /**
@@ -81,12 +81,11 @@ class OrderStatusController extends AdminController
     public function show(OrderStatus $orderStatus): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Get all translations for this stock status
         $translations = $orderStatus->getNames();
 
-        return view('admin.order_status.show', compact('orderStatus', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.order_status.show', compact('orderStatus', 'languages', 'translations'));
     }
 
     /**
@@ -95,12 +94,11 @@ class OrderStatusController extends AdminController
     public function edit(OrderStatus $orderStatus): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Get all translations for this stock status
         $translations = $orderStatus->getNames();
 
-        return view('admin.order_status.form', compact('orderStatus', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.order_status.form', compact('orderStatus', 'languages', 'translations'));
     }
 
     /**
@@ -129,7 +127,7 @@ class OrderStatusController extends AdminController
     public function destroy(OrderStatus $orderStatus): RedirectResponse
     {
         $orderStatus->delete();
-        
+
         return redirect()->route('admin.order_status.index')->with('success', __('admin.deleted_successfully'));
     }
 }

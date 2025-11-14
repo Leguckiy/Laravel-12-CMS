@@ -2,44 +2,55 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Language;
+use App\Support\AdminContext;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdminAuthenticate
 {
+    public function __construct(private AdminContext $context) {}
+
     /**
-     * Handle an incoming request.
-     *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::guard('admin')->check()) {
+        if (! Auth::guard('admin')->check()) {
             return redirect()->route('admin.login');
         }
 
-        // Set user's language preference
         $user = Auth::guard('admin')->user();
-        
-        if ($user?->language?->code) {
-            $locale = $user->language->code;
-            // Check if locale directory exists, otherwise use config default
-            $localePath = lang_path($locale);
-            if (is_dir($localePath)) {
-                App::setLocale($locale);
-            } else {
-                App::setLocale(config('app.locale', 'en'));
-            }
-        } else {
-            // If user has no language, use default from config
-            App::setLocale(config('app.locale', 'en'));
+
+        if ($user) {
+            $user->loadMissing('language');
         }
 
-        // Make language_id available for controllers
-        $request->attributes->set('language_id', $user?->language_id);
+        $locale = $user?->language?->code ?? config('app.locale', 'en');
+        $localePath = lang_path($locale);
+
+        if (! is_dir($localePath)) {
+            $locale = config('app.locale', 'en');
+        }
+
+        App::setLocale($locale);
+
+        $language = $user?->language;
+
+        if (! $language) {
+            $language = Language::query()
+                ->where('code', $locale)
+                ->first();
+        }
+
+        $this->context
+            ->setUser($user)
+            ->setLanguage($language);
+
+        $request->attributes->set('language_id', $language->id);
 
         return $next($request);
     }

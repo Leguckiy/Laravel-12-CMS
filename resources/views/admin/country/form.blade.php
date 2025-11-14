@@ -26,7 +26,7 @@
                     :placeholder="__('admin.country_name')" 
                     :value="$translations ?? ''" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :required="true"
                 />
                 <x-admin.input-field type="text" name="iso_code_2" :label="__('admin.iso_code_2')" :placeholder="__('admin.iso_code_2')" :value="$country->iso_code_2 ?? ''" :required="true"/>

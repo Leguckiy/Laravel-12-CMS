@@ -26,7 +26,7 @@
                     :placeholder="__('admin.feature_name')" 
                     :value="$translations ?? ''" 
                     :languages="$languages"
-                    :currentLanguageId="$currentLanguageId"
+                    :currentLanguageId="$adminLanguage->id"
                     :required="true"
                 />
                 <x-admin.input-field type="number" name="sort_order" :label="__('admin.sort_order')" :value="$feature->sort_order ?? '0'"/>

@@ -29,7 +29,7 @@ class CustomerController extends AdminController
      */
     public function index(): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId() ?? $this->getDefaultLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $customers = Customer::with('customerGroup.translations')->paginate(15);
 
@@ -47,7 +47,7 @@ class CustomerController extends AdminController
      */
     public function create(): View
     {
-        $customerGroupsOptions = $this->getCustomerGroupOptions($this->getCurrentLanguageId());
+        $customerGroupsOptions = $this->getCustomerGroupOptions($this->context->language->id);
 
         return view('admin.customer.form', compact('customerGroupsOptions'));
     }
@@ -72,7 +72,7 @@ class CustomerController extends AdminController
      */
     public function show(Customer $customer): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId() ?? $this->getDefaultLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $customer->load('customerGroup.translations');
         $this->setCustomerGroupTranslation($customer, $currentLanguageId);
@@ -85,7 +85,7 @@ class CustomerController extends AdminController
      */
     public function edit(Customer $customer): View
     {
-        $customerGroupsOptions = $this->getCustomerGroupOptions($this->getCurrentLanguageId());
+        $customerGroupsOptions = $this->getCustomerGroupOptions($this->context->language->id);
 
         return view('admin.customer.form', compact('customer', 'customerGroupsOptions'));
     }
@@ -125,7 +125,7 @@ class CustomerController extends AdminController
      */
     private function getCustomerGroupOptions(?int $languageId): array
     {
-        $languageId ??= $this->getDefaultLanguageId();
+        $languageId ??= $this->context->language->id;
 
         return CustomerGroup::with('translations')
             ->get()
@@ -152,7 +152,7 @@ class CustomerController extends AdminController
             return;
         }
 
-        $languageId ??= $this->getDefaultLanguageId();
+        $languageId ??= $this->context->language->id;
 
         $translation = $customer->customerGroup->translations
             ->firstWhere('language_id', $languageId)

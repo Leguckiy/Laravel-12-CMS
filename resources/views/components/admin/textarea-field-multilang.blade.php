@@ -6,7 +6,7 @@
     'value' => [],
     'required' => false,
     'languages',
-    'currentLanguageId' => null,
+    'currentLanguageId',
     'autoloadRte' => false,
     'rteHeight' => null,
 ])
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-sm-10">
                 @foreach($languages as $index => $language)
-                    <div class="input-group multilang-group {{ $language->id === ($currentLanguageId ?? $languages->first()->id) ? '' : 'd-none' }}" data-lang-id="{{ $language->id }}" data-field-name="{{ $name }}">
+                    <div class="input-group multilang-group {{ $language->id === $currentLanguageId ? '' : 'd-none' }}" data-lang-id="{{ $language->id }}" data-field-name="{{ $name }}">
                         <textarea
                             name="{{ $name }}[{{ $language->id }}]" 
                             placeholder="{{ $placeholder }}" 
@@ -41,7 +41,7 @@
                 <div class="input-group mb-2">
                     <select class="form-select multilang-selector" data-field-name="{{ $name }}">
                         @foreach($languages as $language)
-                            <option value="{{ $language->id }}" {{ $language->id === ($currentLanguageId ?? $languages->first()->id) ? 'selected' : '' }}>
+                            <option value="{{ $language->id }}" {{ $language->id === $currentLanguageId ? 'selected' : '' }}>
                                 {{ strtoupper($language->code) }}
                             </option>
                         @endforeach
@@ -51,4 +51,3 @@
         </div>
     </div>
 </div>
-

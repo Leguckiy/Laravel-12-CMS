@@ -29,7 +29,7 @@ class CustomerGroupController extends AdminController
      */
     public function index(): View
     {
-        $currentLanguageId = $this->getCurrentLanguageId();
+        $currentLanguageId = $this->context->language->id;
 
         $customerGroups = CustomerGroup::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
@@ -50,7 +50,6 @@ class CustomerGroupController extends AdminController
     public function create(): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         // Initialize empty arrays for all multilingual fields
         $translations = [
@@ -58,7 +57,7 @@ class CustomerGroupController extends AdminController
             'description' => [],
         ];
 
-        return view('admin.customer_group.form', compact('languages', 'currentLanguageId', 'translations'));
+        return view('admin.customer_group.form', compact('languages', 'translations'));
     }
 
     /**
@@ -91,14 +90,13 @@ class CustomerGroupController extends AdminController
     public function show(CustomerGroup $customerGroup): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         $translations = [
             'name' => $customerGroup->translations()->pluck('name', 'language_id')->toArray(),
             'description' => $customerGroup->translations()->pluck('description', 'language_id')->toArray(),
         ];
 
-        return view('admin.customer_group.show', compact('customerGroup', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.customer_group.show', compact('customerGroup', 'languages', 'translations'));
     }
 
     /**
@@ -107,14 +105,13 @@ class CustomerGroupController extends AdminController
     public function edit(CustomerGroup $customerGroup): View
     {
         $languages = $this->getLanguages();
-        $currentLanguageId = $this->getCurrentLanguageId();
 
         $translations = [
             'name' => $customerGroup->translations()->pluck('name', 'language_id')->toArray(),
             'description' => $customerGroup->translations()->pluck('description', 'language_id')->toArray(),
         ];
 
-        return view('admin.customer_group.form', compact('customerGroup', 'languages', 'translations', 'currentLanguageId'));
+        return view('admin.customer_group.form', compact('customerGroup', 'languages', 'translations'));
     }
 
     /**
