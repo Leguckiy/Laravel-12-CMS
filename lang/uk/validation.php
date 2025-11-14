@@ -10,7 +10,7 @@ return [
     'sort_order.integer' => 'Порядок сортування повинен бути числом.',
     'sort_order.min' => 'Порядок сортування повинен бути не менше 0.',
     'status.boolean' => 'Статус повинен бути логічним значенням.',
-    
+
     // User validation
     'user_group_id.exists' => 'Вибрана група користувача не існує.',
     'language_id.exists' => 'Вибрана мова не існує.',
@@ -25,14 +25,20 @@ return [
     'email.required' => 'Email є обов\'язковим.',
     'email.email' => 'Будь ласка, введіть валідна адресу email.',
     'email.unique' => 'Цей email вже зареєстрований.',
-    
+
     // User Group validation
     'user_group_name.required' => 'Назва групи користувача є обов\'язковою.',
     'name.required' => 'Поле є обов\'язковим.',
     'name.string' => 'Поле має бути рядком.',
     'name.max' => 'Поле не повинно перевищувати :max символів.',
     'permissions.array' => 'Дозволи мають бути масивом.',
-    
+
+    // Customer group validation
+    'customer_group_name.required' => 'Назва групи клієнтів є обов\'язковою.',
+    'customer_group_name.string' => 'Назва групи клієнтів має бути рядком.',
+    'customer_group_name.max' => 'Назва групи клієнтів не повинна перевищувати :max символів.',
+    'customer_group_name.unique' => 'Ця назва групи клієнтів вже існує для цієї мови.',
+
     // Currency validation
     'currency_title.required' => 'Назва валюти є обов\'язковою.',
     'currency_code.required' => 'Код валюти є обов\'язковим.',
@@ -44,7 +50,7 @@ return [
     'decimal_place.min' => 'Кількість знаків після коми повинна бути не менше 0.',
     'decimal_place.max' => 'Кількість знаків після коми не повинна перевищувати 8.',
     'value.numeric' => 'Значення має бути числом.',
-    
+
     // Stock Status validation
     'stock_status_name.required' => 'Назва статусу наявності є обов\'язковою.',
     'stock_status_name.string' => 'Назва статусу наявності має бути рядком.',
@@ -94,10 +100,10 @@ return [
     'feature_value.required' => 'Назва характеристики є обов\'язковою.',
     'feature_value.string' => 'Назва характеристики має бути рядком.',
     'feature_value.max' => 'Назва характеристики не повинна перевищувати :max символів.',
-    
+
     // Product feature validation
     'duplicate_feature_combination' => 'Комбінація :attribute та значення вже використовується.',
-    
+
     // Standard Laravel validation messages
     'required' => 'Поле :attribute є обов\'язковим.',
     'string' => 'Поле :attribute має бути рядком.',

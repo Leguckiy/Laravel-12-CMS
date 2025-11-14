@@ -1,18 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\CurrencyController;
-use App\Http\Controllers\Admin\LanguageController;
-use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\CurrencyController;
+use App\Http\Controllers\Admin\CustomerGroupController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\FeatureValueController;
+use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\OrderStatusController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\StockStatusController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserGroupController;
+use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [LoginController::class, 'showLoginForm'])->name('admin.login');
@@ -45,6 +46,7 @@ Route::prefix('admin')->group(function () {
                 ->names('admin.feature_value')
                 ->parameters(['value' => 'feature_value']);
             Route::resource('product', ProductController::class)->names('admin.product');
+            Route::resource('customer_group', CustomerGroupController::class)->names('admin.customer_group');
         });
 
         // Fallback for unknown admin routes (404 within admin area)

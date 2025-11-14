@@ -58,12 +58,12 @@ return [
     'no_items' => 'Немає елементів',
     'pre_defined_value' => 'Попередньо визначено',
     'select_value' => 'Виберіть значення',
-    
+
     // Messages
     'created_successfully' => 'Успішно створено',
     'updated_successfully' => 'Успішно оновлено',
     'deleted_successfully' => 'Успішно видалено',
-    
+
     // Users
     'users' => 'Користувачі',
     'user' => 'Користувач',
@@ -100,7 +100,7 @@ return [
     'symbol_right' => 'Символ праворуч',
     'decimal_place' => 'Кількість знаків після коми',
     'currency_details' => 'Деталі валюти',
-    
+
     // Languages
     'languages' => 'Мови',
     'language' => 'Мова',
@@ -109,7 +109,7 @@ return [
     'edit_language' => 'Редагувати мову',
     'language_name' => 'Назва мови',
     'language_details' => 'Деталі мови',
-    
+
     // User Groups
     'user_groups' => 'Групи користувачів',
     'user_group' => 'Група користувача',
@@ -120,7 +120,7 @@ return [
     'permissions' => 'Дозволи',
     'access' => 'Доступ',
     'modify' => 'Редагування',
-    
+
     // Login
     'login' => 'Вхід',
     'username' => "Ім'я користувача",
@@ -202,6 +202,16 @@ return [
     'edit_feature_value' => 'редагувати значення характеристики',
     'feature_value_name' => 'Назва значення характеристики',
     'feature_value_details' => 'Детылі значення характеристики',
+
+    // Customer group
+    'customer_group' => 'Група клієнтів',
+    'customer_groups' => 'Групи клієнтів',
+    'customer_group_list' => 'Список груп клієнтів',
+    'add_customer_group' => 'Додати групу клієнта',
+    'edit_customer_group' => 'Редагувати групу клієнта',
+    'customer_group_name' => 'Назва групи клієнта',
+    'customer_group_approval' => 'Підтвердження нових клієнтів',
+    'customer_group_details' => 'Деталі групи клієнта',
 
     // Menu
     'navigation' => 'Навігація',

@@ -7,7 +7,7 @@ return [
             'name' => 'menu_dashboard',
             'icon' => 'fas fa-home',
             'route' => 'admin.dashboard',
-            'children' => []
+            'children' => [],
         ],
         [
             'id' => 'menu-catalog',
@@ -18,19 +18,19 @@ return [
                 [
                     'name' => 'menu_catalog_categories',
                     'route' => 'admin.category.index',
-                    'children' => []
+                    'children' => [],
                 ],
                 [
                     'name' => 'menu_catalog_products',
                     'route' => 'admin.product.index',
-                    'children' => []
+                    'children' => [],
                 ],
                 [
                     'name' => 'menu_catalog_features',
                     'route' => 'admin.feature.index',
-                    'children' => []
-                ]
-            ]
+                    'children' => [],
+                ],
+            ],
         ],
         [
             'id' => 'menu-sale',
@@ -41,9 +41,9 @@ return [
                 [
                     'name' => 'menu_sales_orders',
                     'route' => '',
-                    'children' => []
-                ]
-            ]
+                    'children' => [],
+                ],
+            ],
         ],
         [
             'id' => 'menu-customer',
@@ -54,14 +54,14 @@ return [
                 [
                     'name' => 'menu_customers_list',
                     'route' => '',
-                    'children' => []
+                    'children' => [],
                 ],
                 [
                     'name' => 'menu_customers_groups',
-                    'route' => '',
-                    'children' => []
-                ]
-            ]
+                    'route' => 'admin.customer_group.index',
+                    'children' => [],
+                ],
+            ],
         ],
         [
             'id' => 'menu-settings',
@@ -72,7 +72,7 @@ return [
                 [
                     'name' => 'menu_settings_general',
                     'route' => '',
-                    'children' => []
+                    'children' => [],
                 ],
                 [
                     'name' => 'menu_settings_users',
@@ -81,14 +81,14 @@ return [
                         [
                             'name' => 'users',
                             'route' => 'admin.user.index',
-                            'children' => []
+                            'children' => [],
                         ],
                         [
                             'name' => 'user_groups',
                             'route' => 'admin.user_group.index',
-                            'children' => []
-                        ]
-                    ]
+                            'children' => [],
+                        ],
+                    ],
                 ],
                 [
                     'name' => 'menu_settings_localisation',
@@ -97,32 +97,32 @@ return [
                         [
                             'name' => 'languages',
                             'route' => 'admin.language.index',
-                            'children' => []
+                            'children' => [],
                         ],
                         [
                             'name' => 'menu_settings_localisation_currencies',
                             'route' => 'admin.currency.index',
-                            'children' => []
+                            'children' => [],
                         ],
                         [
                             'name' => 'menu_settings_localisation_stock_statuses',
                             'route' => 'admin.stock_status.index',
-                            'children' => []
+                            'children' => [],
                         ],
                         [
                             'name' => 'menu_settings_localisation_order_statuses',
                             'route' => 'admin.order_status.index',
-                            'children' => []
+                            'children' => [],
                         ],
                         [
                             'name' => 'menu_settings_localisation_countries',
                             'route' => 'admin.country.index',
-                            'children' => []
-                        ]
-                    ]
-                ]
-            ]
-        ]
+                            'children' => [],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
 
     'permissions_mapping' => [
@@ -136,6 +136,7 @@ return [
         'category' => 'catalog/category',
         'product' => 'catalog/product',
         'feature' => 'catalog/features',
-        'feature_value' => 'catalog/feature_values',
-    ]
+        'feature_value' => 'catalog/feature_value',
+        'customer_group' => 'customer/customer_group',
+    ],
 ];

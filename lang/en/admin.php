@@ -63,7 +63,7 @@ return [
     'created_successfully' => 'Created successfully',
     'updated_successfully' => 'Updated successfully',
     'deleted_successfully' => 'Deleted successfully',
-    
+
     // Users
     'users' => 'Users',
     'user' => 'User',
@@ -100,7 +100,7 @@ return [
     'symbol_right' => 'Symbol Right',
     'decimal_place' => 'Decimal Place',
     'currency_details' => 'Currency details',
-    
+
     // Languages
     'languages' => 'Languages',
     'language' => 'Language',
@@ -109,7 +109,7 @@ return [
     'edit_language' => 'Edit Language',
     'language_name' => 'Language name',
     'language_details' => 'Language details',
-    
+
     // User Groups
     'user_groups' => 'User groups',
     'user_group' => 'User group',
@@ -120,7 +120,7 @@ return [
     'permissions' => 'Permissions',
     'access' => 'Access',
     'modify' => 'Modify',
-    
+
     // Login
     'login' => 'Login',
     'username' => 'Username',
@@ -202,6 +202,16 @@ return [
     'edit_feature_value' => 'Edit Feature value',
     'feature_value_name' => 'Feature name value',
     'feature_value_details' => 'Feature value details',
+
+    // Customer group
+    'customer_group' => 'Customer group',
+    'customer_groups' => 'Customer groups',
+    'customer_group_list' => 'Customer group list',
+    'add_customer_group' => 'Add Customer group',
+    'edit_customer_group' => 'Edit Customer group',
+    'customer_group_name' => 'Customer group name',
+    'customer_group_approval' => 'Approve New Customers',
+    'customer_group_details' => 'Customer group details',
 
     // Menu
     'navigation' => 'Navigation',
