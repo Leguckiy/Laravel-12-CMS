@@ -53,7 +53,7 @@ return [
             'children' => [
                 [
                     'name' => 'menu_customers_list',
-                    'route' => '',
+                    'route' => 'admin.customer.index',
                     'children' => [],
                 ],
                 [
@@ -137,6 +137,7 @@ return [
         'product' => 'catalog/product',
         'feature' => 'catalog/features',
         'feature_value' => 'catalog/feature_value',
+        'customer' => 'customer/customer',
         'customer_group' => 'customer/customer_group',
     ],
 ];

@@ -149,6 +149,14 @@ class CustomerGroupController extends AdminController
      */
     public function destroy(CustomerGroup $customerGroup): RedirectResponse
     {
+        $customersCount = $customerGroup->customers()->count();
+
+        if ($customersCount > 0) {
+            return redirect()
+                ->route('admin.customer_group.index')
+                ->with('error', __('admin.customer_group_cannot_delete', ['count' => $customersCount]));
+        }
+
         $customerGroup->delete();
 
         return redirect()->route('admin.customer_group.index')->with('success', __('admin.deleted_successfully'));

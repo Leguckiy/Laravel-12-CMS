@@ -33,6 +33,9 @@ return [
     'name.max' => 'Поле не повинно перевищувати :max символів.',
     'permissions.array' => 'Дозволи мають бути масивом.',
 
+    // Customer validation
+    'customer_group_id.exists' => 'Вибрана група клієнта не існує.',
+
     // Customer group validation
     'customer_group_name.required' => 'Назва групи клієнтів є обов\'язковою.',
     'customer_group_name.string' => 'Назва групи клієнтів має бути рядком.',

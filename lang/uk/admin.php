@@ -203,6 +203,15 @@ return [
     'feature_value_name' => 'Назва значення характеристики',
     'feature_value_details' => 'Детылі значення характеристики',
 
+    // Customer
+    'customer' => 'Клієнт',
+    'customers' => 'Клієнти',
+    'customer_list' => 'Список клієнтів',
+    'add_customer' => 'Додати клієнта',
+    'edit_customer' => 'Редагувати клієнта',
+    'telephone' => 'Телефон',
+    'customer_details' => 'Customer details',
+
     // Customer group
     'customer_group' => 'Група клієнтів',
     'customer_groups' => 'Групи клієнтів',
@@ -212,6 +221,7 @@ return [
     'customer_group_name' => 'Назва групи клієнта',
     'customer_group_approval' => 'Підтвердження нових клієнтів',
     'customer_group_details' => 'Деталі групи клієнта',
+    'customer_group_cannot_delete' => 'Неможливо видалити групу клієнтів, бо до неї прив’язано :count клієнтів.',
 
     // Menu
     'navigation' => 'Навігація',

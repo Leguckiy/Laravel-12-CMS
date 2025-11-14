@@ -33,6 +33,9 @@ return [
     'name.max' => 'The field must not exceed :max characters.',
     'permissions.array' => 'Permissions must be an array.',
 
+    // Customer validation
+    'customer_group_id.exists' => 'Selected customer group does not exist.',
+
     // Customer group validation
     'customer_group_name.required' => 'Customer group name is required.',
     'customer_group_name.string' => 'Customer group name must be a string.',

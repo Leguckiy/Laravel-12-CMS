@@ -203,6 +203,15 @@ return [
     'feature_value_name' => 'Feature name value',
     'feature_value_details' => 'Feature value details',
 
+    // Customer
+    'customer' => 'Customer',
+    'customers' => 'Customers',
+    'customer_list' => 'Customer list',
+    'add_customer' => 'Add Customer',
+    'edit_customer' => 'Edit Customer',
+    'telephone' => 'Telephone',
+    'customer_details' => 'Customer details',
+
     // Customer group
     'customer_group' => 'Customer group',
     'customer_groups' => 'Customer groups',
@@ -212,6 +221,7 @@ return [
     'customer_group_name' => 'Customer group name',
     'customer_group_approval' => 'Approve New Customers',
     'customer_group_details' => 'Customer group details',
+    'customer_group_cannot_delete' => 'Cannot delete customer group because it is assigned to :count customer(s).',
 
     // Menu
     'navigation' => 'Navigation',

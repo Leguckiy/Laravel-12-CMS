@@ -42,6 +42,14 @@ class CustomerGroup extends Model
     }
 
     /**
+     * Get the customers for the customer group.
+     */
+    public function customers(): HasMany
+    {
+        return $this->hasMany(Customer::class, 'customer_group_id');
+    }
+
+    /**
      * Get translation for a specific language.
      */
     public function translation(int $languageId): ?CustomerGroupLang
