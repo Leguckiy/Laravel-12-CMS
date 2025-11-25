@@ -2,12 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\Auth;
 use App\Http\View\Composers\AdminComposer;
 use App\Services\AdminMenuService;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View as ViewInstance;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(AdminMenuService::class, function ($app) {
-            return new AdminMenuService();
+            return new AdminMenuService;
         });
     }
 
@@ -26,17 +27,24 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Register admin view composer for all admin views
-        View::composer('admin.*', AdminComposer::class);
+        // Register admin view composer for all admin views except login
+        View::composer('admin.*', function (ViewInstance $view): void {
+            if ($view->name() === 'admin.login') {
+                return;
+            }
+
+            app(AdminComposer::class)->compose($view);
+        });
 
         // Blade ACL directives based on route names and current admin user's group
         $registerAclDirective = function (string $directiveName, string $ability): void {
             Blade::if($directiveName, function (?string $routeName = null) use ($ability): bool {
                 $routeName = $routeName ?: optional(request()->route())->getName();
                 $user = Auth::guard('admin')->user();
-                if (!$routeName || !$user || !$user->userGroup) {
+                if (! $routeName || ! $user || ! $user->userGroup) {
                     return false;
                 }
+
                 return $user->userGroup->hasPermissionForRoute($routeName, $ability);
             });
         };
