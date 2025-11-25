@@ -36,7 +36,7 @@ class OrderStatusController extends AdminController
         }])->paginate(15);
 
         $orderStatuses->getCollection()->transform(function ($status) {
-            $status->name = $status->translations->first()?->name ?? '';
+            $status->name = $this->translation($status->translations)?->name ?? '';
 
             return $status;
         });

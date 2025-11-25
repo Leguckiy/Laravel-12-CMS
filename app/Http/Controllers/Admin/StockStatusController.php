@@ -36,7 +36,7 @@ class StockStatusController extends AdminController
         }])->paginate(15);
 
         $stockStatuses->getCollection()->transform(function ($status) {
-            $status->name = $status->translations->first()?->name ?? '';
+            $status->name = $this->translation($status->translations)?->name ?? '';
 
             return $status;
         });

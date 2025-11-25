@@ -38,7 +38,7 @@ class CategoryController extends AdminController
         }])->paginate(15);
 
         $categories->getCollection()->transform(function ($category) {
-            $category->name = $category->translations->first()?->name ?? '';
+            $category->name = $this->translation($category->translations)?->name ?? '';
 
             return $category;
         });

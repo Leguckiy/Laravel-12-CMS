@@ -47,7 +47,7 @@ class LanguageController extends AdminController
     public function store(LanguageRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-        
+
         Language::create($validated);
 
         return redirect()->route('admin.language.index')->with('success', __('admin.created_successfully'));
@@ -75,7 +75,7 @@ class LanguageController extends AdminController
     public function update(LanguageRequest $request, Language $language): RedirectResponse
     {
         $validated = $request->validated();
-        
+
         $language->update($validated);
 
         return redirect()->route('admin.language.index')->with('success', __('admin.updated_successfully'));

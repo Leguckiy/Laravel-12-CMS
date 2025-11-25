@@ -125,18 +125,12 @@ class CustomerController extends AdminController
      */
     private function getCustomerGroupOptions(?int $languageId): array
     {
-        $languageId ??= $this->context->language->id;
-
         return CustomerGroup::with('translations')
             ->get()
             ->map(function (CustomerGroup $group) use ($languageId) {
-                $translation = $group->translations
-                    ->firstWhere('language_id', $languageId)
-                    ?? $group->translations->first();
-
                 return [
                     'id' => $group->id,
-                    'name' => $translation?->name ?? '',
+                    'name' => $this->translation($group->translations, $languageId)?->name ?? '',
                 ];
             })
             ->values()
@@ -152,12 +146,6 @@ class CustomerController extends AdminController
             return;
         }
 
-        $languageId ??= $this->context->language->id;
-
-        $translation = $customer->customerGroup->translations
-            ->firstWhere('language_id', $languageId)
-            ?? $customer->customerGroup->translations->first();
-
-        $customer->customerGroup->name = $translation?->name ?? '';
+        $customer->customerGroup->name = $this->translation($customer->customerGroup->translations, $languageId)?->name ?? '';
     }
 }

@@ -36,7 +36,7 @@ class CustomerGroupController extends AdminController
         }])->paginate(15);
 
         $customerGroups->getCollection()->transform(function ($group) {
-            $group->name = $group->translations->first()?->name ?? '';
+            $group->name = $this->translation($group->translations)?->name ?? '';
 
             return $group;
         });

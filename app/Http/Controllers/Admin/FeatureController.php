@@ -38,7 +38,7 @@ class FeatureController extends AdminController
             ->paginate(15);
 
         $features->getCollection()->transform(function ($feature) {
-            $feature->name = $feature->translations->first()?->name ?? '';
+            $feature->name = $this->translation($feature->translations)?->name ?? '';
 
             return $feature;
         });

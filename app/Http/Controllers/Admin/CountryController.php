@@ -36,7 +36,7 @@ class CountryController extends AdminController
         }])->paginate(15);
 
         $countries->getCollection()->transform(function ($country) {
-            $country->name = $country->translations->first()?->name ?? '';
+            $country->name = $this->translation($country->translations)?->name ?? '';
 
             return $country;
         });

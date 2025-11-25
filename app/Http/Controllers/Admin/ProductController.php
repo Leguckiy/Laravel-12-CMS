@@ -41,7 +41,7 @@ class ProductController extends AdminController
         }])->paginate(15);
 
         $products->getCollection()->transform(function ($product) {
-            $product->name = $product->translations->first()?->name ?? '';
+            $product->name = $this->translation($product->translations)?->name ?? '';
 
             return $product;
         });
@@ -110,33 +110,23 @@ class ProductController extends AdminController
         ]);
 
         $data = $this->prepareProductFormData($product);
-        $currentLanguageId = $this->context->language->id;
 
-        $stockStatusName = $product->stockStatus?->translations
-            ->firstWhere('language_id', $currentLanguageId)?->name
-            ?? $product->stockStatus?->translations->first()?->name
-            ?? null;
+        $stockStatusName = $product->stockStatus
+            ? $this->translation($product->stockStatus->translations)?->name
+            : null;
 
-        $productCategoryNames = $product->categories->map(function (Category $category) use ($currentLanguageId) {
-            return $category->translations->firstWhere('language_id', $currentLanguageId)?->name
-                ?? $category->translations->first()?->name
-                ?? '';
+        $productCategoryNames = $product->categories->map(function (Category $category) {
+            return $this->translation($category->translations)?->name ?? '';
         })->filter()->values()->toArray();
 
-        $featureDetails = $product->features->map(function (Feature $feature) use ($currentLanguageId) {
-            $featureName = $feature->translations
-                ->firstWhere('language_id', $currentLanguageId)?->name
-                ?? $feature->translations->first()?->name
-                ?? '';
+        $featureDetails = $product->features->map(function (Feature $feature) {
+            $featureName = $this->translation($feature->translations)?->name ?? '';
 
             $valueTranslation = $feature->values
-                ->map(function ($value) use ($currentLanguageId) {
+                ->map(function ($value) {
                     return [
                         'id' => $value->id,
-                        'value' => $value->translations
-                            ->firstWhere('language_id', $currentLanguageId)?->value
-                            ?? $value->translations->first()?->value
-                            ?? '',
+                        'value' => $this->translation($value->translations)?->value ?? '',
                     ];
                 })
                 ->firstWhere('id', $feature->pivot?->feature_value_id);
@@ -350,13 +340,9 @@ class ProductController extends AdminController
     private function getStockStatusOptions(int $currentLanguageId): array
     {
         return StockStatus::with('translations')->get()->map(function (StockStatus $status) use ($currentLanguageId) {
-            $translation = $status->translations
-                ->firstWhere('language_id', $currentLanguageId)
-                ?? $status->translations->first();
-
             return [
                 'id' => $status->id,
-                'name' => $translation?->name ?? '',
+                'name' => $this->translation($status->translations, $currentLanguageId)?->name ?? '',
             ];
         })->values()->toArray();
     }
@@ -370,21 +356,13 @@ class ProductController extends AdminController
             'translations',
             'values.translations',
         ])->get()->map(function (Feature $feature) use ($currentLanguageId) {
-            $featureTranslation = $feature->translations
-                ->firstWhere('language_id', $currentLanguageId)
-                ?? $feature->translations->first();
-
             return [
                 'id' => $feature->id,
-                'name' => $featureTranslation?->name ?? '',
+                'name' => $this->translation($feature->translations, $currentLanguageId)?->name ?? '',
                 'values' => $feature->values->map(function ($value) use ($currentLanguageId) {
-                    $translation = $value->translations
-                        ->firstWhere('language_id', $currentLanguageId)
-                        ?? $value->translations->first();
-
                     return [
                         'id' => $value->id,
-                        'value' => $translation?->value ?? '',
+                        'value' => $this->translation($value->translations, $currentLanguageId)?->value ?? '',
                     ];
                 })->values()->toArray(),
             ];

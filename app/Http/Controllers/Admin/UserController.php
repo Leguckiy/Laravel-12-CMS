@@ -42,15 +42,15 @@ class UserController extends AdminController
     public function create(): View
     {
         $userGroups = UserGroup::all();
-        $userGroupsOptions = $userGroups->map(function($group) {
+        $userGroupsOptions = $userGroups->map(function ($group) {
             return ['id' => $group->id, 'name' => $group->name];
         })->toArray();
-        
+
         $languages = Language::where('status', true)->orderBy('sort_order')->get();
-        $languagesOptions = $languages->map(function($language) {
+        $languagesOptions = $languages->map(function ($language) {
             return ['id' => $language->id, 'name' => $language->name];
         })->toArray();
-        
+
         return view('admin.user.form', compact('userGroups', 'userGroupsOptions', 'languagesOptions'));
     }
 
@@ -80,7 +80,7 @@ class UserController extends AdminController
     public function show(User $user): View
     {
         $user->load(['userGroup', 'language']);
-        
+
         return view('admin.user.show', compact('user'));
     }
 
@@ -90,15 +90,15 @@ class UserController extends AdminController
     public function edit(User $user): View
     {
         $userGroups = UserGroup::all();
-        $userGroupsOptions = $userGroups->map(function($group) {
+        $userGroupsOptions = $userGroups->map(function ($group) {
             return ['id' => $group->id, 'name' => $group->name];
         })->toArray();
-        
+
         $languages = Language::where('status', true)->orderBy('sort_order')->get();
-        $languagesOptions = $languages->map(function($language) {
+        $languagesOptions = $languages->map(function ($language) {
             return ['id' => $language->id, 'name' => $language->name];
         })->toArray();
-        
+
         return view('admin.user.form', compact('user', 'userGroupsOptions', 'languagesOptions'));
     }
 
@@ -113,7 +113,7 @@ class UserController extends AdminController
         if (empty($validated['password'])) {
             unset($validated['password']);
         }
-        
+
         // Remove confirm field as it's not needed in database
         unset($validated['confirm'], $validated['image']);
 
@@ -136,7 +136,7 @@ class UserController extends AdminController
 
     private function handleAvatarUpload(UserRequest $request, User $user): ?string
     {
-        $uploader = new AdminImageUploader();
+        $uploader = new AdminImageUploader;
         $currentFilename = $user->image;
         $currentPath = $user->image_path;
 
@@ -146,7 +146,7 @@ class UserController extends AdminController
             $currentPath = null;
         }
 
-        if (!$request->hasFile('image')) {
+        if (! $request->hasFile('image')) {
             return $currentFilename;
         }
 
@@ -158,7 +158,7 @@ class UserController extends AdminController
         $height = (int) config('image_sizes.small.height');
 
         return $uploader->uploadImage(
-            'user_' . $user->id,
+            'user_'.$user->id,
             User::IMAGE_DIRECTORY,
             $request->file('image'),
             $width,

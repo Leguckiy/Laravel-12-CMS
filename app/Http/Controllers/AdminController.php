@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Language;
 use App\Support\AdminContext;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class AdminController extends Controller
 {
@@ -45,5 +47,29 @@ class AdminController extends Controller
             ->orderBy('sort_order')
             ->orderBy('id')
             ->get();
+    }
+
+    /**
+     * Get translation model for the current or provided language.
+     * Works as a language filter - returns the entire translation model with all fields.
+     *
+     * @param  Collection  $translations  Collection of translation models
+     * @param  int|null  $languageId  Target language ID (uses current language if not provided)
+     * @return Model|null Translation model with all fields or null
+     */
+    protected function translation(Collection $translations, ?int $languageId = null): ?Model
+    {
+        if ($translations->isEmpty()) {
+            return null;
+        }
+
+        $languageId ??= $this->context->language->id ?? null;
+
+        if (! $languageId) {
+            return $translations->first();
+        }
+
+        return $translations->firstWhere('language_id', $languageId)
+            ?? $translations->first();
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\UserGroup;
 use App\Http\Controllers\AdminController;
-use Illuminate\Http\Request;
+use App\Models\UserGroup;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class UserGroupController extends AdminController
@@ -39,7 +39,7 @@ class UserGroupController extends AdminController
     public function create(): View
     {
         $adminRoutes = $this->getAdminRoutes();
-        
+
         return view('admin.user_group.form', compact('adminRoutes'));
     }
 
@@ -52,14 +52,14 @@ class UserGroupController extends AdminController
             'name' => 'required|string|max:255',
             'permissions' => 'nullable|array',
         ]);
-        
+
         $permission = $this->parsePermissions($request->input('permissions', []));
-        
+
         UserGroup::create([
             'name' => $validated['name'],
             'permission' => $permission,
         ]);
-        
+
         return redirect()->route('admin.user_group.index')->with('success', __('admin.created_successfully'));
     }
 
@@ -77,7 +77,7 @@ class UserGroupController extends AdminController
     public function edit(UserGroup $userGroup): View
     {
         $adminRoutes = $this->getAdminRoutes();
-        
+
         return view('admin.user_group.form', compact('userGroup', 'adminRoutes'));
     }
 
@@ -90,14 +90,14 @@ class UserGroupController extends AdminController
             'name' => 'required|string|max:255',
             'permissions' => 'nullable|array',
         ]);
-        
+
         $permission = $this->parsePermissions($request->input('permissions', []));
-        
+
         $userGroup->update([
             'name' => $validated['name'],
             'permission' => $permission,
         ]);
-        
+
         return redirect()->route('admin.user_group.index')->with('success', __('admin.updated_successfully'));
     }
 
@@ -129,21 +129,21 @@ class UserGroupController extends AdminController
             'view' => [],
             'edit' => [],
         ];
-        
+
         // Process view permissions
         if (isset($input['view']) && is_array($input['view'])) {
             foreach ($input['view'] as $title) {
                 $parsed['view'][] = $title;
             }
         }
-        
+
         // Process edit permissions
         if (isset($input['edit']) && is_array($input['edit'])) {
             foreach ($input['edit'] as $title) {
                 $parsed['edit'][] = $title;
             }
         }
-        
+
         return $parsed;
     }
 }

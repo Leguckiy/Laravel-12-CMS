@@ -52,7 +52,7 @@ class FeatureValueController extends AdminController
             ->paginate(15);
 
         $values->getCollection()->transform(function (FeatureValue $value) {
-            $value->setAttribute('value', $value->translations->first()?->value ?? '');
+            $value->setAttribute('value', $this->translation($value->translations)?->value ?? '');
 
             return $value;
         });
@@ -187,12 +187,6 @@ class FeatureValueController extends AdminController
     {
         $feature->loadMissing('translations');
 
-        $currentLanguageId = $this->context->language->id;
-
-        $translation = $feature->translations
-            ->firstWhere('language_id', $currentLanguageId)
-            ?? $feature->translations->first();
-
-        return $translation?->name ?? __('admin.feature').' #'.$feature->id;
+        return $this->translation($feature->translations)?->name ?? __('admin.feature').' #'.$feature->id;
     }
 }
