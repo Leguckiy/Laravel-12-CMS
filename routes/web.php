@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\OrderStatusController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\StockStatusController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserGroupController;
@@ -49,6 +50,8 @@ Route::prefix('admin')->group(function () {
             Route::resource('product', ProductController::class)->names('admin.product');
             Route::resource('customer_group', CustomerGroupController::class)->names('admin.customer_group');
             Route::resource('customer', CustomerController::class)->names('admin.customer');
+            Route::get('settings', [SettingController::class, 'edit'])->name('admin.setting.edit');
+            Route::put('settings', [SettingController::class, 'update'])->name('admin.setting.update');
         });
 
         // Fallback for unknown admin routes (404 within admin area)

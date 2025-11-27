@@ -71,7 +71,7 @@ return [
             'children' => [
                 [
                     'name' => 'menu_settings_general',
-                    'route' => '',
+                    'route' => 'admin.setting.edit',
                     'children' => [],
                 ],
                 [
@@ -139,5 +139,6 @@ return [
         'feature_value' => 'catalog/feature_value',
         'customer' => 'customer/customer',
         'customer_group' => 'customer/customer_group',
+        'setting' => 'setting/setting',
     ],
 ];

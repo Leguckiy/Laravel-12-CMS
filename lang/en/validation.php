@@ -107,6 +107,11 @@ return [
     // Product feature validation
     'duplicate_feature_combination' => 'The combination of :attribute and value is already used.',
 
+    // Settings validation
+    'config_name.required' => 'Store name is required.',
+    'config_owner.required' => 'Store owner is required.',
+    'config_address.required' => 'Store address is required.',
+
     // Standard Laravel validation messages
     'required' => 'The :attribute field is required.',
     'string' => 'The :attribute must be a string.',

@@ -223,6 +223,16 @@ return [
     'customer_group_details' => 'Customer group details',
     'customer_group_cannot_delete' => 'Cannot delete customer group because it is assigned to :count customer(s).',
 
+    // Setting
+    'settings' => 'Settings',
+    'edit_setting' => 'Edit Setting',
+    'store_name' => 'Store Name',
+    'store_owner' => 'Store Owner',
+    'store_address' => 'Address',
+    'opening_times' => 'Opening Times',
+    'logo' => 'Store Logo',
+    'icon' => 'Store Icon',
+
     // Menu
     'navigation' => 'Navigation',
     'menu_dashboard' => 'Dashboard',
@@ -250,4 +260,6 @@ return [
     'tab_links' => 'Links',
     'tab_features' => 'Features',
     'tab_image' => 'Image',
+    'tab_store' => 'Store',
+    'tab_local' => 'Local',
 ];

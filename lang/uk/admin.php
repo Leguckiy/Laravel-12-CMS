@@ -223,6 +223,16 @@ return [
     'customer_group_details' => 'Деталі групи клієнта',
     'customer_group_cannot_delete' => 'Неможливо видалити групу клієнтів, бо до неї прив’язано :count клієнтів.',
 
+    // Setting
+    'settings' => 'Налаштування',
+    'edit_setting' => 'Редагувати налаштування',
+    'store_name' => 'Назва магазину',
+    'store_owner' => 'Власник магазину',
+    'store_address' => 'Адреса магазину',
+    'opening_times' => 'Режим роботи',
+    'logo' => 'Логотип',
+    'icon' => 'Іконка',
+
     // Menu
     'navigation' => 'Навігація',
     'menu_dashboard' => 'Панель керування',
@@ -250,4 +260,6 @@ return [
     'tab_links' => 'Зв\'язки',
     'tab_features' => 'Характеристики',
     'tab_image' => 'Зображення',
+    'tab_store' => 'Магазин',
+    'tab_local' => 'Локалізація',
 ];

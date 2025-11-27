@@ -107,6 +107,11 @@ return [
     // Product feature validation
     'duplicate_feature_combination' => 'Комбінація :attribute та значення вже використовується.',
 
+    // Settings validation
+    'config_name.required' => 'Назва магазину є обов\'язковою.',
+    'config_owner.required' => 'Власник магазину є обов\'язковим.',
+    'config_address.required' => 'Адреса магазину є обов\'язковою.',
+
     // Standard Laravel validation messages
     'required' => 'Поле :attribute є обов\'язковим.',
     'string' => 'Поле :attribute має бути рядком.',
