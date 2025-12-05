@@ -1,0 +1,322 @@
+[
+    {
+        "id": 1,
+        "sort_order": 1,
+        "translations": {
+            "en": "Display Diagonal",
+            "uk": "Діагональ дисплея"
+        }
+    },
+    {
+        "id": 2,
+        "sort_order": 2,
+        "translations": {
+            "en": "Maximum Refresh Rate",
+            "uk": "Максимальна частота оновлення"
+        }
+    },
+    {
+        "id": 3,
+        "sort_order": 3,
+        "translations": {
+            "en": "Maximum Display Resolution",
+            "uk": "Максимальна роздільна здатність дисплея"
+        }
+    },
+    {
+        "id": 4,
+        "sort_order": 4,
+        "translations": {
+            "en": "Matrix Type",
+            "uk": "Тип матриці"
+        }
+    },
+    {
+        "id": 5,
+        "sort_order": 5,
+        "translations": {
+            "en": "Color",
+            "uk": "Колір"
+        }
+    },
+    {
+        "id": 6,
+        "sort_order": 6,
+        "translations": {
+            "en": "Processor",
+            "uk": "Процесор"
+        }
+    },
+    {
+        "id": 7,
+        "sort_order": 7,
+        "translations": {
+            "en": "SSD Capacity",
+            "uk": "Обсяг SSD"
+        }
+    },
+    {
+        "id": 8,
+        "sort_order": 8,
+        "translations": {
+            "en": "RAM Capacity",
+            "uk": "Обсяг оперативної пам'яті"
+        }
+    },
+    {
+        "id": 9,
+        "sort_order": 9,
+        "translations": {
+            "en": "RAM Type",
+            "uk": "Тип оперативної пам'яті"
+        }
+    },
+    {
+        "id": 10,
+        "sort_order": 10,
+        "translations": {
+            "en": "GPU Memory",
+            "uk": "Обсяг пам'яті відеокарти"
+        }
+    },
+    {
+        "id": 11,
+        "sort_order": 11,
+        "translations": {
+            "en": "GPU Model",
+            "uk": "Відеокарта"
+        }
+    },
+    {
+        "id": 12,
+        "sort_order": 12,
+        "translations": {
+            "en": "PSU Power",
+            "uk": "Потужність БЖ"
+        }
+    },
+    {
+        "id": 13,
+        "sort_order": 13,
+        "translations": {
+            "en": "Internal Storage",
+            "uk": "Вбудована пам'ять"
+        }
+    },
+    {
+        "id": 14,
+        "sort_order": 14,
+        "translations": {
+            "en": "Main Camera",
+            "uk": "Основна камера"
+        }
+    },
+    {
+        "id": 15,
+        "sort_order": 15,
+        "translations": {
+            "en": "Front Camera",
+            "uk": "Фронтальна камера"
+        }
+    },
+    {
+        "id": 16,
+        "sort_order": 16,
+        "translations": {
+            "en": "Keyboard Type",
+            "uk": "Тип клавіатури"
+        }
+    },
+    {
+        "id": 17,
+        "sort_order": 17,
+        "translations": {
+            "en": "Connection Type",
+            "uk": "Тип підключення"
+        }
+    },
+    {
+        "id": 18,
+        "sort_order": 18,
+        "translations": {
+            "en": "Number of Keys",
+            "uk": "Кількість клавіш"
+        }
+    },
+    {
+        "id": 19,
+        "sort_order": 19,
+        "translations": {
+            "en": "Mouse Sensor Type",
+            "uk": "Тип сенсора миші"
+        }
+    },
+    {
+        "id": 20,
+        "sort_order": 20,
+        "translations": {
+            "en": "DPI",
+            "uk": "DPI"
+        }
+    },
+    {
+        "id": 21,
+        "sort_order": 21,
+        "translations": {
+            "en": "Number of Buttons",
+            "uk": "Кількість кнопок"
+        }
+    },
+    {
+        "id": 22,
+        "sort_order": 22,
+        "translations": {
+            "en": "Interface",
+            "uk": "Інтерфейс"
+        }
+    },
+    {
+        "id": 23,
+        "sort_order": 23,
+        "translations": {
+            "en": "Headphone Type",
+            "uk": "Тип навушників"
+        }
+    },
+    {
+        "id": 24,
+        "sort_order": 24,
+        "translations": {
+            "en": "Mounting Type",
+            "uk": "Тип кріплення"
+        }
+    },
+    {
+        "id": 25,
+        "sort_order": 25,
+        "translations": {
+            "en": "Smart TV Support",
+            "uk": "Підтримка Smart TV"
+        }
+    },
+    {
+        "id": 26,
+        "sort_order": 26,
+        "translations": {
+            "en": "Display Technology",
+            "uk": "Технологія дисплея"
+        }
+    },
+    {
+        "id": 27,
+        "sort_order": 27,
+        "translations": {
+            "en": "Platform",
+            "uk": "Платформа"
+        }
+    },
+    {
+        "id": 28,
+        "sort_order": 28,
+        "translations": {
+            "en": "Battery Capacity",
+            "uk": "Ємність батареї"
+        }
+    },
+    {
+        "id": 29,
+        "sort_order": 29,
+        "translations": {
+            "en": "Purpose",
+            "uk": "Призначення"
+        }
+    },
+    {
+        "id": 30,
+        "sort_order": 30,
+        "translations": {
+            "en": "Output Voltage",
+            "uk": "Вихідна напруга"
+        }
+    },
+    {
+        "id": 31,
+        "sort_order": 31,
+        "translations": {
+            "en": "Output Current",
+            "uk": "Вихідна сила струму"
+        }
+    },
+    {
+        "id": 32,
+        "sort_order": 32,
+        "translations": {
+            "en": "Battery Type",
+            "uk": "Тип акумуляторів"
+        }
+    },
+    {
+        "id": 33,
+        "sort_order": 33,
+        "translations": {
+            "en": "Charging Station Capacity",
+            "uk": "Місткість зарядної станції"
+        }
+    },
+    {
+        "id": 34,
+        "sort_order": 34,
+        "translations": {
+            "en": "Number of Outlets",
+            "uk": "Кількість розеток"
+        }
+    },
+    {
+        "id": 35,
+        "sort_order": 35,
+        "translations": {
+            "en": "Total Output Power",
+            "uk": "Вихідна потужність (загальна)"
+        }
+    },
+    {
+        "id": 36,
+        "sort_order": 36,
+        "translations": {
+            "en": "Maximum Device Power",
+            "uk": "Максимальна потужність пристроїв"
+        }
+    },
+    {
+        "id": 37,
+        "sort_order": 37,
+        "translations": {
+            "en": "System",
+            "uk": "Система"
+        }
+    },
+    {
+        "id": 38,
+        "sort_order": 38,
+        "translations": {
+            "en": "Video Recording",
+            "uk": "Запис відео"
+        }
+    },
+    {
+        "id": 39,
+        "sort_order": 39,
+        "translations": {
+            "en": "Wireless Capabilities",
+            "uk": "Бездротові можливості"
+        }
+    },
+    {
+        "id": 40,
+        "sort_order": 40,
+        "translations": {
+            "en": "Class",
+            "uk": "Клас"
+        }
+    }
+]

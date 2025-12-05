@@ -42,9 +42,6 @@ class Category extends Model
 
     /**
      * Get translation for specific language.
-     * 
-     * @param int $languageId
-     * @return CategoryLang|null
      */
     public function translation(int $languageId): ?CategoryLang
     {
@@ -74,16 +71,16 @@ class Category extends Model
 
     public function getImagePathAttribute(): ?string
     {
-        if (!$this->image) {
+        if (! $this->image) {
             return null;
         }
 
-        return self::IMAGE_DIRECTORY . '/' . $this->image;
+        return self::IMAGE_DIRECTORY.'/'.$this->image;
     }
 
     public function getImageUrlAttribute(): ?string
     {
-        if (!$this->image) {
+        if (! $this->image) {
             return null;
         }
 

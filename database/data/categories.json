@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "sort_order": 1,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Monitors",
+                "slug": "monitors",
+                "description": "LCD, IPS, and OLED monitors for gaming or productivity.",
+                "meta_title": "Monitors and Displays",
+                "meta_description": "Buy professional, gaming, and budget monitors with fast delivery."
+            },
+            "uk": {
+                "name": "Монітори",
+                "slug": "monitory",
+                "description": "LCD, IPS та OLED монітори для ігор і роботи.",
+                "meta_title": "Монітори та дисплеї",
+                "meta_description": "Купуйте професійні та ігрові монітори з швидкою доставкою."
+            }
+        }
+    },
+    {
+        "id": 2,
+        "sort_order": 2,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Laptops",
+                "slug": "laptops",
+                "description": "Ultrabooks, gaming, and business laptops with warranty support.",
+                "meta_title": "Laptops for Work and Gaming",
+                "meta_description": "Choose ultrabooks, gaming laptops, and business notebooks in stock."
+            },
+            "uk": {
+                "name": "Ноутбуки",
+                "slug": "noutbuky",
+                "description": "Ультрабуки, ігрові та бізнес-ноутбуки з гарантією.",
+                "meta_title": "Ноутбуки для роботи й ігор",
+                "meta_description": "Обирайте ультрабуки, ігрові та бізнес-ноутбуки в наявності."
+            }
+        }
+    },
+    {
+        "id": 3,
+        "sort_order": 3,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Desktop Computers",
+                "slug": "desktop-computers",
+                "description": "Pre-built desktop PCs and custom workstations.",
+                "meta_title": "Desktop PCs and Workstations",
+                "meta_description": "Shop gaming, office, and creative desktop computers."
+            },
+            "uk": {
+                "name": "Комп'ютери",
+                "slug": "kompyutery",
+                "description": "Готові ПК та кастомні робочі станції.",
+                "meta_title": "Настільні ПК та робочі станції",
+                "meta_description": "Купуйте ігрові, офісні та креативні комп'ютери."
+            }
+        }
+    },
+    {
+        "id": 4,
+        "sort_order": 4,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Tablets",
+                "slug": "tablets",
+                "description": "Android and iPad tablets for entertainment or work.",
+                "meta_title": "Tablets and eReaders",
+                "meta_description": "Pick Android tablets, iPads, and eReaders with accessories."
+            },
+            "uk": {
+                "name": "Планшети",
+                "slug": "planshety",
+                "description": "Android та iPad планшети для розваг і роботи.",
+                "meta_title": "Планшети та електронні рідери",
+                "meta_description": "Обирайте Android планшети, iPad та аксесуари."
+            }
+        }
+    },
+    {
+        "id": 5,
+        "sort_order": 5,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Keyboards & Mice",
+                "slug": "keyboards-mice",
+                "description": "Mechanical keyboards, wireless mice, and ergonomic sets.",
+                "meta_title": "Keyboards and Mice Store",
+                "meta_description": "Mechanical, wireless, and ergonomic input devices in stock."
+            },
+            "uk": {
+                "name": "Клавіатури та миші",
+                "slug": "klaviatury-ta-myshi",
+                "description": "Механічні клавіатури, бездротові миші та ергономічні набори.",
+                "meta_title": "Клавіатури та миші",
+                "meta_description": "Механічні, бездротові та ергономічні пристрої введення."
+            }
+        }
+    },
+    {
+        "id": 6,
+        "sort_order": 6,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Headphones & Audio",
+                "slug": "headphones-audio",
+                "description": "Over-ear, in-ear, and TWS headphones plus DACs.",
+                "meta_title": "Headphones and Audio Accessories",
+                "meta_description": "Shop wireless headphones, TWS earbuds, and audio adapters."
+            },
+            "uk": {
+                "name": "Навушники та аксесуари",
+                "slug": "navushnyky-ta-aksesuary",
+                "description": "Повнорозмірні, внутрішньовушні та TWS навушники, DAC та кабелі.",
+                "meta_title": "Навушники та аудіо аксесуари",
+                "meta_description": "Замовляйте бездротові навушники, TWS та аудіо адаптери."
+            }
+        }
+    },
+    {
+        "id": 7,
+        "sort_order": 7,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Televisions",
+                "slug": "televisions",
+                "description": "4K, OLED, and QLED TVs with smart platforms.",
+                "meta_title": "Televisions and Smart TVs",
+                "meta_description": "Pick 4K, OLED, and QLED TVs from top brands."
+            },
+            "uk": {
+                "name": "Телевізори",
+                "slug": "televizory",
+                "description": "4K, OLED та QLED телевізори зі Smart TV.",
+                "meta_title": "Телевізори та Smart TV",
+                "meta_description": "Обирайте 4K, OLED та QLED телевізори провідних брендів."
+            }
+        }
+    },
+    {
+        "id": 8,
+        "sort_order": 8,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Mobile Phones",
+                "slug": "mobile-phones",
+                "description": "Android smartphones and iPhones with official warranty.",
+                "meta_title": "Smartphones and Mobile Phones",
+                "meta_description": "Buy Android phones, iPhones, and budget models in stock."
+            },
+            "uk": {
+                "name": "Мобільні телефони",
+                "slug": "mobilni-telefony",
+                "description": "Смартфони Android та iPhone з офіційною гарантією.",
+                "meta_title": "Смартфони та мобільні телефони",
+                "meta_description": "Купуйте Android смартфони, iPhone та бюджетні моделі в наявності."
+            }
+        }
+    },
+    {
+        "id": 9,
+        "sort_order": 9,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Powerbanks & Charging Stations",
+                "slug": "powerbanks-charging-stations",
+                "description": "Portable power banks, wireless charging stations, and charging accessories.",
+                "meta_title": "Powerbanks and Charging Stations",
+                "meta_description": "Buy portable power banks, wireless charging stations, and charging accessories with fast delivery."
+            },
+            "uk": {
+                "name": "Повербанки та зарядні станції",
+                "slug": "poverbanky-ta-zaryadni-stantsiyi",
+                "description": "Портативні повербанки, бездротові зарядні станції та аксесуари для зарядки.",
+                "meta_title": "Повербанки та зарядні станції",
+                "meta_description": "Купуйте портативні повербанки, бездротові зарядні станції та аксесуари для зарядки з швидкою доставкою."
+            }
+        }
+    },
+    {
+        "id": 10,
+        "sort_order": 10,
+        "status": true,
+        "translations": {
+            "en": {
+                "name": "Photo & Video Gear",
+                "slug": "photo-video-gear",
+                "description": "Mirrorless cameras, lenses, drones, and video lights.",
+                "meta_title": "Photo and Video Equipment",
+                "meta_description": "Find cameras, lenses, drones, and lighting for creators."
+            },
+            "uk": {
+                "name": "Фото та відеотехніка",
+                "slug": "foto-ta-videotehnika",
+                "description": "Бездзеркальні камери, об’єктиви, дрони та світло.",
+                "meta_title": "Фото й відеотехніка",
+                "meta_description": "Камери, об’єктиви, дрони та світлове обладнання для контент-мейкерів."
+            }
+        }
+    }
+]

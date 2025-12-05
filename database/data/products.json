@@ -1,0 +1,3482 @@
+[
+    {
+        "id": 1,
+        "reference": "SAM-ODY-G4",
+        "price": 7599,
+        "quantity": 10,
+        "sort_order": 1,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor Samsung Odyssey G4",
+                "slug": "monitor-samsung-odyssey-g4",
+                "description": "High-performance gaming monitor with 240Hz refresh rate and IPS panel for smooth gameplay.",
+                "meta_title": "Samsung Odyssey G4 Gaming Monitor",
+                "meta_description": "Buy Samsung Odyssey G4 gaming monitor with 24.5\" IPS display and 240Hz refresh rate."
+            },
+            "uk": {
+                "name": "Монітор Samsung Odyssey G4",
+                "slug": "monitor-samsung-odyssey-g4",
+                "description": "Високопродуктивний ігровий монітор з частотою оновлення 240 Гц та панеллю IPS для плавної гри.",
+                "meta_title": "Ігровий монітор Samsung Odyssey G4",
+                "meta_description": "Купуйте ігровий монітор Samsung Odyssey G4 з дисплеєм 24.5\" IPS та частотою оновлення 240 Гц."
+            }
+        },
+        "features": {
+            "2": 19,
+            "1": 4,
+            "3": 25,
+            "4": 33,
+            "5": 37
+        }
+    },
+    {
+        "id": 2,
+        "reference": "SAM-ODY-OLED-G8",
+        "price": 41799,
+        "quantity": 5,
+        "sort_order": 2,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor Samsung Odyssey OLED G8",
+                "slug": "monitor-samsung-odyssey-oled-g8",
+                "description": "Premium OLED gaming monitor with 4K resolution and 240Hz refresh rate for immersive gaming experience.",
+                "meta_title": "Samsung Odyssey OLED G8 4K Gaming Monitor",
+                "meta_description": "Buy Samsung Odyssey OLED G8 gaming monitor with 32\" OLED display and 4K UltraHD resolution."
+            },
+            "uk": {
+                "name": "Монітор Samsung Odyssey OLED G8",
+                "slug": "monitor-samsung-odyssey-oled-g8",
+                "description": "Преміальний ігровий монітор OLED з роздільною здатністю 4K та частотою оновлення 240 Гц для захоплюючого ігрового досвіду.",
+                "meta_title": "Ігровий монітор Samsung Odyssey OLED G8 4K",
+                "meta_description": "Купуйте ігровий монітор Samsung Odyssey OLED G8 з дисплеєм 32\" OLED та роздільною здатністю 4K UltraHD."
+            }
+        },
+        "features": {
+            "2": 19,
+            "1": 8,
+            "3": 27,
+            "4": 34,
+            "5": 38
+        }
+    },
+    {
+        "id": 3,
+        "reference": "SAM-ODY-OLED-G9",
+        "price": 54999,
+        "quantity": 3,
+        "sort_order": 3,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor Samsung Odyssey OLED G9",
+                "slug": "monitor-samsung-odyssey-oled-g9",
+                "description": "Ultrawide OLED gaming monitor with 49\" curved display and ultra-wide resolution for professional gaming.",
+                "meta_title": "Samsung Odyssey OLED G9 Ultrawide Monitor",
+                "meta_description": "Buy Samsung Odyssey OLED G9 ultrawide gaming monitor with 49\" OLED curved display."
+            },
+            "uk": {
+                "name": "Монітор Samsung Odyssey OLED G9",
+                "slug": "monitor-samsung-odyssey-oled-g9",
+                "description": "Ультраширокий ігровий монітор OLED з вигнутим дисплеєм 49\" та ультраширокою роздільною здатністю для професійної гри.",
+                "meta_title": "Ультраширокий монітор Samsung Odyssey OLED G9",
+                "meta_description": "Купуйте ультраширокий ігровий монітор Samsung Odyssey OLED G9 з вигнутим дисплеєм 49\" OLED."
+            }
+        },
+        "features": {
+            "2": 19,
+            "1": 9,
+            "3": 28,
+            "4": 34,
+            "5": 38
+        }
+    },
+    {
+        "id": 4,
+        "reference": "ASUS-TUF-GAMING",
+        "price": 8299,
+        "quantity": 15,
+        "sort_order": 4,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor ASUS TUF Gaming",
+                "slug": "monitor-asus-tuf-gaming",
+                "description": "Durable gaming monitor with 280Hz refresh rate and VA panel designed for competitive gaming.",
+                "meta_title": "ASUS TUF Gaming Monitor 280Hz",
+                "meta_description": "Buy ASUS TUF Gaming monitor with 27\" VA display and 280Hz refresh rate."
+            },
+            "uk": {
+                "name": "Монітор ASUS TUF Gaming",
+                "slug": "monitor-asus-tuf-gaming",
+                "description": "Міцний ігровий монітор з частотою оновлення 280 Гц та панеллю VA, розроблений для конкурентної гри.",
+                "meta_title": "Ігровий монітор ASUS TUF Gaming 280 Гц",
+                "meta_description": "Купуйте ігровий монітор ASUS TUF Gaming з дисплеєм 27\" VA та частотою оновлення 280 Гц."
+            }
+        },
+        "features": {
+            "2": 20,
+            "1": 6,
+            "3": 25,
+            "4": 35,
+            "5": 37
+        }
+    },
+    {
+        "id": 5,
+        "reference": "ASUS-VP229HF",
+        "price": 3249,
+        "quantity": 20,
+        "sort_order": 5,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor ASUS VP229HF",
+                "slug": "monitor-asus-vp229hf",
+                "description": "Compact budget monitor with IPS panel and 100Hz refresh rate, perfect for office and home use.",
+                "meta_title": "ASUS VP229HF Budget Monitor",
+                "meta_description": "Buy ASUS VP229HF budget monitor with 21.45\" IPS display and 100Hz refresh rate."
+            },
+            "uk": {
+                "name": "Монітор ASUS VP229HF",
+                "slug": "monitor-asus-vp229hf",
+                "description": "Компактний бюджетний монітор з панеллю IPS та частотою оновлення 100 Гц, ідеальний для офісу та дому.",
+                "meta_title": "Бюджетний монітор ASUS VP229HF",
+                "meta_description": "Купуйте бюджетний монітор ASUS VP229HF з дисплеєм 21.45\" IPS та частотою оновлення 100 Гц."
+            }
+        },
+        "features": {
+            "2": 16,
+            "1": 2,
+            "3": 25,
+            "4": 33,
+            "5": 37
+        }
+    },
+    {
+        "id": 6,
+        "reference": "ACER-VG270X1BMIIPX",
+        "price": 6399,
+        "quantity": 12,
+        "sort_order": 6,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor Acer VG270X1BMIIPX",
+                "slug": "monitor-acer-vg270x1bmiipx",
+                "description": "Gaming monitor with 200Hz refresh rate and IPS panel for smooth gaming performance.",
+                "meta_title": "Acer VG270X1BMIIPX Gaming Monitor",
+                "meta_description": "Buy Acer VG270X1BMIIPX gaming monitor with 27\" IPS display and 200Hz refresh rate."
+            },
+            "uk": {
+                "name": "Монітор Acer VG270X1BMIIPX",
+                "slug": "monitor-acer-vg270x1bmiipx",
+                "description": "Ігровий монітор з частотою оновлення 200 Гц та панеллю IPS для плавної ігрової продуктивності.",
+                "meta_title": "Ігровий монітор Acer VG270X1BMIIPX",
+                "meta_description": "Купуйте ігровий монітор Acer VG270X1BMIIPX з дисплеєм 27\" IPS та частотою оновлення 200 Гц."
+            }
+        },
+        "features": {
+            "2": 18,
+            "1": 6,
+            "3": 25,
+            "4": 33,
+            "5": 37
+        }
+    },
+    {
+        "id": 7,
+        "reference": "XIAOMI-G24I",
+        "price": 4555,
+        "quantity": 18,
+        "sort_order": 7,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor Xiaomi Gaming Monitor G24i",
+                "slug": "monitor-xiaomi-gaming-monitor-g24i",
+                "description": "Affordable gaming monitor with 180Hz refresh rate and IPS panel for everyday gaming.",
+                "meta_title": "Xiaomi Gaming Monitor G24i",
+                "meta_description": "Buy Xiaomi Gaming Monitor G24i with 23.8\" IPS display and 180Hz refresh rate."
+            },
+            "uk": {
+                "name": "Монітор Xiaomi Gaming Monitor G24i",
+                "slug": "monitor-xiaomi-gaming-monitor-g24i",
+                "description": "Доступний ігровий монітор з частотою оновлення 180 Гц та панеллю IPS для щоденної гри.",
+                "meta_title": "Ігровий монітор Xiaomi Gaming Monitor G24i",
+                "meta_description": "Купуйте ігровий монітор Xiaomi Gaming Monitor G24i з дисплеєм 23.8\" IPS та частотою оновлення 180 Гц."
+            }
+        },
+        "features": {
+            "2": 17,
+            "1": 3,
+            "3": 25,
+            "4": 33,
+            "5": 37
+        }
+    },
+    {
+        "id": 8,
+        "reference": "ASUS-ROG-STRIX-XG27ACDNG",
+        "price": 38159,
+        "quantity": 4,
+        "sort_order": 8,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor ASUS ROG Strix OLED XG27ACDNG",
+                "slug": "monitor-asus-rog-strix-oled-xg27acdng",
+                "description": "Ultra-fast OLED gaming monitor with 360Hz refresh rate and 2K QHD resolution for competitive esports.",
+                "meta_title": "ASUS ROG Strix OLED XG27ACDNG 360Hz",
+                "meta_description": "Buy ASUS ROG Strix OLED XG27ACDNG gaming monitor with 26.5\" OLED display and 360Hz refresh rate."
+            },
+            "uk": {
+                "name": "Монітор ASUS ROG Strix OLED XG27ACDNG",
+                "slug": "monitor-asus-rog-strix-oled-xg27acdng",
+                "description": "Ультрашвидкий ігровий монітор OLED з частотою оновлення 360 Гц та роздільною здатністю 2K QHD для конкурентних кіберспорту.",
+                "meta_title": "ASUS ROG Strix OLED XG27ACDNG 360 Гц",
+                "meta_description": "Купуйте ігровий монітор ASUS ROG Strix OLED XG27ACDNG з дисплеєм 26.5\" OLED та частотою оновлення 360 Гц."
+            }
+        },
+        "features": {
+            "2": 21,
+            "1": 5,
+            "3": 26,
+            "4": 34,
+            "5": 37
+        }
+    },
+    {
+        "id": 9,
+        "reference": "AOC-22B2H-EU",
+        "price": 3809,
+        "quantity": 25,
+        "sort_order": 9,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor AOC 22B2H/EU",
+                "slug": "monitor-aoc-22b2h-eu",
+                "description": "Basic office monitor with VA panel and 75Hz refresh rate, suitable for everyday tasks.",
+                "meta_title": "AOC 22B2H/EU Office Monitor",
+                "meta_description": "Buy AOC 22B2H/EU office monitor with 21.5\" VA display and 75Hz refresh rate."
+            },
+            "uk": {
+                "name": "Монітор AOC 22B2H/EU",
+                "slug": "monitor-aoc-22b2h-eu",
+                "description": "Базовий офісний монітор з панеллю VA та частотою оновлення 75 Гц, підходить для щоденних завдань.",
+                "meta_title": "Офісний монітор AOC 22B2H/EU",
+                "meta_description": "Купуйте офісний монітор AOC 22B2H/EU з дисплеєм 21.5\" VA та частотою оновлення 75 Гц."
+            }
+        },
+        "features": {
+            "2": 15,
+            "1": 1,
+            "3": 25,
+            "4": 35,
+            "5": 37
+        }
+    },
+    {
+        "id": 10,
+        "reference": "ASUS-PROART-PA32UCDM",
+        "price": 88888,
+        "quantity": 2,
+        "sort_order": 10,
+        "status": true,
+        "category_id": 1,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Monitor ASUS ProArt PA32UCDM",
+                "slug": "monitor-asus-proart-pa32ucdm",
+                "description": "Professional 4K QD-OLED monitor with 240Hz refresh rate, perfect for content creators and professional work.",
+                "meta_title": "ASUS ProArt PA32UCDM 4K Professional Monitor",
+                "meta_description": "Buy ASUS ProArt PA32UCDM professional monitor with 31.5\" QD-OLED display and 4K UltraHD resolution."
+            },
+            "uk": {
+                "name": "Монітор ASUS ProArt PA32UCDM",
+                "slug": "monitor-asus-proart-pa32ucdm",
+                "description": "Професійний монітор 4K QD-OLED з частотою оновлення 240 Гц, ідеальний для контент-мейкерів та професійної роботи.",
+                "meta_title": "Професійний монітор ASUS ProArt PA32UCDM 4K",
+                "meta_description": "Купуйте професійний монітор ASUS ProArt PA32UCDM з дисплеєм 31.5\" QD-OLED та роздільною здатністю 4K UltraHD."
+            }
+        },
+        "features": {
+            "2": 19,
+            "1": 7,
+            "3": 27,
+            "4": 36,
+            "5": 38
+        }
+    },
+    {
+        "id": 11,
+        "reference": "LEN-IDEAPAD-SLIM-3",
+        "price": 19999,
+        "quantity": 15,
+        "sort_order": 11,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop Lenovo IdeaPad Slim 3 15IAH8",
+                "slug": "laptop-lenovo-ideapad-slim-3-15iah8",
+                "description": "Affordable laptop with Intel Core i5 processor, 16GB RAM, and 512GB SSD for everyday tasks.",
+                "meta_title": "Lenovo IdeaPad Slim 3 15IAH8 Laptop",
+                "meta_description": "Buy Lenovo IdeaPad Slim 3 15IAH8 laptop with Intel Core i5, 16GB RAM, and 512GB SSD."
+            },
+            "uk": {
+                "name": "Ноутбук Lenovo IdeaPad Slim 3 15IAH8",
+                "slug": "noutbuk-lenovo-ideapad-slim-3-15iah8",
+                "description": "Доступний ноутбук з процесором Intel Core i5, 16 ГБ оперативної пам'яті та 512 ГБ SSD для повсякденних завдань.",
+                "meta_title": "Ноутбук Lenovo IdeaPad Slim 3 15IAH8",
+                "meta_description": "Купуйте ноутбук Lenovo IdeaPad Slim 3 15IAH8 з Intel Core i5, 16 ГБ RAM та 512 ГБ SSD."
+            }
+        },
+        "features": {
+            "6": 39,
+            "7": 49,
+            "8": 52,
+            "9": 55,
+            "1": 12,
+            "2": 22,
+            "3": 25
+        }
+    },
+    {
+        "id": 12,
+        "reference": "HP-OMNIBOOK-16",
+        "price": 31999,
+        "quantity": 12,
+        "sort_order": 12,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop HP OmniBook 5 Laptop 16-bc1000ua",
+                "slug": "laptop-hp-omnibook-5-laptop-16-bc1000ua",
+                "description": "Modern laptop with AMD Ryzen 5 processor, 16GB RAM, and 512GB SSD for work and entertainment.",
+                "meta_title": "HP OmniBook 5 Laptop 16-bc1000ua",
+                "meta_description": "Buy HP OmniBook 5 laptop with AMD Ryzen 5, 16GB RAM, and 512GB SSD."
+            },
+            "uk": {
+                "name": "Ноутбук HP OmniBook 5 Laptop 16-bc1000ua",
+                "slug": "noutbuk-hp-omnibook-5-laptop-16-bc1000ua",
+                "description": "Сучасний ноутбук з процесором AMD Ryzen 5, 16 ГБ оперативної пам'яті та 512 ГБ SSD для роботи та розваг.",
+                "meta_title": "Ноутбук HP OmniBook 5 Laptop 16-bc1000ua",
+                "meta_description": "Купуйте ноутбук HP OmniBook 5 з AMD Ryzen 5, 16 ГБ RAM та 512 ГБ SSD."
+            }
+        },
+        "features": {
+            "6": 40,
+            "7": 49,
+            "8": 52,
+            "9": 55,
+            "1": 13,
+            "2": 22,
+            "3": 25
+        }
+    },
+    {
+        "id": 13,
+        "reference": "ASUS-ZENBOOK-S14",
+        "price": 41999,
+        "quantity": 8,
+        "sort_order": 13,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop ASUS Zenbook S 14 UX5406SA-PV037W",
+                "slug": "laptop-asus-zenbook-s-14-ux5406sa-pv037w",
+                "description": "Premium ultrabook with Intel Core Ultra 5 processor, 16GB RAM, and high-resolution display.",
+                "meta_title": "ASUS Zenbook S 14 UX5406SA-PV037W",
+                "meta_description": "Buy ASUS Zenbook S 14 ultrabook with Intel Core Ultra 5, 16GB RAM, and 2880x1800 display."
+            },
+            "uk": {
+                "name": "Ноутбук ASUS Zenbook S 14 UX5406SA-PV037W",
+                "slug": "noutbuk-asus-zenbook-s-14-ux5406sa-pv037w",
+                "description": "Преміальний ультрабук з процесором Intel Core Ultra 5, 16 ГБ оперативної пам'яті та високою роздільною здатністю дисплея.",
+                "meta_title": "ASUS Zenbook S 14 UX5406SA-PV037W",
+                "meta_description": "Купуйте ультрабук ASUS Zenbook S 14 з Intel Core Ultra 5, 16 ГБ RAM та дисплеєм 2880x1800."
+            }
+        },
+        "features": {
+            "6": 41,
+            "7": 49,
+            "8": 52,
+            "9": 55,
+            "1": 10,
+            "2": 23,
+            "3": 29
+        }
+    },
+    {
+        "id": 14,
+        "reference": "ASUS-ROG-STRIX-G18",
+        "price": 88888,
+        "quantity": 5,
+        "sort_order": 14,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop ASUS ROG Strix G18 (2025) G814PP-S9022",
+                "slug": "laptop-asus-rog-strix-g18-2025-g814pp-s9022",
+                "description": "High-end gaming laptop with AMD Ryzen 9 processor, 32GB RAM, 1TB SSD, and powerful GPU.",
+                "meta_title": "ASUS ROG Strix G18 (2025) Gaming Laptop",
+                "meta_description": "Buy ASUS ROG Strix G18 gaming laptop with AMD Ryzen 9, 32GB RAM, 1TB SSD, and 8GB GPU."
+            },
+            "uk": {
+                "name": "Ноутбук ASUS ROG Strix G18 (2025) G814PP-S9022",
+                "slug": "noutbuk-asus-rog-strix-g18-2025-g814pp-s9022",
+                "description": "Високопродуктивний ігровий ноутбук з процесором AMD Ryzen 9, 32 ГБ оперативної пам'яті, 1 ТБ SSD та потужною відеокартою.",
+                "meta_title": "Ігровий ноутбук ASUS ROG Strix G18 (2025)",
+                "meta_description": "Купуйте ігровий ноутбук ASUS ROG Strix G18 з AMD Ryzen 9, 32 ГБ RAM, 1 ТБ SSD та 8 ГБ GPU."
+            }
+        },
+        "features": {
+            "6": 42,
+            "10": 56,
+            "7": 50,
+            "8": 53,
+            "9": 55,
+            "1": 14,
+            "2": 19,
+            "3": 30
+        }
+    },
+    {
+        "id": 15,
+        "reference": "APPLE-MACBOOK-AIR-M4",
+        "price": 62999,
+        "quantity": 10,
+        "sort_order": 15,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop Apple MacBook Air 15.3\" M4 16/256GB 2025",
+                "slug": "laptop-apple-macbook-air-15-3-m4-16-256gb-2025",
+                "description": "Apple MacBook Air with M4 chip, 16GB RAM, and stunning Retina display.",
+                "meta_title": "Apple MacBook Air 15.3\" M4 16/256GB 2025",
+                "meta_description": "Buy Apple MacBook Air 15.3\" with M4 chip, 16GB RAM, and 256GB SSD."
+            },
+            "uk": {
+                "name": "Ноутбук Apple MacBook Air 15.3\" M4 16/256GB 2025",
+                "slug": "noutbuk-apple-macbook-air-15-3-m4-16-256gb-2025",
+                "description": "Apple MacBook Air з чипом M4, 16 ГБ оперативної пам'яті та чудовим дисплеєм Retina.",
+                "meta_title": "Apple MacBook Air 15.3\" M4 16/256GB 2025",
+                "meta_description": "Купуйте Apple MacBook Air 15.3\" з чипом M4, 16 ГБ RAM та 256 ГБ SSD."
+            }
+        },
+        "features": {
+            "6": 43,
+            "7": 48,
+            "8": 52,
+            "1": 11,
+            "2": 22,
+            "3": 32
+        }
+    },
+    {
+        "id": 16,
+        "reference": "ASUS-TUF-GAMING-A16",
+        "price": 73999,
+        "quantity": 7,
+        "sort_order": 16,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop ASUS TUF Gaming A16 (2025) FA608PM-RV026",
+                "slug": "laptop-asus-tuf-gaming-a16-2025-fa608pm-rv026",
+                "description": "Gaming laptop with AMD Ryzen 9 processor, 32GB RAM, 1TB SSD, and dedicated GPU.",
+                "meta_title": "ASUS TUF Gaming A16 (2025) Gaming Laptop",
+                "meta_description": "Buy ASUS TUF Gaming A16 laptop with AMD Ryzen 9, 32GB RAM, 1TB SSD, and 8GB GPU."
+            },
+            "uk": {
+                "name": "Ноутбук ASUS TUF Gaming A16 (2025) FA608PM-RV026",
+                "slug": "noutbuk-asus-tuf-gaming-a16-2025-fa608pm-rv026",
+                "description": "Ігровий ноутбук з процесором AMD Ryzen 9, 32 ГБ оперативної пам'яті, 1 ТБ SSD та дискретною відеокартою.",
+                "meta_title": "Ігровий ноутбук ASUS TUF Gaming A16 (2025)",
+                "meta_description": "Купуйте ігровий ноутбук ASUS TUF Gaming A16 з AMD Ryzen 9, 32 ГБ RAM, 1 ТБ SSD та 8 ГБ GPU."
+            }
+        },
+        "features": {
+            "6": 42,
+            "10": 56,
+            "7": 50,
+            "8": 53,
+            "9": 55,
+            "1": 13,
+            "2": 24,
+            "3": 31
+        }
+    },
+    {
+        "id": 17,
+        "reference": "LENOVO-LEGION-PRO-5-16IRX10",
+        "price": 77999,
+        "quantity": 6,
+        "sort_order": 17,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop Lenovo Legion Pro 5 16IRX10",
+                "slug": "laptop-lenovo-legion-pro-5-16irx10",
+                "description": "Professional gaming laptop with Intel Core i7 processor, 32GB RAM, and powerful GPU.",
+                "meta_title": "Lenovo Legion Pro 5 16IRX10 Gaming Laptop",
+                "meta_description": "Buy Lenovo Legion Pro 5 laptop with Intel Core i7, 32GB RAM, 1TB SSD, and 8GB GPU."
+            },
+            "uk": {
+                "name": "Ноутбук Lenovo Legion Pro 5 16IRX10",
+                "slug": "noutbuk-lenovo-legion-pro-5-16irx10",
+                "description": "Професійний ігровий ноутбук з процесором Intel Core i7, 32 ГБ оперативної пам'яті та потужною відеокартою.",
+                "meta_title": "Ігровий ноутбук Lenovo Legion Pro 5 16IRX10",
+                "meta_description": "Купуйте ігровий ноутбук Lenovo Legion Pro 5 з Intel Core i7, 32 ГБ RAM, 1 ТБ SSD та 8 ГБ GPU."
+            }
+        },
+        "features": {
+            "6": 46,
+            "10": 56,
+            "7": 50,
+            "8": 53,
+            "9": 55,
+            "1": 13,
+            "2": 19,
+            "3": 30
+        }
+    },
+    {
+        "id": 18,
+        "reference": "CHUWI-HEROBOOK-PLUS",
+        "price": 9790,
+        "quantity": 20,
+        "sort_order": 18,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop 15.6 CHUWI HeroBook Plus",
+                "slug": "laptop-15-6-chuwi-herobook-plus",
+                "description": "Budget laptop with Intel Celeron processor, perfect for basic tasks and web browsing.",
+                "meta_title": "15.6 CHUWI HeroBook Plus Budget Laptop",
+                "meta_description": "Buy 15.6 CHUWI HeroBook Plus budget laptop with Intel Celeron, 8GB RAM, and 256GB SSD."
+            },
+            "uk": {
+                "name": "Ноутбук 15.6 CHUWI HeroBook Plus",
+                "slug": "noutbuk-15-6-chuwi-herobook-plus",
+                "description": "Бюджетний ноутбук з процесором Intel Celeron, ідеальний для базових завдань та перегляду веб-сторінок.",
+                "meta_title": "Бюджетний ноутбук 15.6 CHUWI HeroBook Plus",
+                "meta_description": "Купуйте бюджетний ноутбук 15.6 CHUWI HeroBook Plus з Intel Celeron, 8 ГБ RAM та 256 ГБ SSD."
+            }
+        },
+        "features": {
+            "6": 44,
+            "7": 48,
+            "8": 51,
+            "1": 12,
+            "2": 22,
+            "3": 25
+        }
+    },
+    {
+        "id": 19,
+        "reference": "LENOVO-LEGION-PRO-5-16IAX10H",
+        "price": 113999,
+        "quantity": 4,
+        "sort_order": 19,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop Lenovo Legion Pro 5 16IAX10H",
+                "slug": "laptop-lenovo-legion-pro-5-16iax10h",
+                "description": "Top-tier gaming laptop with Intel Core Ultra 9 processor, 32GB RAM, and high-end GPU.",
+                "meta_title": "Lenovo Legion Pro 5 16IAX10H Gaming Laptop",
+                "meta_description": "Buy Lenovo Legion Pro 5 laptop with Intel Core Ultra 9, 32GB RAM, 1TB SSD, and 12GB GPU."
+            },
+            "uk": {
+                "name": "Ноутбук Lenovo Legion Pro 5 16IAX10H",
+                "slug": "noutbuk-lenovo-legion-pro-5-16iax10h",
+                "description": "Топовий ігровий ноутбук з процесором Intel Core Ultra 9, 32 ГБ оперативної пам'яті та висококласною відеокартою.",
+                "meta_title": "Ігровий ноутбук Lenovo Legion Pro 5 16IAX10H",
+                "meta_description": "Купуйте ігровий ноутбук Lenovo Legion Pro 5 з Intel Core Ultra 9, 32 ГБ RAM, 1 ТБ SSD та 12 ГБ GPU."
+            }
+        },
+        "features": {
+            "6": 45,
+            "10": 57,
+            "7": 50,
+            "8": 53,
+            "9": 55,
+            "1": 13,
+            "2": 24,
+            "3": 30
+        }
+    },
+    {
+        "id": 20,
+        "reference": "DELL-15-LAPTOP",
+        "price": 29999,
+        "quantity": 18,
+        "sort_order": 20,
+        "status": true,
+        "category_id": 2,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Laptop Dell 15",
+                "slug": "laptop-dell-15",
+                "description": "Reliable laptop with Intel Core i5 processor, 16GB RAM, and 512GB SSD for work and study.",
+                "meta_title": "Dell 15 Laptop",
+                "meta_description": "Buy Dell 15 laptop with Intel Core i5, 16GB RAM, and 512GB SSD."
+            },
+            "uk": {
+                "name": "Ноутбук Dell 15",
+                "slug": "noutbuk-dell-15",
+                "description": "Надійний ноутбук з процесором Intel Core i5, 16 ГБ оперативної пам'яті та 512 ГБ SSD для роботи та навчання.",
+                "meta_title": "Ноутбук Dell 15 Laptop",
+                "meta_description": "Купуйте ноутбук Dell 15 з Intel Core i5, 16 ГБ RAM та 512 ГБ SSD."
+            }
+        },
+        "features": {
+            "6": 47,
+            "7": 49,
+            "8": 52,
+            "9": 54,
+            "1": 12,
+            "2": 23,
+            "3": 25
+        }
+    },
+    {
+        "id": 21,
+        "reference": "ARTLINE-GAMING-X43",
+        "price": 22999,
+        "quantity": 8,
+        "sort_order": 21,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer ARTLINE Gaming X43 (X43v59)",
+                "slug": "computer-artline-gaming-x43-x43v59",
+                "description": "Gaming desktop PC with GeForce RTX 3050, AMD Ryzen 5 3500X processor, 16GB RAM, and 1TB SSD.",
+                "meta_title": "ARTLINE Gaming X43 Desktop PC",
+                "meta_description": "Buy ARTLINE Gaming X43 desktop PC with RTX 3050, AMD Ryzen 5 3500X, 16GB RAM, and 1TB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер ARTLINE Gaming X43 (X43v59)",
+                "slug": "kompyuter-artline-gaming-x43-x43v59",
+                "description": "Ігровий настільний ПК з GeForce RTX 3050, процесором AMD Ryzen 5 3500X, 16 ГБ оперативної пам'яті та 1 ТБ SSD.",
+                "meta_title": "Настільний ПК ARTLINE Gaming X43",
+                "meta_description": "Купуйте настільний ПК ARTLINE Gaming X43 з RTX 3050, AMD Ryzen 5 3500X, 16 ГБ RAM та 1 ТБ SSD."
+            }
+        },
+        "features": {
+            "11": 77,
+            "10": 59,
+            "6": 62,
+            "8": 52,
+            "9": 54,
+            "12": 86,
+            "7": 50
+        }
+    },
+    {
+        "id": 22,
+        "reference": "COBRA-ADVANCED-A75F",
+        "price": 48499,
+        "quantity": 5,
+        "sort_order": 22,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer COBRA Advanced (A75F.32.S10.56T.23062)",
+                "slug": "computer-cobra-advanced-a75f",
+                "description": "High-performance desktop PC with GeForce RTX 5060 Ti, AMD Ryzen 5 7500F processor, 32GB RAM, and 1TB SSD.",
+                "meta_title": "COBRA Advanced Desktop PC",
+                "meta_description": "Buy COBRA Advanced desktop PC with RTX 5060 Ti, AMD Ryzen 5 7500F, 32GB RAM, and 1TB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер COBRA Advanced (A75F.32.S10.56T.23062)",
+                "slug": "kompyuter-cobra-advanced-a75f",
+                "description": "Високопродуктивний настільний ПК з GeForce RTX 5060 Ti, процесором AMD Ryzen 5 7500F, 32 ГБ оперативної пам'яті та 1 ТБ SSD.",
+                "meta_title": "Настільний ПК COBRA Advanced",
+                "meta_description": "Купуйте настільний ПК COBRA Advanced з RTX 5060 Ti, AMD Ryzen 5 7500F, 32 ГБ RAM та 1 ТБ SSD."
+            }
+        },
+        "features": {
+            "11": 78,
+            "10": 60,
+            "6": 63,
+            "8": 53,
+            "9": 55,
+            "12": 87,
+            "7": 50
+        }
+    },
+    {
+        "id": 23,
+        "reference": "ARTLINE-BUSINESS-B29",
+        "price": 16968,
+        "quantity": 12,
+        "sort_order": 23,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer ARTLINE Business B29 v31",
+                "slug": "computer-artline-business-b29-v31",
+                "description": "Business desktop PC with GeForce GT710, Intel Core i5-10400F processor, 16GB RAM, and 480GB SSD.",
+                "meta_title": "ARTLINE Business B29 Desktop PC",
+                "meta_description": "Buy ARTLINE Business B29 desktop PC with GT710, Intel Core i5-10400F, 16GB RAM, and 480GB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер ARTLINE Business B29 v31",
+                "slug": "kompyuter-artline-business-b29-v31",
+                "description": "Бізнес настільний ПК з GeForce GT710, процесором Intel Core i5-10400F, 16 ГБ оперативної пам'яті та 480 ГБ SSD.",
+                "meta_title": "Настільний ПК ARTLINE Business B29",
+                "meta_description": "Купуйте настільний ПК ARTLINE Business B29 з GT710, Intel Core i5-10400F, 16 ГБ RAM та 480 ГБ SSD."
+            }
+        },
+        "features": {
+            "11": 79,
+            "10": 58,
+            "6": 64,
+            "8": 52,
+            "9": 54,
+            "12": 85,
+            "7": 73
+        }
+    },
+    {
+        "id": 24,
+        "reference": "COBRA-ADVANCED-W11",
+        "price": 87234,
+        "quantity": 3,
+        "sort_order": 24,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer COBRA Advanced Windows 11 (A75F.64.S5.57T.20960W)",
+                "slug": "computer-cobra-advanced-windows-11",
+                "description": "Premium desktop PC with GeForce RTX 5070 Ti, AMD Ryzen 5 7500F processor, 64GB RAM, and 500GB SSD.",
+                "meta_title": "COBRA Advanced Windows 11 Desktop PC",
+                "meta_description": "Buy COBRA Advanced Windows 11 desktop PC with RTX 5070 Ti, AMD Ryzen 5 7500F, 64GB RAM, and 500GB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер COBRA Advanced Windows 11 (A75F.64.S5.57T.20960W)",
+                "slug": "kompyuter-cobra-advanced-windows-11",
+                "description": "Преміальний настільний ПК з GeForce RTX 5070 Ti, процесором AMD Ryzen 5 7500F, 64 ГБ оперативної пам'яті та 500 ГБ SSD.",
+                "meta_title": "Настільний ПК COBRA Advanced Windows 11",
+                "meta_description": "Купуйте настільний ПК COBRA Advanced Windows 11 з RTX 5070 Ti, AMD Ryzen 5 7500F, 64 ГБ RAM та 500 ГБ SSD."
+            }
+        },
+        "features": {
+            "11": 80,
+            "10": 60,
+            "6": 63,
+            "8": 69,
+            "9": 55,
+            "12": 88,
+            "7": 74
+        }
+    },
+    {
+        "id": 25,
+        "reference": "DTOP-BUSINESS-I507",
+        "price": 6550,
+        "quantity": 15,
+        "sort_order": 25,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer DTOP Business i507 SSD",
+                "slug": "computer-dtop-business-i507-ssd",
+                "description": "Budget desktop PC with Intel Core i5-3470 processor, 16GB RAM, DDR3 memory, and 240GB SSD.",
+                "meta_title": "DTOP Business i507 Desktop PC",
+                "meta_description": "Buy DTOP Business i507 desktop PC with Intel Core i5-3470, 16GB RAM, DDR3, and 240GB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер DTOP Business i507 SSD",
+                "slug": "kompyuter-dtop-business-i507-ssd",
+                "description": "Бюджетний настільний ПК з процесором Intel Core i5-3470, 16 ГБ оперативної пам'яті, DDR3 та 240 ГБ SSD.",
+                "meta_title": "Настільний ПК DTOP Business i507",
+                "meta_description": "Купуйте настільний ПК DTOP Business i507 з Intel Core i5-3470, 16 ГБ RAM, DDR3 та 240 ГБ SSD."
+            }
+        },
+        "features": {
+            "6": 65,
+            "8": 52,
+            "9": 71,
+            "12": 85,
+            "7": 72
+        }
+    },
+    {
+        "id": 26,
+        "reference": "VINGA-WOLVERINE-D8831",
+        "price": 56259,
+        "quantity": 6,
+        "sort_order": 26,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer Vinga Wolverine D8831 (I7M32G5060WH.D8831)",
+                "slug": "computer-vinga-wolverine-d8831",
+                "description": "Gaming desktop PC with GeForce RTX 5060, Intel Core i7-12700KF processor, 32GB RAM, and 1TB SSD.",
+                "meta_title": "Vinga Wolverine D8831 Gaming PC",
+                "meta_description": "Buy Vinga Wolverine D8831 gaming desktop PC with RTX 5060, Intel Core i7-12700KF, 32GB RAM, and 1TB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер Vinga Wolverine D8831 (I7M32G5060WH.D8831)",
+                "slug": "kompyuter-vinga-wolverine-d8831",
+                "description": "Ігровий настільний ПК з GeForce RTX 5060, процесором Intel Core i7-12700KF, 32 ГБ оперативної пам'яті та 1 ТБ SSD.",
+                "meta_title": "Ігровий ПК Vinga Wolverine D8831",
+                "meta_description": "Купуйте ігровий настільний ПК Vinga Wolverine D8831 з RTX 5060, Intel Core i7-12700KF, 32 ГБ RAM та 1 ТБ SSD."
+            }
+        },
+        "features": {
+            "11": 81,
+            "10": 56,
+            "6": 66,
+            "8": 53,
+            "9": 55,
+            "12": 87,
+            "7": 50
+        }
+    },
+    {
+        "id": 27,
+        "reference": "ASGARD-A56X",
+        "price": 46678,
+        "quantity": 7,
+        "sort_order": 27,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer ASGARD (A56X.32.S20.26S.1576)",
+                "slug": "computer-asgard-a56x",
+                "description": "Gaming desktop PC with GeForce RTX 2060 Super, AMD Ryzen 5 5600X processor, 32GB RAM, and 2TB SSD.",
+                "meta_title": "ASGARD Gaming Desktop PC",
+                "meta_description": "Buy ASGARD gaming desktop PC with RTX 2060 Super, AMD Ryzen 5 5600X, 32GB RAM, and 2TB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер ASGARD (A56X.32.S20.26S.1576)",
+                "slug": "kompyuter-asgard-a56x",
+                "description": "Ігровий настільний ПК з GeForce RTX 2060 Super, процесором AMD Ryzen 5 5600X, 32 ГБ оперативної пам'яті та 2 ТБ SSD.",
+                "meta_title": "Ігровий настільний ПК ASGARD",
+                "meta_description": "Купуйте ігровий настільний ПК ASGARD з RTX 2060 Super, AMD Ryzen 5 5600X, 32 ГБ RAM та 2 ТБ SSD."
+            }
+        },
+        "features": {
+            "11": 82,
+            "10": 56,
+            "6": 67,
+            "8": 53,
+            "9": 54,
+            "12": 87,
+            "7": 75
+        }
+    },
+    {
+        "id": 28,
+        "reference": "ARTLINE-GAMING-TANK",
+        "price": 155736,
+        "quantity": 2,
+        "sort_order": 28,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer ARTLINE Gaming Tank",
+                "slug": "computer-artline-gaming-tank",
+                "description": "Flagship gaming desktop PC with GeForce RTX 5080, AMD Ryzen 9 9950X3D processor, 64GB RAM, and 2TB SSD.",
+                "meta_title": "ARTLINE Gaming Tank Desktop PC",
+                "meta_description": "Buy ARTLINE Gaming Tank flagship desktop PC with RTX 5080, AMD Ryzen 9 9950X3D, 64GB RAM, and 2TB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер ARTLINE Gaming Tank",
+                "slug": "kompyuter-artline-gaming-tank",
+                "description": "Флагманський ігровий настільний ПК з GeForce RTX 5080, процесором AMD Ryzen 9 9950X3D, 64 ГБ оперативної пам'яті та 2 ТБ SSD.",
+                "meta_title": "Флагманський настільний ПК ARTLINE Gaming Tank",
+                "meta_description": "Купуйте флагманський настільний ПК ARTLINE Gaming Tank з RTX 5080, AMD Ryzen 9 9950X3D, 64 ГБ RAM та 2 ТБ SSD."
+            }
+        },
+        "features": {
+            "11": 83,
+            "10": 60,
+            "6": 68,
+            "8": 69,
+            "9": 55,
+            "12": 89,
+            "7": 75
+        }
+    },
+    {
+        "id": 29,
+        "reference": "ARTLINE-GAMING-X98",
+        "price": 253638,
+        "quantity": 1,
+        "sort_order": 29,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer ARTLINE Gaming X98 (X98v89)",
+                "slug": "computer-artline-gaming-x98-x98v89",
+                "description": "Ultimate gaming desktop PC with GeForce RTX 5090, AMD Ryzen 9 9950X3D processor, 96GB RAM, and 2TB SSD.",
+                "meta_title": "ARTLINE Gaming X98 Ultimate PC",
+                "meta_description": "Buy ARTLINE Gaming X98 ultimate desktop PC with RTX 5090, AMD Ryzen 9 9950X3D, 96GB RAM, and 2TB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер ARTLINE Gaming X98 (X98v89)",
+                "slug": "kompyuter-artline-gaming-x98-x98v89",
+                "description": "Ультиматний ігровий настільний ПК з GeForce RTX 5090, процесором AMD Ryzen 9 9950X3D, 96 ГБ оперативної пам'яті та 2 ТБ SSD.",
+                "meta_title": "Ультиматний ПК ARTLINE Gaming X98",
+                "meta_description": "Купуйте ультиматний настільний ПК ARTLINE Gaming X98 з RTX 5090, AMD Ryzen 9 9950X3D, 96 ГБ RAM та 2 ТБ SSD."
+            }
+        },
+        "features": {
+            "11": 84,
+            "10": 61,
+            "6": 68,
+            "8": 70,
+            "9": 55,
+            "12": 90,
+            "7": 75
+        }
+    },
+    {
+        "id": 30,
+        "reference": "ARTLINE-OVERLORD-GUARDIAN",
+        "price": 460110,
+        "quantity": 1,
+        "sort_order": 30,
+        "status": true,
+        "category_id": 3,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Computer ARTLINE Overlord Guardian (Guardianv03)",
+                "slug": "computer-artline-overlord-guardian-guardianv03",
+                "description": "Extreme gaming desktop PC with GeForce RTX 5090, AMD Ryzen 9 9950X3D processor, 96GB RAM, and 4TB SSD.",
+                "meta_title": "ARTLINE Overlord Guardian Extreme PC",
+                "meta_description": "Buy ARTLINE Overlord Guardian extreme desktop PC with RTX 5090, AMD Ryzen 9 9950X3D, 96GB RAM, and 4TB SSD."
+            },
+            "uk": {
+                "name": "Комп'ютер ARTLINE Overlord Guardian (Guardianv03)",
+                "slug": "kompyuter-artline-overlord-guardian-guardianv03",
+                "description": "Екстремальний ігровий настільний ПК з GeForce RTX 5090, процесором AMD Ryzen 9 9950X3D, 96 ГБ оперативної пам'яті та 4 ТБ SSD.",
+                "meta_title": "Екстремальний ПК ARTLINE Overlord Guardian",
+                "meta_description": "Купуйте екстремальний настільний ПК ARTLINE Overlord Guardian з RTX 5090, AMD Ryzen 9 9950X3D, 96 ГБ RAM та 4 ТБ SSD."
+            }
+        },
+        "features": {
+            "11": 84,
+            "10": 61,
+            "6": 68,
+            "8": 70,
+            "9": 55,
+            "12": 91,
+            "7": 76
+        }
+    },
+    {
+        "id": 31,
+        "reference": "XIAOMI-REDMI-PAD-2",
+        "price": 6699,
+        "quantity": 15,
+        "sort_order": 31,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Xiaomi Redmi Pad 2",
+                "slug": "tablet-xiaomi-redmi-pad-2",
+                "description": "Budget Android tablet with 11\" display, 4GB RAM, 128GB storage, and dual cameras.",
+                "meta_title": "Xiaomi Redmi Pad 2 Tablet",
+                "meta_description": "Buy Xiaomi Redmi Pad 2 tablet with 11\" display, 4GB RAM, 128GB storage, and 90Hz refresh rate."
+            },
+            "uk": {
+                "name": "Планшет Xiaomi Redmi Pad 2",
+                "slug": "planshet-xiaomi-redmi-pad-2",
+                "description": "Бюджетний Android планшет з дисплеєм 11\", 4 ГБ оперативної пам'яті, 128 ГБ вбудованої пам'яті та подвійними камерами.",
+                "meta_title": "Планшет Xiaomi Redmi Pad 2",
+                "meta_description": "Купуйте планшет Xiaomi Redmi Pad 2 з дисплеєм 11\", 4 ГБ RAM, 128 ГБ пам'яті та частотою оновлення 90 Гц."
+            }
+        },
+        "features": {
+            "1": 94,
+            "8": 98,
+            "13": 109,
+            "3": 30,
+            "2": 101,
+            "14": 113,
+            "15": 119
+        }
+    },
+    {
+        "id": 32,
+        "reference": "APPLE-IPAD-11-2025",
+        "price": 16999,
+        "quantity": 12,
+        "sort_order": 32,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Apple iPad 11\" 2025",
+                "slug": "tablet-apple-ipad-11-2025",
+                "description": "Apple iPad with 11\" display, 6GB RAM, 128GB storage, and 12MP cameras.",
+                "meta_title": "Apple iPad 11\" 2025",
+                "meta_description": "Buy Apple iPad 11\" 2025 with 6GB RAM, 128GB storage, and 12MP dual cameras."
+            },
+            "uk": {
+                "name": "Планшет Apple iPad 11\" 2025",
+                "slug": "planshet-apple-ipad-11-2025",
+                "description": "Apple iPad з дисплеєм 11\", 6 ГБ оперативної пам'яті, 128 ГБ вбудованої пам'яті та камерами 12 Мп.",
+                "meta_title": "Планшет Apple iPad 11\" 2025",
+                "meta_description": "Купуйте планшет Apple iPad 11\" 2025 з 6 ГБ RAM, 128 ГБ пам'яті та подвійними камерами 12 Мп."
+            }
+        },
+        "features": {
+            "1": 94,
+            "8": 99,
+            "13": 109,
+            "3": 104,
+            "2": 22,
+            "14": 115,
+            "15": 121
+        }
+    },
+    {
+        "id": 33,
+        "reference": "APPLE-IPAD-PRO-11-M5",
+        "price": 54999,
+        "quantity": 5,
+        "sort_order": 33,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Apple iPad Pro 11\" M5 2025",
+                "slug": "tablet-apple-ipad-pro-11-m5-2025",
+                "description": "Premium Apple iPad Pro with M5 chip, 11\" display, 12GB RAM, 256GB storage, and 120Hz ProMotion display.",
+                "meta_title": "Apple iPad Pro 11\" M5 2025",
+                "meta_description": "Buy Apple iPad Pro 11\" M5 2025 with 12GB RAM, 256GB storage, and 120Hz ProMotion display."
+            },
+            "uk": {
+                "name": "Планшет Apple iPad Pro 11\" M5 2025",
+                "slug": "planshet-apple-ipad-pro-11-m5-2025",
+                "description": "Преміальний Apple iPad Pro з чипом M5, дисплеєм 11\", 12 ГБ оперативної пам'яті, 256 ГБ вбудованої пам'яті та дисплеєм ProMotion 120 Гц.",
+                "meta_title": "Планшет Apple iPad Pro 11\" M5 2025",
+                "meta_description": "Купуйте планшет Apple iPad Pro 11\" M5 2025 з 12 ГБ RAM, 256 ГБ пам'яті та дисплеєм ProMotion 120 Гц."
+            }
+        },
+        "features": {
+            "1": 94,
+            "8": 100,
+            "13": 110,
+            "3": 105,
+            "2": 23,
+            "14": 115,
+            "15": 121
+        }
+    },
+    {
+        "id": 34,
+        "reference": "SAMSUNG-GALAXY-TAB-A11",
+        "price": 9399,
+        "quantity": 10,
+        "sort_order": 34,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Samsung Galaxy Tab A11 Plus",
+                "slug": "tablet-samsung-galaxy-tab-a11-plus",
+                "description": "Samsung Android tablet with 11\" display, 6GB RAM, 128GB storage, and 90Hz refresh rate.",
+                "meta_title": "Samsung Galaxy Tab A11 Plus",
+                "meta_description": "Buy Samsung Galaxy Tab A11 Plus tablet with 11\" display, 6GB RAM, and 128GB storage."
+            },
+            "uk": {
+                "name": "Планшет Samsung Galaxy Tab A11 Plus",
+                "slug": "planshet-samsung-galaxy-tab-a11-plus",
+                "description": "Samsung Android планшет з дисплеєм 11\", 6 ГБ оперативної пам'яті, 128 ГБ вбудованої пам'яті та частотою оновлення 90 Гц.",
+                "meta_title": "Планшет Samsung Galaxy Tab A11 Plus",
+                "meta_description": "Купуйте планшет Samsung Galaxy Tab A11 Plus з дисплеєм 11\", 6 ГБ RAM та 128 ГБ пам'яті."
+            }
+        },
+        "features": {
+            "1": 94,
+            "8": 99,
+            "13": 109,
+            "3": 31,
+            "2": 101,
+            "14": 113,
+            "15": 119
+        }
+    },
+    {
+        "id": 35,
+        "reference": "OSCAL-PAD-70",
+        "price": 2999,
+        "quantity": 20,
+        "sort_order": 35,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Oscal Pad 70",
+                "slug": "tablet-oscal-pad-70",
+                "description": "Budget Android tablet with 10.1\" display, 4GB RAM, 128GB storage, and dual cameras.",
+                "meta_title": "Oscal Pad 70 Tablet",
+                "meta_description": "Buy Oscal Pad 70 budget tablet with 10.1\" display, 4GB RAM, and 128GB storage."
+            },
+            "uk": {
+                "name": "Планшет Oscal Pad 70",
+                "slug": "planshet-oscal-pad-70",
+                "description": "Бюджетний Android планшет з дисплеєм 10.1\", 4 ГБ оперативної пам'яті, 128 ГБ вбудованої пам'яті та подвійними камерами.",
+                "meta_title": "Планшет Oscal Pad 70",
+                "meta_description": "Купуйте бюджетний планшет Oscal Pad 70 з дисплеєм 10.1\", 4 ГБ RAM та 128 ГБ пам'яті."
+            }
+        },
+        "features": {
+            "1": 93,
+            "8": 98,
+            "13": 109,
+            "3": 103,
+            "2": 22,
+            "14": 116,
+            "15": 120
+        }
+    },
+    {
+        "id": 36,
+        "reference": "LENOVO-YOGA-TAB-PLUS",
+        "price": 27999,
+        "quantity": 8,
+        "sort_order": 36,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Lenovo Yoga Tab Plus",
+                "slug": "tablet-lenovo-yoga-tab-plus",
+                "description": "Premium Android tablet with 12.7\" display, 16GB RAM, 256GB storage, and 144Hz refresh rate.",
+                "meta_title": "Lenovo Yoga Tab Plus Tablet",
+                "meta_description": "Buy Lenovo Yoga Tab Plus tablet with 12.7\" display, 16GB RAM, and 256GB storage."
+            },
+            "uk": {
+                "name": "Планшет Lenovo Yoga Tab Plus",
+                "slug": "planshet-lenovo-yoga-tab-plus",
+                "description": "Преміальний Android планшет з дисплеєм 12.7\", 16 ГБ оперативної пам'яті, 256 ГБ вбудованої пам'яті та частотою оновлення 144 Гц.",
+                "meta_title": "Планшет Lenovo Yoga Tab Plus",
+                "meta_description": "Купуйте планшет Lenovo Yoga Tab Plus з дисплеєм 12.7\", 16 ГБ RAM та 256 ГБ пам'яті."
+            }
+        },
+        "features": {
+            "1": 95,
+            "8": 52,
+            "13": 110,
+            "3": 107,
+            "2": 102,
+            "14": 117,
+            "15": 122
+        }
+    },
+    {
+        "id": 37,
+        "reference": "SAMSUNG-GALAXY-TAB-S11-ULTRA",
+        "price": 75999,
+        "quantity": 3,
+        "sort_order": 37,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Samsung Galaxy Tab S11 Ultra 5G",
+                "slug": "tablet-samsung-galaxy-tab-s11-ultra-5g",
+                "description": "Flagship Samsung tablet with 14.6\" display, 12GB RAM, 512GB storage, and dual cameras.",
+                "meta_title": "Samsung Galaxy Tab S11 Ultra 5G",
+                "meta_description": "Buy Samsung Galaxy Tab S11 Ultra 5G tablet with 14.6\" display, 12GB RAM, and 512GB storage."
+            },
+            "uk": {
+                "name": "Планшет Samsung Galaxy Tab S11 Ultra 5G",
+                "slug": "planshet-samsung-galaxy-tab-s11-ultra-5g",
+                "description": "Флагманський Samsung планшет з дисплеєм 14.6\", 12 ГБ оперативної пам'яті, 512 ГБ вбудованої пам'яті та подвійними камерами.",
+                "meta_title": "Планшет Samsung Galaxy Tab S11 Ultra 5G",
+                "meta_description": "Купуйте планшет Samsung Galaxy Tab S11 Ultra 5G з дисплеєм 14.6\", 12 ГБ RAM та 512 ГБ пам'яті."
+            }
+        },
+        "features": {
+            "1": 97,
+            "8": 100,
+            "13": 111,
+            "3": 108,
+            "2": 23,
+            "14": 118,
+            "15": 121
+        }
+    },
+    {
+        "id": 38,
+        "reference": "CHUWI-HI10-XPRO",
+        "price": 4490,
+        "quantity": 18,
+        "sort_order": 38,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet CHUWI Hi10 XPro",
+                "slug": "tablet-chuwi-hi10-xpro",
+                "description": "Budget Android tablet with 10.1\" display, 4GB RAM, 128GB storage, and dual cameras.",
+                "meta_title": "CHUWI Hi10 XPro Tablet",
+                "meta_description": "Buy CHUWI Hi10 XPro budget tablet with 10.1\" display, 4GB RAM, and 128GB storage."
+            },
+            "uk": {
+                "name": "Планшет CHUWI Hi10 XPro",
+                "slug": "planshet-chuwi-hi10-xpro",
+                "description": "Бюджетний Android планшет з дисплеєм 10.1\", 4 ГБ оперативної пам'яті, 128 ГБ вбудованої пам'яті та подвійними камерами.",
+                "meta_title": "Планшет CHUWI Hi10 XPro",
+                "meta_description": "Купуйте бюджетний планшет CHUWI Hi10 XPro з дисплеєм 10.1\", 4 ГБ RAM та 128 ГБ пам'яті."
+            }
+        },
+        "features": {
+            "1": 93,
+            "8": 98,
+            "13": 109,
+            "3": 103,
+            "2": 22,
+            "14": 113,
+            "15": 119
+        }
+    },
+    {
+        "id": 39,
+        "reference": "MICROSOFT-SURFACE-PRO-9",
+        "price": 134390,
+        "quantity": 2,
+        "sort_order": 39,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Microsoft Surface Pro 9 i7",
+                "slug": "tablet-microsoft-surface-pro-9-i7",
+                "description": "Premium Windows tablet with 13\" display, Intel Core i7 processor, 32GB RAM, 1TB storage, and 120Hz refresh rate.",
+                "meta_title": "Microsoft Surface Pro 9 i7",
+                "meta_description": "Buy Microsoft Surface Pro 9 i7 tablet with 13\" display, 32GB RAM, and 1TB storage."
+            },
+            "uk": {
+                "name": "Планшет Microsoft Surface Pro 9 i7",
+                "slug": "planshet-microsoft-surface-pro-9-i7",
+                "description": "Преміальний Windows планшет з дисплеєм 13\", процесором Intel Core i7, 32 ГБ оперативної пам'яті, 1 ТБ вбудованої пам'яті та частотою оновлення 120 Гц.",
+                "meta_title": "Планшет Microsoft Surface Pro 9 i7",
+                "meta_description": "Купуйте планшет Microsoft Surface Pro 9 i7 з дисплеєм 13\", 32 ГБ RAM та 1 ТБ пам'яті."
+            }
+        },
+        "features": {
+            "1": 96,
+            "8": 53,
+            "13": 112,
+            "3": 106,
+            "2": 23,
+            "14": 114,
+            "15": 119
+        }
+    },
+    {
+        "id": 40,
+        "reference": "LENOVO-LEGION-TAB-3RD",
+        "price": 24999,
+        "quantity": 6,
+        "sort_order": 40,
+        "status": true,
+        "category_id": 4,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Tablet Lenovo Legion Tab (3rd Gen)",
+                "slug": "tablet-lenovo-legion-tab-3rd-gen",
+                "description": "Gaming Android tablet with 8.8\" display, 16GB RAM, 512GB storage, and 165Hz refresh rate.",
+                "meta_title": "Lenovo Legion Tab 3rd Gen",
+                "meta_description": "Buy Lenovo Legion Tab 3rd Gen gaming tablet with 8.8\" display, 16GB RAM, and 512GB storage."
+            },
+            "uk": {
+                "name": "Планшет Lenovo Legion Tab (3rd Gen)",
+                "slug": "planshet-lenovo-legion-tab-3rd-gen",
+                "description": "Ігровий Android планшет з дисплеєм 8.8\", 16 ГБ оперативної пам'яті, 512 ГБ вбудованої пам'яті та частотою оновлення 165 Гц.",
+                "meta_title": "Планшет Lenovo Legion Tab 3rd Gen",
+                "meta_description": "Купуйте ігровий планшет Lenovo Legion Tab 3rd Gen з дисплеєм 8.8\", 16 ГБ RAM та 512 ГБ пам'яті."
+            }
+        },
+        "features": {
+            "1": 92,
+            "8": 52,
+            "13": 111,
+            "3": 30,
+            "2": 24,
+            "14": 117,
+            "15": 120
+        }
+    },
+    {
+        "id": 41,
+        "reference": "LOG-G102-LIGHTSYNC",
+        "price": 1099,
+        "quantity": 10,
+        "sort_order": 41,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mouse Logitech G102 Lightsync USB",
+                "slug": "mouse-logitech-g102-lightsync-usb",
+                "description": "Gaming mouse with 8000 DPI sensor, USB connection, and RGB lighting for precise gaming control.",
+                "meta_title": "Mouse Logitech G102 Lightsync USB",
+                "meta_description": "Buy Logitech G102 Lightsync USB gaming mouse with 8000 DPI sensor and RGB lighting."
+            },
+            "uk": {
+                "name": "Миша Logitech G102 Lightsync USB",
+                "slug": "mysha-logitech-g102-lightsync-usb",
+                "description": "Ігрова миша з сенсором 8000 DPI, USB підключенням та RGB підсвіткою для точного ігрового контролю.",
+                "meta_title": "Миша Logitech G102 Lightsync USB",
+                "meta_description": "Купуйте ігрову мишу Logitech G102 Lightsync USB з сенсором 8000 DPI та RGB підсвіткою."
+            }
+        },
+        "features": {
+            "17": 127,
+            "22": 154,
+            "20": 144,
+            "5": 37
+        }
+    },
+    {
+        "id": 42,
+        "reference": "LOG-M190-WIRELESS",
+        "price": 449,
+        "quantity": 10,
+        "sort_order": 42,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mouse Logitech M190 Wireless Charcoal (910-005905)",
+                "slug": "mouse-logitech-m190-wireless-charcoal-910-005905",
+                "description": "Wireless mouse with 1000 DPI sensor and 2.4 GHz radio adapter connection, powered by AA battery.",
+                "meta_title": "Mouse Logitech M190 Wireless Charcoal (910-005905)",
+                "meta_description": "Buy Logitech M190 Wireless Charcoal mouse with 1000 DPI sensor and wireless connection."
+            },
+            "uk": {
+                "name": "Миша Logitech M190 Wireless Charcoal (910-005905)",
+                "slug": "mysha-logitech-m190-wireless-charcoal-910-005905",
+                "description": "Бездротова миша з сенсором 1000 DPI та підключенням через радіо адаптер 2.4 ГГц, живиться від батарейки AA.",
+                "meta_title": "Миша Logitech M190 Wireless Charcoal (910-005905)",
+                "meta_description": "Купуйте бездротову мишу Logitech M190 Wireless Charcoal з сенсором 1000 DPI та бездротовим підключенням."
+            }
+        },
+        "features": {
+            "17": 128,
+            "22": 156,
+            "20": 138,
+            "5": 37
+        }
+    },
+    {
+        "id": 43,
+        "reference": "LOG-M240-BT-GRAPHITE",
+        "price": 859,
+        "quantity": 10,
+        "sort_order": 43,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mouse Logitech M240 Silent Bluetooth Graphite (910-007119)",
+                "slug": "mouse-logitech-m240-silent-bluetooth-graphite-910-007119",
+                "description": "Silent wireless mouse with Bluetooth connection, 1000 DPI sensor, and AA battery power.",
+                "meta_title": "Mouse Logitech M240 Silent Bluetooth Graphite (910-007119)",
+                "meta_description": "Buy Logitech M240 Silent Bluetooth Graphite mouse with silent clicks and Bluetooth connection."
+            },
+            "uk": {
+                "name": "Миша Logitech M240 Silent Bluetooth Graphite (910-007119)",
+                "slug": "mysha-logitech-m240-silent-bluetooth-graphite-910-007119",
+                "description": "Тиха бездротова миша з Bluetooth підключенням, сенсором 1000 DPI та живленням від батарейки AA.",
+                "meta_title": "Миша Logitech M240 Silent Bluetooth Graphite (910-007119)",
+                "meta_description": "Купуйте тиху бездротову мишу Logitech M240 Silent Bluetooth Graphite з тихими кліками та Bluetooth підключенням."
+            }
+        },
+        "features": {
+            "17": 128,
+            "22": 155,
+            "20": 138,
+            "5": 38
+        }
+    },
+    {
+        "id": 44,
+        "reference": "HATOR-PULSAR-3",
+        "price": 1499,
+        "quantity": 10,
+        "sort_order": 44,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mouse HATOR Pulsar 3 Wireless Black (HTM630)",
+                "slug": "mouse-hator-pulsar-3-wireless-black-htm630",
+                "description": "Gaming mouse with 12000 DPI sensor, combo connection (Bluetooth, USB, 2.4 GHz), and rechargeable battery.",
+                "meta_title": "Mouse HATOR Pulsar 3 Wireless Black (HTM630)",
+                "meta_description": "Buy HATOR Pulsar 3 Wireless Black gaming mouse with 12000 DPI sensor and multiple connection options."
+            },
+            "uk": {
+                "name": "Миша HATOR Pulsar 3 Wireless Black (HTM630)",
+                "slug": "mysha-hator-pulsar-3-wireless-black-htm630",
+                "description": "Ігрова миша з сенсором 12000 DPI, комбінованим підключенням (Bluetooth, USB, 2.4 ГГц) та акумулятором.",
+                "meta_title": "Миша HATOR Pulsar 3 Wireless Black (HTM630)",
+                "meta_description": "Купуйте ігрову мишу HATOR Pulsar 3 Wireless Black з сенсором 12000 DPI та кількома варіантами підключення."
+            }
+        },
+        "features": {
+            "17": 129,
+            "22": [
+                155,
+                154,
+                156
+            ],
+            "20": 145,
+            "5": 37
+        }
+    },
+    {
+        "id": 45,
+        "reference": "RAZER-DEATHADDER-V3",
+        "price": 4399,
+        "quantity": 10,
+        "sort_order": 45,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mouse Razer DeathAdder V3 Hyperspeed Black (RZ01-05140100-R3G1)",
+                "slug": "mouse-razer-deathadder-v3-hyperspeed-black-rz01-05140100-r3g1",
+                "description": "Premium gaming mouse with 26000 DPI sensor, combo connection (USB, 2.4 GHz), and rechargeable battery for competitive gaming.",
+                "meta_title": "Mouse Razer DeathAdder V3 Hyperspeed Black (RZ01-05140100-R3G1)",
+                "meta_description": "Buy Razer DeathAdder V3 Hyperspeed Black gaming mouse with 26000 DPI sensor for professional gaming."
+            },
+            "uk": {
+                "name": "Миша Razer DeathAdder V3 Hyperspeed Black (RZ01-05140100-R3G1)",
+                "slug": "mysha-razer-deathadder-v3-hyperspeed-black-rz01-05140100-r3g1",
+                "description": "Преміальна ігрова миша з сенсором 26000 DPI, комбінованим підключенням (USB, 2.4 ГГц) та акумулятором для конкурентної гри.",
+                "meta_title": "Миша Razer DeathAdder V3 Hyperspeed Black (RZ01-05140100-R3G1)",
+                "meta_description": "Купуйте преміальну ігрову мишу Razer DeathAdder V3 Hyperspeed Black з сенсором 26000 DPI для професійної гри."
+            }
+        },
+        "features": {
+            "17": 129,
+            "22": [
+                154,
+                156
+            ],
+            "20": 147,
+            "5": 37
+        }
+    },
+    {
+        "id": 46,
+        "reference": "LOG-MX-KEYS-S-UA",
+        "price": 3999,
+        "quantity": 10,
+        "sort_order": 46,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Keyboard Logitech MX Keys S Graphite UA (920-011593)",
+                "slug": "keyboard-logitech-mx-keys-s-graphite-ua-920-011593",
+                "description": "Premium wireless keyboard with membrane keys, Bluetooth and 2.4 GHz connection, and Ukrainian layout support.",
+                "meta_title": "Keyboard Logitech MX Keys S Graphite UA (920-011593)",
+                "meta_description": "Buy Logitech MX Keys S Graphite UA wireless keyboard with membrane keys and dual connectivity."
+            },
+            "uk": {
+                "name": "Клавіатура Logitech MX Keys S Graphite UA (920-011593)",
+                "slug": "klaviatura-logitech-mx-keys-s-graphite-ua-920-011593",
+                "description": "Преміальна бездротова клавіатура з мембранними клавішами, Bluetooth та 2.4 ГГц підключенням та підтримкою української розкладки.",
+                "meta_title": "Клавіатура Logitech MX Keys S Graphite UA (920-011593)",
+                "meta_description": "Купуйте преміальну бездротову клавіатуру Logitech MX Keys S Graphite UA з мембранними клавішами та подвійним підключенням."
+            }
+        },
+        "features": {
+            "17": 128,
+            "16": 124,
+            "22": [
+                155,
+                156
+            ],
+            "5": 38
+        }
+    },
+    {
+        "id": 47,
+        "reference": "DELL-KB-216-USB",
+        "price": 575,
+        "quantity": 10,
+        "sort_order": 47,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Keyboard Dell Multimedia KB-216 USB",
+                "slug": "keyboard-dell-multimedia-kb-216-usb",
+                "description": "Budget USB keyboard with membrane keys and multilingual layout (English, Russian, Ukrainian).",
+                "meta_title": "Keyboard Dell Multimedia KB-216 USB",
+                "meta_description": "Buy Dell Multimedia KB-216 USB keyboard with membrane keys and multilingual layout."
+            },
+            "uk": {
+                "name": "Клавіатура Dell Multimedia KB-216 USB",
+                "slug": "klaviatura-dell-multimedia-kb-216-usb",
+                "description": "Бюджетна USB клавіатура з мембранними клавішами та багатомовною розкладкою (англійська, російська, українська).",
+                "meta_title": "Клавіатура Dell Multimedia KB-216 USB",
+                "meta_description": "Купуйте бюджетну клавіатуру Dell Multimedia KB-216 USB з мембранними клавішами та багатомовною розкладкою."
+            }
+        },
+        "features": {
+            "17": 127,
+            "16": 124,
+            "22": 154,
+            "5": 37
+        }
+    },
+    {
+        "id": 48,
+        "reference": "GAMEPRO-GENESIS-WARDEN",
+        "price": 1593,
+        "quantity": 10,
+        "sort_order": 48,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Keyboard GamePro Genesis Warden MK160BL White",
+                "slug": "keyboard-gamepro-genesis-warden-mk160bl-white",
+                "description": "Mechanical gaming keyboard with USB connection, white design, and Ukrainian layout support.",
+                "meta_title": "Keyboard GamePro Genesis Warden MK160BL White",
+                "meta_description": "Buy GamePro Genesis Warden MK160BL White mechanical keyboard with USB connection."
+            },
+            "uk": {
+                "name": "Клавіатура GamePro Genesis Warden MK160BL White",
+                "slug": "klaviatura-gamepro-genesis-warden-mk160bl-white",
+                "description": "Механічна ігрова клавіатура з USB підключенням, білим дизайном та підтримкою української розкладки.",
+                "meta_title": "Клавіатура GamePro Genesis Warden MK160BL White",
+                "meta_description": "Купуйте механічну ігрову клавіатуру GamePro Genesis Warden MK160BL White з USB підключенням."
+            }
+        },
+        "features": {
+            "17": 127,
+            "16": 123,
+            "22": 154,
+            "5": 157
+        }
+    },
+    {
+        "id": 49,
+        "reference": "A4TECH-FBX53C",
+        "price": 1052,
+        "quantity": 10,
+        "sort_order": 49,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Keyboard A4Tech FBX53C Black",
+                "slug": "keyboard-a4tech-fbx53c-black",
+                "description": "Wireless keyboard with hybrid keys, Bluetooth and USB connection, and Ukrainian layout support.",
+                "meta_title": "Keyboard A4Tech FBX53C Black",
+                "meta_description": "Buy A4Tech FBX53C Black wireless keyboard with hybrid keys and dual connectivity."
+            },
+            "uk": {
+                "name": "Клавіатура A4Tech FBX53C Black",
+                "slug": "klaviatura-a4tech-fbx53c-black",
+                "description": "Бездротова клавіатура з гібридними клавішами, Bluetooth та USB підключенням та підтримкою української розкладки.",
+                "meta_title": "Клавіатура A4Tech FBX53C Black",
+                "meta_description": "Купуйте бездротову клавіатуру A4Tech FBX53C Black з гібридними клавішами та подвійним підключенням."
+            }
+        },
+        "features": {
+            "17": 128,
+            "16": 125,
+            "22": [
+                155,
+                154
+            ],
+            "5": 37
+        }
+    },
+    {
+        "id": 50,
+        "reference": "STEELSERIES-APEX-PRO-TKL",
+        "price": 19032,
+        "quantity": 10,
+        "sort_order": 50,
+        "status": true,
+        "category_id": 5,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Keyboard Steelseries Apex Pro TKL WL Gen 3 UA (64871)",
+                "slug": "keyboard-steelseries-apex-pro-tkl-wl-gen-3-ua-64871",
+                "description": "Premium optical-mechanical gaming keyboard with combo connection (Bluetooth, USB, 2.4 GHz), TKL layout, and Ukrainian support.",
+                "meta_title": "Keyboard Steelseries Apex Pro TKL WL Gen 3 UA (64871)",
+                "meta_description": "Buy Steelseries Apex Pro TKL WL Gen 3 UA optical-mechanical keyboard with advanced connectivity."
+            },
+            "uk": {
+                "name": "Клавіатура Steelseries Apex Pro TKL WL Gen 3 UA (64871)",
+                "slug": "klaviatura-steelseries-apex-pro-tkl-wl-gen-3-ua-64871",
+                "description": "Преміальна оптико-механічна ігрова клавіатура з комбінованим підключенням (Bluetooth, USB, 2.4 ГГц), TKL розкладкою та підтримкою української.",
+                "meta_title": "Клавіатура Steelseries Apex Pro TKL WL Gen 3 UA (64871)",
+                "meta_description": "Купуйте преміальну оптико-механічну клавіатуру Steelseries Apex Pro TKL WL Gen 3 UA з розширеним підключенням."
+            }
+        },
+        "features": {
+            "17": 129,
+            "16": 126,
+            "22": [
+                155,
+                154,
+                156
+            ],
+            "5": 37
+        }
+    },
+    {
+        "id": 51,
+        "reference": "HATOR-HYPERGANG-2-GOLD",
+        "price": 1649,
+        "quantity": 10,
+        "sort_order": 51,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphones Hator Hypergang 2 Gold Signature Edition (HTA-916)",
+                "slug": "headphones-hator-hypergang-2-gold-signature-edition-hta-916",
+                "description": "Premium wired over-ear headphones with dual 3.5mm mini-Jack connectors and black-gold design.",
+                "meta_title": "Headphones Hator Hypergang 2 Gold Signature Edition (HTA-916)",
+                "meta_description": "Buy Hator Hypergang 2 Gold Signature Edition wired headphones with dual mini-Jack connectors."
+            },
+            "uk": {
+                "name": "Навушники Hator Hypergang 2 Gold Signature Edition (HTA-916)",
+                "slug": "navushnyky-hator-hypergang-2-gold-signature-edition-hta-916",
+                "description": "Преміальні дротові повнорозмірні навушники з подвійними роз'ємами 3.5 мм mini-Jack та чорно-золотим дизайном.",
+                "meta_title": "Навушники Hator Hypergang 2 Gold Signature Edition (HTA-916)",
+                "meta_description": "Купуйте дротові навушники Hator Hypergang 2 Gold Signature Edition з подвійними роз'ємами mini-Jack."
+            }
+        },
+        "features": {
+            "23": 167,
+            "17": 127,
+            "22": [
+                161,
+                160
+            ],
+            "5": 159,
+            "24": 170
+        }
+    },
+    {
+        "id": 52,
+        "reference": "SAMSUNG-GALAXY-BUDS3-PRO",
+        "price": 6699,
+        "quantity": 10,
+        "sort_order": 52,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphones Samsung Galaxy Buds3 Pro Silver (SM-R630NZAASEK)",
+                "slug": "headphones-samsung-galaxy-buds3-pro-silver-sm-r630nzaasek",
+                "description": "Premium TWS earbuds with Bluetooth 5.4, silver design, and in-ear mount for comfortable fit.",
+                "meta_title": "Headphones Samsung Galaxy Buds3 Pro Silver (SM-R630NZAASEK)",
+                "meta_description": "Buy Samsung Galaxy Buds3 Pro Silver TWS earbuds with Bluetooth 5.4 and premium sound."
+            },
+            "uk": {
+                "name": "Навушники Samsung Galaxy Buds3 Pro Silver (SM-R630NZAASEK)",
+                "slug": "navushnyky-samsung-galaxy-buds3-pro-silver-sm-r630nzaasek",
+                "description": "Преміальні TWS навушники з Bluetooth 5.4, сріблястим дизайном та кріпленням у вухах для комфортного носіння.",
+                "meta_title": "Навушники Samsung Galaxy Buds3 Pro Silver (SM-R630NZAASEK)",
+                "meta_description": "Купуйте TWS навушники Samsung Galaxy Buds3 Pro Silver з Bluetooth 5.4 та преміальним звуком."
+            }
+        },
+        "features": {
+            "23": 168,
+            "17": 128,
+            "22": 165,
+            "5": 38,
+            "24": 171
+        }
+    },
+    {
+        "id": 53,
+        "reference": "APPLE-AIRPODS-PRO-MAGSAFE",
+        "price": 14099,
+        "quantity": 10,
+        "sort_order": 53,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphones Apple AirPods Pro with MagSafe Case USB-C (MFHP4ZE/A)",
+                "slug": "headphones-apple-airpods-pro-with-magsafe-case-usb-c-mfhp4zea",
+                "description": "Premium Apple AirPods Pro TWS earbuds with Bluetooth 5.3, MagSafe case with USB-C, and active noise cancellation.",
+                "meta_title": "Headphones Apple AirPods Pro with MagSafe Case USB-C (MFHP4ZE/A)",
+                "meta_description": "Buy Apple AirPods Pro with MagSafe Case USB-C TWS earbuds with active noise cancellation."
+            },
+            "uk": {
+                "name": "Навушники Apple AirPods Pro with MagSafe Case USB-C (MFHP4ZE/A)",
+                "slug": "navushnyky-apple-airpods-pro-with-magsafe-case-usb-c-mfhp4zea",
+                "description": "Преміальні TWS навушники Apple AirPods Pro з Bluetooth 5.3, футляром MagSafe з USB-C та активним шумозаглушенням.",
+                "meta_title": "Навушники Apple AirPods Pro with MagSafe Case USB-C (MFHP4ZE/A)",
+                "meta_description": "Купуйте TWS навушники Apple AirPods Pro з футляром MagSafe USB-C та активним шумозаглушенням."
+            }
+        },
+        "features": {
+            "23": 168,
+            "17": 128,
+            "22": 164,
+            "5": 157,
+            "24": 172
+        }
+    },
+    {
+        "id": 54,
+        "reference": "LOGITECH-G-PRO-X-2-LIGHTSPEED",
+        "price": 7999,
+        "quantity": 10,
+        "sort_order": 54,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphones Logitech G Pro X 2 Lightspeed Wireless Black (981-001263)",
+                "slug": "headphones-logitech-g-pro-x-2-lightspeed-wireless-black-981-001263",
+                "description": "Professional gaming headphones with combo connection (3.5mm, Bluetooth 5.0, USB, 2.4 GHz), over-ear design, and premium sound.",
+                "meta_title": "Headphones Logitech G Pro X 2 Lightspeed Wireless Black (981-001263)",
+                "meta_description": "Buy Logitech G Pro X 2 Lightspeed Wireless gaming headphones with multiple connection options."
+            },
+            "uk": {
+                "name": "Навушники Logitech G Pro X 2 Lightspeed Wireless Black (981-001263)",
+                "slug": "navushnyky-logitech-g-pro-x-2-lightspeed-wireless-black-981-001263",
+                "description": "Професійні ігрові навушники з комбінованим підключенням (3.5 мм, Bluetooth 5.0, USB, 2.4 ГГц), повнорозмірним дизайном та преміальним звуком.",
+                "meta_title": "Навушники Logitech G Pro X 2 Lightspeed Wireless Black (981-001263)",
+                "meta_description": "Купуйте ігрові навушники Logitech G Pro X 2 Lightspeed Wireless з кількома варіантами підключення."
+            }
+        },
+        "features": {
+            "23": 167,
+            "17": 129,
+            "22": [
+                160,
+                162,
+                154,
+                156
+            ],
+            "5": 37,
+            "24": 170
+        }
+    },
+    {
+        "id": 55,
+        "reference": "ANKER-SOUNDCORE-P40I-TWS",
+        "price": 2499,
+        "quantity": 10,
+        "sort_order": 55,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphones Anker SoundCore P40i TWS Navy Blue (A3955G31)",
+                "slug": "headphones-anker-soundcore-p40i-tws-navy-blue-a3955g31",
+                "description": "Affordable TWS earbuds with Bluetooth 5.3, navy blue color, and in-ear mount for secure fit.",
+                "meta_title": "Headphones Anker SoundCore P40i TWS Navy Blue (A3955G31)",
+                "meta_description": "Buy Anker SoundCore P40i TWS Navy Blue earbuds with Bluetooth 5.3."
+            },
+            "uk": {
+                "name": "Навушники Anker SoundCore P40i TWS Navy Blue (A3955G31)",
+                "slug": "navushnyky-anker-soundcore-p40i-tws-navy-blue-a3955g31",
+                "description": "Доступні TWS навушники з Bluetooth 5.3, темно-синім кольором та кріпленням у вухах для надійної фіксації.",
+                "meta_title": "Навушники Anker SoundCore P40i TWS Navy Blue (A3955G31)",
+                "meta_description": "Купуйте TWS навушники Anker SoundCore P40i Navy Blue з Bluetooth 5.3."
+            }
+        },
+        "features": {
+            "23": 168,
+            "17": 128,
+            "22": 164,
+            "5": 158,
+            "24": 171
+        }
+    },
+    {
+        "id": 56,
+        "reference": "XIAOMI-MI-PISTON-FRESH-BLOOM",
+        "price": 279,
+        "quantity": 10,
+        "sort_order": 56,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphones Xiaomi Mi Piston Fresh Bloom Matte Black (ZBW4354TY)",
+                "slug": "headphones-xiaomi-mi-piston-fresh-bloom-matte-black-zbw4354ty",
+                "description": "Budget wired in-ear headphones with 3.5mm mini-Jack connector and matte black design.",
+                "meta_title": "Headphones Xiaomi Mi Piston Fresh Bloom Matte Black (ZBW4354TY)",
+                "meta_description": "Buy Xiaomi Mi Piston Fresh Bloom Matte Black wired in-ear headphones."
+            },
+            "uk": {
+                "name": "Навушники Xiaomi Mi Piston Fresh Bloom Matte Black (ZBW4354TY)",
+                "slug": "navushnyky-xiaomi-mi-piston-fresh-bloom-matte-black-zbw4354ty",
+                "description": "Бюджетні дротові вакуумні навушники з роз'ємом 3.5 мм mini-Jack та матовим чорним дизайном.",
+                "meta_title": "Навушники Xiaomi Mi Piston Fresh Bloom Matte Black (ZBW4354TY)",
+                "meta_description": "Купуйте дротові вакуумні навушники Xiaomi Mi Piston Fresh Bloom Matte Black."
+            }
+        },
+        "features": {
+            "23": 169,
+            "17": 127,
+            "22": 160,
+            "5": 37,
+            "24": 171
+        }
+    },
+    {
+        "id": 57,
+        "reference": "GAMEPRO-ASGARD-VALKYRIA-RGB",
+        "price": 2499,
+        "quantity": 10,
+        "sort_order": 57,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphones GamePro Asgard Valkyria RGB Wireless Tri-Mod (HSW249B)",
+                "slug": "headphones-gamepro-asgard-valkyria-rgb-wireless-tri-mod-hsw249b",
+                "description": "Gaming headphones with RGB lighting, combo connection (Bluetooth 5.2, USB Type-C, 2.4 GHz), and over-head mount.",
+                "meta_title": "Headphones GamePro Asgard Valkyria RGB Wireless Tri-Mod (HSW249B)",
+                "meta_description": "Buy GamePro Asgard Valkyria RGB Wireless Tri-Mod gaming headphones with RGB lighting."
+            },
+            "uk": {
+                "name": "Навушники GamePro Asgard Valkyria RGB Wireless Tri-Mod (HSW249B)",
+                "slug": "navushnyky-gamepro-asgard-valkyria-rgb-wireless-tri-mod-hsw249b",
+                "description": "Ігрові навушники з RGB підсвіткою, комбінованим підключенням (Bluetooth 5.2, USB Type-C, 2.4 ГГц) та наголовним кріпленням.",
+                "meta_title": "Навушники GamePro Asgard Valkyria RGB Wireless Tri-Mod (HSW249B)",
+                "meta_description": "Купуйте ігрові навушники GamePro Asgard Valkyria RGB Wireless Tri-Mod з RGB підсвіткою."
+            }
+        },
+        "features": {
+            "23": 167,
+            "17": 129,
+            "22": [
+                163,
+                166,
+                156
+            ],
+            "5": 37,
+            "24": 170
+        }
+    },
+    {
+        "id": 58,
+        "reference": "SONY-WH-1000XM6-PLATINUM",
+        "price": 17999,
+        "quantity": 10,
+        "sort_order": 58,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphones Sony WH-1000XM6 Platinum Silver (WH1000XM6S.E)",
+                "slug": "headphones-sony-wh-1000xm6-platinum-silver-wh1000xm6se",
+                "description": "Premium noise-cancelling headphones with combo connection (3.5mm, Bluetooth 5.3), platinum silver design, and over-head mount.",
+                "meta_title": "Headphones Sony WH-1000XM6 Platinum Silver (WH1000XM6S.E)",
+                "meta_description": "Buy Sony WH-1000XM6 Platinum Silver noise-cancelling headphones with premium sound."
+            },
+            "uk": {
+                "name": "Навушники Sony WH-1000XM6 Platinum Silver (WH1000XM6S.E)",
+                "slug": "navushnyky-sony-wh-1000xm6-platinum-silver-wh1000xm6se",
+                "description": "Преміальні навушники з шумозаглушенням, комбінованим підключенням (3.5 мм, Bluetooth 5.3), платиново-сріблястим дизайном та наголовним кріпленням.",
+                "meta_title": "Навушники Sony WH-1000XM6 Platinum Silver (WH1000XM6S.E)",
+                "meta_description": "Купуйте преміальні навушники Sony WH-1000XM6 Platinum Silver з шумозаглушенням та преміальним звуком."
+            }
+        },
+        "features": {
+            "23": 167,
+            "17": 129,
+            "22": [
+                160,
+                164
+            ],
+            "5": 38,
+            "24": 170
+        }
+    },
+    {
+        "id": 59,
+        "reference": "NEW-BEE-NB-Z1-HEADPHONE-STAND",
+        "price": 299,
+        "quantity": 10,
+        "sort_order": 59,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphone Stand Organizer with Non-Slip Base New Bee NB-Z1Black",
+                "slug": "headphone-stand-organizer-with-non-slip-base-new-bee-nb-z1black",
+                "description": "Headphone stand organizer with non-slip base, designed for over-ear headphones, black color.",
+                "meta_title": "Headphone Stand Organizer with Non-Slip Base New Bee NB-Z1Black",
+                "meta_description": "Buy New Bee NB-Z1Black headphone stand organizer with non-slip base."
+            },
+            "uk": {
+                "name": "Підставка для навушників органайзер гарнітури на протиковзній основі New Bee NB-Z1Black",
+                "slug": "pidstavka-dlya-navushnykiv-orhanayzer-harnitury-na-protykovzniy-osnovi-new-bee-nb-z1black",
+                "description": "Підставка-органайзер для навушників з протиковзною основою, призначена для повнорозмірних навушників, чорного кольору.",
+                "meta_title": "Підставка для навушників органайзер гарнітури на протиковзній основі New Bee NB-Z1Black",
+                "meta_description": "Купуйте підставку-органайзер для навушників New Bee NB-Z1Black з протиковзною основою."
+            }
+        },
+        "features": {
+            "23": 167,
+            "5": 37
+        }
+    },
+    {
+        "id": 60,
+        "reference": "UGREEN-LP128-HEADPHONE-CASE",
+        "price": 199,
+        "quantity": 10,
+        "sort_order": 60,
+        "status": true,
+        "category_id": 6,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Headphone Case Ugreen LP128 Black (90403424/40816)",
+                "slug": "headphone-case-ugreen-lp128-black-9040342440816",
+                "description": "Protective case for headphones, black color, compact design for easy storage and transport.",
+                "meta_title": "Headphone Case Ugreen LP128 Black (90403424/40816)",
+                "meta_description": "Buy Ugreen LP128 Black headphone case for protection and storage."
+            },
+            "uk": {
+                "name": "Чохол для навушників Ugreen LP128 Black (90403424/40816)",
+                "slug": "chokhol-dlya-navushnykiv-ugreen-lp128-black-9040342440816",
+                "description": "Захисний чохол для навушників, чорного кольору, компактний дизайн для зручного зберігання та транспортування.",
+                "meta_title": "Чохол для навушників Ugreen LP128 Black (90403424/40816)",
+                "meta_description": "Купуйте захисний чохол для навушників Ugreen LP128 Black для захисту та зберігання."
+            }
+        },
+        "features": {
+            "5": 37
+        }
+    },
+    {
+        "id": 61,
+        "reference": "ERGO-QLED-60-60JUQ7500",
+        "price": 19999,
+        "quantity": 10,
+        "sort_order": 61,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV Ergo QLED 60\" 60JUQ7500",
+                "slug": "tv-ergo-qled-60-60juq7500",
+                "description": "QLED 60\" Smart TV with 4K UltraHD resolution, 120Hz refresh rate, and GoogleTV platform.",
+                "meta_title": "TV Ergo QLED 60\" 60JUQ7500",
+                "meta_description": "Buy Ergo QLED 60\" Smart TV with 4K UltraHD and GoogleTV platform."
+            },
+            "uk": {
+                "name": "Телевізор Ergo QLED 60\" 60JUQ7500",
+                "slug": "televizor-ergo-qled-60-60juq7500",
+                "description": "QLED Smart TV 60\" з роздільною здатністю 4K UltraHD, частотою оновлення 120 Гц та платформою GoogleTV.",
+                "meta_title": "Телевізор Ergo QLED 60\" 60JUQ7500",
+                "meta_description": "Купуйте Smart TV Ergo QLED 60\" з 4K UltraHD та платформою GoogleTV."
+            }
+        },
+        "features": {
+            "1": 177,
+            "25": 183,
+            "26": 188,
+            "2": 23,
+            "3": 27,
+            "27": 189
+        }
+    },
+    {
+        "id": 62,
+        "reference": "LG-OLED-42-OLED42C54LA",
+        "price": 37999,
+        "quantity": 10,
+        "sort_order": 62,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV LG OLED 42\" OLED42C54LA",
+                "slug": "tv-lg-oled-42-oled42c54la",
+                "description": "Premium OLED 42\" Smart TV with 4K UltraHD resolution, 144Hz refresh rate, and WebOS platform.",
+                "meta_title": "TV LG OLED 42\" OLED42C54LA",
+                "meta_description": "Buy LG OLED 42\" Smart TV with 4K UltraHD and WebOS platform."
+            },
+            "uk": {
+                "name": "Телевізор LG OLED 42\" OLED42C54LA",
+                "slug": "televizor-lg-oled-42-oled42c54la",
+                "description": "Преміальний OLED Smart TV 42\" з роздільною здатністю 4K UltraHD, частотою оновлення 144 Гц та платформою WebOS.",
+                "meta_title": "Телевізор LG OLED 42\" OLED42C54LA",
+                "meta_description": "Купуйте Smart TV LG OLED 42\" з 4K UltraHD та платформою WebOS."
+            }
+        },
+        "features": {
+            "1": 174,
+            "25": 183,
+            "26": 185,
+            "2": 102,
+            "3": 27,
+            "27": 190
+        }
+    },
+    {
+        "id": 63,
+        "reference": "SAMSUNG-43-UE43U8000FUXUA",
+        "price": 15999,
+        "quantity": 10,
+        "sort_order": 63,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV Samsung 43\" UE43U8000FUXUA",
+                "slug": "tv-samsung-43-ue43u8000fuxua",
+                "description": "Samsung 43\" Smart TV with 4K UltraHD resolution, 50Hz refresh rate, and Tizen platform.",
+                "meta_title": "TV Samsung 43\" UE43U8000FUXUA",
+                "meta_description": "Buy Samsung 43\" Smart TV with 4K UltraHD and Tizen platform."
+            },
+            "uk": {
+                "name": "Телевізор Samsung 43\" UE43U8000FUXUA",
+                "slug": "televizor-samsung-43-ue43u8000fuxua",
+                "description": "Samsung Smart TV 43\" з роздільною здатністю 4K UltraHD, частотою оновлення 50 Гц та платформою Tizen.",
+                "meta_title": "Телевізор Samsung 43\" UE43U8000FUXUA",
+                "meta_description": "Купуйте Smart TV Samsung 43\" з 4K UltraHD та платформою Tizen."
+            }
+        },
+        "features": {
+            "1": 175,
+            "25": 183,
+            "26": 186,
+            "2": 181,
+            "3": 27,
+            "27": 191
+        }
+    },
+    {
+        "id": 64,
+        "reference": "LG-OLED-65-OLED65G54LW",
+        "price": 129999,
+        "quantity": 10,
+        "sort_order": 64,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV LG OLED 65\" OLED65G54LW",
+                "slug": "tv-lg-oled-65-oled65g54lw",
+                "description": "Premium OLED 65\" Smart TV with 4K UltraHD resolution, 165Hz refresh rate, and WebOS platform.",
+                "meta_title": "TV LG OLED 65\" OLED65G54LW",
+                "meta_description": "Buy LG OLED 65\" Smart TV with 4K UltraHD and WebOS platform."
+            },
+            "uk": {
+                "name": "Телевізор LG OLED 65\" OLED65G54LW",
+                "slug": "televizor-lg-oled-65-oled65g54lw",
+                "description": "Преміальний OLED Smart TV 65\" з роздільною здатністю 4K UltraHD, частотою оновлення 165 Гц та платформою WebOS.",
+                "meta_title": "Телевізор LG OLED 65\" OLED65G54LW",
+                "meta_description": "Купуйте Smart TV LG OLED 65\" з 4K UltraHD та платформою WebOS."
+            }
+        },
+        "features": {
+            "1": 178,
+            "25": 183,
+            "26": 185,
+            "2": 24,
+            "3": 27,
+            "27": 190
+        }
+    },
+    {
+        "id": 65,
+        "reference": "PHILIPS-MINILED-65-65PML8709",
+        "price": 33999,
+        "quantity": 10,
+        "sort_order": 65,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV Philips MiniLED 65\" 65PML8709/12",
+                "slug": "tv-philips-miniled-65-65pml870912",
+                "description": "Philips MiniLED 65\" Smart TV with 4K UltraHD resolution, 60Hz refresh rate, and GoogleTV platform.",
+                "meta_title": "TV Philips MiniLED 65\" 65PML8709/12",
+                "meta_description": "Buy Philips MiniLED 65\" Smart TV with 4K UltraHD and GoogleTV platform."
+            },
+            "uk": {
+                "name": "Телевізор Philips MiniLED 65\" 65PML8709/12",
+                "slug": "televizor-philips-miniled-65-65pml870912",
+                "description": "Philips MiniLED Smart TV 65\" з роздільною здатністю 4K UltraHD, частотою оновлення 60 Гц та платформою GoogleTV.",
+                "meta_title": "Телевізор Philips MiniLED 65\" 65PML8709/12",
+                "meta_description": "Купуйте Smart TV Philips MiniLED 65\" з 4K UltraHD та платформою GoogleTV."
+            }
+        },
+        "features": {
+            "1": 178,
+            "25": 183,
+            "26": 187,
+            "2": 22,
+            "3": 27,
+            "27": 189
+        }
+    },
+    {
+        "id": 66,
+        "reference": "TESLA-24-24E632BHS",
+        "price": 5499,
+        "quantity": 10,
+        "sort_order": 66,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV Tesla 24\" 24E632BHS",
+                "slug": "tv-tesla-24-24e632bhs",
+                "description": "Budget 24\" Smart TV with 1366x768 resolution, 60Hz refresh rate, and Android 11.0 platform.",
+                "meta_title": "TV Tesla 24\" 24E632BHS",
+                "meta_description": "Buy Tesla 24\" Smart TV with Android 11.0 platform."
+            },
+            "uk": {
+                "name": "Телевізор Tesla 24\" 24E632BHS",
+                "slug": "televizor-tesla-24-24e632bhs",
+                "description": "Бюджетний Smart TV 24\" з роздільною здатністю 1366x768, частотою оновлення 60 Гц та платформою Android 11.0.",
+                "meta_title": "Телевізор Tesla 24\" 24E632BHS",
+                "meta_description": "Купуйте Smart TV Tesla 24\" з платформою Android 11.0."
+            }
+        },
+        "features": {
+            "1": 173,
+            "25": 183,
+            "26": 186,
+            "2": 22,
+            "3": 182,
+            "27": 192
+        }
+    },
+    {
+        "id": 67,
+        "reference": "TCL-MINILED-55-55C6K",
+        "price": 34999,
+        "quantity": 10,
+        "sort_order": 67,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV TCL MiniLED 55\" 55C6K",
+                "slug": "tv-tcl-miniled-55-55c6k",
+                "description": "TCL MiniLED 55\" Smart TV with 4K UltraHD resolution, 144Hz refresh rate, and GoogleTV platform.",
+                "meta_title": "TV TCL MiniLED 55\" 55C6K",
+                "meta_description": "Buy TCL MiniLED 55\" Smart TV with 4K UltraHD and GoogleTV platform."
+            },
+            "uk": {
+                "name": "Телевізор TCL MiniLED 55\" 55C6K",
+                "slug": "televizor-tcl-miniled-55-55c6k",
+                "description": "TCL MiniLED Smart TV 55\" з роздільною здатністю 4K UltraHD, частотою оновлення 144 Гц та платформою GoogleTV.",
+                "meta_title": "Телевізор TCL MiniLED 55\" 55C6K",
+                "meta_description": "Купуйте Smart TV TCL MiniLED 55\" з 4K UltraHD та платформою GoogleTV."
+            }
+        },
+        "features": {
+            "1": 176,
+            "25": 183,
+            "26": 187,
+            "2": 102,
+            "3": 27,
+            "27": 189
+        }
+    },
+    {
+        "id": 68,
+        "reference": "KIVI-QLED-32-PRIME-E5-32F720QB",
+        "price": 6999,
+        "quantity": 10,
+        "sort_order": 68,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV Kivi QLED 32\" Prime E5 32F720QB",
+                "slug": "tv-kivi-qled-32-prime-e5-32f720qb",
+                "description": "Kivi QLED 32\" Smart TV with FullHD resolution, 60Hz refresh rate, and GoogleTV platform.",
+                "meta_title": "TV Kivi QLED 32\" Prime E5 32F720QB",
+                "meta_description": "Buy Kivi QLED 32\" Smart TV with FullHD and GoogleTV platform."
+            },
+            "uk": {
+                "name": "Телевізор Kivi QLED 32\" Prime E5 32F720QB",
+                "slug": "televizor-kivi-qled-32-prime-e5-32f720qb",
+                "description": "Kivi QLED Smart TV 32\" з роздільною здатністю FullHD, частотою оновлення 60 Гц та платформою GoogleTV.",
+                "meta_title": "Телевізор Kivi QLED 32\" Prime E5 32F720QB",
+                "meta_description": "Купуйте Smart TV Kivi QLED 32\" з FullHD та платформою GoogleTV."
+            }
+        },
+        "features": {
+            "1": 8,
+            "25": 183,
+            "26": 188,
+            "2": 22,
+            "3": 25,
+            "27": 189
+        }
+    },
+    {
+        "id": 69,
+        "reference": "SAMSUNG-MINILED-115-QE115QN90FUXUA",
+        "price": 799999,
+        "quantity": 10,
+        "sort_order": 69,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV Samsung MiniLED 115\" QE115QN90FUXUA",
+                "slug": "tv-samsung-miniled-115-qe115qn90fuxua",
+                "description": "Premium MiniLED/QLED 115\" Smart TV with 4K UltraHD resolution, 144Hz refresh rate, and Tizen platform.",
+                "meta_title": "TV Samsung MiniLED 115\" QE115QN90FUXUA",
+                "meta_description": "Buy Samsung MiniLED/QLED 115\" Smart TV with 4K UltraHD and Tizen platform."
+            },
+            "uk": {
+                "name": "Телевізор Samsung MiniLED 115\" QE115QN90FUXUA",
+                "slug": "televizor-samsung-miniled-115-qe115qn90fuxua",
+                "description": "Преміальний MiniLED/QLED Smart TV 115\" з роздільною здатністю 4K UltraHD, частотою оновлення 144 Гц та платформою Tizen.",
+                "meta_title": "Телевізор Samsung MiniLED 115\" QE115QN90FUXUA",
+                "meta_description": "Купуйте Smart TV Samsung MiniLED/QLED 115\" з 4K UltraHD та платформою Tizen."
+            }
+        },
+        "features": {
+            "1": 180,
+            "25": 183,
+            "26": [
+                187,
+                188
+            ],
+            "2": 102,
+            "3": 27,
+            "27": 191
+        }
+    },
+    {
+        "id": 70,
+        "reference": "SONY-QLED-85-K-85XR90",
+        "price": 232630,
+        "quantity": 10,
+        "sort_order": 70,
+        "status": true,
+        "category_id": 7,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "TV Sony 85\" K-85XR90",
+                "slug": "tv-sony-85-k-85xr90",
+                "description": "Premium QLED 85\" Smart TV with 4K UltraHD resolution, 120Hz refresh rate, and GoogleTV platform.",
+                "meta_title": "TV Sony 85\" K-85XR90",
+                "meta_description": "Buy Sony QLED 85\" Smart TV with 4K UltraHD and GoogleTV platform."
+            },
+            "uk": {
+                "name": "Телевізор 85 дюймів Sony K-85XR90",
+                "slug": "televizor-85-dyuymiv-sony-k-85xr90",
+                "description": "Преміальний QLED Smart TV 85\" з роздільною здатністю 4K UltraHD, частотою оновлення 120 Гц та платформою GoogleTV.",
+                "meta_title": "Телевізор 85 дюймів Sony K-85XR90",
+                "meta_description": "Купуйте Smart TV Sony QLED 85\" з 4K UltraHD та платформою GoogleTV."
+            }
+        },
+        "features": {
+            "1": 179,
+            "25": 183,
+            "26": 188,
+            "2": 23,
+            "3": 27,
+            "27": 189
+        }
+    },
+    {
+        "id": 71,
+        "reference": "SAMSUNG-GALAXY-A26",
+        "price": 10299,
+        "quantity": 10,
+        "sort_order": 71,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Samsung Galaxy A26 (SM-A266BLGCEUC)",
+                "slug": "mobile-phone-samsung-galaxy-a26-sm-a266blgceuc",
+                "description": "Samsung Galaxy A26 smartphone with 6.7\" Super AMOLED display, 120Hz refresh rate, 8GB RAM, 256GB storage, and triple camera system.",
+                "meta_title": "Mobile Phone Samsung Galaxy A26 (SM-A266BLGCEUC)",
+                "meta_description": "Buy Samsung Galaxy A26 smartphone with Super AMOLED display and triple camera."
+            },
+            "uk": {
+                "name": "Мобільний телефон Samsung Galaxy A26 (SM-A266BLGCEUC)",
+                "slug": "mobilnyy-telefon-samsung-galaxy-a26-sm-a266blgceuc",
+                "description": "Смартфон Samsung Galaxy A26 з дисплеєм 6.7\" Super AMOLED, частотою оновлення 120 Гц, 8 ГБ ОЗП, 256 ГБ пам'яті та потрійною камерою.",
+                "meta_title": "Мобільний телефон Samsung Galaxy A26 (SM-A266BLGCEUC)",
+                "meta_description": "Купуйте смартфон Samsung Galaxy A26 з дисплеєм Super AMOLED та потрійною камерою."
+            }
+        },
+        "features": {
+            "1": 193,
+            "3": 201,
+            "4": 212,
+            "2": 23,
+            "8": 51,
+            "13": 110,
+            "14": 216,
+            "15": 122
+        }
+    },
+    {
+        "id": 72,
+        "reference": "APPLE-IPHONE-17-PRO",
+        "price": 63999,
+        "quantity": 10,
+        "sort_order": 72,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Apple iPhone 17 Pro (MG8J4AF/A)",
+                "slug": "mobile-phone-apple-iphone-17-pro-mg8j4afa",
+                "description": "Premium Apple iPhone 17 Pro with 6.3\" OLED display, 120Hz refresh rate, 6GB RAM, 256GB storage, and triple 48MP camera system.",
+                "meta_title": "Mobile Phone Apple iPhone 17 Pro (MG8J4AF/A)",
+                "meta_description": "Buy Apple iPhone 17 Pro with OLED display and triple 48MP camera."
+            },
+            "uk": {
+                "name": "Мобільний телефон Apple iPhone 17 Pro (MG8J4AF/A)",
+                "slug": "mobilnyy-telefon-apple-iphone-17-pro-mg8j4afa",
+                "description": "Преміальний Apple iPhone 17 Pro з дисплеєм 6.3\" OLED, частотою оновлення 120 Гц, 6 ГБ ОЗП, 256 ГБ пам'яті та потрійною камерою 48 Мп.",
+                "meta_title": "Мобільний телефон Apple iPhone 17 Pro (MG8J4AF/A)",
+                "meta_description": "Купуйте Apple iPhone 17 Pro з дисплеєм OLED та потрійною камерою 48 Мп."
+            }
+        },
+        "features": {
+            "1": 194,
+            "3": 202,
+            "4": 34,
+            "2": 23,
+            "8": 99,
+            "13": 110,
+            "14": 217,
+            "15": 225
+        }
+    },
+    {
+        "id": 73,
+        "reference": "MOTOROLA-EDGE-50-FUSION",
+        "price": 7999,
+        "quantity": 10,
+        "sort_order": 73,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Motorola Edge 50 Fusion (PB3T0087RS)",
+                "slug": "mobile-phone-motorola-edge-50-fusion-pb3t0087rs",
+                "description": "Motorola Edge 50 Fusion with 6.7\" P-OLED display, 144Hz refresh rate, 8GB RAM, 128GB storage, and dual camera system.",
+                "meta_title": "Mobile Phone Motorola Edge 50 Fusion (PB3T0087RS)",
+                "meta_description": "Buy Motorola Edge 50 Fusion with P-OLED display and 144Hz refresh rate."
+            },
+            "uk": {
+                "name": "Мобільний телефон Motorola Edge 50 Fusion (PB3T0087RS)",
+                "slug": "mobilnyy-telefon-motorola-edge-50-fusion-pb3t0087rs",
+                "description": "Motorola Edge 50 Fusion з дисплеєм 6.7\" P-OLED, частотою оновлення 144 Гц, 8 ГБ ОЗП, 128 ГБ пам'яті та подвійною камерою.",
+                "meta_title": "Мобільний телефон Motorola Edge 50 Fusion (PB3T0087RS)",
+                "meta_description": "Купуйте Motorola Edge 50 Fusion з дисплеєм P-OLED та частотою оновлення 144 Гц."
+            }
+        },
+        "features": {
+            "1": 193,
+            "3": 203,
+            "4": 213,
+            "2": 102,
+            "8": 51,
+            "13": 109,
+            "14": 218,
+            "15": 226
+        }
+    },
+    {
+        "id": 74,
+        "reference": "XIAOMI-15T",
+        "price": 24499,
+        "quantity": 10,
+        "sort_order": 74,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Xiaomi 15T (1168057)",
+                "slug": "mobile-phone-xiaomi-15t-1168057",
+                "description": "Xiaomi 15T with 6.83\" AMOLED display, 120Hz refresh rate, 12GB RAM, 512GB storage, and triple camera system.",
+                "meta_title": "Mobile Phone Xiaomi 15T (1168057)",
+                "meta_description": "Buy Xiaomi 15T with AMOLED display and triple camera system."
+            },
+            "uk": {
+                "name": "Мобільний телефон Xiaomi 15T (1168057)",
+                "slug": "mobilnyy-telefon-xiaomi-15t-1168057",
+                "description": "Xiaomi 15T з дисплеєм 6.83\" AMOLED, частотою оновлення 120 Гц, 12 ГБ ОЗП, 512 ГБ пам'яті та потрійною камерою.",
+                "meta_title": "Мобільний телефон Xiaomi 15T (1168057)",
+                "meta_description": "Купуйте Xiaomi 15T з дисплеєм AMOLED та потрійною камерою."
+            }
+        },
+        "features": {
+            "1": 195,
+            "3": 204,
+            "4": 214,
+            "2": 23,
+            "8": 100,
+            "13": 111,
+            "14": 219,
+            "15": 226
+        }
+    },
+    {
+        "id": 75,
+        "reference": "MOTOROLA-EDGE-60-PRO",
+        "price": 19999,
+        "quantity": 10,
+        "sort_order": 75,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Motorola Edge 60 Pro (001012377715)",
+                "slug": "mobile-phone-motorola-edge-60-pro-001012377715",
+                "description": "Motorola Edge 60 Pro with 6.7\" P-OLED display, 120Hz refresh rate, 12GB RAM, 512GB storage, and triple camera system.",
+                "meta_title": "Mobile Phone Motorola Edge 60 Pro (001012377715)",
+                "meta_description": "Buy Motorola Edge 60 Pro with P-OLED display and triple camera."
+            },
+            "uk": {
+                "name": "Мобільний телефон Motorola Edge 60 Pro (001012377715)",
+                "slug": "mobilnyy-telefon-motorola-edge-60-pro-001012377715",
+                "description": "Motorola Edge 60 Pro з дисплеєм 6.7\" P-OLED, частотою оновлення 120 Гц, 12 ГБ ОЗП, 512 ГБ пам'яті та потрійною камерою.",
+                "meta_title": "Мобільний телефон Motorola Edge 60 Pro (001012377715)",
+                "meta_description": "Купуйте Motorola Edge 60 Pro з дисплеєм P-OLED та потрійною камерою."
+            }
+        },
+        "features": {
+            "1": 193,
+            "3": 205,
+            "4": 213,
+            "2": 23,
+            "8": 100,
+            "13": 111,
+            "14": 220,
+            "15": 227
+        }
+    },
+    {
+        "id": 76,
+        "reference": "APPLE-IPHONE-15",
+        "price": 40899,
+        "quantity": 10,
+        "sort_order": 76,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Apple iPhone 15 (MTP93RX/A)",
+                "slug": "mobile-phone-apple-iphone-15-mtp93rxa",
+                "description": "Apple iPhone 15 with 6.1\" OLED display, 60Hz refresh rate, 6GB RAM, 256GB storage, and dual camera system.",
+                "meta_title": "Mobile Phone Apple iPhone 15 (MTP93RX/A)",
+                "meta_description": "Buy Apple iPhone 15 with OLED display and dual camera."
+            },
+            "uk": {
+                "name": "Мобільний телефон Apple iPhone 15 (MTP93RX/A)",
+                "slug": "mobilnyy-telefon-apple-iphone-15-mtp93rxa",
+                "description": "Apple iPhone 15 з дисплеєм 6.1\" OLED, частотою оновлення 60 Гц, 6 ГБ ОЗП, 256 ГБ пам'яті та подвійною камерою.",
+                "meta_title": "Мобільний телефон Apple iPhone 15 (MTP93RX/A)",
+                "meta_description": "Купуйте Apple iPhone 15 з дисплеєм OLED та подвійною камерою."
+            }
+        },
+        "features": {
+            "1": 196,
+            "3": 206,
+            "4": 34,
+            "2": 22,
+            "8": 99,
+            "13": 110,
+            "14": 221,
+            "15": 121
+        }
+    },
+    {
+        "id": 77,
+        "reference": "SAMSUNG-GALAXY-S25-ULTRA",
+        "price": 68599,
+        "quantity": 10,
+        "sort_order": 77,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Samsung Galaxy S25 Ultra (SM-S938BZBHEUC)",
+                "slug": "mobile-phone-samsung-galaxy-s25-ultra-sm-s938bzbheuc",
+                "description": "Premium Samsung Galaxy S25 Ultra with 6.9\" Dynamic AMOLED 2X display, 120Hz refresh rate, 12GB RAM, 1TB storage, and quad camera system with 200MP main sensor.",
+                "meta_title": "Mobile Phone Samsung Galaxy S25 Ultra (SM-S938BZBHEUC)",
+                "meta_description": "Buy Samsung Galaxy S25 Ultra with Dynamic AMOLED 2X display and 200MP camera."
+            },
+            "uk": {
+                "name": "Мобільний телефон Samsung Galaxy S25 Ultra (SM-S938BZBHEUC)",
+                "slug": "mobilnyy-telefon-samsung-galaxy-s25-ultra-sm-s938bzbheuc",
+                "description": "Преміальний Samsung Galaxy S25 Ultra з дисплеєм 6.9\" Dynamic AMOLED 2X, частотою оновлення 120 Гц, 12 ГБ ОЗП, 1 ТБ пам'яті та чотирикамерною системою з основним сенсором 200 Мп.",
+                "meta_title": "Мобільний телефон Samsung Galaxy S25 Ultra (SM-S938BZBHEUC)",
+                "meta_description": "Купуйте Samsung Galaxy S25 Ultra з дисплеєм Dynamic AMOLED 2X та камерою 200 Мп."
+            }
+        },
+        "features": {
+            "1": 197,
+            "3": 207,
+            "4": 215,
+            "2": 23,
+            "8": 100,
+            "13": 112,
+            "14": 222,
+            "15": 121
+        }
+    },
+    {
+        "id": 78,
+        "reference": "POCO-F8-PRO",
+        "price": 24999,
+        "quantity": 10,
+        "sort_order": 78,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Poco F8 Pro (1179963)",
+                "slug": "mobile-phone-poco-f8-pro-1179963",
+                "description": "Poco F8 Pro with 6.59\" AMOLED display, 120Hz refresh rate, 12GB RAM, 256GB storage, and triple camera system.",
+                "meta_title": "Mobile Phone Poco F8 Pro (1179963)",
+                "meta_description": "Buy Poco F8 Pro with AMOLED display and triple camera."
+            },
+            "uk": {
+                "name": "Мобільний телефон Poco F8 Pro (1179963)",
+                "slug": "mobilnyy-telefon-poco-f8-pro-1179963",
+                "description": "Poco F8 Pro з дисплеєм 6.59\" AMOLED, частотою оновлення 120 Гц, 12 ГБ ОЗП, 256 ГБ пам'яті та потрійною камерою.",
+                "meta_title": "Мобільний телефон Poco F8 Pro (1179963)",
+                "meta_description": "Купуйте Poco F8 Pro з дисплеєм AMOLED та потрійною камерою."
+            }
+        },
+        "features": {
+            "1": 198,
+            "3": 208,
+            "4": 214,
+            "2": 23,
+            "8": 100,
+            "13": 110,
+            "14": 223,
+            "15": 228
+        }
+    },
+    {
+        "id": 79,
+        "reference": "SAMSUNG-GALAXY-FOLD-7",
+        "price": 85799,
+        "quantity": 10,
+        "sort_order": 79,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Mobile Phone Samsung Galaxy Fold 7",
+                "slug": "mobile-phone-samsung-galaxy-fold-7",
+                "description": "Premium foldable Samsung Galaxy Fold 7 with dual displays (8\" + 6.5\"), Dynamic AMOLED 2X, 120Hz refresh rate, 12GB RAM, 512GB storage, and triple camera system.",
+                "meta_title": "Mobile Phone Samsung Galaxy Fold 7",
+                "meta_description": "Buy Samsung Galaxy Fold 7 foldable smartphone with dual displays."
+            },
+            "uk": {
+                "name": "Мобільний телефон Samsung Galaxy Fold 7",
+                "slug": "mobilnyy-telefon-samsung-galaxy-fold-7",
+                "description": "Преміальний складний Samsung Galaxy Fold 7 з подвійними дисплеями (8\" + 6.5\"), Dynamic AMOLED 2X, частотою оновлення 120 Гц, 12 ГБ ОЗП, 512 ГБ пам'яті та потрійною камерою.",
+                "meta_title": "Мобільний телефон Samsung Galaxy Fold 7",
+                "meta_description": "Купуйте складний смартфон Samsung Galaxy Fold 7 з подвійними дисплеями."
+            }
+        },
+        "features": {
+            "1": 199,
+            "3": 209,
+            "4": 215,
+            "2": 23,
+            "8": 100,
+            "13": 111,
+            "14": 224,
+            "15": 229
+        }
+    },
+    {
+        "id": 80,
+        "reference": "GOOGLE-PIXEL-9-PRO",
+        "price": 73119,
+        "quantity": 10,
+        "sort_order": 80,
+        "status": true,
+        "category_id": 8,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Smartphone Google Pixel 9 Pro",
+                "slug": "smartphone-google-pixel-9-pro",
+                "description": "Premium Google Pixel 9 Pro with 6.3\" OLED display, 120Hz refresh rate, 16GB RAM, 1TB storage, and triple camera system.",
+                "meta_title": "Smartphone Google Pixel 9 Pro",
+                "meta_description": "Buy Google Pixel 9 Pro with OLED display and triple camera system."
+            },
+            "uk": {
+                "name": "Смартфон Google Pixel 9 Pro",
+                "slug": "smartfon-google-pixel-9-pro",
+                "description": "Преміальний Google Pixel 9 Pro з дисплеєм 6.3\" OLED, частотою оновлення 120 Гц, 16 ГБ ОЗП, 1 ТБ пам'яті та потрійною камерою.",
+                "meta_title": "Смартфон Google Pixel 9 Pro",
+                "meta_description": "Купуйте Google Pixel 9 Pro з дисплеєм OLED та потрійною камерою."
+            }
+        },
+        "features": {
+            "1": 194,
+            "3": 211,
+            "4": 34,
+            "2": 23,
+            "8": 52,
+            "13": 112,
+            "14": 223,
+            "15": 230
+        }
+    },
+    {
+        "id": 81,
+        "reference": "ZENDURE-SUPERBASE-ZDSB1000M-GY-EU",
+        "price": 17999,
+        "quantity": 10,
+        "sort_order": 81,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Station Zendure SuperBase (ZDSB1000M-gy-eu)",
+                "slug": "power-station-zendure-superbase-zdsb1000m-gy-eu",
+                "description": "Portable power station Zendure SuperBase with high-capacity battery, multiple output ports, fast charging, and reliable performance for outdoor and emergency use.",
+                "meta_title": "Power Station Zendure SuperBase",
+                "meta_description": "Buy Zendure SuperBase portable power station with high-capacity battery."
+            },
+            "uk": {
+                "name": "Зарядна станція Zendure SuperBase (ZDSB1000M-gy-eu)",
+                "slug": "zaryadna-stantsiya-zendure-superbase-zdsb1000m-gy-eu",
+                "description": "Портативна зарядна станція Zendure SuperBase з великою ємністю батареї, численними вихідними портами, швидкою зарядкою та надійною роботою для подорожей і надзвичайних ситуацій.",
+                "meta_title": "Зарядна станція Zendure SuperBase",
+                "meta_description": "Купуйте портативну зарядну станцію Zendure SuperBase з великою ємністю."
+            }
+        },
+        "features": {
+            "33": 255,
+            "34": 259,
+            "35": 262,
+            "36": 266
+        }
+    },
+    {
+        "id": 82,
+        "reference": "BLUETTI-AC300-3000W-B300K2",
+        "price": 59999,
+        "quantity": 12,
+        "sort_order": 82,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Station Bluetti AC300 (3000W AC300+B300K2)",
+                "slug": "power-station-bluetti-ac300-3000w-ac300-b300k2",
+                "description": "High-performance Bluetti AC300 modular power station with 3000W output, expandable battery system, fast charging, and multiple AC/DC ports.",
+                "meta_title": "Power Station Bluetti AC300",
+                "meta_description": "Buy Bluetti AC300 modular power station with 3000W output."
+            },
+            "uk": {
+                "name": "Зарядна станція Bluetti AC300 (3000W AC300+B300K2)",
+                "slug": "zaryadna-stantsiya-bluetti-ac300-3000w-ac300-b300k2",
+                "description": "Високопродуктивна модульна зарядна станція Bluetti AC300 з потужністю 3000W, розширюваною батарейною системою, швидкою зарядкою та багатьма портами.",
+                "meta_title": "Зарядна станція Bluetti AC300",
+                "meta_description": "Купуйте модульну зарядну станцію Bluetti AC300 з потужністю 3000W."
+            }
+        },
+        "features": {
+            "33": 257,
+            "34": 261,
+            "35": 264,
+            "36": 269
+        }
+    },
+    {
+        "id": 83,
+        "reference": "JACKERY-EXPLORER-21-0001-000221",
+        "price": 26999,
+        "quantity": 14,
+        "sort_order": 83,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Station Jackery Explorer (21-0001-000221)",
+                "slug": "power-station-jackery-explorer-21-0001-000221",
+                "description": "Jackery Explorer portable power station with high-capacity battery, multiple outputs, fast charging, and ideal performance for travel and backup power.",
+                "meta_title": "Power Station Jackery Explorer",
+                "meta_description": "Buy Jackery Explorer portable power station with high-capacity battery."
+            },
+            "uk": {
+                "name": "Зарядна станція Jackery Explorer (21-0001-000221)",
+                "slug": "zaryadna-stantsiya-jackery-explorer-21-0001-000221",
+                "description": "Портативна зарядна станція Jackery Explorer з великою ємністю акумулятора, численними портами та швидкою зарядкою, ідеальна для поїздок та резервного живлення.",
+                "meta_title": "Зарядна станція Jackery Explorer",
+                "meta_description": "Купуйте портативну зарядну станцію Jackery Explorer з великою ємністю."
+            }
+        },
+        "features": {
+            "33": 256,
+            "34": 259,
+            "35": 263,
+            "36": 267
+        }
+    },
+    {
+        "id": 84,
+        "reference": "ANKER-SOLIX-F3000-A1782311",
+        "price": 98999,
+        "quantity": 8,
+        "sort_order": 84,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Station Anker SOLIX F3000 (A1782311)",
+                "slug": "power-station-anker-solix-f3000-a1782311",
+                "description": "Anker SOLIX F3000 premium power station with extreme capacity, ultra-fast charging, high output power, and multiple AC/DC ports for home and outdoor use.",
+                "meta_title": "Power Station Anker SOLIX F3000",
+                "meta_description": "Buy Anker SOLIX F3000 premium power station with high-capacity battery."
+            },
+            "uk": {
+                "name": "Зарядна станція Anker SOLIX F3000 (A1782311)",
+                "slug": "zaryadna-stantsiya-anker-solix-f3000-a1782311",
+                "description": "Преміальна зарядна станція Anker SOLIX F3000 з надвеликою ємністю, надшвидкою зарядкою та високою вихідною потужністю для дому та подорожей.",
+                "meta_title": "Зарядна станція Anker SOLIX F3000",
+                "meta_description": "Купуйте преміальну зарядну станцію Anker SOLIX F3000 з великою ємністю."
+            }
+        },
+        "features": {
+            "33": 258,
+            "34": 260,
+            "35": 265,
+            "36": 268
+        }
+    },
+    {
+        "id": 85,
+        "reference": "ECOFLOW-DELTA-3-EU-EFDELTA3-EU",
+        "price": 35000,
+        "quantity": 11,
+        "sort_order": 85,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Station EcoFlow DELTA 3 EU (EFDELTA3-EU)",
+                "slug": "power-station-ecoflow-delta-3-eu-efdelta3-eu",
+                "description": "EcoFlow DELTA 3 EU portable power station with high-capacity battery, fast charging, multiple AC/DC ports and reliable power backup.",
+                "meta_title": "Power Station EcoFlow DELTA 3 EU",
+                "meta_description": "Buy EcoFlow DELTA 3 EU power station with high-capacity battery."
+            },
+            "uk": {
+                "name": "Зарядна станція EcoFlow DELTA 3 EU (EFDELTA3-EU)",
+                "slug": "zaryadna-stantsiya-ecoflow-delta-3-eu-efdelta3-eu",
+                "description": "Портативна зарядна станція EcoFlow DELTA 3 EU з великою потужністю, швидкою зарядкою та численними AC/DC портами для дому та подорожей.",
+                "meta_title": "Зарядна станція EcoFlow DELTA 3 EU",
+                "meta_description": "Купуйте зарядну станцію EcoFlow DELTA 3 EU з високою ємністю."
+            }
+        },
+        "features": {
+            "33": 255,
+            "34": 260,
+            "35": 263,
+            "36": 268
+        }
+    },
+    {
+        "id": 86,
+        "reference": "FONENG-PX115-20000MAH-22-5W",
+        "price": 1649,
+        "quantity": 15,
+        "sort_order": 86,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Bank 20000 mAh 22.5W Foneng PX115",
+                "slug": "power-bank-20000mah-22-5w-foneng-px115",
+                "description": "Foneng PX115 20000mAh power bank with fast charging, multiple ports, LED indicators, and compact design.",
+                "meta_title": "Power Bank Foneng PX115 20000 mAh",
+                "meta_description": "Buy Foneng PX115 fast-charging 20000mAh power bank."
+            },
+            "uk": {
+                "name": "Повербанк 20000 mAh 22.5W Foneng PX115",
+                "slug": "poverbank-20000mah-22-5w-foneng-px115",
+                "description": "Повербанк Foneng PX115 на 20000mAh із швидкою зарядкою, кількома портами та LED-індикаторами.",
+                "meta_title": "Повербанк Foneng PX115 20000 mAh",
+                "meta_description": "Купуйте повербанк Foneng PX115 на 20000mAh із швидкою зарядкою."
+            }
+        },
+        "features": {
+            "28": 232,
+            "29": [
+                235,
+                239
+            ],
+            "30": [
+                243,
+                242,
+                241
+            ],
+            "31": [
+                250,
+                248,
+                247
+            ],
+            "32": 254
+        }
+    },
+    {
+        "id": 87,
+        "reference": "YOKI-MAXCAP-10000MAH-22-5W",
+        "price": 1099,
+        "quantity": 15,
+        "sort_order": 87,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Bank 10000 mAh 22.5W Yoki MaxCap",
+                "slug": "power-bank-10000mah-22-5w-yoki-maxcap",
+                "description": "Yoki MaxCap 10000mAh compact power bank with fast charging, dual ports, and digital display.",
+                "meta_title": "Power Bank Yoki MaxCap 10000 mAh",
+                "meta_description": "Buy Yoki MaxCap 10000mAh power bank with fast charging."
+            },
+            "uk": {
+                "name": "Повербанк 10000 mAh 22.5W Yoki MaxCap",
+                "slug": "poverbank-10000mah-22-5w-yoki-maxcap",
+                "description": "Компактний повербанк Yoki MaxCap 10000mAh зі швидкою зарядкою, двома портами та цифровим дисплеєм.",
+                "meta_title": "Повербанк Yoki MaxCap 10000 mAh",
+                "meta_description": "Купуйте повербанк Yoki MaxCap 10000mAh зі швидкою зарядкою."
+            }
+        },
+        "features": {
+            "28": 231,
+            "29": [
+                235,
+                239
+            ],
+            "30": [
+                243,
+                242,
+                241
+            ],
+            "31": [
+                252,
+                250
+            ],
+            "32": 254
+        }
+    },
+    {
+        "id": 88,
+        "reference": "HOCO-DB03-MAX-CENTURION-100000MAH-65W",
+        "price": 5399,
+        "quantity": 21,
+        "sort_order": 88,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Bank 100000 mAh 65W Hoco DB03 Max Centurion",
+                "slug": "power-bank-100000mah-65w-hoco-db03-max-centurion",
+                "description": "Ultra-high-capacity Hoco DB03 Max Centurion 100000mAh power bank with fast charging, multiple ports, and durable housing.",
+                "meta_title": "Power Bank Hoco DB03 Max Centurion 100000 mAh",
+                "meta_description": "Buy Hoco DB03 Max Centurion 100000mAh ultra-capacity power bank."
+            },
+            "uk": {
+                "name": "Повербанк великої ємності 100000mAh 65W Hoco DB03 Max Centurion",
+                "slug": "poverbank-100000mah-65w-hoco-db03-max-centurion",
+                "description": "Повербанк Hoco DB03 Max Centurion на 100000mAh із швидкою зарядкою, багатьма портами та міцним корпусом.",
+                "meta_title": "Повербанк Hoco DB03 Max Centurion 100000 mAh",
+                "meta_description": "Купуйте повербанк Hoco DB03 Max Centurion на 100000mAh."
+            }
+        },
+        "features": {
+            "28": 234,
+            "29": [
+                235,
+                236,
+                239
+            ],
+            "30": [
+                245,
+                244,
+                243,
+                242,
+                241,
+                240
+            ],
+            "31": [
+                253,
+                252,
+                251,
+                250,
+                248,
+                247
+            ],
+            "32": 254
+        }
+    },
+    {
+        "id": 89,
+        "reference": "BASEUS-BIPOW-10000MAH-20W-PPBD050301",
+        "price": 1795,
+        "quantity": 14,
+        "sort_order": 89,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Bank Baseus Bipow 10000 mAh 20W Digital Display (PPBD050301)",
+                "slug": "power-bank-baseus-bipow-10000mah-20w-digital-display-ppbd050301",
+                "description": "Baseus Bipow 10000mAh power bank with 20W fast charging, digital display, and multiple output ports.",
+                "meta_title": "Power Bank Baseus Bipow 10000 mAh",
+                "meta_description": "Buy Baseus Bipow 10000mAh 20W power bank with digital display."
+            },
+            "uk": {
+                "name": "Павербанк Baseus Bipow 10000 mAh 20W Digital Display (PPBD050301)",
+                "slug": "poverbank-baseus-bipow-10000mah-20w-digital-display-ppbd050301",
+                "description": "Повербанк Baseus Bipow 10000mAh з підтримкою 20W швидкої зарядки, цифровим дисплеєм і кількома портами.",
+                "meta_title": "Повербанк Baseus Bipow 10000 mAh",
+                "meta_description": "Купуйте повербанк Baseus Bipow 10000mAh з цифровим дисплеєм."
+            }
+        },
+        "features": {
+            "28": 231,
+            "29": [
+                235,
+                236,
+                238
+            ],
+            "30": [
+                243,
+                242,
+                241
+            ],
+            "31": [
+                250,
+                249,
+                248,
+                247
+            ],
+            "32": 254
+        }
+    },
+    {
+        "id": 90,
+        "reference": "HOCO-DB81A-APOLLO-50000MAH-PD65W",
+        "price": 3059,
+        "quantity": 23,
+        "sort_order": 90,
+        "status": true,
+        "category_id": 9,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Power Bank Hoco DB81A Apollo PD65W 50000 mAh",
+                "slug": "power-bank-hoco-db81a-apollo-pd65w-50000mah",
+                "description": "Hoco DB81A Apollo 50000mAh high-capacity power bank with 65W fast charging, multiple output ports, and universal compatibility.",
+                "meta_title": "Power Bank Hoco DB81A Apollo 50000 mAh",
+                "meta_description": "Buy Hoco DB81A Apollo 50000mAh PD65W high-capacity power bank."
+            },
+            "uk": {
+                "name": "Повербанк Hoco DB81A Apollo PD65W fully compatible 50000 mAh",
+                "slug": "poverbank-hoco-db81a-apollo-pd65w-50000mah",
+                "description": "Повербанк Hoco DB81A Apollo 50000mAh з підтримкою PD65W, великою ємністю та широкою сумісністю.",
+                "meta_title": "Повербанк Hoco DB81A Apollo 50000 mAh",
+                "meta_description": "Купуйте повербанк Hoco DB81A Apollo 50000mAh із підтримкою PD65W."
+            }
+        },
+        "features": {
+            "28": 233,
+            "29": [
+                235,
+                236,
+                237,
+                238,
+                239
+            ],
+            "30": 246,
+            "31": 251,
+            "32": 254
+        }
+    },
+    {
+        "id": 91,
+        "reference": "CANON-EOS-R50-BODY-BLACK-5811C029AA",
+        "price": 26999,
+        "quantity": 8,
+        "sort_order": 91,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Camera Canon EOS R50 Body Black (5811C029AA)",
+                "slug": "camera-canon-eos-r50-body-black-5811c029aa",
+                "description": "Canon EOS R50 mirrorless camera body in black with advanced features, high-quality image sensor, and versatile shooting capabilities.",
+                "meta_title": "Camera Canon EOS R50 Body Black",
+                "meta_description": "Buy Canon EOS R50 mirrorless camera body in black."
+            },
+            "uk": {
+                "name": "Фотоапарат Canon EOS R50 Body Black (5811C029AA)",
+                "slug": "fotoaparat-canon-eos-r50-body-black-5811c029aa",
+                "description": "Бездзеркальний фотоапарат Canon EOS R50 Body чорного кольору з передовими функціями, високоякісним сенсором зображення та універсальними можливостями зйомки.",
+                "meta_title": "Фотоапарат Canon EOS R50 Body Black",
+                "meta_description": "Купуйте бездзеркальний фотоапарат Canon EOS R50 Body чорного кольору."
+            }
+        },
+        "features": {
+            "37": 270,
+            "38": 273,
+            "22": [
+                160,
+                155,
+                166,
+                172,
+                168
+            ]
+        }
+    },
+    {
+        "id": 92,
+        "reference": "GOPRO-HERO13-CHDRB-134-RW",
+        "price": 24999,
+        "quantity": 12,
+        "sort_order": 92,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Video Camera GoPro HERO13 (CHDRB-134-RW)",
+                "slug": "video-camera-gopro-hero13-chdrb-134-rw",
+                "description": "GoPro HERO13 action camera with advanced video recording, waterproof design, and wireless connectivity for extreme sports and adventures.",
+                "meta_title": "Video Camera GoPro HERO13",
+                "meta_description": "Buy GoPro HERO13 action camera with advanced features."
+            },
+            "uk": {
+                "name": "Відеокамера GoPro HERO13 (CHDRB-134-RW)",
+                "slug": "videokamera-gopro-hero13-chdrb-134-rw",
+                "description": "Екшн-камера GoPro HERO13 з передовим записом відео, водонепроникним дизайном та бездротовим підключенням для екстремальних видів спорту та пригод.",
+                "meta_title": "Відеокамера GoPro HERO13",
+                "meta_description": "Купуйте екшн-камеру GoPro HERO13 з передовими функціями."
+            }
+        },
+        "features": {
+            "39": [
+                274,
+                275,
+                276
+            ],
+            "22": [
+                169,
+                170,
+                166
+            ]
+        }
+    },
+    {
+        "id": 93,
+        "reference": "SONY-ALPHA-A7-IV-28-70MM-KIT-ILCE7M4KB-CEC",
+        "price": 95999,
+        "quantity": 5,
+        "sort_order": 93,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Camera Sony Alpha а7 IV 28-70 mm Kit (ILCE7M4KB.CEC)",
+                "slug": "camera-sony-alpha-a7-iv-28-70mm-kit-ilce7m4kb-cec",
+                "description": "Sony Alpha а7 IV mirrorless camera with 28-70mm kit lens, full-frame sensor, advanced autofocus, and professional video capabilities.",
+                "meta_title": "Camera Sony Alpha а7 IV 28-70 mm Kit",
+                "meta_description": "Buy Sony Alpha а7 IV mirrorless camera with 28-70mm kit lens."
+            },
+            "uk": {
+                "name": "Фотоапарат Sony Alpha а7 IV 28-70 мм Kit (ILCE7M4KB.CEC)",
+                "slug": "fotoaparat-sony-alpha-a7-iv-28-70mm-kit-ilce7m4kb-cec",
+                "description": "Бездзеркальний фотоапарат Sony Alpha а7 IV з об'єктивом 28-70 мм, повнокадровим сенсором, передовим автофокусом та професійними можливостями відео.",
+                "meta_title": "Фотоапарат Sony Alpha а7 IV 28-70 мм Kit",
+                "meta_description": "Купуйте бездзеркальний фотоапарат Sony Alpha а7 IV з об'єктивом 28-70 мм."
+            }
+        },
+        "features": {
+            "37": 270,
+            "38": 273,
+            "22": [
+                167,
+                155,
+                169,
+                171,
+                166,
+                172
+            ]
+        }
+    },
+    {
+        "id": 94,
+        "reference": "GOPRO-HERO12-CHDHX-121-RW",
+        "price": 18799,
+        "quantity": 15,
+        "sort_order": 94,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Video Camera GoPro HERO12 (CHDHX-121-RW)",
+                "slug": "video-camera-gopro-hero12-chdhx-121-rw",
+                "description": "GoPro HERO12 action camera with high-quality video recording, compact design, and wireless connectivity for capturing adventures.",
+                "meta_title": "Video Camera GoPro HERO12",
+                "meta_description": "Buy GoPro HERO12 action camera with advanced features."
+            },
+            "uk": {
+                "name": "Відеокамера GoPro HERO12 (CHDHX-121-RW)",
+                "slug": "videokamera-gopro-hero12-chdhx-121-rw",
+                "description": "Екшн-камера GoPro HERO12 з високоякісним записом відео, компактним дизайном та бездротовим підключенням для зйомки пригод.",
+                "meta_title": "Відеокамера GoPro HERO12",
+                "meta_description": "Купуйте екшн-камеру GoPro HERO12 з передовими функціями."
+            }
+        },
+        "features": {
+            "39": [
+                274,
+                276
+            ],
+            "22": [
+                166
+            ]
+        }
+    },
+    {
+        "id": 95,
+        "reference": "SONY-ALPHA-A7-IV-BODY-ILCE7M4B-CEC",
+        "price": 85999,
+        "quantity": 6,
+        "sort_order": 95,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Camera Sony Alpha А7 IV Body (ILCE7M4B.CEC)",
+                "slug": "camera-sony-alpha-a7-iv-body-ilce7m4b-cec",
+                "description": "Sony Alpha А7 IV mirrorless camera body with full-frame sensor, advanced autofocus system, and professional video recording capabilities.",
+                "meta_title": "Camera Sony Alpha А7 IV Body",
+                "meta_description": "Buy Sony Alpha А7 IV mirrorless camera body."
+            },
+            "uk": {
+                "name": "Фотоапарат Sony Alpha А7 IV Body (ILCE7M4B.CEC)",
+                "slug": "fotoaparat-sony-alpha-a7-iv-body-ilce7m4b-cec",
+                "description": "Бездзеркальний фотоапарат Sony Alpha А7 IV Body з повнокадровим сенсором, передовою системою автофокусу та професійними можливостями запису відео.",
+                "meta_title": "Фотоапарат Sony Alpha А7 IV Body",
+                "meta_description": "Купуйте бездзеркальний фотоапарат Sony Alpha А7 IV Body."
+            }
+        },
+        "features": {
+            "37": 270,
+            "38": 273,
+            "22": [
+                160,
+                155,
+                169,
+                171,
+                166,
+                172
+            ]
+        }
+    },
+    {
+        "id": 96,
+        "reference": "KODAK-I60-FULL-FILM-CAMERA-STRAP-FLASH-RETRO",
+        "price": 3990,
+        "quantity": 20,
+        "sort_order": 96,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Film Camera Kodak i60 Full Film Camera Strap Flash Retro i 60",
+                "slug": "film-camera-kodak-i60-full-film-camera-strap-flash-retro-i-60",
+                "description": "Kodak i60 compact film camera with retro design, built-in flash, and strap for classic photography experience.",
+                "meta_title": "Film Camera Kodak i60",
+                "meta_description": "Buy Kodak i60 compact film camera with retro design."
+            },
+            "uk": {
+                "name": "Плівковий фотоапарат Kodak i60 Full Film Camera Strap Flash Retro i 60",
+                "slug": "plivkoviy-fotoaparat-kodak-i60-full-film-camera-strap-flash-retro-i-60",
+                "description": "Компактний плівковий фотоапарат Kodak i60 з ретро-дизайном, вбудованою спалахом та ремінцем для класичного фотографічного досвіду.",
+                "meta_title": "Плівковий фотоапарат Kodak i60",
+                "meta_description": "Купуйте компактний плівковий фотоапарат Kodak i60 з ретро-дизайном."
+            }
+        },
+        "features": {
+            "37": 271
+        }
+    },
+    {
+        "id": 97,
+        "reference": "FUJIFILM-INSTAX-MINI-41-PH-EX-D-16696863",
+        "price": 5169,
+        "quantity": 18,
+        "sort_order": 97,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Instant Print Camera Fujifilm Instax Mini 41 PH EX D (16696863)",
+                "slug": "instant-print-camera-fujifilm-instax-mini-41-ph-ex-d-16696863",
+                "description": "Fujifilm Instax Mini 41 instant print camera with compact design, easy-to-use interface, and instant photo printing capabilities.",
+                "meta_title": "Instant Print Camera Fujifilm Instax Mini 41",
+                "meta_description": "Buy Fujifilm Instax Mini 41 instant print camera."
+            },
+            "uk": {
+                "name": "Камера моментального друку Fujifilm Instax Mini 41 PH EX D (16696863)",
+                "slug": "kamera-momentalnogo-druku-fujifilm-instax-mini-41-ph-ex-d-16696863",
+                "description": "Камера моментального друку Fujifilm Instax Mini 41 з компактним дизайном, зручним інтерфейсом та можливостями миттєвого друку фотографій.",
+                "meta_title": "Камера моментального друку Fujifilm Instax Mini 41",
+                "meta_description": "Купуйте камеру моментального друку Fujifilm Instax Mini 41."
+            }
+        },
+        "features": {
+            "37": 272,
+            "40": 277
+        }
+    },
+    {
+        "id": 98,
+        "reference": "PANASONIC-HC-X20-BLACK-HC-X20EE",
+        "price": 137199,
+        "quantity": 3,
+        "sort_order": 98,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Video Camera Panasonic HC-X20 Black (HC-X20EE)",
+                "slug": "video-camera-panasonic-hc-x20-black-hc-x20ee",
+                "description": "Panasonic HC-X20 professional video camera in black with high-capacity battery, advanced recording features, and professional video quality.",
+                "meta_title": "Video Camera Panasonic HC-X20 Black",
+                "meta_description": "Buy Panasonic HC-X20 professional video camera in black."
+            },
+            "uk": {
+                "name": "Відеокамера Panasonic HC-X20 Black (HC-X20EE)",
+                "slug": "videokamera-panasonic-hc-x20-black-hc-x20ee",
+                "description": "Професійна відеокамера Panasonic HC-X20 чорного кольору з акумулятором великої ємності, передовими функціями запису та професійною якістю відео.",
+                "meta_title": "Відеокамера Panasonic HC-X20 Black",
+                "meta_description": "Купуйте професійну відеокамеру Panasonic HC-X20 чорного кольору."
+            }
+        },
+        "features": {
+            "28": 235,
+            "5": 37
+        }
+    },
+    {
+        "id": 99,
+        "reference": "PANASONIC-HC-X2000-PRO-HC-X2000EE",
+        "price": 91782,
+        "quantity": 4,
+        "sort_order": 99,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Video Camera Panasonic HC-X2000 Pro (HC-X2000EE)",
+                "slug": "video-camera-panasonic-hc-x2000-pro-hc-x2000ee",
+                "description": "Panasonic HC-X2000 Pro professional video camera with wireless connectivity, multiple interfaces, and advanced video recording capabilities.",
+                "meta_title": "Video Camera Panasonic HC-X2000 Pro",
+                "meta_description": "Buy Panasonic HC-X2000 Pro professional video camera."
+            },
+            "uk": {
+                "name": "Відеокамера Panasonic HC-X2000 Pro (HC-X2000EE)",
+                "slug": "videokamera-panasonic-hc-x2000-pro-hc-x2000ee",
+                "description": "Професійна відеокамера Panasonic HC-X2000 Pro з бездротовим підключенням, численними інтерфейсами та передовими можливостями запису відео.",
+                "meta_title": "Відеокамера Panasonic HC-X2000 Pro",
+                "meta_description": "Купуйте професійну відеокамеру Panasonic HC-X2000 Pro."
+            }
+        },
+        "features": {
+            "39": [
+                276
+            ],
+            "22": [
+                169,
+                170
+            ]
+        }
+    },
+    {
+        "id": 100,
+        "reference": "SONY-ALPHA-A1-BODY-ILCE1-CEC",
+        "price": 283522,
+        "quantity": 2,
+        "sort_order": 100,
+        "status": true,
+        "category_id": 10,
+        "stock_status_id": 2,
+        "translations": {
+            "en": {
+                "name": "Camera Sony Alpha A1 Body (ILCE1.CEC)",
+                "slug": "camera-sony-alpha-a1-body-ilce1-cec",
+                "description": "Sony Alpha A1 professional mirrorless camera body with full-frame sensor, ultra-high resolution, and advanced professional features.",
+                "meta_title": "Camera Sony Alpha A1 Body",
+                "meta_description": "Buy Sony Alpha A1 professional mirrorless camera body."
+            },
+            "uk": {
+                "name": "Фотоапарат Sony Alpha A1 Body (ILCE1.CEC)",
+                "slug": "fotoaparat-sony-alpha-a1-body-ilce1-cec",
+                "description": "Професійний бездзеркальний фотоапарат Sony Alpha A1 Body з повнокадровим сенсором, надвисокою роздільною здатністю та передовими професійними функціями.",
+                "meta_title": "Фотоапарат Sony Alpha A1 Body",
+                "meta_description": "Купуйте професійний бездзеркальний фотоапарат Sony Alpha A1 Body."
+            }
+        },
+        "features": {
+            "37": 270
+        }
+    }
+]

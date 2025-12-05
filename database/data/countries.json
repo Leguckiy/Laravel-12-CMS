@@ -1,0 +1,2587 @@
+[
+    {
+        "id": 1,
+        "iso_code_2": "BB",
+        "iso_code_3": "BRB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Barbados",
+            "uk": "Барбадос"
+        }
+    },
+    {
+        "id": 2,
+        "iso_code_2": "BY",
+        "iso_code_3": "BLR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Belarus",
+            "uk": "Білорусь"
+        }
+    },
+    {
+        "id": 3,
+        "iso_code_2": "BE",
+        "iso_code_3": "BEL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Belgium",
+            "uk": "Бельгія"
+        }
+    },
+    {
+        "id": 4,
+        "iso_code_2": "BZ",
+        "iso_code_3": "BLZ",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Belize",
+            "uk": "Беліз"
+        }
+    },
+    {
+        "id": 5,
+        "iso_code_2": "BJ",
+        "iso_code_3": "BEN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Benin",
+            "uk": "Бенін"
+        }
+    },
+    {
+        "id": 6,
+        "iso_code_2": "BM",
+        "iso_code_3": "BMU",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Bermuda",
+            "uk": "Бермуди"
+        }
+    },
+    {
+        "id": 7,
+        "iso_code_2": "BT",
+        "iso_code_3": "BTN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Bhutan",
+            "uk": "Бутан"
+        }
+    },
+    {
+        "id": 8,
+        "iso_code_2": "BO",
+        "iso_code_3": "BOL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Bolivia",
+            "uk": "Болівія"
+        }
+    },
+    {
+        "id": 9,
+        "iso_code_2": "BA",
+        "iso_code_3": "BIH",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Bosnia and Herzegovina",
+            "uk": "Боснія і Герцеговина"
+        }
+    },
+    {
+        "id": 10,
+        "iso_code_2": "BW",
+        "iso_code_3": "BWA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Botswana",
+            "uk": "Ботсвана"
+        }
+    },
+    {
+        "id": 11,
+        "iso_code_2": "BV",
+        "iso_code_3": "BVT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Bouvet Island",
+            "uk": "Острів Буве"
+        }
+    },
+    {
+        "id": 12,
+        "iso_code_2": "BR",
+        "iso_code_3": "BRA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Brazil",
+            "uk": "Бразилія"
+        }
+    },
+    {
+        "id": 13,
+        "iso_code_2": "IO",
+        "iso_code_3": "IOT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "British Indian Ocean Territory",
+            "uk": "Британська територія в Індійському океані"
+        }
+    },
+    {
+        "id": 14,
+        "iso_code_2": "BN",
+        "iso_code_3": "BRN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Brunei",
+            "uk": "Бруней"
+        }
+    },
+    {
+        "id": 15,
+        "iso_code_2": "BG",
+        "iso_code_3": "BGR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Bulgaria",
+            "uk": "Болгарія"
+        }
+    },
+    {
+        "id": 16,
+        "iso_code_2": "BF",
+        "iso_code_3": "BFA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Burkina Faso",
+            "uk": "Буркіна-Фасо"
+        }
+    },
+    {
+        "id": 17,
+        "iso_code_2": "BI",
+        "iso_code_3": "BDI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Burundi",
+            "uk": "Бурунді"
+        }
+    },
+    {
+        "id": 18,
+        "iso_code_2": "KH",
+        "iso_code_3": "KHM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cambodia",
+            "uk": "Камбоджа"
+        }
+    },
+    {
+        "id": 19,
+        "iso_code_2": "CM",
+        "iso_code_3": "CMR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cameroon",
+            "uk": "Камерун"
+        }
+    },
+    {
+        "id": 20,
+        "iso_code_2": "CA",
+        "iso_code_3": "CAN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Canada",
+            "uk": "Канада"
+        }
+    },
+    {
+        "id": 21,
+        "iso_code_2": "CV",
+        "iso_code_3": "CPV",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cape Verde",
+            "uk": "Кабо-Верде"
+        }
+    },
+    {
+        "id": 22,
+        "iso_code_2": "KY",
+        "iso_code_3": "CYM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cayman Islands",
+            "uk": "Кайманові Острови"
+        }
+    },
+    {
+        "id": 23,
+        "iso_code_2": "CF",
+        "iso_code_3": "CAF",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Central African Republic",
+            "uk": "Центральноафриканська Республіка"
+        }
+    },
+    {
+        "id": 24,
+        "iso_code_2": "TD",
+        "iso_code_3": "TCD",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Chad",
+            "uk": "Чад"
+        }
+    },
+    {
+        "id": 25,
+        "iso_code_2": "CL",
+        "iso_code_3": "CHL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Chile",
+            "uk": "Чилі"
+        }
+    },
+    {
+        "id": 26,
+        "iso_code_2": "CN",
+        "iso_code_3": "CHN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "China",
+            "uk": "Китай"
+        }
+    },
+    {
+        "id": 27,
+        "iso_code_2": "CX",
+        "iso_code_3": "CXR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Christmas Island",
+            "uk": "Острів Різдва"
+        }
+    },
+    {
+        "id": 28,
+        "iso_code_2": "CC",
+        "iso_code_3": "CCK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cocos (Keeling) Islands",
+            "uk": "Кокосові (Кілінґ) Острови"
+        }
+    },
+    {
+        "id": 29,
+        "iso_code_2": "CO",
+        "iso_code_3": "COL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Colombia",
+            "uk": "Колумбія"
+        }
+    },
+    {
+        "id": 30,
+        "iso_code_2": "KM",
+        "iso_code_3": "COM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Comoros",
+            "uk": "Коморські Острови"
+        }
+    },
+    {
+        "id": 31,
+        "iso_code_2": "CG",
+        "iso_code_3": "COG",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Congo",
+            "uk": "Конго"
+        }
+    },
+    {
+        "id": 32,
+        "iso_code_2": "CK",
+        "iso_code_3": "COK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cook Islands",
+            "uk": "Острови Кука"
+        }
+    },
+    {
+        "id": 33,
+        "iso_code_2": "CR",
+        "iso_code_3": "CRI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Costa Rica",
+            "uk": "Коста-Рика"
+        }
+    },
+    {
+        "id": 34,
+        "iso_code_2": "CI",
+        "iso_code_3": "CIV",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cote D'Ivoire",
+            "uk": "Кот-д'Івуар"
+        }
+    },
+    {
+        "id": 35,
+        "iso_code_2": "HR",
+        "iso_code_3": "HRV",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Croatia",
+            "uk": "Хорватія"
+        }
+    },
+    {
+        "id": 36,
+        "iso_code_2": "CU",
+        "iso_code_3": "CUB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cuba",
+            "uk": "Куба"
+        }
+    },
+    {
+        "id": 37,
+        "iso_code_2": "CY",
+        "iso_code_3": "CYP",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Cyprus",
+            "uk": "Кіпр"
+        }
+    },
+    {
+        "id": 38,
+        "iso_code_2": "CZ",
+        "iso_code_3": "CZE",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Czech Republic",
+            "uk": "Чеська Республіка"
+        }
+    },
+    {
+        "id": 39,
+        "iso_code_2": "DK",
+        "iso_code_3": "DNK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Denmark",
+            "uk": "Данія"
+        }
+    },
+    {
+        "id": 40,
+        "iso_code_2": "DJ",
+        "iso_code_3": "DJI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Djibouti",
+            "uk": "Джибуті"
+        }
+    },
+    {
+        "id": 41,
+        "iso_code_2": "DM",
+        "iso_code_3": "DMA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Dominica",
+            "uk": "Домініка"
+        }
+    },
+    {
+        "id": 42,
+        "iso_code_2": "DO",
+        "iso_code_3": "DOM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Dominican Republic",
+            "uk": "Домініканська Республіка"
+        }
+    },
+    {
+        "id": 43,
+        "iso_code_2": "TL",
+        "iso_code_3": "TLS",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Timor-Leste",
+            "uk": "Тімор-Лешті"
+        }
+    },
+    {
+        "id": 44,
+        "iso_code_2": "EC",
+        "iso_code_3": "ECU",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Ecuador",
+            "uk": "Еквадор"
+        }
+    },
+    {
+        "id": 45,
+        "iso_code_2": "EG",
+        "iso_code_3": "EGY",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Egypt",
+            "uk": "Єгипет"
+        }
+    },
+    {
+        "id": 46,
+        "iso_code_2": "SV",
+        "iso_code_3": "SLV",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "El Salvador",
+            "uk": "Сальвадор"
+        }
+    },
+    {
+        "id": 47,
+        "iso_code_2": "GQ",
+        "iso_code_3": "GNQ",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Equatorial Guinea",
+            "uk": "Екваторіальна Гвінея"
+        }
+    },
+    {
+        "id": 48,
+        "iso_code_2": "ER",
+        "iso_code_3": "ERI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Eritrea",
+            "uk": "Еритрея"
+        }
+    },
+    {
+        "id": 49,
+        "iso_code_2": "EE",
+        "iso_code_3": "EST",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Estonia",
+            "uk": "Естонія"
+        }
+    },
+    {
+        "id": 50,
+        "iso_code_2": "ET",
+        "iso_code_3": "ETH",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Ethiopia",
+            "uk": "Ефіопія"
+        }
+    },
+    {
+        "id": 51,
+        "iso_code_2": "FK",
+        "iso_code_3": "FLK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Falkland Islands (Malvinas)",
+            "uk": "Фолклендські Острови (Мальвіни)"
+        }
+    },
+    {
+        "id": 52,
+        "iso_code_2": "FO",
+        "iso_code_3": "FRO",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Faroe Islands",
+            "uk": "Фарерські Острови"
+        }
+    },
+    {
+        "id": 53,
+        "iso_code_2": "FJ",
+        "iso_code_3": "FJI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Fiji",
+            "uk": "Фіджі"
+        }
+    },
+    {
+        "id": 54,
+        "iso_code_2": "FI",
+        "iso_code_3": "FIN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Finland",
+            "uk": "Фінляндія"
+        }
+    },
+    {
+        "id": 55,
+        "iso_code_2": "FR",
+        "iso_code_3": "FRA",
+        "postcode_required": 1,
+        "status": 0,
+        "names": {
+            "en": "France, Metropolitan",
+            "uk": "Франція"
+        }
+    },
+    {
+        "id": 56,
+        "iso_code_2": "GF",
+        "iso_code_3": "GUF",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "French Guiana",
+            "uk": "Французька Гвіана"
+        }
+    },
+    {
+        "id": 57,
+        "iso_code_2": "PF",
+        "iso_code_3": "PYF",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "French Polynesia",
+            "uk": "Французька Полінезія"
+        }
+    },
+    {
+        "id": 58,
+        "iso_code_2": "TF",
+        "iso_code_3": "ATF",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "French Southern Territories",
+            "uk": "Французькі Південні Території"
+        }
+    },
+    {
+        "id": 59,
+        "iso_code_2": "GA",
+        "iso_code_3": "GAB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Gabon",
+            "uk": "Габон"
+        }
+    },
+    {
+        "id": 60,
+        "iso_code_2": "GM",
+        "iso_code_3": "GMB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "The Gambia",
+            "uk": "Гамбія"
+        }
+    },
+    {
+        "id": 61,
+        "iso_code_2": "GE",
+        "iso_code_3": "GEO",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Georgia",
+            "uk": "Грузія"
+        }
+    },
+    {
+        "id": 62,
+        "iso_code_2": "DE",
+        "iso_code_3": "DEU",
+        "postcode_required": 1,
+        "status": 0,
+        "names": {
+            "en": "Germany",
+            "uk": "Німеччина"
+        }
+    },
+    {
+        "id": 63,
+        "iso_code_2": "GH",
+        "iso_code_3": "GHA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Ghana",
+            "uk": "Гана"
+        }
+    },
+    {
+        "id": 64,
+        "iso_code_2": "GI",
+        "iso_code_3": "GIB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Gibraltar",
+            "uk": "Гібралтар"
+        }
+    },
+    {
+        "id": 65,
+        "iso_code_2": "GR",
+        "iso_code_3": "GRC",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Greece",
+            "uk": "Греція"
+        }
+    },
+    {
+        "id": 66,
+        "iso_code_2": "GL",
+        "iso_code_3": "GRL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Greenland",
+            "uk": "Гренландія"
+        }
+    },
+    {
+        "id": 67,
+        "iso_code_2": "GD",
+        "iso_code_3": "GRD",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Grenada",
+            "uk": "Гренада"
+        }
+    },
+    {
+        "id": 68,
+        "iso_code_2": "GP",
+        "iso_code_3": "GLP",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Guadeloupe",
+            "uk": "Гваделупа"
+        }
+    },
+    {
+        "id": 69,
+        "iso_code_2": "GU",
+        "iso_code_3": "GUM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Guam",
+            "uk": "Гуам"
+        }
+    },
+    {
+        "id": 70,
+        "iso_code_2": "GT",
+        "iso_code_3": "GTM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Guatemala",
+            "uk": "Гватемала"
+        }
+    },
+    {
+        "id": 71,
+        "iso_code_2": "GN",
+        "iso_code_3": "GIN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Guinea",
+            "uk": "Гвінея"
+        }
+    },
+    {
+        "id": 72,
+        "iso_code_2": "GW",
+        "iso_code_3": "GNB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Guinea-Bissau",
+            "uk": "Гвінея-Бісау"
+        }
+    },
+    {
+        "id": 73,
+        "iso_code_2": "GY",
+        "iso_code_3": "GUY",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Guyana",
+            "uk": "Гаяна"
+        }
+    },
+    {
+        "id": 74,
+        "iso_code_2": "HT",
+        "iso_code_3": "HTI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Haiti",
+            "uk": "Гаїті"
+        }
+    },
+    {
+        "id": 75,
+        "iso_code_2": "HM",
+        "iso_code_3": "HMD",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Heard and Mc Donald Islands",
+            "uk": "Острови Герд і Мак-Дональд"
+        }
+    },
+    {
+        "id": 76,
+        "iso_code_2": "HN",
+        "iso_code_3": "HND",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Honduras",
+            "uk": "Гондурас"
+        }
+    },
+    {
+        "id": 77,
+        "iso_code_2": "HK",
+        "iso_code_3": "HKG",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Hong Kong",
+            "uk": "Гонконг"
+        }
+    },
+    {
+        "id": 78,
+        "iso_code_2": "HU",
+        "iso_code_3": "HUN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Hungary",
+            "uk": "Угорщина"
+        }
+    },
+    {
+        "id": 79,
+        "iso_code_2": "IS",
+        "iso_code_3": "ISL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Iceland",
+            "uk": "Ісландія"
+        }
+    },
+    {
+        "id": 80,
+        "iso_code_2": "IN",
+        "iso_code_3": "IND",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "India",
+            "uk": "Індія"
+        }
+    },
+    {
+        "id": 81,
+        "iso_code_2": "ID",
+        "iso_code_3": "IDN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Indonesia",
+            "uk": "Індонезія"
+        }
+    },
+    {
+        "id": 82,
+        "iso_code_2": "IR",
+        "iso_code_3": "IRN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Iran (Islamic Republic of)",
+            "uk": "Іран (Ісламська Республіка)"
+        }
+    },
+    {
+        "id": 83,
+        "iso_code_2": "IQ",
+        "iso_code_3": "IRQ",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Iraq",
+            "uk": "Ірак"
+        }
+    },
+    {
+        "id": 84,
+        "iso_code_2": "IE",
+        "iso_code_3": "IRL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Ireland",
+            "uk": "Ірландія"
+        }
+    },
+    {
+        "id": 85,
+        "iso_code_2": "IL",
+        "iso_code_3": "ISR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Israel",
+            "uk": "Ізраїль"
+        }
+    },
+    {
+        "id": 86,
+        "iso_code_2": "IT",
+        "iso_code_3": "ITA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Italy",
+            "uk": "Італія"
+        }
+    },
+    {
+        "id": 87,
+        "iso_code_2": "JM",
+        "iso_code_3": "JAM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Jamaica",
+            "uk": "Ямайка"
+        }
+    },
+    {
+        "id": 88,
+        "iso_code_2": "JP",
+        "iso_code_3": "JPN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Japan",
+            "uk": "Японія"
+        }
+    },
+    {
+        "id": 89,
+        "iso_code_2": "JO",
+        "iso_code_3": "JOR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Jordan",
+            "uk": "Йорданія"
+        }
+    },
+    {
+        "id": 90,
+        "iso_code_2": "KZ",
+        "iso_code_3": "KAZ",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Kazakhstan",
+            "uk": "Казахстан"
+        }
+    },
+    {
+        "id": 91,
+        "iso_code_2": "KE",
+        "iso_code_3": "KEN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Kenya",
+            "uk": "Кенія"
+        }
+    },
+    {
+        "id": 92,
+        "iso_code_2": "KI",
+        "iso_code_3": "KIR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Kiribati",
+            "uk": "Кірибаті"
+        }
+    },
+    {
+        "id": 93,
+        "iso_code_2": "KP",
+        "iso_code_3": "PRK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "North Korea",
+            "uk": "Північна Корея"
+        }
+    },
+    {
+        "id": 94,
+        "iso_code_2": "KR",
+        "iso_code_3": "KOR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "South Korea",
+            "uk": "Південна Корея"
+        }
+    },
+    {
+        "id": 95,
+        "iso_code_2": "KW",
+        "iso_code_3": "KWT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Kuwait",
+            "uk": "Кувейт"
+        }
+    },
+    {
+        "id": 96,
+        "iso_code_2": "KG",
+        "iso_code_3": "KGZ",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Kyrgyzstan",
+            "uk": "Киргизстан"
+        }
+    },
+    {
+        "id": 97,
+        "iso_code_2": "LA",
+        "iso_code_3": "LAO",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Lao People's Democratic Republic (the)",
+            "uk": "Лаоська Народно-Демократична Республіка"
+        }
+    },
+    {
+        "id": 98,
+        "iso_code_2": "LV",
+        "iso_code_3": "LVA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Latvia",
+            "uk": "Латвія"
+        }
+    },
+    {
+        "id": 99,
+        "iso_code_2": "LB",
+        "iso_code_3": "LBN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Lebanon",
+            "uk": "Ліван"
+        }
+    },
+    {
+        "id": 100,
+        "iso_code_2": "LS",
+        "iso_code_3": "LSO",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Lesotho",
+            "uk": "Лесото"
+        }
+    },
+    {
+        "id": 101,
+        "iso_code_2": "LR",
+        "iso_code_3": "LBR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Liberia",
+            "uk": "Ліберія"
+        }
+    },
+    {
+        "id": 102,
+        "iso_code_2": "LY",
+        "iso_code_3": "LBY",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Libya",
+            "uk": "Лівія"
+        }
+    },
+    {
+        "id": 103,
+        "iso_code_2": "LI",
+        "iso_code_3": "LIE",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Liechtenstein",
+            "uk": "Ліхтенштейн"
+        }
+    },
+    {
+        "id": 104,
+        "iso_code_2": "LT",
+        "iso_code_3": "LTU",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Lithuania",
+            "uk": "Литва"
+        }
+    },
+    {
+        "id": 105,
+        "iso_code_2": "LU",
+        "iso_code_3": "LUX",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Luxembourg",
+            "uk": "Люксембург"
+        }
+    },
+    {
+        "id": 106,
+        "iso_code_2": "MO",
+        "iso_code_3": "MAC",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Macau",
+            "uk": "Макао"
+        }
+    },
+    {
+        "id": 107,
+        "iso_code_2": "MK",
+        "iso_code_3": "MKD",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "North Macedonia",
+            "uk": "Північна Македонія"
+        }
+    },
+    {
+        "id": 108,
+        "iso_code_2": "MG",
+        "iso_code_3": "MDG",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Madagascar",
+            "uk": "Мадагаскар"
+        }
+    },
+    {
+        "id": 109,
+        "iso_code_2": "MW",
+        "iso_code_3": "MWI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Malawi",
+            "uk": "Малаві"
+        }
+    },
+    {
+        "id": 110,
+        "iso_code_2": "MY",
+        "iso_code_3": "MYS",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Malaysia",
+            "uk": "Малайзія"
+        }
+    },
+    {
+        "id": 111,
+        "iso_code_2": "MV",
+        "iso_code_3": "MDV",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Maldives",
+            "uk": "Мальдіви"
+        }
+    },
+    {
+        "id": 112,
+        "iso_code_2": "ML",
+        "iso_code_3": "MLI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Mali",
+            "uk": "Малі"
+        }
+    },
+    {
+        "id": 113,
+        "iso_code_2": "MT",
+        "iso_code_3": "MLT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Malta",
+            "uk": "Мальта"
+        }
+    },
+    {
+        "id": 114,
+        "iso_code_2": "MH",
+        "iso_code_3": "MHL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Marshall Islands",
+            "uk": "Маршаллові Острови"
+        }
+    },
+    {
+        "id": 115,
+        "iso_code_2": "MQ",
+        "iso_code_3": "MTQ",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Martinique",
+            "uk": "Мартиніка"
+        }
+    },
+    {
+        "id": 116,
+        "iso_code_2": "MR",
+        "iso_code_3": "MRT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Mauritania",
+            "uk": "Мавританія"
+        }
+    },
+    {
+        "id": 117,
+        "iso_code_2": "MU",
+        "iso_code_3": "MUS",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Mauritius",
+            "uk": "Маврикій"
+        }
+    },
+    {
+        "id": 118,
+        "iso_code_2": "YT",
+        "iso_code_3": "MYT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Mayotte",
+            "uk": "Майотта"
+        }
+    },
+    {
+        "id": 119,
+        "iso_code_2": "MX",
+        "iso_code_3": "MEX",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Mexico",
+            "uk": "Мексика"
+        }
+    },
+    {
+        "id": 120,
+        "iso_code_2": "FM",
+        "iso_code_3": "FSM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Micronesia, Federated States of",
+            "uk": "Мікронезія, Федеративні Штати"
+        }
+    },
+    {
+        "id": 121,
+        "iso_code_2": "MD",
+        "iso_code_3": "MDA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Moldova, Republic of",
+            "uk": "Молдова, Республіка"
+        }
+    },
+    {
+        "id": 122,
+        "iso_code_2": "MC",
+        "iso_code_3": "MCO",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Monaco",
+            "uk": "Монако"
+        }
+    },
+    {
+        "id": 123,
+        "iso_code_2": "MN",
+        "iso_code_3": "MNG",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Mongolia",
+            "uk": "Монголія"
+        }
+    },
+    {
+        "id": 124,
+        "iso_code_2": "MS",
+        "iso_code_3": "MSR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Montserrat",
+            "uk": "Монтсеррат"
+        }
+    },
+    {
+        "id": 125,
+        "iso_code_2": "MA",
+        "iso_code_3": "MAR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Morocco",
+            "uk": "Марокко"
+        }
+    },
+    {
+        "id": 126,
+        "iso_code_2": "MZ",
+        "iso_code_3": "MOZ",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Mozambique",
+            "uk": "Мозамбік"
+        }
+    },
+    {
+        "id": 127,
+        "iso_code_2": "MM",
+        "iso_code_3": "MMR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Myanmar",
+            "uk": "М'янма"
+        }
+    },
+    {
+        "id": 128,
+        "iso_code_2": "NA",
+        "iso_code_3": "NAM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Namibia",
+            "uk": "Намібія"
+        }
+    },
+    {
+        "id": 129,
+        "iso_code_2": "NR",
+        "iso_code_3": "NRU",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Nauru",
+            "uk": "Науру"
+        }
+    },
+    {
+        "id": 130,
+        "iso_code_2": "NP",
+        "iso_code_3": "NPL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Nepal",
+            "uk": "Непал"
+        }
+    },
+    {
+        "id": 131,
+        "iso_code_2": "NL",
+        "iso_code_3": "NLD",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Netherlands",
+            "uk": "Нідерланди"
+        }
+    },
+    {
+        "id": 132,
+        "iso_code_2": "AN",
+        "iso_code_3": "ANT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Netherlands Antilles",
+            "uk": "Нідерландські Антильські Острови"
+        }
+    },
+    {
+        "id": 133,
+        "iso_code_2": "NC",
+        "iso_code_3": "NCL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "New Caledonia",
+            "uk": "Нова Каледонія"
+        }
+    },
+    {
+        "id": 134,
+        "iso_code_2": "NZ",
+        "iso_code_3": "NZL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "New Zealand",
+            "uk": "Нова Зеландія"
+        }
+    },
+    {
+        "id": 135,
+        "iso_code_2": "NI",
+        "iso_code_3": "NIC",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Nicaragua",
+            "uk": "Нікарагуа"
+        }
+    },
+    {
+        "id": 136,
+        "iso_code_2": "NE",
+        "iso_code_3": "NER",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Niger",
+            "uk": "Нігер"
+        }
+    },
+    {
+        "id": 137,
+        "iso_code_2": "NG",
+        "iso_code_3": "NGA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Nigeria",
+            "uk": "Нігерія"
+        }
+    },
+    {
+        "id": 138,
+        "iso_code_2": "NU",
+        "iso_code_3": "NIU",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Niue",
+            "uk": "Ніуе"
+        }
+    },
+    {
+        "id": 139,
+        "iso_code_2": "NF",
+        "iso_code_3": "NFK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Norfolk Island",
+            "uk": "Острів Норфолк"
+        }
+    },
+    {
+        "id": 140,
+        "iso_code_2": "MP",
+        "iso_code_3": "MNP",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Northern Mariana Islands",
+            "uk": "Північні Маріанські Острови"
+        }
+    },
+    {
+        "id": 141,
+        "iso_code_2": "NO",
+        "iso_code_3": "NOR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Norway",
+            "uk": "Норвегія"
+        }
+    },
+    {
+        "id": 142,
+        "iso_code_2": "OM",
+        "iso_code_3": "OMN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Oman",
+            "uk": "Оман"
+        }
+    },
+    {
+        "id": 143,
+        "iso_code_2": "PK",
+        "iso_code_3": "PAK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Pakistan",
+            "uk": "Пакистан"
+        }
+    },
+    {
+        "id": 144,
+        "iso_code_2": "PW",
+        "iso_code_3": "PLW",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Palau",
+            "uk": "Палау"
+        }
+    },
+    {
+        "id": 145,
+        "iso_code_2": "PA",
+        "iso_code_3": "PAN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Panama",
+            "uk": "Панама"
+        }
+    },
+    {
+        "id": 146,
+        "iso_code_2": "PG",
+        "iso_code_3": "PNG",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Papua New Guinea",
+            "uk": "Папуа-Нова Гвінея"
+        }
+    },
+    {
+        "id": 147,
+        "iso_code_2": "PY",
+        "iso_code_3": "PRY",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Paraguay",
+            "uk": "Парагвай"
+        }
+    },
+    {
+        "id": 148,
+        "iso_code_2": "PE",
+        "iso_code_3": "PER",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Peru",
+            "uk": "Перу"
+        }
+    },
+    {
+        "id": 149,
+        "iso_code_2": "PH",
+        "iso_code_3": "PHL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Philippines",
+            "uk": "Філіппіни"
+        }
+    },
+    {
+        "id": 150,
+        "iso_code_2": "PN",
+        "iso_code_3": "PCN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Pitcairn",
+            "uk": "Піткерн"
+        }
+    },
+    {
+        "id": 151,
+        "iso_code_2": "PL",
+        "iso_code_3": "POL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Poland",
+            "uk": "Польща"
+        }
+    },
+    {
+        "id": 152,
+        "iso_code_2": "PT",
+        "iso_code_3": "PRT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Portugal",
+            "uk": "Португалія"
+        }
+    },
+    {
+        "id": 153,
+        "iso_code_2": "PR",
+        "iso_code_3": "PRI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Puerto Rico",
+            "uk": "Пуерто-Рико"
+        }
+    },
+    {
+        "id": 154,
+        "iso_code_2": "QA",
+        "iso_code_3": "QAT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Qatar",
+            "uk": "Катар"
+        }
+    },
+    {
+        "id": 155,
+        "iso_code_2": "RE",
+        "iso_code_3": "REU",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Reunion",
+            "uk": "Реюньйон"
+        }
+    },
+    {
+        "id": 156,
+        "iso_code_2": "RO",
+        "iso_code_3": "ROM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Romania",
+            "uk": "Румунія"
+        }
+    },
+    {
+        "id": 157,
+        "iso_code_2": "RU",
+        "iso_code_3": "RUS",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Russian Federation (the)",
+            "uk": "Росія"
+        }
+    },
+    {
+        "id": 158,
+        "iso_code_2": "RW",
+        "iso_code_3": "RWA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Rwanda",
+            "uk": "Руанда"
+        }
+    },
+    {
+        "id": 159,
+        "iso_code_2": "KN",
+        "iso_code_3": "KNA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Saint Kitts and Nevis",
+            "uk": "Сент-Кітс і Невіс"
+        }
+    },
+    {
+        "id": 160,
+        "iso_code_2": "LC",
+        "iso_code_3": "LCA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Saint Lucia",
+            "uk": "Сент-Люсія"
+        }
+    },
+    {
+        "id": 161,
+        "iso_code_2": "VC",
+        "iso_code_3": "VCT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Saint Vincent and the Grenadines",
+            "uk": "Сент-Вінсент і Гренадіни"
+        }
+    },
+    {
+        "id": 162,
+        "iso_code_2": "WS",
+        "iso_code_3": "WSM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Samoa",
+            "uk": "Самоа"
+        }
+    },
+    {
+        "id": 163,
+        "iso_code_2": "SM",
+        "iso_code_3": "SMR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "San Marino",
+            "uk": "Сан-Марино"
+        }
+    },
+    {
+        "id": 164,
+        "iso_code_2": "ST",
+        "iso_code_3": "STP",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Sao Tome and Principe",
+            "uk": "Сан-Томе і Принсіпі"
+        }
+    },
+    {
+        "id": 165,
+        "iso_code_2": "SA",
+        "iso_code_3": "SAU",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Saudi Arabia",
+            "uk": "Саудівська Аравія"
+        }
+    },
+    {
+        "id": 166,
+        "iso_code_2": "SN",
+        "iso_code_3": "SEN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Senegal",
+            "uk": "Сенегал"
+        }
+    },
+    {
+        "id": 167,
+        "iso_code_2": "SC",
+        "iso_code_3": "SYC",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Seychelles",
+            "uk": "Сейшели"
+        }
+    },
+    {
+        "id": 168,
+        "iso_code_2": "SL",
+        "iso_code_3": "SLE",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Sierra Leone",
+            "uk": "Сьєрра-Леоне"
+        }
+    },
+    {
+        "id": 169,
+        "iso_code_2": "SG",
+        "iso_code_3": "SGP",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Singapore",
+            "uk": "Сінгапур"
+        }
+    },
+    {
+        "id": 170,
+        "iso_code_2": "SK",
+        "iso_code_3": "SVK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Slovak Republic",
+            "uk": "Словацька Республіка"
+        }
+    },
+    {
+        "id": 171,
+        "iso_code_2": "SI",
+        "iso_code_3": "SVN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Slovenia",
+            "uk": "Словенія"
+        }
+    },
+    {
+        "id": 172,
+        "iso_code_2": "SB",
+        "iso_code_3": "SLB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Solomon Islands",
+            "uk": "Соломонові Острови"
+        }
+    },
+    {
+        "id": 173,
+        "iso_code_2": "SO",
+        "iso_code_3": "SOM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Somalia",
+            "uk": "Сомалі"
+        }
+    },
+    {
+        "id": 174,
+        "iso_code_2": "ZA",
+        "iso_code_3": "ZAF",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "South Africa",
+            "uk": "Південно-Африканська Республіка"
+        }
+    },
+    {
+        "id": 175,
+        "iso_code_2": "GS",
+        "iso_code_3": "SGS",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "South Georgia &amp; South Sandwich Islands",
+            "uk": "Південна Джорджія та Південні Сандвічеві Острови"
+        }
+    },
+    {
+        "id": 176,
+        "iso_code_2": "ES",
+        "iso_code_3": "ESP",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Spain",
+            "uk": "Іспанія"
+        }
+    },
+    {
+        "id": 177,
+        "iso_code_2": "LK",
+        "iso_code_3": "LKA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Sri Lanka",
+            "uk": "Шрі-Ланка"
+        }
+    },
+    {
+        "id": 178,
+        "iso_code_2": "SH",
+        "iso_code_3": "SHN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "St. Helena",
+            "uk": "Острів Святої Єлени"
+        }
+    },
+    {
+        "id": 179,
+        "iso_code_2": "PM",
+        "iso_code_3": "SPM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "St. Pierre and Miquelon",
+            "uk": "Сен-П’єр і Мікелон"
+        }
+    },
+    {
+        "id": 180,
+        "iso_code_2": "SD",
+        "iso_code_3": "SDN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Sudan",
+            "uk": "Судан"
+        }
+    },
+    {
+        "id": 181,
+        "iso_code_2": "SR",
+        "iso_code_3": "SUR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Suriname",
+            "uk": "Суринам"
+        }
+    },
+    {
+        "id": 182,
+        "iso_code_2": "SJ",
+        "iso_code_3": "SJM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Svalbard and Jan Mayen Islands",
+            "uk": "Шпіцберген і Ян-Маєн"
+        }
+    },
+    {
+        "id": 183,
+        "iso_code_2": "SZ",
+        "iso_code_3": "SWZ",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Eswatini",
+            "uk": "Есватіні"
+        }
+    },
+    {
+        "id": 184,
+        "iso_code_2": "SE",
+        "iso_code_3": "SWE",
+        "postcode_required": 1,
+        "status": 0,
+        "names": {
+            "en": "Sweden",
+            "uk": "Швеція"
+        }
+    },
+    {
+        "id": 185,
+        "iso_code_2": "CH",
+        "iso_code_3": "CHE",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Switzerland",
+            "uk": "Швейцарія"
+        }
+    },
+    {
+        "id": 186,
+        "iso_code_2": "SY",
+        "iso_code_3": "SYR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Syrian Arab Republic",
+            "uk": "Сирійська Арабська Республіка"
+        }
+    },
+    {
+        "id": 187,
+        "iso_code_2": "TW",
+        "iso_code_3": "TWN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Taiwan",
+            "uk": "Тайвань"
+        }
+    },
+    {
+        "id": 188,
+        "iso_code_2": "TJ",
+        "iso_code_3": "TJK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Tajikistan",
+            "uk": "Таджикистан"
+        }
+    },
+    {
+        "id": 189,
+        "iso_code_2": "TZ",
+        "iso_code_3": "TZA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Tanzania, United Republic of",
+            "uk": "Об’єднана Республіка Танзанія"
+        }
+    },
+    {
+        "id": 190,
+        "iso_code_2": "TH",
+        "iso_code_3": "THA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Thailand",
+            "uk": "Таїланд"
+        }
+    },
+    {
+        "id": 191,
+        "iso_code_2": "TG",
+        "iso_code_3": "TGO",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Togo",
+            "uk": "Того"
+        }
+    },
+    {
+        "id": 192,
+        "iso_code_2": "TK",
+        "iso_code_3": "TKL",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Tokelau",
+            "uk": "Токелау"
+        }
+    },
+    {
+        "id": 193,
+        "iso_code_2": "TO",
+        "iso_code_3": "TON",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Tonga",
+            "uk": "Тонга"
+        }
+    },
+    {
+        "id": 194,
+        "iso_code_2": "TT",
+        "iso_code_3": "TTO",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Trinidad and Tobago",
+            "uk": "Тринідад і Тобаго"
+        }
+    },
+    {
+        "id": 195,
+        "iso_code_2": "TN",
+        "iso_code_3": "TUN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Tunisia",
+            "uk": "Туніс"
+        }
+    },
+    {
+        "id": 196,
+        "iso_code_2": "TR",
+        "iso_code_3": "TUR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Republic of Türkiye",
+            "uk": "Республіка Тюркія"
+        }
+    },
+    {
+        "id": 197,
+        "iso_code_2": "TM",
+        "iso_code_3": "TKM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Turkmenistan",
+            "uk": "Туркменістан"
+        }
+    },
+    {
+        "id": 198,
+        "iso_code_2": "TC",
+        "iso_code_3": "TCA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Turks and Caicos Islands",
+            "uk": "Острови Теркс і Кайкос"
+        }
+    },
+    {
+        "id": 199,
+        "iso_code_2": "TV",
+        "iso_code_3": "TUV",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Tuvalu",
+            "uk": "Тувалу"
+        }
+    },
+    {
+        "id": 200,
+        "iso_code_2": "UG",
+        "iso_code_3": "UGA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Uganda",
+            "uk": "Уганда"
+        }
+    },
+    {
+        "id": 201,
+        "iso_code_2": "UA",
+        "iso_code_3": "UKR",
+        "postcode_required": 0,
+        "status": 1,
+        "names": {
+            "en": "Ukraine",
+            "uk": "Україна"
+        }
+    },
+    {
+        "id": 202,
+        "iso_code_2": "AE",
+        "iso_code_3": "ARE",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "United Arab Emirates",
+            "uk": "Об’єднані Арабські Емірати"
+        }
+    },
+    {
+        "id": 203,
+        "iso_code_2": "GB",
+        "iso_code_3": "GBR",
+        "postcode_required": 1,
+        "status": 0,
+        "names": {
+            "en": "United Kingdom",
+            "uk": "Велика Британія"
+        }
+    },
+    {
+        "id": 204,
+        "iso_code_2": "US",
+        "iso_code_3": "USA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "United States",
+            "uk": "Сполучені Штати Америки"
+        }
+    },
+    {
+        "id": 205,
+        "iso_code_2": "UM",
+        "iso_code_3": "UMI",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "United States Minor Outlying Islands",
+            "uk": "Малі Віддалені Острови США"
+        }
+    },
+    {
+        "id": 206,
+        "iso_code_2": "UY",
+        "iso_code_3": "URY",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Uruguay",
+            "uk": "Уругвай"
+        }
+    },
+    {
+        "id": 207,
+        "iso_code_2": "UZ",
+        "iso_code_3": "UZB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Uzbekistan",
+            "uk": "Узбекистан"
+        }
+    },
+    {
+        "id": 208,
+        "iso_code_2": "VU",
+        "iso_code_3": "VUT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Vanuatu",
+            "uk": "Вануату"
+        }
+    },
+    {
+        "id": 209,
+        "iso_code_2": "VA",
+        "iso_code_3": "VAT",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Vatican City State (Holy See)",
+            "uk": "Ватикан (Святий Престол)"
+        }
+    },
+    {
+        "id": 210,
+        "iso_code_2": "VE",
+        "iso_code_3": "VEN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Venezuela",
+            "uk": "Венесуела"
+        }
+    },
+    {
+        "id": 211,
+        "iso_code_2": "VN",
+        "iso_code_3": "VNM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Viet Nam",
+            "uk": "Вʼєтнам"
+        }
+    },
+    {
+        "id": 212,
+        "iso_code_2": "VG",
+        "iso_code_3": "VGB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Virgin Islands (British)",
+            "uk": "Віргінські Острови (Британські)"
+        }
+    },
+    {
+        "id": 213,
+        "iso_code_2": "VI",
+        "iso_code_3": "VIR",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Virgin Islands (U.S.)",
+            "uk": "Віргінські Острови (США)"
+        }
+    },
+    {
+        "id": 214,
+        "iso_code_2": "WF",
+        "iso_code_3": "WLF",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Wallis and Futuna Islands",
+            "uk": "Острови Волліс і Футуна"
+        }
+    },
+    {
+        "id": 215,
+        "iso_code_2": "EH",
+        "iso_code_3": "ESH",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Western Sahara",
+            "uk": "Західна Сахара"
+        }
+    },
+    {
+        "id": 216,
+        "iso_code_2": "YE",
+        "iso_code_3": "YEM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Yemen",
+            "uk": "Ємен"
+        }
+    },
+    {
+        "id": 217,
+        "iso_code_2": "CD",
+        "iso_code_3": "COD",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Democratic Republic of the Congo",
+            "uk": "Демократична Республіка Конго"
+        }
+    },
+    {
+        "id": 218,
+        "iso_code_2": "ZM",
+        "iso_code_3": "ZMB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Zambia",
+            "uk": "Замбія"
+        }
+    },
+    {
+        "id": 219,
+        "iso_code_2": "ZW",
+        "iso_code_3": "ZWE",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Zimbabwe",
+            "uk": "Зімбабве"
+        }
+    },
+    {
+        "id": 220,
+        "iso_code_2": "ME",
+        "iso_code_3": "MNE",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Montenegro",
+            "uk": "Чорногорія"
+        }
+    },
+    {
+        "id": 221,
+        "iso_code_2": "RS",
+        "iso_code_3": "SRB",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Serbia",
+            "uk": "Сербія"
+        }
+    },
+    {
+        "id": 222,
+        "iso_code_2": "AX",
+        "iso_code_3": "ALA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Aaland Islands",
+            "uk": "Аландські острови"
+        }
+    },
+    {
+        "id": 223,
+        "iso_code_2": "BQ",
+        "iso_code_3": "BES",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Bonaire, Sint Eustatius and Saba",
+            "uk": "Бонайре, Сінт-Естатіус і Саба"
+        }
+    },
+    {
+        "id": 224,
+        "iso_code_2": "CW",
+        "iso_code_3": "CUW",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Curacao",
+            "uk": "Кюрасао"
+        }
+    },
+    {
+        "id": 225,
+        "iso_code_2": "PS",
+        "iso_code_3": "PSE",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Occupied Palestinian Territory",
+            "uk": "Окупована Палестинська Територія"
+        }
+    },
+    {
+        "id": 226,
+        "iso_code_2": "SS",
+        "iso_code_3": "SSD",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "South Sudan",
+            "uk": "Південний Судан"
+        }
+    },
+    {
+        "id": 227,
+        "iso_code_2": "BL",
+        "iso_code_3": "BLM",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "St. Barthelemy",
+            "uk": "Сен-Бартелемі"
+        }
+    },
+    {
+        "id": 228,
+        "iso_code_2": "MF",
+        "iso_code_3": "MAF",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "St. Martin (French part)",
+            "uk": "Сен-Мартен (французька частина)"
+        }
+    },
+    {
+        "id": 229,
+        "iso_code_2": "IC",
+        "iso_code_3": "ICA",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Canary Islands",
+            "uk": "Канарські острови"
+        }
+    },
+    {
+        "id": 230,
+        "iso_code_2": "AC",
+        "iso_code_3": "ASC",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Ascension Island (British)",
+            "uk": "Острів Вознесіння (Британія)"
+        }
+    },
+    {
+        "id": 231,
+        "iso_code_2": "XK",
+        "iso_code_3": "UNK",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Kosovo, Republic of",
+            "uk": "Косово, Республіка"
+        }
+    },
+    {
+        "id": 232,
+        "iso_code_2": "IM",
+        "iso_code_3": "IMN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Isle of Man",
+            "uk": "Острів Мен"
+        }
+    },
+    {
+        "id": 233,
+        "iso_code_2": "TA",
+        "iso_code_3": "SHN",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Tristan da Cunha",
+            "uk": "Трістан-да-Кунья"
+        }
+    },
+    {
+        "id": 234,
+        "iso_code_2": "GG",
+        "iso_code_3": "GGY",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Guernsey",
+            "uk": "Гернсі"
+        }
+    },
+    {
+        "id": 235,
+        "iso_code_2": "JE",
+        "iso_code_3": "JEY",
+        "postcode_required": 0,
+        "status": 0,
+        "names": {
+            "en": "Jersey",
+            "uk": "Джерсі"
+        }
+    }
+]

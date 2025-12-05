@@ -1,0 +1,2558 @@
+[
+    {
+        "id": 1,
+        "feature_id": 1,
+        "sort_order": 1,
+        "translations": {
+            "en": "21.5\"",
+            "uk": "21.5\""
+        }
+    },
+    {
+        "id": 2,
+        "feature_id": 1,
+        "sort_order": 2,
+        "translations": {
+            "en": "21.45\"",
+            "uk": "21.45\""
+        }
+    },
+    {
+        "id": 3,
+        "feature_id": 1,
+        "sort_order": 3,
+        "translations": {
+            "en": "23.8\"",
+            "uk": "23.8\""
+        }
+    },
+    {
+        "id": 4,
+        "feature_id": 1,
+        "sort_order": 4,
+        "translations": {
+            "en": "24.5\"",
+            "uk": "24.5\""
+        }
+    },
+    {
+        "id": 5,
+        "feature_id": 1,
+        "sort_order": 5,
+        "translations": {
+            "en": "26.5\"",
+            "uk": "26.5\""
+        }
+    },
+    {
+        "id": 6,
+        "feature_id": 1,
+        "sort_order": 6,
+        "translations": {
+            "en": "27\"",
+            "uk": "27\""
+        }
+    },
+    {
+        "id": 7,
+        "feature_id": 1,
+        "sort_order": 7,
+        "translations": {
+            "en": "31.5\"",
+            "uk": "31.5\""
+        }
+    },
+    {
+        "id": 8,
+        "feature_id": 1,
+        "sort_order": 8,
+        "translations": {
+            "en": "32\"",
+            "uk": "32\""
+        }
+    },
+    {
+        "id": 9,
+        "feature_id": 1,
+        "sort_order": 9,
+        "translations": {
+            "en": "49\"",
+            "uk": "49\""
+        }
+    },
+    {
+        "id": 10,
+        "feature_id": 1,
+        "sort_order": 10,
+        "translations": {
+            "en": "14\"",
+            "uk": "14\""
+        }
+    },
+    {
+        "id": 11,
+        "feature_id": 1,
+        "sort_order": 11,
+        "translations": {
+            "en": "15.3\"",
+            "uk": "15.3\""
+        }
+    },
+    {
+        "id": 12,
+        "feature_id": 1,
+        "sort_order": 12,
+        "translations": {
+            "en": "15.6\"",
+            "uk": "15.6\""
+        }
+    },
+    {
+        "id": 13,
+        "feature_id": 1,
+        "sort_order": 13,
+        "translations": {
+            "en": "16\"",
+            "uk": "16\""
+        }
+    },
+    {
+        "id": 14,
+        "feature_id": 1,
+        "sort_order": 14,
+        "translations": {
+            "en": "18\"",
+            "uk": "18\""
+        }
+    },
+    {
+        "id": 15,
+        "feature_id": 2,
+        "sort_order": 1,
+        "translations": {
+            "en": "75 Hz",
+            "uk": "75 Гц"
+        }
+    },
+    {
+        "id": 16,
+        "feature_id": 2,
+        "sort_order": 2,
+        "translations": {
+            "en": "100 Hz",
+            "uk": "100 Гц"
+        }
+    },
+    {
+        "id": 17,
+        "feature_id": 2,
+        "sort_order": 3,
+        "translations": {
+            "en": "180 Hz",
+            "uk": "180 Гц"
+        }
+    },
+    {
+        "id": 18,
+        "feature_id": 2,
+        "sort_order": 4,
+        "translations": {
+            "en": "200 Hz",
+            "uk": "200 Гц"
+        }
+    },
+    {
+        "id": 19,
+        "feature_id": 2,
+        "sort_order": 5,
+        "translations": {
+            "en": "240 Hz",
+            "uk": "240 Гц"
+        }
+    },
+    {
+        "id": 20,
+        "feature_id": 2,
+        "sort_order": 6,
+        "translations": {
+            "en": "280 Hz",
+            "uk": "280 Гц"
+        }
+    },
+    {
+        "id": 21,
+        "feature_id": 2,
+        "sort_order": 7,
+        "translations": {
+            "en": "360 Hz",
+            "uk": "360 Гц"
+        }
+    },
+    {
+        "id": 22,
+        "feature_id": 2,
+        "sort_order": 8,
+        "translations": {
+            "en": "60 Hz",
+            "uk": "60 Гц"
+        }
+    },
+    {
+        "id": 23,
+        "feature_id": 2,
+        "sort_order": 9,
+        "translations": {
+            "en": "120 Hz",
+            "uk": "120 Гц"
+        }
+    },
+    {
+        "id": 24,
+        "feature_id": 2,
+        "sort_order": 10,
+        "translations": {
+            "en": "165 Hz",
+            "uk": "165 Гц"
+        }
+    },
+    {
+        "id": 25,
+        "feature_id": 3,
+        "sort_order": 1,
+        "translations": {
+            "en": "1920x1080 (FullHD)",
+            "uk": "1920x1080 (FullHD)"
+        }
+    },
+    {
+        "id": 26,
+        "feature_id": 3,
+        "sort_order": 2,
+        "translations": {
+            "en": "2560x1440 (2K QHD)",
+            "uk": "2560x1440 (2K QHD)"
+        }
+    },
+    {
+        "id": 27,
+        "feature_id": 3,
+        "sort_order": 3,
+        "translations": {
+            "en": "3840x2160 (4K UltraHD)",
+            "uk": "3840x2160 (4K UltraHD)"
+        }
+    },
+    {
+        "id": 28,
+        "feature_id": 3,
+        "sort_order": 4,
+        "translations": {
+            "en": "5120x1440",
+            "uk": "5120x1440"
+        }
+    },
+    {
+        "id": 29,
+        "feature_id": 3,
+        "sort_order": 5,
+        "translations": {
+            "en": "2880x1800",
+            "uk": "2880x1800"
+        }
+    },
+    {
+        "id": 30,
+        "feature_id": 3,
+        "sort_order": 6,
+        "translations": {
+            "en": "2560x1600",
+            "uk": "2560x1600"
+        }
+    },
+    {
+        "id": 31,
+        "feature_id": 3,
+        "sort_order": 7,
+        "translations": {
+            "en": "1920x1200",
+            "uk": "1920x1200"
+        }
+    },
+    {
+        "id": 32,
+        "feature_id": 3,
+        "sort_order": 8,
+        "translations": {
+            "en": "2880x1864",
+            "uk": "2880x1864"
+        }
+    },
+    {
+        "id": 33,
+        "feature_id": 4,
+        "sort_order": 1,
+        "translations": {
+            "en": "IPS",
+            "uk": "IPS"
+        }
+    },
+    {
+        "id": 34,
+        "feature_id": 4,
+        "sort_order": 2,
+        "translations": {
+            "en": "OLED",
+            "uk": "OLED"
+        }
+    },
+    {
+        "id": 35,
+        "feature_id": 4,
+        "sort_order": 3,
+        "translations": {
+            "en": "VA",
+            "uk": "VA"
+        }
+    },
+    {
+        "id": 36,
+        "feature_id": 4,
+        "sort_order": 4,
+        "translations": {
+            "en": "QD-OLED",
+            "uk": "QD-OLED"
+        }
+    },
+    {
+        "id": 37,
+        "feature_id": 5,
+        "sort_order": 1,
+        "translations": {
+            "en": "Black",
+            "uk": "Чорний"
+        }
+    },
+    {
+        "id": 38,
+        "feature_id": 5,
+        "sort_order": 2,
+        "translations": {
+            "en": "Silver",
+            "uk": "Сріблястий"
+        }
+    },
+    {
+        "id": 39,
+        "feature_id": 6,
+        "sort_order": 1,
+        "translations": {
+            "en": "Octa-core Intel Core i5-12450H (3.3 - 4.4 GHz)",
+            "uk": "Восьмиядерний Intel Core i5-12450H (3.3 - 4.4 ГГц)"
+        }
+    },
+    {
+        "id": 40,
+        "feature_id": 6,
+        "sort_order": 2,
+        "translations": {
+            "en": "Hexa-core AMD Ryzen 5 8540U (3.2 - 4.9 GHz)",
+            "uk": "Шестиядерний AMD Ryzen 5 8540U (3.2 - 4.9 ГГц)"
+        }
+    },
+    {
+        "id": 41,
+        "feature_id": 6,
+        "sort_order": 3,
+        "translations": {
+            "en": "Octa-core Intel Core Ultra 5 226V (2.1 - 4.5 GHz)",
+            "uk": "Восьмиядерний Intel Core Ultra 5 226V (2.1 - 4.5 ГГц)"
+        }
+    },
+    {
+        "id": 42,
+        "feature_id": 6,
+        "sort_order": 4,
+        "translations": {
+            "en": "Sixteen-core AMD Ryzen 9 8940HX (2.4 - 5.3 GHz)",
+            "uk": "Шістнадцятидерний AMD Ryzen 9 8940HX (2.4 - 5.3 ГГц)"
+        }
+    },
+    {
+        "id": 43,
+        "feature_id": 6,
+        "sort_order": 5,
+        "translations": {
+            "en": "Deca-core Apple M4 (2.89 – 4.46 GHz)",
+            "uk": "Десятиядерний Apple M4 (2.89 – 4.46 ГГц)"
+        }
+    },
+    {
+        "id": 44,
+        "feature_id": 6,
+        "sort_order": 6,
+        "translations": {
+            "en": "Dual-core Intel Celeron N4020 (1.1 - 2.8 GHz)",
+            "uk": "Двоядерний Intel Celeron N4020 (1.1 - 2.8 ГГц)"
+        }
+    },
+    {
+        "id": 45,
+        "feature_id": 6,
+        "sort_order": 7,
+        "translations": {
+            "en": "Twenty-four-core Intel Core Ultra 9 275HX (2.1 - 5.4 GHz)",
+            "uk": "Двадцятичотирьохядерний Intel Core Ultra 9 275HX (2.1 - 5.4 ГГц)"
+        }
+    },
+    {
+        "id": 46,
+        "feature_id": 6,
+        "sort_order": 8,
+        "translations": {
+            "en": "Sixteen-core Intel Core i7-14650HX (2.2 - 5.2 GHz)",
+            "uk": "Шістнадцятиядерний Intel Core i7-14650HX (2.2 - 5.2 ГГц)"
+        }
+    },
+    {
+        "id": 47,
+        "feature_id": 6,
+        "sort_order": 9,
+        "translations": {
+            "en": "Deca-core Intel Core i5-1334U (1.3 - 4.6 GHz)",
+            "uk": "Десятиядерний Intel Core i5-1334U (1.3 - 4.6 ГГц)"
+        }
+    },
+    {
+        "id": 48,
+        "feature_id": 7,
+        "sort_order": 1,
+        "translations": {
+            "en": "256 GB",
+            "uk": "256 ГБ"
+        }
+    },
+    {
+        "id": 49,
+        "feature_id": 7,
+        "sort_order": 2,
+        "translations": {
+            "en": "512 GB",
+            "uk": "512 ГБ"
+        }
+    },
+    {
+        "id": 50,
+        "feature_id": 7,
+        "sort_order": 3,
+        "translations": {
+            "en": "1 TB",
+            "uk": "1 ТБ"
+        }
+    },
+    {
+        "id": 51,
+        "feature_id": 8,
+        "sort_order": 1,
+        "translations": {
+            "en": "8 GB",
+            "uk": "8 ГБ"
+        }
+    },
+    {
+        "id": 52,
+        "feature_id": 8,
+        "sort_order": 2,
+        "translations": {
+            "en": "16 GB",
+            "uk": "16 ГБ"
+        }
+    },
+    {
+        "id": 53,
+        "feature_id": 8,
+        "sort_order": 3,
+        "translations": {
+            "en": "32 GB",
+            "uk": "32 ГБ"
+        }
+    },
+    {
+        "id": 54,
+        "feature_id": 9,
+        "sort_order": 1,
+        "translations": {
+            "en": "DDR4",
+            "uk": "DDR4"
+        }
+    },
+    {
+        "id": 55,
+        "feature_id": 9,
+        "sort_order": 2,
+        "translations": {
+            "en": "DDR5",
+            "uk": "DDR5"
+        }
+    },
+    {
+        "id": 56,
+        "feature_id": 10,
+        "sort_order": 1,
+        "translations": {
+            "en": "8 GB",
+            "uk": "8 ГБ"
+        }
+    },
+    {
+        "id": 57,
+        "feature_id": 10,
+        "sort_order": 2,
+        "translations": {
+            "en": "12 GB",
+            "uk": "12 ГБ"
+        }
+    },
+    {
+        "id": 58,
+        "feature_id": 10,
+        "sort_order": 3,
+        "translations": {
+            "en": "2 GB",
+            "uk": "2 ГБ"
+        }
+    },
+    {
+        "id": 59,
+        "feature_id": 10,
+        "sort_order": 4,
+        "translations": {
+            "en": "6 GB",
+            "uk": "6 ГБ"
+        }
+    },
+    {
+        "id": 60,
+        "feature_id": 10,
+        "sort_order": 5,
+        "translations": {
+            "en": "16 GB",
+            "uk": "16 ГБ"
+        }
+    },
+    {
+        "id": 61,
+        "feature_id": 10,
+        "sort_order": 6,
+        "translations": {
+            "en": "32 GB",
+            "uk": "32 ГБ"
+        }
+    },
+    {
+        "id": 62,
+        "feature_id": 6,
+        "sort_order": 10,
+        "translations": {
+            "en": "Hexa-core AMD Ryzen 5 3500X (3.6 - 4.1 GHz)",
+            "uk": "Шестиядерний AMD Ryzen 5 3500X (3.6 — 4.1 ГГц)"
+        }
+    },
+    {
+        "id": 63,
+        "feature_id": 6,
+        "sort_order": 11,
+        "translations": {
+            "en": "Hexa-core AMD Ryzen 5 7500F (3.7 - 5.0 GHz)",
+            "uk": "Шестиядерний AMD Ryzen 5 7500F (3.7 - 5.0 ГГц)"
+        }
+    },
+    {
+        "id": 64,
+        "feature_id": 6,
+        "sort_order": 12,
+        "translations": {
+            "en": "Hexa-core Intel Core i5-10400F (2.9 - 4.3 GHz)",
+            "uk": "Шестиядерний Intel Core i5-10400F (2.9 – 4.3 ГГц)"
+        }
+    },
+    {
+        "id": 65,
+        "feature_id": 6,
+        "sort_order": 13,
+        "translations": {
+            "en": "Quad-core Intel Core i5-3470 (3.2 GHz)",
+            "uk": "Чотириядерний Intel Core i5-3470 (3.2 ГГц)"
+        }
+    },
+    {
+        "id": 66,
+        "feature_id": 6,
+        "sort_order": 14,
+        "translations": {
+            "en": "Twelve-core Intel Core i7-12700KF (3.6 - 5.0 GHz)",
+            "uk": "Дванадцятиядерний Intel Core i7-12700KF (3.6 — 5.0 ГГц)"
+        }
+    },
+    {
+        "id": 67,
+        "feature_id": 6,
+        "sort_order": 15,
+        "translations": {
+            "en": "Hexa-core AMD Ryzen 5 5600X (3.7 - 4.6 GHz)",
+            "uk": "Шестиядерний AMD Ryzen 5 5600X (3.7 — 4.6 ГГц)"
+        }
+    },
+    {
+        "id": 68,
+        "feature_id": 6,
+        "sort_order": 16,
+        "translations": {
+            "en": "Sixteen-core AMD Ryzen 9 9950X3D (4.3 - 5.7 GHz)",
+            "uk": "Шістнадцятиядерний AMD Ryzen 9 9950X3D (4.3 - 5.7 ГГц)"
+        }
+    },
+    {
+        "id": 69,
+        "feature_id": 8,
+        "sort_order": 4,
+        "translations": {
+            "en": "64 GB",
+            "uk": "64 ГБ"
+        }
+    },
+    {
+        "id": 70,
+        "feature_id": 8,
+        "sort_order": 5,
+        "translations": {
+            "en": "96 GB",
+            "uk": "96 ГБ"
+        }
+    },
+    {
+        "id": 71,
+        "feature_id": 9,
+        "sort_order": 3,
+        "translations": {
+            "en": "DDR3",
+            "uk": "DDR3"
+        }
+    },
+    {
+        "id": 72,
+        "feature_id": 7,
+        "sort_order": 4,
+        "translations": {
+            "en": "240 GB",
+            "uk": "240 ГБ"
+        }
+    },
+    {
+        "id": 73,
+        "feature_id": 7,
+        "sort_order": 5,
+        "translations": {
+            "en": "480 GB",
+            "uk": "480 ГБ"
+        }
+    },
+    {
+        "id": 74,
+        "feature_id": 7,
+        "sort_order": 6,
+        "translations": {
+            "en": "500 GB",
+            "uk": "500 ГБ"
+        }
+    },
+    {
+        "id": 75,
+        "feature_id": 7,
+        "sort_order": 7,
+        "translations": {
+            "en": "2 TB",
+            "uk": "2 ТБ"
+        }
+    },
+    {
+        "id": 76,
+        "feature_id": 7,
+        "sort_order": 8,
+        "translations": {
+            "en": "4 TB (2 TB + 2 TB)",
+            "uk": "4 ТБ (2 ТБ + 2 ТБ)"
+        }
+    },
+    {
+        "id": 77,
+        "feature_id": 11,
+        "sort_order": 1,
+        "translations": {
+            "en": "GeForce RTX 3050",
+            "uk": "GeForce RTX 3050"
+        }
+    },
+    {
+        "id": 78,
+        "feature_id": 11,
+        "sort_order": 2,
+        "translations": {
+            "en": "GeForce RTX 5060 Ti",
+            "uk": "GeForce RTX 5060 Ti"
+        }
+    },
+    {
+        "id": 79,
+        "feature_id": 11,
+        "sort_order": 3,
+        "translations": {
+            "en": "GeForce GT710",
+            "uk": "GeForce GT710"
+        }
+    },
+    {
+        "id": 80,
+        "feature_id": 11,
+        "sort_order": 4,
+        "translations": {
+            "en": "GeForce RTX 5070 Ti",
+            "uk": "GeForce RTX 5070 Ti"
+        }
+    },
+    {
+        "id": 81,
+        "feature_id": 11,
+        "sort_order": 5,
+        "translations": {
+            "en": "GeForce RTX 5060",
+            "uk": "GeForce RTX 5060"
+        }
+    },
+    {
+        "id": 82,
+        "feature_id": 11,
+        "sort_order": 6,
+        "translations": {
+            "en": "GeForce RTX 2060 Super",
+            "uk": "GeForce RTX 2060 Super"
+        }
+    },
+    {
+        "id": 83,
+        "feature_id": 11,
+        "sort_order": 7,
+        "translations": {
+            "en": "GeForce RTX 5080",
+            "uk": "GeForce RTX 5080"
+        }
+    },
+    {
+        "id": 84,
+        "feature_id": 11,
+        "sort_order": 8,
+        "translations": {
+            "en": "GeForce RTX 5090",
+            "uk": "GeForce RTX 5090"
+        }
+    },
+    {
+        "id": 85,
+        "feature_id": 12,
+        "sort_order": 1,
+        "translations": {
+            "en": "400 W",
+            "uk": "400 Вт"
+        }
+    },
+    {
+        "id": 86,
+        "feature_id": 12,
+        "sort_order": 2,
+        "translations": {
+            "en": "500 W",
+            "uk": "500 Вт"
+        }
+    },
+    {
+        "id": 87,
+        "feature_id": 12,
+        "sort_order": 3,
+        "translations": {
+            "en": "600 W",
+            "uk": "600 Вт"
+        }
+    },
+    {
+        "id": 88,
+        "feature_id": 12,
+        "sort_order": 4,
+        "translations": {
+            "en": "750 W",
+            "uk": "750 Вт"
+        }
+    },
+    {
+        "id": 89,
+        "feature_id": 12,
+        "sort_order": 5,
+        "translations": {
+            "en": "850 W",
+            "uk": "850 Вт"
+        }
+    },
+    {
+        "id": 90,
+        "feature_id": 12,
+        "sort_order": 6,
+        "translations": {
+            "en": "1200 W",
+            "uk": "1200 Вт"
+        }
+    },
+    {
+        "id": 91,
+        "feature_id": 12,
+        "sort_order": 7,
+        "translations": {
+            "en": "1600 W",
+            "uk": "1600 Вт"
+        }
+    },
+    {
+        "id": 92,
+        "feature_id": 1,
+        "sort_order": 15,
+        "translations": {
+            "en": "8.8\"",
+            "uk": "8.8\""
+        }
+    },
+    {
+        "id": 93,
+        "feature_id": 1,
+        "sort_order": 16,
+        "translations": {
+            "en": "10.1\"",
+            "uk": "10.1\""
+        }
+    },
+    {
+        "id": 94,
+        "feature_id": 1,
+        "sort_order": 17,
+        "translations": {
+            "en": "11\"",
+            "uk": "11\""
+        }
+    },
+    {
+        "id": 95,
+        "feature_id": 1,
+        "sort_order": 18,
+        "translations": {
+            "en": "12.7\"",
+            "uk": "12.7\""
+        }
+    },
+    {
+        "id": 96,
+        "feature_id": 1,
+        "sort_order": 19,
+        "translations": {
+            "en": "13\"",
+            "uk": "13\""
+        }
+    },
+    {
+        "id": 97,
+        "feature_id": 1,
+        "sort_order": 20,
+        "translations": {
+            "en": "14.6\"",
+            "uk": "14.6\""
+        }
+    },
+    {
+        "id": 98,
+        "feature_id": 8,
+        "sort_order": 6,
+        "translations": {
+            "en": "4 GB",
+            "uk": "4 ГБ"
+        }
+    },
+    {
+        "id": 99,
+        "feature_id": 8,
+        "sort_order": 7,
+        "translations": {
+            "en": "6 GB",
+            "uk": "6 ГБ"
+        }
+    },
+    {
+        "id": 100,
+        "feature_id": 8,
+        "sort_order": 8,
+        "translations": {
+            "en": "12 GB",
+            "uk": "12 ГБ"
+        }
+    },
+    {
+        "id": 101,
+        "feature_id": 2,
+        "sort_order": 11,
+        "translations": {
+            "en": "90 Hz",
+            "uk": "90 Гц"
+        }
+    },
+    {
+        "id": 102,
+        "feature_id": 2,
+        "sort_order": 12,
+        "translations": {
+            "en": "144 Hz",
+            "uk": "144 Гц"
+        }
+    },
+    {
+        "id": 103,
+        "feature_id": 3,
+        "sort_order": 9,
+        "translations": {
+            "en": "1280x800",
+            "uk": "1280x800"
+        }
+    },
+    {
+        "id": 104,
+        "feature_id": 3,
+        "sort_order": 10,
+        "translations": {
+            "en": "2360x1640",
+            "uk": "2360х1640"
+        }
+    },
+    {
+        "id": 105,
+        "feature_id": 3,
+        "sort_order": 11,
+        "translations": {
+            "en": "2420x1668",
+            "uk": "2420x1668"
+        }
+    },
+    {
+        "id": 106,
+        "feature_id": 3,
+        "sort_order": 12,
+        "translations": {
+            "en": "2880x1920",
+            "uk": "2880x1920"
+        }
+    },
+    {
+        "id": 107,
+        "feature_id": 3,
+        "sort_order": 13,
+        "translations": {
+            "en": "2944x1840",
+            "uk": "2944x1840"
+        }
+    },
+    {
+        "id": 108,
+        "feature_id": 3,
+        "sort_order": 14,
+        "translations": {
+            "en": "2960x1848",
+            "uk": "2960x1848"
+        }
+    },
+    {
+        "id": 109,
+        "feature_id": 13,
+        "sort_order": 1,
+        "translations": {
+            "en": "128 GB",
+            "uk": "128 ГБ"
+        }
+    },
+    {
+        "id": 110,
+        "feature_id": 13,
+        "sort_order": 2,
+        "translations": {
+            "en": "256 GB",
+            "uk": "256 ГБ"
+        }
+    },
+    {
+        "id": 111,
+        "feature_id": 13,
+        "sort_order": 3,
+        "translations": {
+            "en": "512 GB",
+            "uk": "512 ГБ"
+        }
+    },
+    {
+        "id": 112,
+        "feature_id": 13,
+        "sort_order": 4,
+        "translations": {
+            "en": "1 TB",
+            "uk": "1 ТБ"
+        }
+    },
+    {
+        "id": 113,
+        "feature_id": 14,
+        "sort_order": 1,
+        "translations": {
+            "en": "8 MP",
+            "uk": "8 Мп"
+        }
+    },
+    {
+        "id": 114,
+        "feature_id": 14,
+        "sort_order": 2,
+        "translations": {
+            "en": "10 MP",
+            "uk": "10 Мп"
+        }
+    },
+    {
+        "id": 115,
+        "feature_id": 14,
+        "sort_order": 3,
+        "translations": {
+            "en": "12 MP",
+            "uk": "12 Мп"
+        }
+    },
+    {
+        "id": 116,
+        "feature_id": 14,
+        "sort_order": 4,
+        "translations": {
+            "en": "13 MP",
+            "uk": "13 Мп"
+        }
+    },
+    {
+        "id": 117,
+        "feature_id": 14,
+        "sort_order": 5,
+        "translations": {
+            "en": "13 + 2 MP",
+            "uk": "13 + 2 Мп"
+        }
+    },
+    {
+        "id": 118,
+        "feature_id": 14,
+        "sort_order": 6,
+        "translations": {
+            "en": "13 + 8 MP",
+            "uk": "13 + 8 Мп"
+        }
+    },
+    {
+        "id": 119,
+        "feature_id": 15,
+        "sort_order": 1,
+        "translations": {
+            "en": "5 MP",
+            "uk": "5 Мп"
+        }
+    },
+    {
+        "id": 120,
+        "feature_id": 15,
+        "sort_order": 2,
+        "translations": {
+            "en": "8 MP",
+            "uk": "8 Мп"
+        }
+    },
+    {
+        "id": 121,
+        "feature_id": 15,
+        "sort_order": 3,
+        "translations": {
+            "en": "12 MP",
+            "uk": "12 Мп"
+        }
+    },
+    {
+        "id": 122,
+        "feature_id": 15,
+        "sort_order": 4,
+        "translations": {
+            "en": "13 MP",
+            "uk": "13 Мп"
+        }
+    },
+    {
+        "id": 123,
+        "feature_id": 16,
+        "sort_order": 1,
+        "translations": {
+            "en": "Mechanical",
+            "uk": "Механічна"
+        }
+    },
+    {
+        "id": 124,
+        "feature_id": 16,
+        "sort_order": 2,
+        "translations": {
+            "en": "Membrane",
+            "uk": "Мембранна"
+        }
+    },
+    {
+        "id": 125,
+        "feature_id": 16,
+        "sort_order": 3,
+        "translations": {
+            "en": "Hybrid",
+            "uk": "Гібридна"
+        }
+    },
+    {
+        "id": 126,
+        "feature_id": 16,
+        "sort_order": 4,
+        "translations": {
+            "en": "Optical-Mechanical",
+            "uk": "Оптико-механічні"
+        }
+    },
+    {
+        "id": 127,
+        "feature_id": 17,
+        "sort_order": 1,
+        "translations": {
+            "en": "Wired",
+            "uk": "Провідне"
+        }
+    },
+    {
+        "id": 128,
+        "feature_id": 17,
+        "sort_order": 2,
+        "translations": {
+            "en": "Wireless",
+            "uk": "Бездротове"
+        }
+    },
+    {
+        "id": 129,
+        "feature_id": 17,
+        "sort_order": 3,
+        "translations": {
+            "en": "Combo",
+            "uk": "Комбіноване"
+        }
+    },
+    {
+        "id": 130,
+        "feature_id": 18,
+        "sort_order": 1,
+        "translations": {
+            "en": "61",
+            "uk": "61"
+        }
+    },
+    {
+        "id": 131,
+        "feature_id": 18,
+        "sort_order": 2,
+        "translations": {
+            "en": "68",
+            "uk": "68"
+        }
+    },
+    {
+        "id": 132,
+        "feature_id": 18,
+        "sort_order": 3,
+        "translations": {
+            "en": "87",
+            "uk": "87"
+        }
+    },
+    {
+        "id": 133,
+        "feature_id": 18,
+        "sort_order": 4,
+        "translations": {
+            "en": "104",
+            "uk": "104"
+        }
+    },
+    {
+        "id": 134,
+        "feature_id": 19,
+        "sort_order": 1,
+        "translations": {
+            "en": "Optical",
+            "uk": "Оптична"
+        }
+    },
+    {
+        "id": 135,
+        "feature_id": 19,
+        "sort_order": 2,
+        "translations": {
+            "en": "Laser",
+            "uk": "Лазерна"
+        }
+    },
+    {
+        "id": 136,
+        "feature_id": 20,
+        "sort_order": 1,
+        "translations": {
+            "en": "400 DPI",
+            "uk": "400 DPI"
+        }
+    },
+    {
+        "id": 137,
+        "feature_id": 20,
+        "sort_order": 2,
+        "translations": {
+            "en": "800 DPI",
+            "uk": "800 DPI"
+        }
+    },
+    {
+        "id": 138,
+        "feature_id": 20,
+        "sort_order": 3,
+        "translations": {
+            "en": "1000 DPI",
+            "uk": "1000 DPI"
+        }
+    },
+    {
+        "id": 139,
+        "feature_id": 20,
+        "sort_order": 4,
+        "translations": {
+            "en": "1600 DPI",
+            "uk": "1600 DPI"
+        }
+    },
+    {
+        "id": 140,
+        "feature_id": 20,
+        "sort_order": 5,
+        "translations": {
+            "en": "2400 DPI",
+            "uk": "2400 DPI"
+        }
+    },
+    {
+        "id": 141,
+        "feature_id": 20,
+        "sort_order": 6,
+        "translations": {
+            "en": "3200 DPI",
+            "uk": "3200 DPI"
+        }
+    },
+    {
+        "id": 142,
+        "feature_id": 20,
+        "sort_order": 7,
+        "translations": {
+            "en": "4000 DPI",
+            "uk": "4000 DPI"
+        }
+    },
+    {
+        "id": 143,
+        "feature_id": 20,
+        "sort_order": 8,
+        "translations": {
+            "en": "6400 DPI",
+            "uk": "6400 DPI"
+        }
+    },
+    {
+        "id": 144,
+        "feature_id": 20,
+        "sort_order": 9,
+        "translations": {
+            "en": "8000 DPI",
+            "uk": "8000 DPI"
+        }
+    },
+    {
+        "id": 145,
+        "feature_id": 20,
+        "sort_order": 10,
+        "translations": {
+            "en": "12000 DPI",
+            "uk": "12000 DPI"
+        }
+    },
+    {
+        "id": 146,
+        "feature_id": 20,
+        "sort_order": 11,
+        "translations": {
+            "en": "16000 DPI",
+            "uk": "16000 DPI"
+        }
+    },
+    {
+        "id": 147,
+        "feature_id": 20,
+        "sort_order": 12,
+        "translations": {
+            "en": "26000 DPI",
+            "uk": "26000 DPI"
+        }
+    },
+    {
+        "id": 148,
+        "feature_id": 21,
+        "sort_order": 1,
+        "translations": {
+            "en": "2",
+            "uk": "2"
+        }
+    },
+    {
+        "id": 149,
+        "feature_id": 21,
+        "sort_order": 2,
+        "translations": {
+            "en": "3",
+            "uk": "3"
+        }
+    },
+    {
+        "id": 150,
+        "feature_id": 21,
+        "sort_order": 3,
+        "translations": {
+            "en": "5",
+            "uk": "5"
+        }
+    },
+    {
+        "id": 151,
+        "feature_id": 21,
+        "sort_order": 4,
+        "translations": {
+            "en": "6",
+            "uk": "6"
+        }
+    },
+    {
+        "id": 152,
+        "feature_id": 21,
+        "sort_order": 5,
+        "translations": {
+            "en": "7",
+            "uk": "7"
+        }
+    },
+    {
+        "id": 153,
+        "feature_id": 21,
+        "sort_order": 6,
+        "translations": {
+            "en": "8",
+            "uk": "8"
+        }
+    },
+    {
+        "id": 154,
+        "feature_id": 22,
+        "sort_order": 1,
+        "translations": {
+            "en": "USB",
+            "uk": "USB"
+        }
+    },
+    {
+        "id": 155,
+        "feature_id": 22,
+        "sort_order": 2,
+        "translations": {
+            "en": "Bluetooth",
+            "uk": "Bluetooth"
+        }
+    },
+    {
+        "id": 156,
+        "feature_id": 22,
+        "sort_order": 3,
+        "translations": {
+            "en": "Radio adapter (2.4 GHz)",
+            "uk": "Радіо адаптер (2,4 ГГц)"
+        }
+    },
+    {
+        "id": 157,
+        "feature_id": 5,
+        "sort_order": 3,
+        "translations": {
+            "en": "White",
+            "uk": "Білий"
+        }
+    },
+    {
+        "id": 158,
+        "feature_id": 5,
+        "sort_order": 4,
+        "translations": {
+            "en": "Blue",
+            "uk": "Синій"
+        }
+    },
+    {
+        "id": 159,
+        "feature_id": 5,
+        "sort_order": 5,
+        "translations": {
+            "en": "Black-Gold",
+            "uk": "Чорно-золотий"
+        }
+    },
+    {
+        "id": 160,
+        "feature_id": 22,
+        "sort_order": 4,
+        "translations": {
+            "en": "3.5 mm (mini-Jack)",
+            "uk": "3.5 мм (mini-Jack)"
+        }
+    },
+    {
+        "id": 161,
+        "feature_id": 22,
+        "sort_order": 5,
+        "translations": {
+            "en": "2 x 3.5 mm (mini-Jack)",
+            "uk": "2 х 3.5 мм (mini-Jack)"
+        }
+    },
+    {
+        "id": 162,
+        "feature_id": 22,
+        "sort_order": 6,
+        "translations": {
+            "en": "Bluetooth 5.0",
+            "uk": "Bluetooth 5.0"
+        }
+    },
+    {
+        "id": 163,
+        "feature_id": 22,
+        "sort_order": 7,
+        "translations": {
+            "en": "Bluetooth 5.2",
+            "uk": "Bluetooth 5.2"
+        }
+    },
+    {
+        "id": 164,
+        "feature_id": 22,
+        "sort_order": 8,
+        "translations": {
+            "en": "Bluetooth 5.3",
+            "uk": "Bluetooth 5.3"
+        }
+    },
+    {
+        "id": 165,
+        "feature_id": 22,
+        "sort_order": 9,
+        "translations": {
+            "en": "Bluetooth 5.4",
+            "uk": "Bluetooth 5.4"
+        }
+    },
+    {
+        "id": 166,
+        "feature_id": 22,
+        "sort_order": 10,
+        "translations": {
+            "en": "USB Type-C",
+            "uk": "USB Type-C"
+        }
+    },
+    {
+        "id": 167,
+        "feature_id": 22,
+        "sort_order": 11,
+        "translations": {
+            "en": "3.5 mini-jack",
+            "uk": "3.5 mini-jack"
+        }
+    },
+    {
+        "id": 168,
+        "feature_id": 22,
+        "sort_order": 12,
+        "translations": {
+            "en": "micro-HDMI",
+            "uk": "micro-HDMI"
+        }
+    },
+    {
+        "id": 169,
+        "feature_id": 22,
+        "sort_order": 13,
+        "translations": {
+            "en": "HDMI",
+            "uk": "HDMI"
+        }
+    },
+    {
+        "id": 170,
+        "feature_id": 22,
+        "sort_order": 14,
+        "translations": {
+            "en": "Mini-Jack",
+            "uk": "Mini-Jack"
+        }
+    },
+    {
+        "id": 171,
+        "feature_id": 22,
+        "sort_order": 15,
+        "translations": {
+            "en": "Micro USB",
+            "uk": "Micro USB"
+        }
+    },
+    {
+        "id": 172,
+        "feature_id": 22,
+        "sort_order": 16,
+        "translations": {
+            "en": "WI-Fi",
+            "uk": "WI-Fi"
+        }
+    },
+    {
+        "id": 173,
+        "feature_id": 23,
+        "sort_order": 1,
+        "translations": {
+            "en": "Over-ear",
+            "uk": "Повнорозмірні"
+        }
+    },
+    {
+        "id": 168,
+        "feature_id": 23,
+        "sort_order": 2,
+        "translations": {
+            "en": "TWS (2 separate)",
+            "uk": "TWS (2 окремо)"
+        }
+    },
+    {
+        "id": 169,
+        "feature_id": 23,
+        "sort_order": 3,
+        "translations": {
+            "en": "In-ear",
+            "uk": "Вакуумні"
+        }
+    },
+    {
+        "id": 170,
+        "feature_id": 24,
+        "sort_order": 1,
+        "translations": {
+            "en": "Over-head",
+            "uk": "З наголов'ям"
+        }
+    },
+    {
+        "id": 171,
+        "feature_id": 24,
+        "sort_order": 2,
+        "translations": {
+            "en": "In-ear mount",
+            "uk": "З кріпленням у вухах"
+        }
+    },
+    {
+        "id": 172,
+        "feature_id": 24,
+        "sort_order": 3,
+        "translations": {
+            "en": "No mount",
+            "uk": "Без кріплення"
+        }
+    },
+    {
+        "id": 173,
+        "feature_id": 1,
+        "sort_order": 21,
+        "translations": {
+            "en": "24\"",
+            "uk": "24\""
+        }
+    },
+    {
+        "id": 174,
+        "feature_id": 1,
+        "sort_order": 22,
+        "translations": {
+            "en": "42\"",
+            "uk": "42\""
+        }
+    },
+    {
+        "id": 175,
+        "feature_id": 1,
+        "sort_order": 23,
+        "translations": {
+            "en": "43\"",
+            "uk": "43\""
+        }
+    },
+    {
+        "id": 176,
+        "feature_id": 1,
+        "sort_order": 24,
+        "translations": {
+            "en": "55\"",
+            "uk": "55\""
+        }
+    },
+    {
+        "id": 177,
+        "feature_id": 1,
+        "sort_order": 25,
+        "translations": {
+            "en": "60\"",
+            "uk": "60\""
+        }
+    },
+    {
+        "id": 178,
+        "feature_id": 1,
+        "sort_order": 26,
+        "translations": {
+            "en": "65\"",
+            "uk": "65\""
+        }
+    },
+    {
+        "id": 179,
+        "feature_id": 1,
+        "sort_order": 27,
+        "translations": {
+            "en": "85\"",
+            "uk": "85\""
+        }
+    },
+    {
+        "id": 180,
+        "feature_id": 1,
+        "sort_order": 28,
+        "translations": {
+            "en": "115\"",
+            "uk": "115\""
+        }
+    },
+    {
+        "id": 181,
+        "feature_id": 2,
+        "sort_order": 13,
+        "translations": {
+            "en": "50 Hz",
+            "uk": "50 Гц"
+        }
+    },
+    {
+        "id": 182,
+        "feature_id": 3,
+        "sort_order": 15,
+        "translations": {
+            "en": "1366x768",
+            "uk": "1366x768"
+        }
+    },
+    {
+        "id": 183,
+        "feature_id": 25,
+        "sort_order": 1,
+        "translations": {
+            "en": "With Smart TV",
+            "uk": "Зі Smart TV"
+        }
+    },
+    {
+        "id": 184,
+        "feature_id": 26,
+        "sort_order": 1,
+        "translations": {
+            "en": "Bluetooth 5.1",
+            "uk": "Bluetooth 5.1"
+        }
+    },
+    {
+        "id": 185,
+        "feature_id": 26,
+        "sort_order": 2,
+        "translations": {
+            "en": "OLED",
+            "uk": "OLED"
+        }
+    },
+    {
+        "id": 186,
+        "feature_id": 26,
+        "sort_order": 3,
+        "translations": {
+            "en": "LCD (LED)",
+            "uk": "LCD (LED)"
+        }
+    },
+    {
+        "id": 187,
+        "feature_id": 26,
+        "sort_order": 4,
+        "translations": {
+            "en": "MiniLED",
+            "uk": "MiniLED"
+        }
+    },
+    {
+        "id": 188,
+        "feature_id": 26,
+        "sort_order": 5,
+        "translations": {
+            "en": "QLED / Quantum Dot",
+            "uk": "QLED / Quantum Dot"
+        }
+    },
+    {
+        "id": 189,
+        "feature_id": 27,
+        "sort_order": 1,
+        "translations": {
+            "en": "GoogleTV",
+            "uk": "GoogleTV"
+        }
+    },
+    {
+        "id": 190,
+        "feature_id": 27,
+        "sort_order": 2,
+        "translations": {
+            "en": "WebOS",
+            "uk": "WebOS"
+        }
+    },
+    {
+        "id": 191,
+        "feature_id": 27,
+        "sort_order": 3,
+        "translations": {
+            "en": "Tizen",
+            "uk": "Tizen"
+        }
+    },
+    {
+        "id": 192,
+        "feature_id": 27,
+        "sort_order": 4,
+        "translations": {
+            "en": "Android 11.0",
+            "uk": "Android 11.0"
+        }
+    },
+    {
+        "id": 193,
+        "feature_id": 1,
+        "sort_order": 29,
+        "translations": {
+            "en": "6.7\"",
+            "uk": "6.7\""
+        }
+    },
+    {
+        "id": 194,
+        "feature_id": 1,
+        "sort_order": 30,
+        "translations": {
+            "en": "6.3\"",
+            "uk": "6.3\""
+        }
+    },
+    {
+        "id": 195,
+        "feature_id": 1,
+        "sort_order": 31,
+        "translations": {
+            "en": "6.83\"",
+            "uk": "6.83\""
+        }
+    },
+    {
+        "id": 196,
+        "feature_id": 1,
+        "sort_order": 32,
+        "translations": {
+            "en": "6.1\"",
+            "uk": "6.1\""
+        }
+    },
+    {
+        "id": 197,
+        "feature_id": 1,
+        "sort_order": 33,
+        "translations": {
+            "en": "6.9\"",
+            "uk": "6.9\""
+        }
+    },
+    {
+        "id": 198,
+        "feature_id": 1,
+        "sort_order": 34,
+        "translations": {
+            "en": "6.59\"",
+            "uk": "6.59\""
+        }
+    },
+    {
+        "id": 199,
+        "feature_id": 1,
+        "sort_order": 35,
+        "translations": {
+            "en": "8\"",
+            "uk": "8\""
+        }
+    },
+    {
+        "id": 200,
+        "feature_id": 1,
+        "sort_order": 36,
+        "translations": {
+            "en": "6.5\"",
+            "uk": "6.5\""
+        }
+    },
+    {
+        "id": 201,
+        "feature_id": 3,
+        "sort_order": 16,
+        "translations": {
+            "en": "2340 x 1080",
+            "uk": "2340 x 1080"
+        }
+    },
+    {
+        "id": 202,
+        "feature_id": 3,
+        "sort_order": 17,
+        "translations": {
+            "en": "2622x1206",
+            "uk": "2622x1206"
+        }
+    },
+    {
+        "id": 203,
+        "feature_id": 3,
+        "sort_order": 18,
+        "translations": {
+            "en": "2400 x 1080",
+            "uk": "2400 x 1080"
+        }
+    },
+    {
+        "id": 204,
+        "feature_id": 3,
+        "sort_order": 19,
+        "translations": {
+            "en": "2772x1280",
+            "uk": "2772x1280"
+        }
+    },
+    {
+        "id": 205,
+        "feature_id": 3,
+        "sort_order": 20,
+        "translations": {
+            "en": "2712x1220",
+            "uk": "2712x1220"
+        }
+    },
+    {
+        "id": 206,
+        "feature_id": 3,
+        "sort_order": 21,
+        "translations": {
+            "en": "2556x1179",
+            "uk": "2556x1179"
+        }
+    },
+    {
+        "id": 207,
+        "feature_id": 3,
+        "sort_order": 22,
+        "translations": {
+            "en": "3120x1440",
+            "uk": "3120x1440"
+        }
+    },
+    {
+        "id": 208,
+        "feature_id": 3,
+        "sort_order": 23,
+        "translations": {
+            "en": "2510x1156",
+            "uk": "2510x1156"
+        }
+    },
+    {
+        "id": 209,
+        "feature_id": 3,
+        "sort_order": 24,
+        "translations": {
+            "en": "2520x1080",
+            "uk": "2520x1080"
+        }
+    },
+    {
+        "id": 210,
+        "feature_id": 3,
+        "sort_order": 25,
+        "translations": {
+            "en": "2184x1968",
+            "uk": "2184x1968"
+        }
+    },
+    {
+        "id": 211,
+        "feature_id": 3,
+        "sort_order": 26,
+        "translations": {
+            "en": "2992x1344",
+            "uk": "2992x1344"
+        }
+    },
+    {
+        "id": 212,
+        "feature_id": 4,
+        "sort_order": 5,
+        "translations": {
+            "en": "Super AMOLED",
+            "uk": "Super AMOLED"
+        }
+    },
+    {
+        "id": 213,
+        "feature_id": 4,
+        "sort_order": 6,
+        "translations": {
+            "en": "P-OLED",
+            "uk": "P-OLED"
+        }
+    },
+    {
+        "id": 214,
+        "feature_id": 4,
+        "sort_order": 7,
+        "translations": {
+            "en": "AMOLED",
+            "uk": "AMOLED"
+        }
+    },
+    {
+        "id": 215,
+        "feature_id": 4,
+        "sort_order": 8,
+        "translations": {
+            "en": "Dynamic AMOLED 2X",
+            "uk": "Dynamic AMOLED 2X"
+        }
+    },
+    {
+        "id": 216,
+        "feature_id": 14,
+        "sort_order": 7,
+        "translations": {
+            "en": "50 + 8 + 2 MP",
+            "uk": "50 + 8 + 2 Мп"
+        }
+    },
+    {
+        "id": 217,
+        "feature_id": 14,
+        "sort_order": 8,
+        "translations": {
+            "en": "48 + 48 + 48 MP",
+            "uk": "48 + 48 + 48 Мп"
+        }
+    },
+    {
+        "id": 218,
+        "feature_id": 14,
+        "sort_order": 9,
+        "translations": {
+            "en": "50 + 13 MP",
+            "uk": "50 + 13 Мп"
+        }
+    },
+    {
+        "id": 219,
+        "feature_id": 14,
+        "sort_order": 10,
+        "translations": {
+            "en": "50 + 50 + 12 MP",
+            "uk": "50 + 50 + 12 Мп"
+        }
+    },
+    {
+        "id": 220,
+        "feature_id": 14,
+        "sort_order": 11,
+        "translations": {
+            "en": "50 + 50 + 10 MP",
+            "uk": "50 + 50 + 10 Мп"
+        }
+    },
+    {
+        "id": 221,
+        "feature_id": 14,
+        "sort_order": 12,
+        "translations": {
+            "en": "48 + 12 MP",
+            "uk": "48 + 12 Мп"
+        }
+    },
+    {
+        "id": 222,
+        "feature_id": 14,
+        "sort_order": 13,
+        "translations": {
+            "en": "200 + 50 + 50 + 10 MP",
+            "uk": "200 + 50 + 50 + 10 Мп"
+        }
+    },
+    {
+        "id": 223,
+        "feature_id": 14,
+        "sort_order": 14,
+        "translations": {
+            "en": "50 + 50 + 8 MP",
+            "uk": "50 + 50 + 8 Мп"
+        }
+    },
+    {
+        "id": 224,
+        "feature_id": 14,
+        "sort_order": 15,
+        "translations": {
+            "en": "200 + 12 + 10 MP",
+            "uk": "200 + 12 + 10 Мп"
+        }
+    },
+    {
+        "id": 225,
+        "feature_id": 15,
+        "sort_order": 5,
+        "translations": {
+            "en": "18 MP",
+            "uk": "18 Мп"
+        }
+    },
+    {
+        "id": 226,
+        "feature_id": 15,
+        "sort_order": 6,
+        "translations": {
+            "en": "32 MP",
+            "uk": "32 Мп"
+        }
+    },
+    {
+        "id": 227,
+        "feature_id": 15,
+        "sort_order": 7,
+        "translations": {
+            "en": "50 MP",
+            "uk": "50 Мп"
+        }
+    },
+    {
+        "id": 228,
+        "feature_id": 15,
+        "sort_order": 8,
+        "translations": {
+            "en": "20 MP",
+            "uk": "20 Мп"
+        }
+    },
+    {
+        "id": 229,
+        "feature_id": 15,
+        "sort_order": 9,
+        "translations": {
+            "en": "10 + 10 MP",
+            "uk": "10 + 10 Мп"
+        }
+    },
+    {
+        "id": 230,
+        "feature_id": 15,
+        "sort_order": 10,
+        "translations": {
+            "en": "42 MP",
+            "uk": "42 Мп"
+        }
+    },
+    {
+        "id": 231,
+        "feature_id": 28,
+        "sort_order": 1,
+        "translations": {
+            "en": "10000 mAh",
+            "uk": "10000 мА·год"
+        }
+    },
+    {
+        "id": 232,
+        "feature_id": 28,
+        "sort_order": 2,
+        "translations": {
+            "en": "20000 mAh",
+            "uk": "20000 мА·год"
+        }
+    },
+    {
+        "id": 233,
+        "feature_id": 28,
+        "sort_order": 3,
+        "translations": {
+            "en": "50000 mAh",
+            "uk": "50000 мА·год"
+        }
+    },
+    {
+        "id": 234,
+        "feature_id": 28,
+        "sort_order": 4,
+        "translations": {
+            "en": "100000 mAh",
+            "uk": "100000 мА·год"
+        }
+    },
+    {
+        "id": 235,
+        "feature_id": 28,
+        "sort_order": 5,
+        "translations": {
+            "en": "5900 mAh",
+            "uk": "5900 мА·год"
+        }
+    },
+    {
+        "id": 236,
+        "feature_id": 29,
+        "sort_order": 1,
+        "translations": {
+            "en": "For Phones",
+            "uk": "Для телефонів"
+        }
+    },
+    {
+        "id": 236,
+        "feature_id": 29,
+        "sort_order": 2,
+        "translations": {
+            "en": "For Tablets",
+            "uk": "Для планшетів"
+        }
+    },
+    {
+        "id": 237,
+        "feature_id": 29,
+        "sort_order": 3,
+        "translations": {
+            "en": "For Laptops",
+            "uk": "Для ноутбуків"
+        }
+    },
+    {
+        "id": 238,
+        "feature_id": 29,
+        "sort_order": 4,
+        "translations": {
+            "en": "For Smartwatches and Bracelets",
+            "uk": "Для смарт-годинників та браслетів"
+        }
+    },
+    {
+        "id": 239,
+        "feature_id": 29,
+        "sort_order": 5,
+        "translations": {
+            "en": "For Electronics",
+            "uk": "Для електроніки"
+        }
+    },
+    {
+        "id": 240,
+        "feature_id": 30,
+        "sort_order": 1,
+        "translations": {
+            "en": "4.5 V",
+            "uk": "4.5 В"
+        }
+    },
+    {
+        "id": 241,
+        "feature_id": 30,
+        "sort_order": 2,
+        "translations": {
+            "en": "5 V",
+            "uk": "5 В"
+        }
+    },
+    {
+        "id": 242,
+        "feature_id": 30,
+        "sort_order": 3,
+        "translations": {
+            "en": "9 V",
+            "uk": "9 В"
+        }
+    },
+    {
+        "id": 243,
+        "feature_id": 30,
+        "sort_order": 4,
+        "translations": {
+            "en": "12 V",
+            "uk": "12 В"
+        }
+    },
+    {
+        "id": 244,
+        "feature_id": 30,
+        "sort_order": 5,
+        "translations": {
+            "en": "15 V",
+            "uk": "15 В"
+        }
+    },
+    {
+        "id": 245,
+        "feature_id": 30,
+        "sort_order": 6,
+        "translations": {
+            "en": "20 V",
+            "uk": "20 В"
+        }
+    },
+    {
+        "id": 246,
+        "feature_id": 30,
+        "sort_order": 7,
+        "translations": {
+            "en": "65 V",
+            "uk": "65 В"
+        }
+    },
+    {
+        "id": 247,
+        "feature_id": 31,
+        "sort_order": 1,
+        "translations": {
+            "en": "1.5 A",
+            "uk": "1.5 А"
+        }
+    },
+    {
+        "id": 248,
+        "feature_id": 31,
+        "sort_order": 2,
+        "translations": {
+            "en": "2 A",
+            "uk": "2 А"
+        }
+    },
+    {
+        "id": 249,
+        "feature_id": 31,
+        "sort_order": 3,
+        "translations": {
+            "en": "2.22 A",
+            "uk": "2.22 А"
+        }
+    },
+    {
+        "id": 250,
+        "feature_id": 31,
+        "sort_order": 4,
+        "translations": {
+            "en": "3 A",
+            "uk": "3 А"
+        }
+    },
+    {
+        "id": 251,
+        "feature_id": 31,
+        "sort_order": 5,
+        "translations": {
+            "en": "3.25 A",
+            "uk": "3.25 А"
+        }
+    },
+    {
+        "id": 252,
+        "feature_id": 31,
+        "sort_order": 6,
+        "translations": {
+            "en": "4.5 A",
+            "uk": "4.5 А"
+        }
+    },
+    {
+        "id": 253,
+        "feature_id": 31,
+        "sort_order": 7,
+        "translations": {
+            "en": "5 A",
+            "uk": "5 А"
+        }
+    },
+    {
+        "id": 254,
+        "feature_id": 32,
+        "sort_order": 1,
+        "translations": {
+            "en": "Lithium Polymer (Li-pol)",
+            "uk": "Літій-полімерні (Li-pol)"
+        }
+    },
+    {
+        "id": 255,
+        "feature_id": 33,
+        "sort_order": 1,
+        "translations": {
+            "en": "1021 Wh",
+            "uk": "1021 Вт·год"
+        }
+    },
+    {
+        "id": 256,
+        "feature_id": 33,
+        "sort_order": 2,
+        "translations": {
+            "en": "1070 Wh",
+            "uk": "1070 Вт·год"
+        }
+    },
+    {
+        "id": 257,
+        "feature_id": 33,
+        "sort_order": 3,
+        "translations": {
+            "en": "2764.8 Wh",
+            "uk": "2764.8 Вт·год"
+        }
+    },
+    {
+        "id": 258,
+        "feature_id": 33,
+        "sort_order": 4,
+        "translations": {
+            "en": "3072 Wh",
+            "uk": "3072 Вт·год"
+        }
+    },
+    {
+        "id": 259,
+        "feature_id": 34,
+        "sort_order": 1,
+        "translations": {
+            "en": "2",
+            "uk": "2"
+        }
+    },
+    {
+        "id": 260,
+        "feature_id": 34,
+        "sort_order": 2,
+        "translations": {
+            "en": "4",
+            "uk": "4"
+        }
+    },
+    {
+        "id": 261,
+        "feature_id": 34,
+        "sort_order": 3,
+        "translations": {
+            "en": "6",
+            "uk": "6"
+        }
+    },
+    {
+        "id": 262,
+        "feature_id": 35,
+        "sort_order": 1,
+        "translations": {
+            "en": "1000 W",
+            "uk": "1000 Вт"
+        }
+    },
+    {
+        "id": 263,
+        "feature_id": 35,
+        "sort_order": 2,
+        "translations": {
+            "en": "1500 W",
+            "uk": "1500 Вт"
+        }
+    },
+    {
+        "id": 264,
+        "feature_id": 35,
+        "sort_order": 3,
+        "translations": {
+            "en": "3000 W",
+            "uk": "3000 Вт"
+        }
+    },
+    {
+        "id": 265,
+        "feature_id": 35,
+        "sort_order": 4,
+        "translations": {
+            "en": "3600 W",
+            "uk": "3600 Вт"
+        }
+    },
+    {
+        "id": 266,
+        "feature_id": 36,
+        "sort_order": 1,
+        "translations": {
+            "en": "1500 W",
+            "uk": "1500 Вт"
+        }
+    },
+    {
+        "id": 267,
+        "feature_id": 36,
+        "sort_order": 2,
+        "translations": {
+            "en": "3000 W",
+            "uk": "3000 Вт"
+        }
+    },
+    {
+        "id": 268,
+        "feature_id": 36,
+        "sort_order": 3,
+        "translations": {
+            "en": "3600 W",
+            "uk": "3600 Вт"
+        }
+    },
+    {
+        "id": 269,
+        "feature_id": 36,
+        "sort_order": 4,
+        "translations": {
+            "en": "6000 W",
+            "uk": "6000 Вт"
+        }
+    },
+    {
+        "id": 270,
+        "feature_id": 37,
+        "sort_order": 1,
+        "translations": {
+            "en": "Mirrorless",
+            "uk": "Бездзеркальна"
+        }
+    },
+    {
+        "id": 271,
+        "feature_id": 37,
+        "sort_order": 2,
+        "translations": {
+            "en": "Compact",
+            "uk": "Компактна"
+        }
+    },
+    {
+        "id": 272,
+        "feature_id": 37,
+        "sort_order": 3,
+        "translations": {
+            "en": "Instant Printing",
+            "uk": "Миттєвого друкування"
+        }
+    },
+    {
+        "id": 273,
+        "feature_id": 38,
+        "sort_order": 1,
+        "translations": {
+            "en": "UHD 4K (3840x2160)",
+            "uk": "UHD 4K (3840x2160)"
+        }
+    },
+    {
+        "id": 274,
+        "feature_id": 39,
+        "sort_order": 1,
+        "translations": {
+            "en": "Bluetooth",
+            "uk": "Bluetooth"
+        }
+    },
+    {
+        "id": 275,
+        "feature_id": 39,
+        "sort_order": 2,
+        "translations": {
+            "en": "GPS",
+            "uk": "GPS"
+        }
+    },
+    {
+        "id": 276,
+        "feature_id": 39,
+        "sort_order": 3,
+        "translations": {
+            "en": "Wi-Fi",
+            "uk": "Wi-Fi"
+        }
+    },
+    {
+        "id": 277,
+        "feature_id": 40,
+        "sort_order": 1,
+        "translations": {
+            "en": "For Beginners",
+            "uk": "Для початківців"
+        }
+    }
+]
