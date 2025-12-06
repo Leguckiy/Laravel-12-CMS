@@ -57,12 +57,18 @@ class ProductSeeder extends Seeder
                 $productData['stock_status_id'] = 2;
             }
 
+            // Use image from JSON if exists, otherwise null
+            if (! isset($productData['image'])) {
+                $productData['image'] = null;
+            }
+
             // Create product
             $product = Product::create([
                 'reference' => $productData['reference'],
                 'price' => $productData['price'],
                 'quantity' => $productData['quantity'],
                 'stock_status_id' => $productData['stock_status_id'],
+                'image' => $productData['image'],
                 'sort_order' => $productData['sort_order'],
                 'status' => $productData['status'],
             ]);

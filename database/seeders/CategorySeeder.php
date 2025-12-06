@@ -23,6 +23,11 @@ class CategorySeeder extends Seeder
             $translations = $categoryData['translations'] ?? [];
             unset($categoryData['translations']);
 
+            // Use image from JSON if exists, otherwise null
+            if (! isset($categoryData['image'])) {
+                $categoryData['image'] = null;
+            }
+
             // Create category
             $category = Category::create($categoryData);
 

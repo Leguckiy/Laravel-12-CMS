@@ -36,10 +36,10 @@ class SettingSeeder extends Seeder
             ]);
         }
 
-        // Image settings (empty values)
+        // Image settings
         $imageSettings = [
-            'config_logo' => null,
-            'config_icon' => null,
+            'config_logo' => 'shop/logo.svg',
+            'config_icon' => 'shop/icon.png',
         ];
 
         foreach ($imageSettings as $name => $value) {

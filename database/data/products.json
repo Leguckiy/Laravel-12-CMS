@@ -8,6 +8,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-samsung-odyssey-g4.webp",
         "translations": {
             "en": {
                 "name": "Monitor Samsung Odyssey G4",
@@ -41,6 +42,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-samsung-odyssey-oled-g8.webp",
         "translations": {
             "en": {
                 "name": "Monitor Samsung Odyssey OLED G8",
@@ -74,6 +76,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-samsung-odyssey-oled-g9.webp",
         "translations": {
             "en": {
                 "name": "Monitor Samsung Odyssey OLED G9",
@@ -107,6 +110,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-asus-tuf-gaming.webp",
         "translations": {
             "en": {
                 "name": "Monitor ASUS TUF Gaming",
@@ -140,6 +144,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-asus-vp229hf.webp",
         "translations": {
             "en": {
                 "name": "Monitor ASUS VP229HF",
@@ -173,6 +178,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-acer-vg270x1bmiipx.webp",
         "translations": {
             "en": {
                 "name": "Monitor Acer VG270X1BMIIPX",
@@ -206,6 +212,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-xiaomi-gaming-monitor-g24i.webp",
         "translations": {
             "en": {
                 "name": "Monitor Xiaomi Gaming Monitor G24i",
@@ -239,6 +246,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-asus-rog-strix-oled-xg27acdng.webp",
         "translations": {
             "en": {
                 "name": "Monitor ASUS ROG Strix OLED XG27ACDNG",
@@ -272,6 +280,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-aoc-22b2h-eu.webp",
         "translations": {
             "en": {
                 "name": "Monitor AOC 22B2H/EU",
@@ -305,6 +314,7 @@
         "status": true,
         "category_id": 1,
         "stock_status_id": 2,
+        "image": "monitor-asus-proart-pa32ucdm.webp",
         "translations": {
             "en": {
                 "name": "Monitor ASUS ProArt PA32UCDM",
@@ -338,6 +348,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-lenovo-ideapad-slim-3-15iah8.webp",
         "translations": {
             "en": {
                 "name": "Laptop Lenovo IdeaPad Slim 3 15IAH8",
@@ -373,6 +384,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-hp-omnibook-5-laptop-16-bc1000ua.webp",
         "translations": {
             "en": {
                 "name": "Laptop HP OmniBook 5 Laptop 16-bc1000ua",
@@ -408,6 +420,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-asus-zenbook-s-14-ux5406sa-pv037w.webp",
         "translations": {
             "en": {
                 "name": "Laptop ASUS Zenbook S 14 UX5406SA-PV037W",
@@ -443,6 +456,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-asus-rog-strix-g18-2025-g814pp-s9022.webp",
         "translations": {
             "en": {
                 "name": "Laptop ASUS ROG Strix G18 (2025) G814PP-S9022",
@@ -479,6 +493,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-apple-macbook-air-15-3-m4-16-256gb-2025.webp",
         "translations": {
             "en": {
                 "name": "Laptop Apple MacBook Air 15.3\" M4 16/256GB 2025",
@@ -513,6 +528,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-asus-tuf-gaming-a16-2025-fa608pm-rv026.webp",
         "translations": {
             "en": {
                 "name": "Laptop ASUS TUF Gaming A16 (2025) FA608PM-RV026",
@@ -549,6 +565,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-lenovo-legion-pro-5-16irx10.webp",
         "translations": {
             "en": {
                 "name": "Laptop Lenovo Legion Pro 5 16IRX10",
@@ -585,6 +602,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-15-6-chuwi-herobook-plus.webp",
         "translations": {
             "en": {
                 "name": "Laptop 15.6 CHUWI HeroBook Plus",
@@ -619,6 +637,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-lenovo-legion-pro-5-16iax10h.webp",
         "translations": {
             "en": {
                 "name": "Laptop Lenovo Legion Pro 5 16IAX10H",
@@ -655,6 +674,7 @@
         "status": true,
         "category_id": 2,
         "stock_status_id": 2,
+        "image": "laptop-dell-15.webp",
         "translations": {
             "en": {
                 "name": "Laptop Dell 15",
@@ -690,6 +710,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-artline-gaming-x43-x43v59.webp",
         "translations": {
             "en": {
                 "name": "Computer ARTLINE Gaming X43 (X43v59)",
@@ -725,6 +746,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-cobra-advanced-a75f.webp",
         "translations": {
             "en": {
                 "name": "Computer COBRA Advanced (A75F.32.S10.56T.23062)",
@@ -760,6 +782,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-artline-business-b29-v31.webp",
         "translations": {
             "en": {
                 "name": "Computer ARTLINE Business B29 v31",
@@ -795,6 +818,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-cobra-advanced-windows-11.webp",
         "translations": {
             "en": {
                 "name": "Computer COBRA Advanced Windows 11 (A75F.64.S5.57T.20960W)",
@@ -830,6 +854,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-dtop-business-i507-ssd.webp",
         "translations": {
             "en": {
                 "name": "Computer DTOP Business i507 SSD",
@@ -863,6 +888,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-vinga-wolverine-d8831.webp",
         "translations": {
             "en": {
                 "name": "Computer Vinga Wolverine D8831 (I7M32G5060WH.D8831)",
@@ -898,6 +924,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-asgard-a56x.webp",
         "translations": {
             "en": {
                 "name": "Computer ASGARD (A56X.32.S20.26S.1576)",
@@ -933,6 +960,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-artline-gaming-tank.webp",
         "translations": {
             "en": {
                 "name": "Computer ARTLINE Gaming Tank",
@@ -968,6 +996,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-artline-gaming-x98-x98v89.webp",
         "translations": {
             "en": {
                 "name": "Computer ARTLINE Gaming X98 (X98v89)",
@@ -1003,6 +1032,7 @@
         "status": true,
         "category_id": 3,
         "stock_status_id": 2,
+        "image": "computer-artline-overlord-guardian-guardianv03.webp",
         "translations": {
             "en": {
                 "name": "Computer ARTLINE Overlord Guardian (Guardianv03)",
@@ -1038,6 +1068,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-xiaomi-redmi-pad-2.webp",
         "translations": {
             "en": {
                 "name": "Tablet Xiaomi Redmi Pad 2",
@@ -1073,6 +1104,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-apple-ipad-11-2025.webp",
         "translations": {
             "en": {
                 "name": "Tablet Apple iPad 11\" 2025",
@@ -1108,6 +1140,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-apple-ipad-pro-11-m5-2025.webp",
         "translations": {
             "en": {
                 "name": "Tablet Apple iPad Pro 11\" M5 2025",
@@ -1143,6 +1176,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-samsung-galaxy-tab-a11-plus.webp",
         "translations": {
             "en": {
                 "name": "Tablet Samsung Galaxy Tab A11 Plus",
@@ -1178,6 +1212,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-oscal-pad-70.webp",
         "translations": {
             "en": {
                 "name": "Tablet Oscal Pad 70",
@@ -1213,6 +1248,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-lenovo-yoga-tab-plus.webp",
         "translations": {
             "en": {
                 "name": "Tablet Lenovo Yoga Tab Plus",
@@ -1248,6 +1284,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-samsung-galaxy-tab-s11-ultra-5g.webp",
         "translations": {
             "en": {
                 "name": "Tablet Samsung Galaxy Tab S11 Ultra 5G",
@@ -1283,6 +1320,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-chuwi-hi10-xpro.webp",
         "translations": {
             "en": {
                 "name": "Tablet CHUWI Hi10 XPro",
@@ -1318,6 +1356,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-microsoft-surface-pro-9-i7.webp",
         "translations": {
             "en": {
                 "name": "Tablet Microsoft Surface Pro 9 i7",
@@ -1353,6 +1392,7 @@
         "status": true,
         "category_id": 4,
         "stock_status_id": 2,
+        "image": "tablet-lenovo-legion-tab-3rd-gen.webp",
         "translations": {
             "en": {
                 "name": "Tablet Lenovo Legion Tab (3rd Gen)",
@@ -1388,6 +1428,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "mouse-logitech-g102-lightsync-usb.webp",
         "translations": {
             "en": {
                 "name": "Mouse Logitech G102 Lightsync USB",
@@ -1420,6 +1461,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "mouse-logitech-m190-wireless-charcoal-910-005905.webp",
         "translations": {
             "en": {
                 "name": "Mouse Logitech M190 Wireless Charcoal (910-005905)",
@@ -1452,6 +1494,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "mouse-logitech-m240-silent-bluetooth-graphite-910-007119.webp",
         "translations": {
             "en": {
                 "name": "Mouse Logitech M240 Silent Bluetooth Graphite (910-007119)",
@@ -1484,6 +1527,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "mouse-hator-pulsar-3-wireless-black-htm630.webp",
         "translations": {
             "en": {
                 "name": "Mouse HATOR Pulsar 3 Wireless Black (HTM630)",
@@ -1520,6 +1564,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "mouse-razer-deathadder-v3-hyperspeed-black-rz01-05140100-r3g1.webp",
         "translations": {
             "en": {
                 "name": "Mouse Razer DeathAdder V3 Hyperspeed Black (RZ01-05140100-R3G1)",
@@ -1555,6 +1600,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "keyboard-logitech-mx-keys-s-graphite-ua-920-011593.webp",
         "translations": {
             "en": {
                 "name": "Keyboard Logitech MX Keys S Graphite UA (920-011593)",
@@ -1590,6 +1636,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "keyboard-dell-multimedia-kb-216-usb.webp",
         "translations": {
             "en": {
                 "name": "Keyboard Dell Multimedia KB-216 USB",
@@ -1622,6 +1669,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "keyboard-gamepro-genesis-warden-mk160bl-white.webp",
         "translations": {
             "en": {
                 "name": "Keyboard GamePro Genesis Warden MK160BL White",
@@ -1654,6 +1702,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "keyboard-a4tech-fbx53c-black.webp",
         "translations": {
             "en": {
                 "name": "Keyboard A4Tech FBX53C Black",
@@ -1689,6 +1738,7 @@
         "status": true,
         "category_id": 5,
         "stock_status_id": 2,
+        "image": "keyboard-steelseries-apex-pro-tkl-wl-gen-3-ua-64871.webp",
         "translations": {
             "en": {
                 "name": "Keyboard Steelseries Apex Pro TKL WL Gen 3 UA (64871)",
@@ -1725,6 +1775,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphones-hator-hypergang-2-gold-signature-edition-hta-916.webp",
         "translations": {
             "en": {
                 "name": "Headphones Hator Hypergang 2 Gold Signature Edition (HTA-916)",
@@ -1761,6 +1812,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphones-samsung-galaxy-buds3-pro-silver-sm-r630nzaasek.webp",
         "translations": {
             "en": {
                 "name": "Headphones Samsung Galaxy Buds3 Pro Silver (SM-R630NZAASEK)",
@@ -1794,6 +1846,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphones-apple-airpods-pro-with-magsafe-case-usb-c-mfhp4zea.webp",
         "translations": {
             "en": {
                 "name": "Headphones Apple AirPods Pro with MagSafe Case USB-C (MFHP4ZE/A)",
@@ -1827,6 +1880,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphones-logitech-g-pro-x-2-lightspeed-wireless-black-981-001263.webp",
         "translations": {
             "en": {
                 "name": "Headphones Logitech G Pro X 2 Lightspeed Wireless Black (981-001263)",
@@ -1865,6 +1919,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphones-anker-soundcore-p40i-tws-navy-blue-a3955g31.webp",
         "translations": {
             "en": {
                 "name": "Headphones Anker SoundCore P40i TWS Navy Blue (A3955G31)",
@@ -1898,6 +1953,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphones-xiaomi-mi-piston-fresh-bloom-matte-black-zbw4354ty.webp",
         "translations": {
             "en": {
                 "name": "Headphones Xiaomi Mi Piston Fresh Bloom Matte Black (ZBW4354TY)",
@@ -1931,6 +1987,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphones-gamepro-asgard-valkyria-rgb-wireless-tri-mod-hsw249b.webp",
         "translations": {
             "en": {
                 "name": "Headphones GamePro Asgard Valkyria RGB Wireless Tri-Mod (HSW249B)",
@@ -1968,6 +2025,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphones-sony-wh-1000xm6-platinum-silver-wh1000xm6se.webp",
         "translations": {
             "en": {
                 "name": "Headphones Sony WH-1000XM6 Platinum Silver (WH1000XM6S.E)",
@@ -2004,6 +2062,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphone-stand-organizer-with-non-slip-base-new-bee-nb-z1black.webp",
         "translations": {
             "en": {
                 "name": "Headphone Stand Organizer with Non-Slip Base New Bee NB-Z1Black",
@@ -2034,6 +2093,7 @@
         "status": true,
         "category_id": 6,
         "stock_status_id": 2,
+        "image": "headphone-case-ugreen-lp128-black-9040342440816.webp",
         "translations": {
             "en": {
                 "name": "Headphone Case Ugreen LP128 Black (90403424/40816)",
@@ -2063,6 +2123,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-ergo-qled-60-60juq7500.webp",
         "translations": {
             "en": {
                 "name": "TV Ergo QLED 60\" 60JUQ7500",
@@ -2097,6 +2158,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-lg-oled-42-oled42c54la.webp",
         "translations": {
             "en": {
                 "name": "TV LG OLED 42\" OLED42C54LA",
@@ -2131,6 +2193,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-samsung-43-ue43u8000fuxua.webp",
         "translations": {
             "en": {
                 "name": "TV Samsung 43\" UE43U8000FUXUA",
@@ -2165,6 +2228,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-lg-oled-65-oled65g54lw.webp",
         "translations": {
             "en": {
                 "name": "TV LG OLED 65\" OLED65G54LW",
@@ -2199,6 +2263,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-philips-miniled-65-65pml870912.webp",
         "translations": {
             "en": {
                 "name": "TV Philips MiniLED 65\" 65PML8709/12",
@@ -2233,6 +2298,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-tesla-24-24e632bhs.webp",
         "translations": {
             "en": {
                 "name": "TV Tesla 24\" 24E632BHS",
@@ -2267,6 +2333,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-tcl-miniled-55-55c6k.webp",
         "translations": {
             "en": {
                 "name": "TV TCL MiniLED 55\" 55C6K",
@@ -2301,6 +2368,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-kivi-qled-32-prime-e5-32f720qb.webp",
         "translations": {
             "en": {
                 "name": "TV Kivi QLED 32\" Prime E5 32F720QB",
@@ -2335,6 +2403,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-samsung-miniled-115-qe115qn90fuxua.webp",
         "translations": {
             "en": {
                 "name": "TV Samsung MiniLED 115\" QE115QN90FUXUA",
@@ -2372,6 +2441,7 @@
         "status": true,
         "category_id": 7,
         "stock_status_id": 2,
+        "image": "tv-sony-85-k-85xr90.webp",
         "translations": {
             "en": {
                 "name": "TV Sony 85\" K-85XR90",
@@ -2406,6 +2476,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-samsung-galaxy-a26-sm-a266blgceuc.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Samsung Galaxy A26 (SM-A266BLGCEUC)",
@@ -2442,6 +2513,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-apple-iphone-17-pro-mg8j4afa.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Apple iPhone 17 Pro (MG8J4AF/A)",
@@ -2478,6 +2550,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-motorola-edge-50-fusion-pb3t0087rs.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Motorola Edge 50 Fusion (PB3T0087RS)",
@@ -2514,6 +2587,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-xiaomi-15t-1168057.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Xiaomi 15T (1168057)",
@@ -2550,6 +2624,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-motorola-edge-60-pro-001012377715.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Motorola Edge 60 Pro (001012377715)",
@@ -2586,6 +2661,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-apple-iphone-15-mtp93rxa.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Apple iPhone 15 (MTP93RX/A)",
@@ -2622,6 +2698,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-samsung-galaxy-s25-ultra-sm-s938bzbheuc.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Samsung Galaxy S25 Ultra (SM-S938BZBHEUC)",
@@ -2658,6 +2735,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-poco-f8-pro-1179963.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Poco F8 Pro (1179963)",
@@ -2694,6 +2772,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "mobile-phone-samsung-galaxy-fold-7.webp",
         "translations": {
             "en": {
                 "name": "Mobile Phone Samsung Galaxy Fold 7",
@@ -2730,6 +2809,7 @@
         "status": true,
         "category_id": 8,
         "stock_status_id": 2,
+        "image": "smartphone-google-pixel-9-pro.webp",
         "translations": {
             "en": {
                 "name": "Smartphone Google Pixel 9 Pro",
@@ -2766,6 +2846,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-station-zendure-superbase-zdsb1000m-gy-eu.webp",
         "translations": {
             "en": {
                 "name": "Power Station Zendure SuperBase (ZDSB1000M-gy-eu)",
@@ -2798,6 +2879,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-station-bluetti-ac300-3000w-ac300-b300k2.webp",
         "translations": {
             "en": {
                 "name": "Power Station Bluetti AC300 (3000W AC300+B300K2)",
@@ -2830,6 +2912,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-station-jackery-explorer-21-0001-000221.webp",
         "translations": {
             "en": {
                 "name": "Power Station Jackery Explorer (21-0001-000221)",
@@ -2862,6 +2945,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-station-anker-solix-f3000-a1782311.webp",
         "translations": {
             "en": {
                 "name": "Power Station Anker SOLIX F3000 (A1782311)",
@@ -2894,6 +2978,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-station-ecoflow-delta-3-eu-efdelta3-eu.webp",
         "translations": {
             "en": {
                 "name": "Power Station EcoFlow DELTA 3 EU (EFDELTA3-EU)",
@@ -2926,6 +3011,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-bank-20000mah-22-5w-foneng-px115.webp",
         "translations": {
             "en": {
                 "name": "Power Bank 20000 mAh 22.5W Foneng PX115",
@@ -2970,6 +3056,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-bank-10000mah-22-5w-yoki-maxcap.webp",
         "translations": {
             "en": {
                 "name": "Power Bank 10000 mAh 22.5W Yoki MaxCap",
@@ -3013,6 +3100,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-bank-100000mah-65w-hoco-db03-max-centurion.webp",
         "translations": {
             "en": {
                 "name": "Power Bank 100000 mAh 65W Hoco DB03 Max Centurion",
@@ -3064,6 +3152,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-bank-baseus-bipow-10000mah-20w-digital-display-ppbd050301.webp",
         "translations": {
             "en": {
                 "name": "Power Bank Baseus Bipow 10000 mAh 20W Digital Display (PPBD050301)",
@@ -3110,6 +3199,7 @@
         "status": true,
         "category_id": 9,
         "stock_status_id": 2,
+        "image": "power-bank-hoco-db81a-apollo-pd65w-50000mah.webp",
         "translations": {
             "en": {
                 "name": "Power Bank Hoco DB81A Apollo PD65W 50000 mAh",
@@ -3149,6 +3239,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "camera-canon-eos-r50-body-black-5811c029aa.webp",
         "translations": {
             "en": {
                 "name": "Camera Canon EOS R50 Body Black (5811C029AA)",
@@ -3186,6 +3277,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "video-camera-gopro-hero13-chdrb-134-rw.webp",
         "translations": {
             "en": {
                 "name": "Video Camera GoPro HERO13 (CHDRB-134-RW)",
@@ -3224,6 +3316,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "camera-sony-alpha-a7-iv-28-70mm-kit-ilce7m4kb-cec.webp",
         "translations": {
             "en": {
                 "name": "Camera Sony Alpha а7 IV 28-70 mm Kit (ILCE7M4KB.CEC)",
@@ -3262,6 +3355,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "video-camera-gopro-hero12-chdhx-121-rw.webp",
         "translations": {
             "en": {
                 "name": "Video Camera GoPro HERO12 (CHDHX-121-RW)",
@@ -3297,6 +3391,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "camera-sony-alpha-a7-iv-body-ilce7m4b-cec.webp",
         "translations": {
             "en": {
                 "name": "Camera Sony Alpha А7 IV Body (ILCE7M4B.CEC)",
@@ -3335,6 +3430,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "film-camera-kodak-i60-full-film-camera-strap-flash-retro-i-60.webp",
         "translations": {
             "en": {
                 "name": "Film Camera Kodak i60 Full Film Camera Strap Flash Retro i 60",
@@ -3364,6 +3460,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "instant-print-camera-fujifilm-instax-mini-41-ph-ex-d-16696863.webp",
         "translations": {
             "en": {
                 "name": "Instant Print Camera Fujifilm Instax Mini 41 PH EX D (16696863)",
@@ -3394,6 +3491,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "video-camera-panasonic-hc-x20-black-hc-x20ee.webp",
         "translations": {
             "en": {
                 "name": "Video Camera Panasonic HC-X20 Black (HC-X20EE)",
@@ -3424,6 +3522,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "video-camera-panasonic-hc-x2000-pro-hc-x2000ee.webp",
         "translations": {
             "en": {
                 "name": "Video Camera Panasonic HC-X2000 Pro (HC-X2000EE)",
@@ -3459,6 +3558,7 @@
         "status": true,
         "category_id": 10,
         "stock_status_id": 2,
+        "image": "camera-sony-alpha-a1-body-ilce1-cec.webp",
         "translations": {
             "en": {
                 "name": "Camera Sony Alpha A1 Body (ILCE1.CEC)",

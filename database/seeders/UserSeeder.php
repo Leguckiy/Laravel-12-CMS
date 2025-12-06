@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'lastname' => 'User',
             'email' => 'admin@example.com',
             'password' => 'admin',
+            'image' => 'user_1.png',
             'status' => true,
         ]);
     }
