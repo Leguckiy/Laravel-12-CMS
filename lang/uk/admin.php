@@ -58,6 +58,7 @@ return [
     'no_items' => 'Немає елементів',
     'pre_defined_value' => 'Попередньо визначено',
     'select_value' => 'Виберіть значення',
+    'id' => 'Id',
 
     // Messages
     'created_successfully' => 'Успішно створено',

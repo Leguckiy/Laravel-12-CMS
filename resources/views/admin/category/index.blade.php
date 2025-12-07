@@ -19,6 +19,8 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th>{{ __('admin.id') }}</th>
+                            <th>{{ __('admin.image') }}</th>
                             <th>{{ __('admin.category_name') }}</th>
                             <th>{{ __('admin.sort_order') }}</th>
                             <th>{{ __('admin.status') }}</th>
@@ -28,6 +30,10 @@
                     <tbody>
                         @foreach ($categories as $category)
                             <tr>
+                                <td>{{ $category->id }}</td>
+                                <td class="text-center image-wrapper">
+                                    <img src="{{ $category->image_url }}" alt="{{ $category->name }}" class="img-thumbnail">
+                                </td>
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->sort_order }}</td>
                                 <td>

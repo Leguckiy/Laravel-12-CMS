@@ -38,7 +38,7 @@ class ProductController extends AdminController
 
         $products = Product::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
-        }])->paginate(15);
+        }])->paginate(10);
 
         $products->getCollection()->transform(function ($product) {
             $product->name = $this->translation($product->translations)?->name ?? '';

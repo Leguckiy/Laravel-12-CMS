@@ -19,6 +19,8 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th>{{ __('admin.id') }}</th>
+                            <th>{{ __('admin.image') }}</th>
                             <th>{{ __('admin.product_name') }}</th>
                             <th>{{ __('admin.product_reference') }}</th>
                             <th>{{ __('admin.price') }}</th>
@@ -30,6 +32,10 @@
                     <tbody>
                         @foreach ($products as $product)
                             <tr>
+                                <td>{{ $product->id }}</td>
+                                <td class="text-center image-wrapper">
+                                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="img-thumbnail">
+                                </td>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->reference }}</td>
                                 <td>{{ $product->quantity }}</td>

@@ -58,6 +58,7 @@ return [
     'no_items' => 'No items',
     'pre_defined_value' => 'Pre-defined value',
     'select_value' => 'Select value',
+    'id' => 'Id',
 
     // Messages
     'created_successfully' => 'Created successfully',

@@ -35,7 +35,7 @@ class CategoryController extends AdminController
 
         $categories = Category::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
-        }])->paginate(15);
+        }])->paginate(10);
 
         $categories->getCollection()->transform(function ($category) {
             $category->name = $this->translation($category->translations)?->name ?? '';
