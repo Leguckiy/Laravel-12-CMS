@@ -38,8 +38,8 @@
                                 </td>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->reference }}</td>
+                                <td>{{ number_format($product->price, 2) }}</td>
                                 <td>{{ $product->quantity }}</td>
-                                <td>{{ $product->status }}</td>
                                 <td>
                                     <x-admin.status-badge :status="$product->status"/>
                                 </td>
@@ -56,6 +56,7 @@
                     </tbody>
                 </table>
             </div>
+            <x-admin.pagination :paginator="$products" />
         </div>
     </div>
 @endsection

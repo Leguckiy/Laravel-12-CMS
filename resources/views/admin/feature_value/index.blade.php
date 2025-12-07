@@ -46,6 +46,7 @@
                     </tbody>
                 </table>
             </div>
+            <x-admin.pagination :paginator="$values" />
         </div>
     </div>
 @endsection

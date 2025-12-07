@@ -59,6 +59,7 @@ return [
     'pre_defined_value' => 'Pre-defined value',
     'select_value' => 'Select value',
     'id' => 'Id',
+    'pages' => 'Pages',
 
     // Messages
     'created_successfully' => 'Created successfully',

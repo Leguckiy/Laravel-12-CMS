@@ -48,6 +48,7 @@
                     </tbody>
                 </table>
             </div>
+            <x-admin.pagination :paginator="$countries" />
         </div>
     </div>
 @endsection

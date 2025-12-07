@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\View\Composers\AdminComposer;
 use App\Services\AdminMenuService;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
@@ -27,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Use Bootstrap 5 pagination views
+        Paginator::useBootstrapFive();
+
         // Register admin view composer for all admin views except login
         View::composer('admin.*', function (ViewInstance $view): void {
             if ($view->name() === 'admin.login') {

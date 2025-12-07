@@ -50,6 +50,7 @@
                     </tbody>
                 </table>
             </div>
+            <x-admin.pagination :paginator="$currencies" />
         </div>
     </div>
 @endsection

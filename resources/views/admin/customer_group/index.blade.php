@@ -42,6 +42,7 @@
                     </tbody>
                 </table>
             </div>
+            <x-admin.pagination :paginator="$customerGroups" />
         </div>
     </div>
 @endsection

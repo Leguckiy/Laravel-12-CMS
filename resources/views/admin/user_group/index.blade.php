@@ -40,6 +40,7 @@
                     </tbody>
                 </table>
             </div>
+            <x-admin.pagination :paginator="$userGroups" />
         </div>
     </div>
 @endsection

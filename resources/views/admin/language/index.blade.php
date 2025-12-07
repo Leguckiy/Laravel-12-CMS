@@ -48,6 +48,7 @@
                     </tbody>
                 </table>
             </div>
+            <x-admin.pagination :paginator="$languages" />
         </div>
     </div>
 @endsection

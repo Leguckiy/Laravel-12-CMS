@@ -59,6 +59,7 @@ return [
     'pre_defined_value' => 'Попередньо визначено',
     'select_value' => 'Виберіть значення',
     'id' => 'Id',
+    'pages' => 'Сторінок',
 
     // Messages
     'created_successfully' => 'Успішно створено',

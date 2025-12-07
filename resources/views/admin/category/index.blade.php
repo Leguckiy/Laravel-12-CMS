@@ -52,6 +52,7 @@
                     </tbody>
                 </table>
             </div>
+            <x-admin.pagination :paginator="$categories" />
         </div>
     </div>
 @endsection
