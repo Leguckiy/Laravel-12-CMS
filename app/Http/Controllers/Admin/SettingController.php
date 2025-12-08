@@ -64,11 +64,19 @@ class SettingController extends AdminController
      */
     public function update(SettingRequest $request): RedirectResponse
     {
+        $oldCurrencyId = Setting::get('config_currency_id');
+        $newCurrencyId = $request->input('config_currency_id');
+
         // Simple (non-multilingual) settings
         foreach (self::SIMPLE_SETTINGS as $name) {
             $value = $request->input($name);
 
             Setting::set($name, (string) $value);
+        }
+
+        // Recalculate currency values if default currency changed
+        if ($oldCurrencyId !== $newCurrencyId && $newCurrencyId) {
+            $this->recalculateCurrencyValues((int) $oldCurrencyId, (int) $newCurrencyId);
         }
 
         // Image settings
@@ -245,5 +253,38 @@ class SettingController extends AdminController
         $path = trim($directory, '/').'/'.$filename;
 
         Setting::set($settingName, $path);
+    }
+
+    /**
+     * Recalculate currency values when default currency changes.
+     * The new default currency gets value = 1, others are recalculated proportionally.
+     */
+    private function recalculateCurrencyValues(?int $oldCurrencyId, int $newCurrencyId): void
+    {
+        $newDefaultCurrency = Currency::find($newCurrencyId);
+        
+        if (! $newDefaultCurrency || ! $newDefaultCurrency->value) {
+            return;
+        }
+
+        $newDefaultValue = (float) $newDefaultCurrency->value;
+        
+        // Calculate conversion factor: 1 / newDefaultValue
+        // Example: if new default currency has value = 0.85, factor = 1 / 0.85 = 1.176
+        // This means all currencies should be multiplied by 1.176
+        $conversionFactor = 1.0 / $newDefaultValue;
+
+        // Update all currencies
+        $currencies = Currency::all();
+        foreach ($currencies as $currency) {
+            if ($currency->id === $newCurrencyId) {
+                // New default currency gets value = 1
+                $currency->update(['value' => 1.0]);
+            } elseif ($currency->value) {
+                // Other currencies are recalculated proportionally
+                $newValue = (float) $currency->value * $conversionFactor;
+                $currency->update(['value' => $newValue]);
+            }
+        }
     }
 }
