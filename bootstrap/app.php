@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'auth.admin' => \App\Http\Middleware\AdminAuthenticate::class,
             'admin.permission' => \App\Http\Middleware\AdminPermissionMiddleware::class,
+            'front.locale' => \App\Http\Middleware\FrontLocaleMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
@@ -32,7 +33,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 return response()->view('admin.permission_denied', [], 403);
             }
         });
-        
+
         // Handle 403 HTTP exceptions (from abort(403))
         $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\HttpException $e, $request) {
             if ($e->getStatusCode() === 403 && ($request->is('admin/*') || $request->routeIs('admin.*'))) {
