@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\View\Composers\AdminComposer;
+use App\Http\View\Composers\FrontComposer;
 use App\Models\Setting;
 use App\Models\SettingLang;
 use App\Observers\SettingObserver;
@@ -45,6 +46,9 @@ class AppServiceProvider extends ServiceProvider
 
             app(AdminComposer::class)->compose($view);
         });
+
+        // Register front view composer all front views
+        View::composer('front.*', FrontComposer::class);
 
         // Blade ACL directives based on route names and current admin user's group
         $registerAclDirective = function (string $directiveName, string $ability): void {

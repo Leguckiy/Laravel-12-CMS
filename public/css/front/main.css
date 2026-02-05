@@ -1,0 +1,174 @@
+/* Layout: make footer stick to bottom inside <main> */
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    overflow-y: auto;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main > * {
+    flex-shrink: 0;
+}
+
+#header .header-nav {
+    max-height: 50px;
+    border-bottom: #f6f6f6 2px solid;
+    padding: 10px 0;
+}
+
+#header a {
+    text-decoration: none;
+    color: #232323;
+}
+
+#header a:hover {
+    color: #24b9d7;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    top: 100% !important;
+    transform: none !important;
+    min-width: 100%;
+}
+
+.dropdown-item:focus {
+    color: #24b9d7;
+    text-decoration: none;
+    background: none;
+}
+
+#header .dropdown-item.active {
+    background-color: #e9ecef;
+    color: #232323;
+}
+
+#header .fa-solid {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+#header .dropdown-label {
+    color: #7a7a7a;
+}
+
+#header [data-bs-toggle="dropdown"],
+#header .expand-more,
+#header .dropdown-item {
+    cursor: pointer;
+}
+
+/* Desktop top menu: horizontal row */
+#_desktop_top_menu .top-menu .nav-link {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+#_desktop_top_menu .top-menu .nav-link:hover {
+    color: #24b9d7;
+}
+
+/* Mobile offcanvas: dropdowns overlay content, no extra caret */
+#mobile_offcanvas_menu .mobile-dropdown-wrapper .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#mobile_offcanvas_menu .mobile-dropdown-wrapper .dropdown-menu,
+#mobile_offcanvas_menu .mobile-dropdown-wrapper .dropdown-menu.show {
+    position: absolute !important;
+    z-index: 1060;
+    top: 100%;
+    left: 0;
+    right: auto;
+    transform: none !important;
+}
+
+#mobile_offcanvas_menu .mobile-dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+#mobile_offcanvas_menu .mobile-dropdown-toggle::after {
+    display: none;
+}
+
+#mobile_offcanvas_menu .mobile-dropdown-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Footer: do not clip expanded accordion content */
+#footer.footer {
+    overflow: visible;
+}
+
+/* Footer columns */
+#footer.footer .footer-column-title {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#footer.footer .footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+
+#footer.footer .footer-links a:hover {
+    color: #24b9d7;
+}
+
+#footer.footer .footer-links li {
+    margin-bottom: 0.35rem;
+}
+
+#footer.footer .footer-links li:last-child {
+    margin-bottom: 0;
+}
+
+/* Desktop: always show footer column content (no collapse) */
+@media (min-width: 768px) {
+    #footer .footer-columns .collapse {
+        display: block !important;
+    }
+}
+
+/* Mobile: accordion style, chevron rotation; allow footer to grow page height */
+@media (max-width: 767px) {
+    #footer .footer-columns,
+    #footer .footer-columns .collapse.show {
+        overflow: visible;
+    }
+
+    #footer .footer-column-toggle[aria-expanded="true"] .footer-column-chevron {
+        transform: rotate(180deg);
+    }
+
+    #footer .footer-column-chevron {
+        transition: transform 0.2s ease;
+    }
+}
+
+@media (max-width: 767px) {
+    #header .top-logo {
+        width: 100px;
+    }
+
+    #header .top-logo img {
+        width: auto;
+        max-height: 2rem;
+    }
+}
