@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('meta-title', 'My App')</title>
+    @hasSection('meta-description')
+        <meta name="description" content="@yield('meta-description')">
+    @endif
     <link href="{{ asset('css/library/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/library/fontawesome.min.css') }}" rel="stylesheet">
     @stack('styles')

@@ -31,8 +31,10 @@ class PageController extends FrontController
 
         return view('front.page.show', [
             'page' => $page,
-            'title' => $translation?->title ?? '',
-            'content' => $translation?->content ?? null,
+            'title' => $translation->title,
+            'content' => $translation->content,
+            'metaTitle' => $translation->meta_title ?? $translation->title,
+            'metaDescription' => $translation->meta_description,
         ]);
     }
 }

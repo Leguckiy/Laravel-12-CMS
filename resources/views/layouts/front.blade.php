@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('meta-title', $title ?? config('app.name'))
+@section('meta-title', $metaTitle ?? '')
+@section('meta-description', $metaDescription ?? '')
 
 @push('styles')
     <link href="{{ asset('css/front/main.css') }}" rel="stylesheet">
