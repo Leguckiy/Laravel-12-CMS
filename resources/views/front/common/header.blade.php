@@ -18,8 +18,14 @@
                                     </span>
                                     <ul class="dropdown-menu">
                                         @foreach ($frontLanguages as $language)
+                                            @php
+                                                $langRouteParams = ['lang' => $language->code];
+                                                if ((Route::currentRouteName() ?? '') === 'front.page.show') {
+                                                    $langRouteParams['slug'] = request()->route('slug');
+                                                }
+                                            @endphp
                                             <li>
-                                                <a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ route(Route::currentRouteName() ?? 'front.home', ['lang' => $language->code]) }}" data-iso-code="{{ $language->code }}">
+                                                <a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ route(Route::currentRouteName() ?? 'front.home', $langRouteParams) }}" data-iso-code="{{ $language->code }}">
                                                     {{ $language->name }}
                                                 </a>
                                             </li>
@@ -168,7 +174,13 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         @foreach ($frontLanguages as $language)
-                                            <li><a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ route(Route::currentRouteName() ?? 'front.home', ['lang' => $language->code]) }}" data-iso-code="{{ $language->code }}">{{ $language->name }}</a></li>
+                                            @php
+                                                $langRouteParams = ['lang' => $language->code];
+                                                if ((Route::currentRouteName() ?? '') === 'front.page.show') {
+                                                    $langRouteParams['slug'] = request()->route('slug');
+                                                }
+                                            @endphp
+                                            <li><a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ route(Route::currentRouteName() ?? 'front.home', $langRouteParams) }}" data-iso-code="{{ $language->code }}">{{ $language->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

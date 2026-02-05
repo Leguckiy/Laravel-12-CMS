@@ -64,6 +64,19 @@ return [
             ],
         ],
         [
+            'id' => 'menu-content',
+            'name' => 'menu_content',
+            'icon' => 'fas fa-file-lines',
+            'route' => '',
+            'children' => [
+                [
+                    'name' => 'menu_content_pages',
+                    'route' => 'admin.page.index',
+                    'children' => [],
+                ],
+            ],
+        ],
+        [
             'id' => 'menu-settings',
             'name' => 'menu_settings',
             'icon' => 'fas fa-cog',
@@ -139,6 +152,7 @@ return [
         'feature_value' => 'catalog/feature_value',
         'customer' => 'customer/customer',
         'customer_group' => 'customer/customer_group',
+        'page' => 'content/page',
         'setting' => 'setting/setting',
     ],
 ];

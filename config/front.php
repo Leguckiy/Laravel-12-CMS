@@ -6,12 +6,8 @@ return [
             [
                 'id' => 'information',
                 'title' => 'Information',
-                'links' => [
-                    ['label' => 'Terms & Condition', 'url' => '#'],
-                    ['label' => 'Delivery Information', 'url' => '#'],
-                    ['label' => 'About Us', 'url' => '#'],
-                    ['label' => 'Privacy Policy', 'url' => '#'],
-                ],
+                'links_source' => 'pages',
+                'links' => [],
             ],
             [
                 'id' => 'customer-service',

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             StockStatusSeeder::class,
             OrderStatusSeeder::class,
             CategorySeeder::class,
+            PageSeeder::class,
             FeatureSeeder::class,
             FeatureValueSeeder::class,
             ProductSeeder::class,

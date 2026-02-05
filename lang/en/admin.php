@@ -235,6 +235,15 @@ return [
     'logo' => 'Store Logo',
     'icon' => 'Store Icon',
 
+    // Page (CMS)
+    'page_list' => 'Page list',
+    'add_page' => 'Add Page',
+    'edit_page' => 'Edit Page',
+    'page_title' => 'Page title',
+    'page_content' => 'Content',
+    'page_details' => 'Page details',
+    'no_pages' => 'No pages',
+
     // Menu
     'navigation' => 'Navigation',
     'menu_dashboard' => 'Dashboard',
@@ -247,6 +256,8 @@ return [
     'menu_customers' => 'Customers',
     'menu_customers_list' => 'Customers',
     'menu_customers_groups' => 'Customer Groups',
+    'menu_content' => 'Content',
+    'menu_content_pages' => 'Pages',
     'menu_settings' => 'Settings',
     'menu_settings_general' => 'Settings',
     'menu_settings_users' => 'Users',

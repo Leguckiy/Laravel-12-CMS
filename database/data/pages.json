@@ -1,0 +1,82 @@
+[
+  {
+    "sort_order": 1,
+    "status": true,
+    "translations": {
+      "en": {
+        "title": "Terms & Condition",
+        "slug": "terms",
+        "content": "<p>Please read these terms and conditions carefully before using our website.</p>",
+        "meta_title": "Terms & Condition",
+        "meta_description": "Terms and conditions of use."
+      },
+      "uk": {
+        "title": "Умови та положення",
+        "slug": "umovy-ta-polozhennya",
+        "content": "<p>Будь ласка, уважно ознайомтесь з умовами використання перед користуванням сайтом.</p>",
+        "meta_title": "Умови та положення",
+        "meta_description": "Умови та положення використання."
+      }
+    }
+  },
+  {
+    "sort_order": 2,
+    "status": true,
+    "translations": {
+      "en": {
+        "title": "Delivery Information",
+        "slug": "delivery",
+        "content": "<p>Information about delivery methods, terms and costs.</p>",
+        "meta_title": "Delivery Information",
+        "meta_description": "Delivery methods, terms and costs."
+      },
+      "uk": {
+        "title": "Доставка",
+        "slug": "dostavka",
+        "content": "<p>Інформація про способи доставки, терміни та вартість.</p>",
+        "meta_title": "Доставка",
+        "meta_description": "Способи доставки, терміни та вартість."
+      }
+    }
+  },
+  {
+    "sort_order": 3,
+    "status": true,
+    "translations": {
+      "en": {
+        "title": "About Us",
+        "slug": "about",
+        "content": "<p>Learn more about our company and our values.</p>",
+        "meta_title": "About Us",
+        "meta_description": "About our company and values."
+      },
+      "uk": {
+        "title": "Про нас",
+        "slug": "pro-nas",
+        "content": "<p>Дізнайтесь більше про нашу компанію та наші цінності.</p>",
+        "meta_title": "Про нас",
+        "meta_description": "Про нашу компанію та цінності."
+      }
+    }
+  },
+  {
+    "sort_order": 4,
+    "status": true,
+    "translations": {
+      "en": {
+        "title": "Privacy Policy",
+        "slug": "privacy",
+        "content": "<p>How we collect, use and protect your personal data.</p>",
+        "meta_title": "Privacy Policy",
+        "meta_description": "Privacy policy and personal data protection."
+      },
+      "uk": {
+        "title": "Політика конфіденційності",
+        "slug": "polityka-konfidentsiynosti",
+        "content": "<p>Як ми збираємо, використовуємо та захищаємо ваші персональні дані.</p>",
+        "meta_title": "Політика конфіденційності",
+        "meta_description": "Політика конфіденційності та захист персональних даних."
+      }
+    }
+  }
+]

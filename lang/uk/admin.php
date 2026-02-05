@@ -235,6 +235,15 @@ return [
     'logo' => 'Логотип',
     'icon' => 'Іконка',
 
+    // Page (CMS)
+    'page_list' => 'Список сторінок',
+    'add_page' => 'Додати сторінку',
+    'edit_page' => 'Редагувати сторінку',
+    'page_title' => 'Заголовок сторінки',
+    'page_content' => 'Вміст',
+    'page_details' => 'Деталі сторінки',
+    'no_pages' => 'Немає сторінок',
+
     // Menu
     'navigation' => 'Навігація',
     'menu_dashboard' => 'Панель керування',
@@ -247,6 +256,8 @@ return [
     'menu_customers' => 'Клієнти',
     'menu_customers_list' => 'Клієнти',
     'menu_customers_groups' => 'Групи клієнтів',
+    'menu_content' => 'Контент',
+    'menu_content_pages' => 'Сторінки',
     'menu_settings' => 'Налаштування',
     'menu_settings_general' => 'Налаштування',
     'menu_settings_users' => 'Користувачі',
