@@ -176,3 +176,19 @@ main > * {
         max-height: 2rem;
     }
 }
+
+/* 404 page */
+.not-found-block .not-found-code {
+    font-size: 6rem;
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+.not-found-block .btn-primary {
+    background-color: #24b9d7;
+    border-color: #24b9d7;
+}
+.not-found-block .btn-primary:hover {
+    background-color: #1ea5bf;
+    border-color: #1ea5bf;
+}

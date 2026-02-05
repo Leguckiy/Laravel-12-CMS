@@ -25,6 +25,7 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('admin/*') || $request->routeIs('admin.*')) {
                 return response()->view('admin.not_found', [], 404);
             }
+            return response()->view('front.not_found', [], 404);
         });
 
         // Handle 403 errors for admin routes

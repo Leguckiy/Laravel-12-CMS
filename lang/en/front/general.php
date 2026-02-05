@@ -11,6 +11,10 @@ return [
     'cart_title' => 'Cart',
     'menu' => 'Menu',
     'search_placeholder' => 'Search in catalog',
+
+    'not_found' => 'Page not found',
+    'not_found_message' => 'The page you are looking for does not exist or has been moved.',
+    'back_to_home' => 'Back to home',
     'all_rights_reserved' => 'All rights reserved.',
     'privacy_policy' => 'Privacy Policy',
     'terms_of_service' => 'Terms of Service',

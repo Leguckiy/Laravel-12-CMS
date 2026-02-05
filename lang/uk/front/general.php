@@ -11,6 +11,10 @@ return [
     'cart_title' => 'Корзина',
     'menu' => 'Меню',
     'search_placeholder' => 'Пошук в каталозі',
+
+    'not_found' => 'Сторінку не знайдено',
+    'not_found_message' => 'Сторінка, яку ви шукаєте, не існує або була переміщена.',
+    'back_to_home' => 'На головну',
     'all_rights_reserved' => 'Усі права захищені.',
     'privacy_policy' => 'Політика конфіденційності',
     'terms_of_service' => 'Умови використання',
