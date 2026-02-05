@@ -2,10 +2,7 @@
 
 @section('content')
 @php
-    $lang = request()->segment(1);
-    if (!preg_match('/^[a-z]{2}$/', $lang)) {
-        $lang = config('app.locale');
-    }
+    $lang = $frontLanguage?->code ?? config('app.locale');
 @endphp
 <div class="container py-5">
     <div class="row justify-content-center">

@@ -8,10 +8,13 @@ use Illuminate\Support\Collection;
 
 class FrontContext
 {
-    public Language $language;
-    public Currency $currency;
-    public Collection $languages;
-    public Collection $currencies;
+    public ?Language $language = null;
+
+    public ?Currency $currency = null;
+
+    public ?Collection $languages = null;
+
+    public ?Collection $currencies = null;
 
     public function setLanguage(Language $language): self
     {
@@ -27,12 +30,12 @@ class FrontContext
         return $this;
     }
 
-    public function getLanguage(): Language
+    public function getLanguage(): ?Language
     {
         return $this->language;
     }
 
-    public function getCurrency(): Currency
+    public function getCurrency(): ?Currency
     {
         return $this->currency;
     }
@@ -46,7 +49,7 @@ class FrontContext
 
     public function getLanguages(): Collection
     {
-        return $this->languages;
+        return $this->languages ?? collect();
     }
 
     public function setCurrencies(Collection $currencies): self
@@ -58,6 +61,6 @@ class FrontContext
 
     public function getCurrencies(): Collection
     {
-        return $this->currencies;
+        return $this->currencies ?? collect();
     }
 }

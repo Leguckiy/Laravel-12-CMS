@@ -1,0 +1,28 @@
+/* Category page: category image (1:1) and product images (natural ratio, width-based) */
+
+.category-header-image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    max-width: 240px;
+    margin-left: auto;
+}
+
+.category-header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.category-product-card .category-product-card__image {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.category-product-card .category-product-card__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

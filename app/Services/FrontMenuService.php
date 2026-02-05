@@ -20,7 +20,12 @@ class FrontMenuService
      */
     public function getMenuItems(): array
     {
-        $languageId = $this->context->language->id;
+        $language = $this->context->getLanguage();
+        if ($language === null) {
+            return [];
+        }
+
+        $languageId = $language->id;
 
         $categories = Category::query()
             ->where('status', true)
@@ -38,7 +43,7 @@ class FrontMenuService
     protected function mapToMenuItems(Collection $categories, int $languageId): array
     {
         $items = [];
-        $langCode = $this->context->language->code;
+        $langCode = $this->context->getLanguage()?->code ?? config('app.locale');
 
         foreach ($categories as $category) {
             $translation = $category->translation($languageId);
@@ -59,8 +64,8 @@ class FrontMenuService
 
     protected function buildCategoryUrl(string $langCode, string $slug): string
     {
-        if (Route::has('front.category')) {
-            return route('front.category', ['lang' => $langCode, 'slug' => $slug]);
+        if (Route::has('front.category.show')) {
+            return route('front.category.show', ['lang' => $langCode, 'slug' => $slug]);
         }
 
         return '#';

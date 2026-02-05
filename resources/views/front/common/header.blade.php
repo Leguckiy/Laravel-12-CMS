@@ -14,7 +14,7 @@
                                 <div class="language-selector dropdown js-dropdown">
                                     <span class="language-selector-label">{{ __('front/general.language') }}:</span>
                                     <span class="expand-more _gray-darker" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {{ $frontLanguage->name }} <i class="fa-solid fa-angle-down"></i>
+                                        {{ $frontLanguage?->name }} <i class="fa-solid fa-angle-down"></i>
                                     </span>
                                     <ul class="dropdown-menu">
                                         @foreach ($frontLanguages as $language)
@@ -26,7 +26,7 @@
                                                 $langHref = $frontLanguageUrls[$language->code] ?? route(Route::currentRouteName() ?? 'front.home', $langRouteParams);
                                             @endphp
                                             <li>
-                                                <a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ $langHref }}" data-iso-code="{{ $language->code }}">
+                                                <a class="dropdown-item {{ $language->id === ($frontLanguage?->id) ? 'active' : '' }}" href="{{ $langHref }}" data-iso-code="{{ $language->code }}">
                                                     {{ $language->name }}
                                                 </a>
                                             </li>
@@ -38,13 +38,13 @@
                                 <div class="currency-selector dropdown js-dropdown">
                                     <span class="currency-selector-label">{{ __('front/general.currency') }}:</span>
                                     <span class="expand-more _gray-darker" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {{ $frontCurrency->code }} {{ trim($frontCurrency->symbol_left . $frontCurrency->symbol_right) }} <i class="fa-solid fa-angle-down"></i>
+                                        {{ $frontCurrency?->code }} {{ trim(($frontCurrency?->symbol_left ?? '') . ($frontCurrency?->symbol_right ?? '')) }} <i class="fa-solid fa-angle-down"></i>
                                     </span>
                                     <ul class="dropdown-menu">
                                         @foreach ($frontCurrencies as $currency)
                                             <li>
-                                                <a class="dropdown-item {{ $currency->id === $frontCurrency->id ? 'active' : '' }}" href="#" rel="nofollow" data-currency-id="{{ $currency->id }}">
-                                                    {{ $currency->code }} {{ trim($currency->symbol_left . $currency->symbol_right) }}
+                                                <a class="dropdown-item {{ $currency->id === ($frontCurrency?->id) ? 'active' : '' }}" href="#" rel="nofollow" data-currency-id="{{ $currency->id }}">
+                                                    {{ $currency->code }} {{ trim(($currency->symbol_left ?? '') . ($currency->symbol_right ?? '')) }}
                                                 </a>
                                             </li>
                                         @endforeach
@@ -86,7 +86,7 @@
                                 <i class="fa-solid fa-bars"></i>
                             </button>
                             <div class="top-logo" id="_mobile_logo">
-                                <a href="{{ route('front.home') }}">
+                                <a href="{{ route('front.home', ['lang' => $frontLanguage?->code ?? config('app.locale')]) }}">
                                     <img src="{{ asset('storage/' . $frontSettings['config_logo']['value']) }}" alt="{{ config('app.name') }}" class="logo img-fluid">
                                 </a>
                             </div>
@@ -119,7 +119,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2 d-none d-md-block" id="_desktop_logo">
-                    <a href="{{ route('front.home') }}">
+                    <a href="{{ route('front.home', ['lang' => $frontLanguage?->code ?? config('app.locale')]) }}">
                         <img src="{{ asset('storage/' . $frontSettings['config_logo']['value']) }}" alt="{{ config('app.name') }}" class="logo img-fluid">
                     </a>
                 </div>
@@ -158,11 +158,11 @@
                                 <div class="currency-selector dropdown js-dropdown">
                                     <span class="currency-selector-label">{{ __('front/general.currency') }}:</span>
                                     <button type="button" class="mobile-dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {{ $frontCurrency->code }} {{ trim($frontCurrency->symbol_left . $frontCurrency->symbol_right) }} <i class="fa-solid fa-angle-down"></i>
+                                        {{ $frontCurrency?->code }} {{ trim(($frontCurrency?->symbol_left ?? '') . ($frontCurrency?->symbol_right ?? '')) }} <i class="fa-solid fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu">
                                         @foreach ($frontCurrencies as $currency)
-                                            <li><a class="dropdown-item {{ $currency->id === $frontCurrency->id ? 'active' : '' }}" href="#" rel="nofollow" data-currency-id="{{ $currency->id }}">{{ $currency->code }} {{ trim($currency->symbol_left . $currency->symbol_right) }}</a></li>
+                                            <li><a class="dropdown-item {{ $currency->id === ($frontCurrency?->id) ? 'active' : '' }}" href="#" rel="nofollow" data-currency-id="{{ $currency->id }}">{{ $currency->code }} {{ trim(($currency->symbol_left ?? '') . ($currency->symbol_right ?? '')) }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -171,7 +171,7 @@
                                 <div class="language-selector dropdown js-dropdown">
                                     <span class="language-selector-label">{{ __('front/general.language') }}:</span>
                                     <button type="button" class="mobile-dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {{ $frontLanguage->name }} <i class="fa-solid fa-angle-down"></i>
+                                        {{ $frontLanguage?->name }} <i class="fa-solid fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu">
                                         @foreach ($frontLanguages as $language)
@@ -182,7 +182,7 @@
                                                 }
                                                 $langHref = $frontLanguageUrls[$language->code] ?? route(Route::currentRouteName() ?? 'front.home', $langRouteParams);
                                             @endphp
-                                            <li><a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ $langHref }}" data-iso-code="{{ $language->code }}">{{ $language->name }}</a></li>
+                                            <li><a class="dropdown-item {{ $language->id === ($frontLanguage?->id) ? 'active' : '' }}" href="{{ $langHref }}" data-iso-code="{{ $language->code }}">{{ $language->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

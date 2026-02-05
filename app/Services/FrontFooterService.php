@@ -37,8 +37,13 @@ class FrontFooterService
      */
     protected function getPageLinks(): array
     {
-        $languageId = $this->context->language->id;
-        $langCode = $this->context->language->code;
+        $language = $this->context->getLanguage();
+        if ($language === null) {
+            return [];
+        }
+
+        $languageId = $language->id;
+        $langCode = $language->code;
 
         $pages = Page::query()
             ->where('status', true)

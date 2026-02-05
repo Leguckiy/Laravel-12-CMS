@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CategoryLang extends Model
 {
@@ -38,4 +39,9 @@ class CategoryLang extends Model
         'meta_title',
         'meta_description',
     ];
+
+    public function language(): BelongsTo
+    {
+        return $this->belongsTo(Language::class, 'language_id');
+    }
 }
