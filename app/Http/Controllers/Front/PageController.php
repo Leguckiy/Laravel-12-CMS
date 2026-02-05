@@ -29,6 +29,11 @@ class PageController extends FrontController
 
         $translation = $page->translations->first();
 
+        $page->load(['translations.language']);
+        $this->languageUrls = $page->translations->keyBy(fn ($t) => $t->language->code)
+            ->map(fn ($t) => route('front.page.show', ['lang' => $t->language->code, 'slug' => $t->slug]))
+            ->toArray();
+
         return view('front.page.show', [
             'page' => $page,
             'title' => $translation->title,

@@ -23,9 +23,10 @@
                                                 if ((Route::currentRouteName() ?? '') === 'front.page.show') {
                                                     $langRouteParams['slug'] = request()->route('slug');
                                                 }
+                                                $langHref = $frontLanguageUrls[$language->code] ?? route(Route::currentRouteName() ?? 'front.home', $langRouteParams);
                                             @endphp
                                             <li>
-                                                <a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ route(Route::currentRouteName() ?? 'front.home', $langRouteParams) }}" data-iso-code="{{ $language->code }}">
+                                                <a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ $langHref }}" data-iso-code="{{ $language->code }}">
                                                     {{ $language->name }}
                                                 </a>
                                             </li>
@@ -179,8 +180,9 @@
                                                 if ((Route::currentRouteName() ?? '') === 'front.page.show') {
                                                     $langRouteParams['slug'] = request()->route('slug');
                                                 }
+                                                $langHref = $frontLanguageUrls[$language->code] ?? route(Route::currentRouteName() ?? 'front.home', $langRouteParams);
                                             @endphp
-                                            <li><a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ route(Route::currentRouteName() ?? 'front.home', $langRouteParams) }}" data-iso-code="{{ $language->code }}">{{ $language->name }}</a></li>
+                                            <li><a class="dropdown-item {{ $language->id === $frontLanguage->id ? 'active' : '' }}" href="{{ $langHref }}" data-iso-code="{{ $language->code }}">{{ $language->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PageLang extends Model
 {
@@ -40,4 +41,9 @@ class PageLang extends Model
         'meta_title',
         'meta_description',
     ];
+
+    public function language(): BelongsTo
+    {
+        return $this->belongsTo(Language::class, 'language_id');
+    }
 }

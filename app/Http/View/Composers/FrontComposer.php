@@ -2,6 +2,7 @@
 
 namespace App\Http\View\Composers;
 
+use App\Http\Controllers\FrontController as BaseFrontController;
 use App\Services\FrontFooterService;
 use App\Services\FrontMenuService;
 use App\Services\SettingService;
@@ -19,6 +20,11 @@ class FrontComposer
 
     public function compose(View $view): void
     {
+        $controller = request()->route()?->getController();
+        $frontLanguageUrls = ($controller instanceof BaseFrontController && method_exists($controller, 'getLanguageUrls'))
+            ? $controller->getLanguageUrls()
+            : [];
+
         $view->with([
             'frontLanguage' => $this->context->language,
             'frontCurrency' => $this->context->currency,
@@ -27,6 +33,7 @@ class FrontComposer
             'frontSettings' => $this->settingService->all(),
             'frontMenuItems' => $this->frontMenuService->getMenuItems(),
             'frontFooterColumns' => $this->frontFooterService->getColumns(),
+            'frontLanguageUrls' => $frontLanguageUrls,
         ]);
     }
 }
