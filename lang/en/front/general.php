@@ -14,4 +14,21 @@ return [
     'all_rights_reserved' => 'All rights reserved.',
     'privacy_policy' => 'Privacy Policy',
     'terms_of_service' => 'Terms of Service',
+
+    'footer' => [
+        'information_title' => 'Information',
+        'information_0' => 'Terms & Condition',
+        'information_1' => 'Delivery Information',
+        'information_2' => 'About Us',
+        'information_3' => 'Privacy Policy',
+        'customer-service_title' => 'Customer Service',
+        'customer-service_0' => 'Contact Us',
+        'customer-service_1' => 'Returns',
+        'customer-service_2' => 'Site Map',
+        'my-account_title' => 'My Account',
+        'my-account_0' => 'My Account',
+        'my-account_1' => 'Order History',
+        'my-account_2' => 'Wish List',
+        'my-account_3' => 'Newsletter',
+    ],
 ];

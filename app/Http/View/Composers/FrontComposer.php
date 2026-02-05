@@ -2,6 +2,7 @@
 
 namespace App\Http\View\Composers;
 
+use App\Services\FrontFooterService;
 use App\Services\FrontMenuService;
 use App\Services\SettingService;
 use App\Support\FrontContext;
@@ -13,6 +14,7 @@ class FrontComposer
         protected FrontContext $context,
         protected SettingService $settingService,
         protected FrontMenuService $frontMenuService,
+        protected FrontFooterService $frontFooterService,
     ) {}
 
     public function compose(View $view): void
@@ -24,6 +26,7 @@ class FrontComposer
             'frontCurrencies' => $this->context->getCurrencies(),
             'frontSettings' => $this->settingService->all(),
             'frontMenuItems' => $this->frontMenuService->getMenuItems(),
+            'frontFooterColumns' => $this->frontFooterService->getColumns(),
         ]);
     }
 }
