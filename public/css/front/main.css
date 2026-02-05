@@ -24,6 +24,10 @@ main > * {
     padding: 10px 0;
 }
 
+#header .header-top {
+    padding-top: 1rem;
+}
+
 #header a {
     text-decoration: none;
     color: #232323;

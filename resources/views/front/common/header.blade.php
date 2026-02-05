@@ -119,18 +119,11 @@
                 <div class="header-top-right col-md-10 col-sm-12 d-flex align-items-center">
                     <nav class="menu js-top-menu position-static d-none d-md-block" id="_desktop_top_menu" aria-label="Main navigation">
                         <ul class="top-menu nav flex-row gap-3 list-unstyled mb-0" id="top-menu-desktop">
-                            <li class="nav-item">
-                                <a class="nav-link text-body p-0" href="#" title="Link1">Link1</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-body p-0" href="#" title="Link2">Link2</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-body p-0" href="#" title="Link3">Link3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-body p-0" href="#" title="Link4">Link4</a>
-                            </li>
+                            @foreach ($frontMenuItems as $item)
+                                <li class="nav-item">
+                                    <a class="nav-link text-body p-0" href="{{ $item['url'] }}" title="{{ $item['name'] }}">{{ $item['name'] }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </nav>
                 </div>
@@ -146,18 +139,11 @@
                     <div id="mobile_top_menu_wrapper" class="row gy-3">
                         <div class="js-top-menu mobile" id="_mobile_top_menu">
                             <ul id="top-menu" class="mobile-menu mb-3">
-                                <li>
-                                    <a href="#" title="Link1">Link1</a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Link2">Link2</a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Link3">Link3</a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Link4">Link4</a>
-                                </li>
+                                @foreach ($frontMenuItems as $item)
+                                    <li>
+                                        <a href="{{ $item['url'] }}" title="{{ $item['name'] }}">{{ $item['name'] }}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="js-top-menu-bottom mt-2">
