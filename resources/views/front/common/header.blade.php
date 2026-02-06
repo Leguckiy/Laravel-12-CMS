@@ -1,3 +1,6 @@
+@push('head-meta')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+@endpush
 <header id="header">
     <nav class="header-nav">
         <div class="container">
@@ -35,7 +38,7 @@
                                 </div>
                             </div>
                             <div id="_desktop_currency_selector">
-                                <div class="currency-selector dropdown js-dropdown">
+                                <div class="currency-selector dropdown js-dropdown" data-set-currency-url="{{ route('front.currency.set', ['lang' => $frontLanguage->code]) }}">
                                     <span class="currency-selector-label">{{ __('front/general.currency') }}:</span>
                                     <span class="expand-more _gray-darker" data-bs-toggle="dropdown" aria-expanded="false">
                                         {{ $frontCurrency?->code }} {{ trim(($frontCurrency?->symbol_left ?? '') . ($frontCurrency?->symbol_right ?? '')) }} <i class="fa-solid fa-angle-down"></i>
@@ -155,7 +158,7 @@
                         </div>
                         <div class="js-top-menu-bottom mt-2">
                             <div id="_mobile_currency_selector" class="currency-selector-wrapper mobile-dropdown-wrapper">
-                                <div class="currency-selector dropdown js-dropdown">
+                                <div class="currency-selector dropdown js-dropdown" data-set-currency-url="{{ route('front.currency.set', ['lang' => $frontLanguage?->code ?? config('app.locale')]) }}">
                                     <span class="currency-selector-label">{{ __('front/general.currency') }}:</span>
                                     <button type="button" class="mobile-dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                         {{ $frontCurrency?->code }} {{ trim(($frontCurrency?->symbol_left ?? '') . ($frontCurrency?->symbol_right ?? '')) }} <i class="fa-solid fa-angle-down"></i>

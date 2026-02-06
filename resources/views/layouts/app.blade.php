@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @stack('head-meta')
     <title>@yield('meta-title', 'My App')</title>
     @hasSection('meta-description')
         <meta name="description" content="@yield('meta-description')">
