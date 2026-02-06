@@ -1557,7 +1557,7 @@
         }
     },
     {
-        "id": 168,
+        "id": 174,
         "feature_id": 23,
         "sort_order": 2,
         "translations": {
@@ -1566,7 +1566,7 @@
         }
     },
     {
-        "id": 169,
+        "id": 175,
         "feature_id": 23,
         "sort_order": 3,
         "translations": {
@@ -1575,7 +1575,7 @@
         }
     },
     {
-        "id": 170,
+        "id": 176,
         "feature_id": 24,
         "sort_order": 1,
         "translations": {
@@ -1584,7 +1584,7 @@
         }
     },
     {
-        "id": 171,
+        "id": 177,
         "feature_id": 24,
         "sort_order": 2,
         "translations": {
@@ -1593,7 +1593,7 @@
         }
     },
     {
-        "id": 172,
+        "id": 178,
         "feature_id": 24,
         "sort_order": 3,
         "translations": {
@@ -1602,7 +1602,7 @@
         }
     },
     {
-        "id": 173,
+        "id": 179,
         "feature_id": 1,
         "sort_order": 21,
         "translations": {
@@ -1611,7 +1611,7 @@
         }
     },
     {
-        "id": 174,
+        "id": 180,
         "feature_id": 1,
         "sort_order": 22,
         "translations": {
@@ -1620,7 +1620,7 @@
         }
     },
     {
-        "id": 175,
+        "id": 181,
         "feature_id": 1,
         "sort_order": 23,
         "translations": {
@@ -1629,7 +1629,7 @@
         }
     },
     {
-        "id": 176,
+        "id": 182,
         "feature_id": 1,
         "sort_order": 24,
         "translations": {
@@ -1638,7 +1638,7 @@
         }
     },
     {
-        "id": 177,
+        "id": 183,
         "feature_id": 1,
         "sort_order": 25,
         "translations": {
@@ -1647,7 +1647,7 @@
         }
     },
     {
-        "id": 178,
+        "id": 184,
         "feature_id": 1,
         "sort_order": 26,
         "translations": {
@@ -1656,7 +1656,7 @@
         }
     },
     {
-        "id": 179,
+        "id": 185,
         "feature_id": 1,
         "sort_order": 27,
         "translations": {
@@ -1665,7 +1665,7 @@
         }
     },
     {
-        "id": 180,
+        "id": 186,
         "feature_id": 1,
         "sort_order": 28,
         "translations": {
@@ -1674,7 +1674,7 @@
         }
     },
     {
-        "id": 181,
+        "id": 187,
         "feature_id": 2,
         "sort_order": 13,
         "translations": {
@@ -1683,7 +1683,7 @@
         }
     },
     {
-        "id": 182,
+        "id": 188,
         "feature_id": 3,
         "sort_order": 15,
         "translations": {
@@ -1692,7 +1692,7 @@
         }
     },
     {
-        "id": 183,
+        "id": 189,
         "feature_id": 25,
         "sort_order": 1,
         "translations": {
@@ -1701,7 +1701,7 @@
         }
     },
     {
-        "id": 184,
+        "id": 190,
         "feature_id": 26,
         "sort_order": 1,
         "translations": {
@@ -1710,7 +1710,7 @@
         }
     },
     {
-        "id": 185,
+        "id": 191,
         "feature_id": 26,
         "sort_order": 2,
         "translations": {
@@ -1719,7 +1719,7 @@
         }
     },
     {
-        "id": 186,
+        "id": 192,
         "feature_id": 26,
         "sort_order": 3,
         "translations": {
@@ -1728,7 +1728,7 @@
         }
     },
     {
-        "id": 187,
+        "id": 193,
         "feature_id": 26,
         "sort_order": 4,
         "translations": {
@@ -1737,16 +1737,16 @@
         }
     },
     {
-        "id": 188,
+        "id": 194,
         "feature_id": 26,
         "sort_order": 5,
         "translations": {
-            "en": "QLED / Quantum Dot",
-            "uk": "QLED / Quantum Dot"
+            "en": "QLED \/ Quantum Dot",
+            "uk": "QLED \/ Quantum Dot"
         }
     },
     {
-        "id": 189,
+        "id": 195,
         "feature_id": 27,
         "sort_order": 1,
         "translations": {
@@ -1755,7 +1755,7 @@
         }
     },
     {
-        "id": 190,
+        "id": 196,
         "feature_id": 27,
         "sort_order": 2,
         "translations": {
@@ -1764,7 +1764,7 @@
         }
     },
     {
-        "id": 191,
+        "id": 197,
         "feature_id": 27,
         "sort_order": 3,
         "translations": {
@@ -1773,7 +1773,7 @@
         }
     },
     {
-        "id": 192,
+        "id": 198,
         "feature_id": 27,
         "sort_order": 4,
         "translations": {
@@ -1782,7 +1782,7 @@
         }
     },
     {
-        "id": 193,
+        "id": 199,
         "feature_id": 1,
         "sort_order": 29,
         "translations": {
@@ -1791,7 +1791,7 @@
         }
     },
     {
-        "id": 194,
+        "id": 200,
         "feature_id": 1,
         "sort_order": 30,
         "translations": {
@@ -1800,7 +1800,7 @@
         }
     },
     {
-        "id": 195,
+        "id": 201,
         "feature_id": 1,
         "sort_order": 31,
         "translations": {
@@ -1809,7 +1809,7 @@
         }
     },
     {
-        "id": 196,
+        "id": 202,
         "feature_id": 1,
         "sort_order": 32,
         "translations": {
@@ -1818,7 +1818,7 @@
         }
     },
     {
-        "id": 197,
+        "id": 203,
         "feature_id": 1,
         "sort_order": 33,
         "translations": {
@@ -1827,7 +1827,7 @@
         }
     },
     {
-        "id": 198,
+        "id": 204,
         "feature_id": 1,
         "sort_order": 34,
         "translations": {
@@ -1836,7 +1836,7 @@
         }
     },
     {
-        "id": 199,
+        "id": 205,
         "feature_id": 1,
         "sort_order": 35,
         "translations": {
@@ -1845,7 +1845,7 @@
         }
     },
     {
-        "id": 200,
+        "id": 206,
         "feature_id": 1,
         "sort_order": 36,
         "translations": {
@@ -1854,7 +1854,7 @@
         }
     },
     {
-        "id": 201,
+        "id": 207,
         "feature_id": 3,
         "sort_order": 16,
         "translations": {
@@ -1863,7 +1863,7 @@
         }
     },
     {
-        "id": 202,
+        "id": 208,
         "feature_id": 3,
         "sort_order": 17,
         "translations": {
@@ -1872,7 +1872,7 @@
         }
     },
     {
-        "id": 203,
+        "id": 209,
         "feature_id": 3,
         "sort_order": 18,
         "translations": {
@@ -1881,7 +1881,7 @@
         }
     },
     {
-        "id": 204,
+        "id": 210,
         "feature_id": 3,
         "sort_order": 19,
         "translations": {
@@ -1890,7 +1890,7 @@
         }
     },
     {
-        "id": 205,
+        "id": 211,
         "feature_id": 3,
         "sort_order": 20,
         "translations": {
@@ -1899,7 +1899,7 @@
         }
     },
     {
-        "id": 206,
+        "id": 212,
         "feature_id": 3,
         "sort_order": 21,
         "translations": {
@@ -1908,7 +1908,7 @@
         }
     },
     {
-        "id": 207,
+        "id": 213,
         "feature_id": 3,
         "sort_order": 22,
         "translations": {
@@ -1917,7 +1917,7 @@
         }
     },
     {
-        "id": 208,
+        "id": 214,
         "feature_id": 3,
         "sort_order": 23,
         "translations": {
@@ -1926,7 +1926,7 @@
         }
     },
     {
-        "id": 209,
+        "id": 215,
         "feature_id": 3,
         "sort_order": 24,
         "translations": {
@@ -1935,7 +1935,7 @@
         }
     },
     {
-        "id": 210,
+        "id": 216,
         "feature_id": 3,
         "sort_order": 25,
         "translations": {
@@ -1944,7 +1944,7 @@
         }
     },
     {
-        "id": 211,
+        "id": 217,
         "feature_id": 3,
         "sort_order": 26,
         "translations": {
@@ -1953,7 +1953,7 @@
         }
     },
     {
-        "id": 212,
+        "id": 218,
         "feature_id": 4,
         "sort_order": 5,
         "translations": {
@@ -1962,7 +1962,7 @@
         }
     },
     {
-        "id": 213,
+        "id": 219,
         "feature_id": 4,
         "sort_order": 6,
         "translations": {
@@ -1971,7 +1971,7 @@
         }
     },
     {
-        "id": 214,
+        "id": 220,
         "feature_id": 4,
         "sort_order": 7,
         "translations": {
@@ -1980,7 +1980,7 @@
         }
     },
     {
-        "id": 215,
+        "id": 221,
         "feature_id": 4,
         "sort_order": 8,
         "translations": {
@@ -1989,7 +1989,7 @@
         }
     },
     {
-        "id": 216,
+        "id": 222,
         "feature_id": 14,
         "sort_order": 7,
         "translations": {
@@ -1998,7 +1998,7 @@
         }
     },
     {
-        "id": 217,
+        "id": 223,
         "feature_id": 14,
         "sort_order": 8,
         "translations": {
@@ -2007,7 +2007,7 @@
         }
     },
     {
-        "id": 218,
+        "id": 224,
         "feature_id": 14,
         "sort_order": 9,
         "translations": {
@@ -2016,7 +2016,7 @@
         }
     },
     {
-        "id": 219,
+        "id": 225,
         "feature_id": 14,
         "sort_order": 10,
         "translations": {
@@ -2025,7 +2025,7 @@
         }
     },
     {
-        "id": 220,
+        "id": 226,
         "feature_id": 14,
         "sort_order": 11,
         "translations": {
@@ -2034,7 +2034,7 @@
         }
     },
     {
-        "id": 221,
+        "id": 227,
         "feature_id": 14,
         "sort_order": 12,
         "translations": {
@@ -2043,7 +2043,7 @@
         }
     },
     {
-        "id": 222,
+        "id": 228,
         "feature_id": 14,
         "sort_order": 13,
         "translations": {
@@ -2052,7 +2052,7 @@
         }
     },
     {
-        "id": 223,
+        "id": 229,
         "feature_id": 14,
         "sort_order": 14,
         "translations": {
@@ -2061,7 +2061,7 @@
         }
     },
     {
-        "id": 224,
+        "id": 230,
         "feature_id": 14,
         "sort_order": 15,
         "translations": {
@@ -2070,7 +2070,7 @@
         }
     },
     {
-        "id": 225,
+        "id": 231,
         "feature_id": 15,
         "sort_order": 5,
         "translations": {
@@ -2079,7 +2079,7 @@
         }
     },
     {
-        "id": 226,
+        "id": 232,
         "feature_id": 15,
         "sort_order": 6,
         "translations": {
@@ -2088,7 +2088,7 @@
         }
     },
     {
-        "id": 227,
+        "id": 233,
         "feature_id": 15,
         "sort_order": 7,
         "translations": {
@@ -2097,7 +2097,7 @@
         }
     },
     {
-        "id": 228,
+        "id": 234,
         "feature_id": 15,
         "sort_order": 8,
         "translations": {
@@ -2106,7 +2106,7 @@
         }
     },
     {
-        "id": 229,
+        "id": 235,
         "feature_id": 15,
         "sort_order": 9,
         "translations": {
@@ -2115,7 +2115,7 @@
         }
     },
     {
-        "id": 230,
+        "id": 236,
         "feature_id": 15,
         "sort_order": 10,
         "translations": {
@@ -2124,7 +2124,7 @@
         }
     },
     {
-        "id": 231,
+        "id": 237,
         "feature_id": 28,
         "sort_order": 1,
         "translations": {
@@ -2133,7 +2133,7 @@
         }
     },
     {
-        "id": 232,
+        "id": 238,
         "feature_id": 28,
         "sort_order": 2,
         "translations": {
@@ -2142,7 +2142,7 @@
         }
     },
     {
-        "id": 233,
+        "id": 239,
         "feature_id": 28,
         "sort_order": 3,
         "translations": {
@@ -2151,7 +2151,7 @@
         }
     },
     {
-        "id": 234,
+        "id": 240,
         "feature_id": 28,
         "sort_order": 4,
         "translations": {
@@ -2160,7 +2160,7 @@
         }
     },
     {
-        "id": 235,
+        "id": 241,
         "feature_id": 28,
         "sort_order": 5,
         "translations": {
@@ -2169,7 +2169,7 @@
         }
     },
     {
-        "id": 236,
+        "id": 242,
         "feature_id": 29,
         "sort_order": 1,
         "translations": {
@@ -2178,7 +2178,7 @@
         }
     },
     {
-        "id": 236,
+        "id": 243,
         "feature_id": 29,
         "sort_order": 2,
         "translations": {
@@ -2187,7 +2187,7 @@
         }
     },
     {
-        "id": 237,
+        "id": 244,
         "feature_id": 29,
         "sort_order": 3,
         "translations": {
@@ -2196,7 +2196,7 @@
         }
     },
     {
-        "id": 238,
+        "id": 245,
         "feature_id": 29,
         "sort_order": 4,
         "translations": {
@@ -2205,7 +2205,7 @@
         }
     },
     {
-        "id": 239,
+        "id": 246,
         "feature_id": 29,
         "sort_order": 5,
         "translations": {
@@ -2214,7 +2214,7 @@
         }
     },
     {
-        "id": 240,
+        "id": 247,
         "feature_id": 30,
         "sort_order": 1,
         "translations": {
@@ -2223,7 +2223,7 @@
         }
     },
     {
-        "id": 241,
+        "id": 248,
         "feature_id": 30,
         "sort_order": 2,
         "translations": {
@@ -2232,7 +2232,7 @@
         }
     },
     {
-        "id": 242,
+        "id": 249,
         "feature_id": 30,
         "sort_order": 3,
         "translations": {
@@ -2241,7 +2241,7 @@
         }
     },
     {
-        "id": 243,
+        "id": 250,
         "feature_id": 30,
         "sort_order": 4,
         "translations": {
@@ -2250,7 +2250,7 @@
         }
     },
     {
-        "id": 244,
+        "id": 251,
         "feature_id": 30,
         "sort_order": 5,
         "translations": {
@@ -2259,7 +2259,7 @@
         }
     },
     {
-        "id": 245,
+        "id": 252,
         "feature_id": 30,
         "sort_order": 6,
         "translations": {
@@ -2268,7 +2268,7 @@
         }
     },
     {
-        "id": 246,
+        "id": 253,
         "feature_id": 30,
         "sort_order": 7,
         "translations": {
@@ -2277,7 +2277,7 @@
         }
     },
     {
-        "id": 247,
+        "id": 254,
         "feature_id": 31,
         "sort_order": 1,
         "translations": {
@@ -2286,7 +2286,7 @@
         }
     },
     {
-        "id": 248,
+        "id": 255,
         "feature_id": 31,
         "sort_order": 2,
         "translations": {
@@ -2295,7 +2295,7 @@
         }
     },
     {
-        "id": 249,
+        "id": 256,
         "feature_id": 31,
         "sort_order": 3,
         "translations": {
@@ -2304,7 +2304,7 @@
         }
     },
     {
-        "id": 250,
+        "id": 257,
         "feature_id": 31,
         "sort_order": 4,
         "translations": {
@@ -2313,7 +2313,7 @@
         }
     },
     {
-        "id": 251,
+        "id": 258,
         "feature_id": 31,
         "sort_order": 5,
         "translations": {
@@ -2322,7 +2322,7 @@
         }
     },
     {
-        "id": 252,
+        "id": 259,
         "feature_id": 31,
         "sort_order": 6,
         "translations": {
@@ -2331,7 +2331,7 @@
         }
     },
     {
-        "id": 253,
+        "id": 260,
         "feature_id": 31,
         "sort_order": 7,
         "translations": {
@@ -2340,7 +2340,7 @@
         }
     },
     {
-        "id": 254,
+        "id": 261,
         "feature_id": 32,
         "sort_order": 1,
         "translations": {
@@ -2349,7 +2349,7 @@
         }
     },
     {
-        "id": 255,
+        "id": 262,
         "feature_id": 33,
         "sort_order": 1,
         "translations": {
@@ -2358,7 +2358,7 @@
         }
     },
     {
-        "id": 256,
+        "id": 263,
         "feature_id": 33,
         "sort_order": 2,
         "translations": {
@@ -2367,7 +2367,7 @@
         }
     },
     {
-        "id": 257,
+        "id": 264,
         "feature_id": 33,
         "sort_order": 3,
         "translations": {
@@ -2376,7 +2376,7 @@
         }
     },
     {
-        "id": 258,
+        "id": 265,
         "feature_id": 33,
         "sort_order": 4,
         "translations": {
@@ -2385,7 +2385,7 @@
         }
     },
     {
-        "id": 259,
+        "id": 266,
         "feature_id": 34,
         "sort_order": 1,
         "translations": {
@@ -2394,7 +2394,7 @@
         }
     },
     {
-        "id": 260,
+        "id": 267,
         "feature_id": 34,
         "sort_order": 2,
         "translations": {
@@ -2403,7 +2403,7 @@
         }
     },
     {
-        "id": 261,
+        "id": 268,
         "feature_id": 34,
         "sort_order": 3,
         "translations": {
@@ -2412,7 +2412,7 @@
         }
     },
     {
-        "id": 262,
+        "id": 269,
         "feature_id": 35,
         "sort_order": 1,
         "translations": {
@@ -2421,7 +2421,7 @@
         }
     },
     {
-        "id": 263,
+        "id": 270,
         "feature_id": 35,
         "sort_order": 2,
         "translations": {
@@ -2430,7 +2430,7 @@
         }
     },
     {
-        "id": 264,
+        "id": 271,
         "feature_id": 35,
         "sort_order": 3,
         "translations": {
@@ -2439,7 +2439,7 @@
         }
     },
     {
-        "id": 265,
+        "id": 272,
         "feature_id": 35,
         "sort_order": 4,
         "translations": {
@@ -2448,7 +2448,7 @@
         }
     },
     {
-        "id": 266,
+        "id": 273,
         "feature_id": 36,
         "sort_order": 1,
         "translations": {
@@ -2457,7 +2457,7 @@
         }
     },
     {
-        "id": 267,
+        "id": 274,
         "feature_id": 36,
         "sort_order": 2,
         "translations": {
@@ -2466,7 +2466,7 @@
         }
     },
     {
-        "id": 268,
+        "id": 275,
         "feature_id": 36,
         "sort_order": 3,
         "translations": {
@@ -2475,7 +2475,7 @@
         }
     },
     {
-        "id": 269,
+        "id": 276,
         "feature_id": 36,
         "sort_order": 4,
         "translations": {
@@ -2484,7 +2484,7 @@
         }
     },
     {
-        "id": 270,
+        "id": 277,
         "feature_id": 37,
         "sort_order": 1,
         "translations": {
@@ -2493,7 +2493,7 @@
         }
     },
     {
-        "id": 271,
+        "id": 278,
         "feature_id": 37,
         "sort_order": 2,
         "translations": {
@@ -2502,7 +2502,7 @@
         }
     },
     {
-        "id": 272,
+        "id": 279,
         "feature_id": 37,
         "sort_order": 3,
         "translations": {
@@ -2511,7 +2511,7 @@
         }
     },
     {
-        "id": 273,
+        "id": 280,
         "feature_id": 38,
         "sort_order": 1,
         "translations": {
@@ -2520,7 +2520,7 @@
         }
     },
     {
-        "id": 274,
+        "id": 281,
         "feature_id": 39,
         "sort_order": 1,
         "translations": {
@@ -2529,7 +2529,7 @@
         }
     },
     {
-        "id": 275,
+        "id": 282,
         "feature_id": 39,
         "sort_order": 2,
         "translations": {
@@ -2538,7 +2538,7 @@
         }
     },
     {
-        "id": 276,
+        "id": 283,
         "feature_id": 39,
         "sort_order": 3,
         "translations": {
@@ -2547,7 +2547,7 @@
         }
     },
     {
-        "id": 277,
+        "id": 284,
         "feature_id": 40,
         "sort_order": 1,
         "translations": {
