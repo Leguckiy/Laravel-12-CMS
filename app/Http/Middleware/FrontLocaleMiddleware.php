@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Language;
 use App\Services\FrontContextService;
 use App\Support\FrontContext;
 use Closure;
@@ -28,7 +27,10 @@ class FrontLocaleMiddleware
         $this->frontContextService->initializeFromSession($request);
 
         $lang = $request->route('lang');
-        $activeLanguages = Language::query()->where('status', true)->orderBy('id')->get();
+        $activeLanguages = $this->context->getLanguages();
+        if ($activeLanguages->isEmpty()) {
+            abort(404);
+        }
         $languagesByCode = $activeLanguages->pluck('id', 'code')->toArray();
 
         if (! $lang || ! array_key_exists($lang, $languagesByCode)) {
@@ -36,8 +38,7 @@ class FrontLocaleMiddleware
         }
 
         $languageId = $languagesByCode[$lang];
-        /** @var Language $language */
-        $language = $activeLanguages->firstWhere('id', $languageId) ?? Language::findOrFail($languageId);
+        $language = $activeLanguages->firstWhere('id', $languageId);
 
         URL::defaults(['lang' => $lang]);
         App::setLocale($lang);
