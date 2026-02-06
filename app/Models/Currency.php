@@ -30,4 +30,36 @@ class Currency extends Model
     protected $casts = [
         'status' => 'boolean',
     ];
+
+    /**
+     * Convert amount from base currency (value=1) to this currency.
+     * Price in DB is in base currency. value = rate to base (1 base = value of this currency).
+     */
+    public function convertFromBase(float|string $amount): float
+    {
+        return (float) $amount * (float) $this->value;
+    }
+
+    /**
+     * Convert price from base currency and format with symbol_left/symbol_right.
+     */
+    public function formatPriceFromBase(float|string $price): string
+    {
+        return $this->formatPrice($this->convertFromBase($price));
+    }
+
+    /**
+     * Format price with currency symbol_left and symbol_right from DB.
+     */
+    public function formatPrice(float|string $price): string
+    {
+        $price = (float) $price;
+        $decimals = (int) ($this->decimal_place ?? 2);
+        $left = $this->symbol_left ?? '';
+        $right = $this->symbol_right ?? '';
+
+        $formatted = number_format($price, $decimals);
+
+        return $left . $formatted . $right;
+    }
 }

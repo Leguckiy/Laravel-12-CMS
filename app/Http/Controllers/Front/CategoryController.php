@@ -53,6 +53,11 @@ class CategoryController extends FrontController
 
         $products = $productsQuery->paginate(12)->withQueryString();
 
+        $currency = $this->context->currency;
+        $products->getCollection()->each(function ($product) use ($currency) {
+            $product->formattedPrice = $currency->formatPriceFromBase($product->price);
+        });
+
         $category->load(['translations.language']);
         $this->languageUrls = $category->translations->keyBy(fn ($t) => $t->language->code)
             ->map(fn ($t) => route('front.category.show', ['lang' => $t->language->code, 'slug' => $t->slug]))

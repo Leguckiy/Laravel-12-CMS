@@ -63,8 +63,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $productName }}</h5>
                                     <p class="card-text mb-0">
-                                        <strong>{{ number_format($product->price, 2) }}</strong>
-                                        {{ $frontCurrency?->code ?? '' }}
+                                        <strong>{{ $product->formattedPrice }}</strong>
                                     </p>
                                 </div>
                             </div>
