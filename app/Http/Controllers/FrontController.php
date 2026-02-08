@@ -32,15 +32,19 @@ abstract class FrontController extends BaseController
     }
 
     /**
-     * Build language URLs for the switcher from translations (with language relation loaded).
+     * Build language URLs for the switcher from translations.
+     * Uses $languages from context to avoid redundant DB query for language relation.
      *
-     * @param  Collection<int, object>  $translations
+     * @param  Collection<int, object>  $translations  Must have language_id
+     * @param  Collection<int, \App\Models\Language>  $languages
      */
-    protected function setLanguageUrlsFromTranslations(Collection $translations, string $routeName): void
+    protected function setLanguageUrlsFromTranslations(Collection $translations, Collection $languages, string $routeName): void
     {
+        $languagesById = $languages->keyBy('id');
         $this->languageUrls = $translations
-            ->keyBy(fn ($t) => $t->language->code)
-            ->map(fn ($t) => route($routeName, ['lang' => $t->language->code, 'slug' => $t->slug]))
+            ->filter(fn ($t) => $languagesById->has($t->language_id))
+            ->keyBy(fn ($t) => $languagesById[$t->language_id]->code)
+            ->map(fn ($t) => route($routeName, ['lang' => $languagesById[$t->language_id]->code, 'slug' => $t->slug]))
             ->toArray();
     }
 }

@@ -47,8 +47,8 @@ class AppServiceProvider extends ServiceProvider
             app(AdminComposer::class)->compose($view);
         });
 
-        // Register front view composer all front views
-        View::composer('front.*', FrontComposer::class);
+        // Register front view composer for layout only (header/footer inherit vars, avoid 3x duplicate queries)
+        View::composer('layouts.front', FrontComposer::class);
 
         // Blade ACL directives based on route names and current admin user's group
         $registerAclDirective = function (string $directiveName, string $ability): void {

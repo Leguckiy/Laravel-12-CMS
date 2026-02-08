@@ -58,10 +58,15 @@ class CategoryProductService
             return [];
         }
 
-        $valueIds = FeatureValue::query()
-            ->whereIn('feature_id', array_keys($filters->featureValueGroups))
-            ->pluck('id')
-            ->toArray();
+        $valueIds = [];
+        $featureIds = array_keys($filters->featureValueGroups);
+        if ($featureIds !== []) {
+            $valueIds = FeatureValue::query()
+                ->whereIn('feature_id', $featureIds)
+                ->pluck('id')
+                ->toArray();
+        }
+
         $valueIdsFromCounts = FeatureValue::query()
             ->whereHas('products', fn ($q) => $q->whereIn('product_id', $productIds))
             ->pluck('id')

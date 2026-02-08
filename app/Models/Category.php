@@ -51,7 +51,7 @@ class Category extends Model
                 $query->where('language_id', $languageId)
                     ->where('slug', $slug);
             })
-            ->with(['translations.language'])
+            ->with(['translations'])
             ->firstOrFail();
     }
 

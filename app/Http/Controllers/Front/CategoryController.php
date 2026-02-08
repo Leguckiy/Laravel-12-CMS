@@ -82,7 +82,7 @@ class CategoryController extends FrontController
         $priceRangeMin = $currency->convertFromBase($filterData->priceRangeMin);
         $priceRangeMax = $currency->convertFromBase($filterData->priceRangeMax);
 
-        $this->setLanguageUrlsFromTranslations($category->translations, 'front.category.show');
+        $this->setLanguageUrlsFromTranslations($category->translations, $this->context->getLanguages(), 'front.category.show');
 
         $priceFilterLabel = $filterData->hasPriceFilter
             ? $currency->formatPrice($filterPriceMin) . ' - ' . $currency->formatPrice($filterPriceMax)

@@ -29,8 +29,8 @@ class PageController extends FrontController
 
         $translation = $page->translations->first();
 
-        $page->load(['translations.language']);
-        $this->setLanguageUrlsFromTranslations($page->translations, 'front.page.show');
+        $page->load(['translations']);
+        $this->setLanguageUrlsFromTranslations($page->translations, $this->context->getLanguages(), 'front.page.show');
 
         return view('front.page.show', [
             'page' => $page,
