@@ -2,105 +2,140 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\DTOs\CategoryFilterData;
 use App\Http\Controllers\FrontController;
 use App\Models\Category;
+use App\Services\CategoryActiveFilterBuilder;
+use App\Services\CategoryFilterService;
+use App\Services\CategoryProductService;
+use App\Support\CategoryFilterState;
+use App\Support\CategoryFilterUrlBuilder;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class CategoryController extends FrontController
 {
-    protected const SORT_OPTIONS = [
-        'position',
-        'name_asc',
-        'name_desc',
-        'price_asc',
-        'price_desc',
-        'reference_asc',
-        'reference_desc',
-    ];
-
     /**
      * Display the category by slug for the current language.
+     *
+     * @return View|RedirectResponse
      */
-    public function show(): View
-    {
+    public function show(
+        CategoryProductService $categoryProductService,
+        CategoryFilterService $filterService,
+        CategoryActiveFilterBuilder $activeFilterBuilder
+    ): View|RedirectResponse {
         $slug = request()->route('slug');
         $languageId = $this->context->language->id;
 
-        $category = Category::query()
-            ->where('status', true)
-            ->whereHas('translations', function ($query) use ($languageId, $slug) {
-                $query->where('language_id', $languageId)
-                    ->where('slug', $slug);
-            })
-            ->with(['translations' => function ($query) use ($languageId) {
-                $query->where('language_id', $languageId);
-            }])
-            ->firstOrFail();
-
-        $translation = $category->translations->first();
-
-        $productsQuery = $category->products()
-            ->where('status', true)
-            ->with(['translations' => function ($query) use ($languageId) {
-                $query->where('language_id', $languageId);
-            }]);
-
-        $sort = request()->query('sort', self::SORT_OPTIONS[0]);
-        if (! in_array($sort, self::SORT_OPTIONS, true)) {
-            $sort = self::SORT_OPTIONS[0];
-        }
-        $productsQuery = $this->applySort($productsQuery, $sort, $languageId);
-
-        $products = $productsQuery->paginate(12)->withQueryString();
-
+        $category = Category::findBySlug($slug, $languageId);
+        $translation = $category->translation($languageId);
         $currency = $this->context->currency;
-        $products->getCollection()->each(function ($product) use ($currency) {
-            $product->formattedPrice = $currency->formatPriceFromBase($product->price);
-        });
 
-        $category->load(['translations.language']);
-        $this->languageUrls = $category->translations->keyBy(fn ($t) => $t->language->code)
-            ->map(fn ($t) => route('front.category.show', ['lang' => $t->language->code, 'slug' => $t->slug]))
-            ->toArray();
+        $filterState = CategoryFilterState::fromRequest(request());
+        $priceMinBase = $filterState->hasPriceFilter() ? $currency->convertToBase($filterState->priceMin) : null;
+        $priceMaxBase = $filterState->hasPriceFilter() ? $currency->convertToBase($filterState->priceMax) : null;
+        $filterData = $filterService->buildFilterData(
+            $category,
+            $filterState,
+            $priceMinBase,
+            $priceMaxBase
+        );
 
-        return view('front.category.show', [
+        $includeSortInUrl = CategoryFilterState::shouldIncludeSortInUrl($filterData->sort, request()->has('sort'));
+
+        $canonicalQString = CategoryFilterUrlBuilder::buildQString(
+            $filterData->featureValueGroups,
+            $filterData->sortedFeatureIds,
+            $filterState->inStock,
+            $filterState->hasPriceFilter(),
+            $filterState->priceMin,
+            $filterState->priceMax
+        );
+        if ($filterState->needsCanonicalRedirect($canonicalQString)) {
+            $params = CategoryFilterUrlBuilder::buildParams(
+                $filterData->featureValueGroups,
+                $filterData->sortedFeatureIds,
+                $filterState->inStock,
+                $filterState->priceMin,
+                $filterState->priceMax,
+                $filterState->hasPriceFilter(),
+                $filterState->sort,
+                $includeSortInUrl
+            );
+
+            return redirect()->to(CategoryFilterUrlBuilder::buildFullUrl(request()->url(), $params));
+        }
+
+        $products = $categoryProductService->getPaginatedProducts(
+            $category,
+            $filterData,
+            $languageId,
+            12
+        );
+
+        $inStockCount = $categoryProductService->getInStockCount($category, $filterData);
+        $featuresForFilter = $categoryProductService->getFeaturesForFilter($category, $languageId, $filterData);
+
+        $filterPriceMin = $currency->convertFromBase($filterData->priceMinBase);
+        $filterPriceMax = $currency->convertFromBase($filterData->priceMaxBase);
+        $priceRangeMin = $currency->convertFromBase($filterData->priceRangeMin);
+        $priceRangeMax = $currency->convertFromBase($filterData->priceRangeMax);
+
+        $this->setLanguageUrlsFromTranslations($category->translations, 'front.category.show');
+
+        $priceFilterLabel = $filterData->hasPriceFilter
+            ? $currency->formatPrice($filterPriceMin) . ' - ' . $currency->formatPrice($filterPriceMax)
+            : '';
+        $activeFilters = $activeFilterBuilder->build(
+            $filterData,
+            $featuresForFilter,
+            $priceFilterLabel,
+            $filterData->hasPriceFilter ? $filterPriceMin : null,
+            $filterData->hasPriceFilter ? $filterPriceMax : null,
+            $includeSortInUrl,
+            fn (array $params) => CategoryFilterUrlBuilder::buildFullUrl(request()->url(), $params)
+        );
+
+        $filterParams = CategoryFilterUrlBuilder::buildParams(
+            $filterData->featureValueGroups,
+            $filterData->sortedFeatureIds,
+            $filterData->inStock,
+            $filterData->hasPriceFilter ? $filterPriceMin : null,
+            $filterData->hasPriceFilter ? $filterPriceMax : null,
+            $filterData->hasPriceFilter,
+            $filterData->sort,
+            $includeSortInUrl
+        );
+
+        $viewData = [
             'category' => $category,
             'title' => $translation->name,
             'description' => $translation->description,
             'metaTitle' => $translation->meta_title ?? $translation->name,
             'metaDescription' => $translation->meta_description,
             'products' => $products,
-            'currentSort' => $sort,
-        ]);
-    }
+            'currentSort' => $filterData->sort,
+            'sortOptions' => array_map(
+                fn (string $value) => ['value' => $value, 'label' => __('front/general.sort_' . $value)],
+                CategoryFilterState::SORT_OPTIONS
+            ),
+            'filterInStock' => $filterData->inStock,
+            'filterPriceMin' => $filterPriceMin,
+            'filterPriceMax' => $filterPriceMax,
+            'priceRangeMin' => $priceRangeMin,
+            'priceRangeMax' => $priceRangeMax,
+            'currency' => $currency,
+            'inStockCount' => $inStockCount,
+            'featuresForFilter' => $featuresForFilter,
+            'filterFeatureValueIds' => $filterData->featureValueIds,
+            'activeFilters' => $activeFilters,
+            'filterParams' => $filterParams,
+            'sortInUrl' => request()->has('sort'),
+            'hasPriceFilter' => $filterData->hasPriceFilter,
+            'clearFiltersUrl' => CategoryFilterUrlBuilder::buildClearFiltersUrl(request()->url(), $filterData->sort, $includeSortInUrl),
+        ];
 
-    /**
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    protected function applySort($query, string $sort, int $languageId)
-    {
-        switch ($sort) {
-            case 'name_asc':
-                return $query->join('products_lang', function ($join) use ($languageId) {
-                    $join->on('products.id', '=', 'products_lang.product_id')
-                        ->where('products_lang.language_id', '=', $languageId);
-                })->orderBy('products_lang.name', 'asc')->select('products.*');
-            case 'name_desc':
-                return $query->join('products_lang', function ($join) use ($languageId) {
-                    $join->on('products.id', '=', 'products_lang.product_id')
-                        ->where('products_lang.language_id', '=', $languageId);
-                })->orderBy('products_lang.name', 'desc')->select('products.*');
-            case 'price_asc':
-                return $query->orderBy('products.price', 'asc');
-            case 'price_desc':
-                return $query->orderBy('products.price', 'desc');
-            case 'reference_asc':
-                return $query->orderBy('products.reference', 'asc');
-            case 'reference_desc':
-                return $query->orderBy('products.reference', 'desc');
-            default:
-                return $query->orderBy('products.sort_order', 'asc');
-        }
+        return view('front.category.show', $viewData);
     }
 }

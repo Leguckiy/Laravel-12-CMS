@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Support\FrontContext;
+use Illuminate\Support\Collection;
 use Illuminate\Routing\Controller as BaseController;
 
 abstract class FrontController extends BaseController
@@ -28,5 +29,18 @@ abstract class FrontController extends BaseController
     public function getLanguageUrls(): array
     {
         return $this->languageUrls;
+    }
+
+    /**
+     * Build language URLs for the switcher from translations (with language relation loaded).
+     *
+     * @param  Collection<int, object>  $translations
+     */
+    protected function setLanguageUrlsFromTranslations(Collection $translations, string $routeName): void
+    {
+        $this->languageUrls = $translations
+            ->keyBy(fn ($t) => $t->language->code)
+            ->map(fn ($t) => route($routeName, ['lang' => $t->language->code, 'slug' => $t->slug]))
+            ->toArray();
     }
 }

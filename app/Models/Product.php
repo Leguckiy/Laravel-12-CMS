@@ -80,6 +80,28 @@ class Product extends Model
     }
 
     /**
+     * Scope: filter products by feature values. Multiple values of same feature = OR, different features = AND.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  array<int, array<int, int>>  $featureValueGroups  [featureId => [valueId, ...]]
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeWithFeatureValueFilters($query, array $featureValueGroups)
+    {
+        if ($featureValueGroups === []) {
+            return $query;
+        }
+        foreach ($featureValueGroups as $featureId => $valueIds) {
+            $query->whereHas('features', function ($q) use ($featureId, $valueIds) {
+                $q->where('features.id', $featureId)
+                    ->whereIn('feature_product.feature_value_id', array_map('intval', $valueIds));
+            });
+        }
+
+        return $query;
+    }
+
+    /**
      * Get the categories for the product.
      */
     public function categories(): BelongsToMany

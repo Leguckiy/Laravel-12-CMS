@@ -25,25 +25,78 @@
     </div>
 
     <div class="row">
-        <div class="col-12">
+        <div id="left-column" class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0">
+            <div class="category-filters card">
+                <div class="card-header d-flex align-items-center justify-content-between gap-2">
+                    <h2 class="h6 mb-0">{{ __('front/general.filter_title') }}</h2>
+                    @if (!empty($activeFilters))
+                        <a href="{{ $clearFiltersUrl }}" class="btn btn-sm btn-outline-secondary" aria-label="{{ __('front/general.filter_clear_all') }}">&times; {{ __('front/general.filter_clear_all') }}</a>
+                    @endif
+                </div>
+                <div class="card-body">
+                    <form method="get" action="{{ request()->url() }}" id="category-filters-form" data-sort-in-url="{{ $sortInUrl ? '1' : '0' }}">
+                        <input type="hidden" name="q" value="{{ $filterParams['q'] ?? '' }}" id="filter-q">
+                        <div class="mb-3">
+                            <p class="category-filters__section-label">{{ __('front/general.filter_availability') }}</p>
+                            <div class="form-check">
+                                <input type="checkbox" value="1" id="filter-in-stock" class="form-check-input category-filter-in-stock"
+                                    {{ $filterInStock ? 'checked' : '' }}>
+                                <label for="filter-in-stock" class="form-check-label">{{ __('front/general.filter_in_stock_count', ['count' => $inStockCount]) }}</label>
+                            </div>
+                        </div>
+                        @if ($priceRangeMax > 0 || $priceRangeMin > 0)
+                            <x-front.price-range-slider
+                                :label="__('front/general.filter_price')"
+                                :price-range-min="$priceRangeMin"
+                                :price-range-max="$priceRangeMax"
+                                :value-min="$filterPriceMin"
+                                :value-max="$filterPriceMax"
+                                :formatted-min="$currency->formatPrice($filterPriceMin)"
+                                :formatted-max="$currency->formatPrice($filterPriceMax)"
+                                :has-price-filter="$hasPriceFilter"
+                            />
+                        @endif
+                        @foreach ($featuresForFilter as $featureBlock)
+                            <div class="mb-3">
+                                <p class="category-filters__section-label">{{ $featureBlock['feature']['name'] }}</p>
+                                <div class="category-filters__feature-values">
+                                    @foreach ($featureBlock['values'] as $fv)
+                                        @if ($fv['count'] > 0)
+                                        <div class="form-check">
+                                            <input type="checkbox" name="feature_value[]" value="{{ $fv['id'] }}" id="filter-fv-{{ $fv['id'] }}" class="form-check-input category-filter-feature-value"
+                                                data-feature-id="{{ $featureBlock['feature']['id'] }}" data-value-id="{{ $fv['id'] }}"
+                                                {{ in_array($fv['id'], $filterFeatureValueIds, true) ? 'checked' : '' }}>
+                                            <label for="filter-fv-{{ $fv['id'] }}" class="form-check-label">{{ $fv['name'] }} ({{ $fv['count'] }})</label>
+                                        </div>
+                                        @endif
+                        @endforeach
+                        </div>
+                            </div>
+                        @endforeach
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="content-wrapper" class="js-content-wrapper col-12 col-md-8 col-lg-9">
             @if ($products->isEmpty())
                 <p class="text-muted">{{ __('front/general.no_products') }}</p>
             @else
+                @if (!empty($activeFilters))
+                    <div class="category-active-filters d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <span class="text-muted me-2">{{ __('front/general.active_filters') }}:</span>
+                        @foreach ($activeFilters as $af)
+                            <a href="{{ $af['url'] }}" class="btn btn-sm btn-outline-secondary me-1 mb-1" aria-label="{{ __('front/general.active_filters') }}">{{ $af['label'] }} <span aria-hidden="true">&times;</span></a>
+                        @endforeach
+                    </div>
+                @endif
                 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4">
                     <p class="mb-0 text-muted">{{ __('front/general.products_count', ['count' => $products->total()]) }}</p>
-                    <form method="get" action="{{ request()->url() }}" class="d-flex align-items-center gap-2">
-                        @foreach (request()->except('sort', 'page') as $key => $value)
-                            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
-                        @endforeach
+                    <form method="get" action="{{ request()->url() }}" id="category-sort-form" class="d-flex align-items-center gap-2">
                         <label for="category-sort" class="mb-0">{{ __('front/general.sort_by') }}:</label>
-                        <select name="sort" id="category-sort" class="form-select form-select-sm" style="width: auto;" onchange="this.form.submit()">
-                            <option value="position" {{ ($currentSort ?? '') === 'position' ? 'selected' : '' }}>{{ __('front/general.sort_position') }}</option>
-                            <option value="name_asc" {{ ($currentSort ?? '') === 'name_asc' ? 'selected' : '' }}>{{ __('front/general.sort_name_asc') }}</option>
-                            <option value="name_desc" {{ ($currentSort ?? '') === 'name_desc' ? 'selected' : '' }}>{{ __('front/general.sort_name_desc') }}</option>
-                            <option value="price_asc" {{ ($currentSort ?? '') === 'price_asc' ? 'selected' : '' }}>{{ __('front/general.sort_price_asc') }}</option>
-                            <option value="price_desc" {{ ($currentSort ?? '') === 'price_desc' ? 'selected' : '' }}>{{ __('front/general.sort_price_desc') }}</option>
-                            <option value="reference_asc" {{ ($currentSort ?? '') === 'reference_asc' ? 'selected' : '' }}>{{ __('front/general.sort_reference_asc') }}</option>
-                            <option value="reference_desc" {{ ($currentSort ?? '') === 'reference_desc' ? 'selected' : '' }}>{{ __('front/general.sort_reference_desc') }}</option>
+                        <select name="sort" id="category-sort" class="form-select form-select-sm" style="width: auto;">
+                            @foreach ($sortOptions as $opt)
+                                <option value="{{ $opt['value'] }}" {{ $currentSort === $opt['value'] ? 'selected' : '' }}>{{ $opt['label'] }}</option>
+                            @endforeach
                         </select>
                     </form>
                 </div>
@@ -53,7 +106,7 @@
                             $translation = $product->translations->first();
                             $productName = $translation?->name ?? $product->reference ?? '#'.$product->id;
                         @endphp
-                        <div class="col-6 col-md-4 col-lg-3">
+                        <div class="col-6 col-md-4">
                             <div class="card h-100 category-product-card">
                                 @if ($product->image_url)
                                     <div class="category-product-card__image card-img-top">
@@ -63,7 +116,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $productName }}</h5>
                                     <p class="card-text mb-0">
-                                        <strong>{{ $product->formattedPrice }}</strong>
+                                        <strong>{{ $currency->formatPriceFromBase($product->price) }}</strong>
                                     </p>
                                 </div>
                             </div>
@@ -77,4 +130,8 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script src="{{ asset('js/front/category.js') }}" defer></script>
+@endpush
 @endsection

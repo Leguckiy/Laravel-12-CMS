@@ -27,3 +27,124 @@
     display: block;
     object-fit: contain;
 }
+
+/* Category filters (left column) */
+.category-filters .card-header {
+    background-color: var(--bs-light, #f8f9fa);
+    padding: 0.75rem 1rem;
+}
+
+.category-filters .card-body {
+    padding: 1rem;
+}
+
+.category-filters__feature-values .form-check {
+    margin-bottom: 0.25rem;
+}
+
+.category-filters__feature-values .form-check:last-child {
+    margin-bottom: 0;
+}
+
+.category-filters-price .category-price-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.category-filters-price .form-range {
+    width: 100%;
+}
+
+/* Filter section labels (Availability, Price) – same style */
+.category-filters__section-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Front price range slider – PrestaShop-like (single track, two oval thumbs) */
+
+.front-price-range-slider__display {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.front-price-range-slider__track-wrap {
+    position: relative;
+    height: 28px;
+    padding: 0 8px;
+}
+
+.front-price-range-slider__track {
+    position: absolute;
+    left: 8px;
+    right: 9px;
+    top: 50%;
+    margin-top: -4px;
+    height: 8px;
+    --range-start: 0%;
+    --range-end: 100%;
+    background: linear-gradient(
+        to right,
+        #999 0%,
+        #999 var(--range-start),
+        #555 var(--range-start),
+        #555 var(--range-end),
+        #999 var(--range-end),
+        #999 100%
+    );
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.front-price-range-slider__track-wrap .front-price-range-slider__range {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 0;
+    width: calc(100% - 16px);
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    pointer-events: none;
+}
+
+.front-price-range-slider__track-wrap .front-price-range-slider__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    pointer-events: auto;
+    margin-top: 4px; /* center 20px thumb in 28px track (28-20)/2 */
+}
+
+.front-price-range-slider__track-wrap .front-price-range-slider__range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.front-price-range-slider__track-wrap .front-price-range-slider__range::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    background: transparent;
+    height: 28px;
+    pointer-events: none;
+}
+
+.front-price-range-slider__track-wrap .front-price-range-slider__range::-moz-range-track {
+    background: transparent;
+    height: 28px;
+    pointer-events: none;
+}

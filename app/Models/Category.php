@@ -41,10 +41,30 @@ class Category extends Model
     }
 
     /**
+     * Find active category by slug for the given language.
+     */
+    public static function findBySlug(string $slug, int $languageId): self
+    {
+        return static::query()
+            ->where('status', true)
+            ->whereHas('translations', function ($query) use ($languageId, $slug) {
+                $query->where('language_id', $languageId)
+                    ->where('slug', $slug);
+            })
+            ->with(['translations.language'])
+            ->firstOrFail();
+    }
+
+    /**
      * Get translation for specific language.
+     * Uses loaded relation when available to avoid N+1.
      */
     public function translation(int $languageId): ?CategoryLang
     {
+        if ($this->relationLoaded('translations')) {
+            return $this->translations->firstWhere('language_id', $languageId);
+        }
+
         return $this->translations()->where('language_id', $languageId)->first();
     }
 

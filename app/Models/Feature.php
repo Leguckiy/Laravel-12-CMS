@@ -41,8 +41,26 @@ class Feature extends Model
     }
 
     /**
+     * Get feature IDs sorted by sort_order.
+     *
+     * @param  array<int, int>  $featureIds
+     * @return \Illuminate\Support\Collection<int, int>
+     */
+    public static function getIdsSorted(array $featureIds): \Illuminate\Support\Collection
+    {
+        if ($featureIds === []) {
+            return collect();
+        }
+
+        return static::query()
+            ->whereIn('id', $featureIds)
+            ->orderBy('sort_order')
+            ->pluck('id');
+    }
+
+    /**
      * Get all names for different languages.
-     * 
+     *
      * @return array [language_id => name]
      */
     public function getNames(): array

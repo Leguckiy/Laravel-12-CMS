@@ -41,6 +41,19 @@ class Currency extends Model
     }
 
     /**
+     * Convert amount from this (current) currency to base currency.
+     */
+    public function convertToBase(float|string $amountInCurrent): float
+    {
+        $rate = (float) $this->value;
+        if ($rate <= 0) {
+            return 0.0;
+        }
+
+        return (float) $amountInCurrent / $rate;
+    }
+
+    /**
      * Convert price from base currency and format with symbol_left/symbol_right.
      */
     public function formatPriceFromBase(float|string $price): string
