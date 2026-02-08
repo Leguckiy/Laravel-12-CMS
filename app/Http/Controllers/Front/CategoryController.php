@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\DTOs\CategoryFilterData;
 use App\Http\Controllers\FrontController;
 use App\Models\Category;
 use App\Services\CategoryActiveFilterBuilder;
@@ -15,6 +14,8 @@ use Illuminate\View\View;
 
 class CategoryController extends FrontController
 {
+    private const PRODUCTS_PER_PAGE = 12;
+
     /**
      * Display the category by slug for the current language.
      *
@@ -71,7 +72,7 @@ class CategoryController extends FrontController
             $category,
             $filterData,
             $languageId,
-            12
+            self::PRODUCTS_PER_PAGE
         );
 
         $inStockCount = $categoryProductService->getInStockCount($category, $filterData);
