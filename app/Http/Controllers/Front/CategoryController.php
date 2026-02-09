@@ -109,6 +109,11 @@ class CategoryController extends FrontController
             $includeSortInUrl
         );
 
+        $this->setBreadcrumbs([
+            ['label' => __('front/general.breadcrumb_home'), 'url' => route('front.home', ['lang' => $this->context->language->code])],
+            ['label' => $translation->name, 'url' => null],
+        ]);
+
         $viewData = [
             'category' => $category,
             'title' => $translation->name,

@@ -128,7 +128,7 @@
                 </div>
                 <div class="header-top-right col-md-10 col-sm-12 d-flex align-items-center">
                     <nav class="menu js-top-menu position-static d-none d-md-block" id="_desktop_top_menu" aria-label="Main navigation">
-                        <ul class="top-menu nav flex-row gap-3 list-unstyled mb-0" id="top-menu-desktop">
+                        <ul class="top-menu nav flex-row list-unstyled mb-0" id="top-menu-desktop">
                             @foreach ($frontMenuItems as $item)
                                 <li class="nav-item">
                                     <a class="nav-link text-body p-0" href="{{ $item['url'] }}" title="{{ $item['name'] }}">{{ $item['name'] }}</a>

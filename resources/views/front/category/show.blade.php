@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container py-5">
-    <div class="row align-items-start mb-5">
+    <div class="row align-items-start mb-3 category-header-row">
         <div class="col-lg-7 col-xl-8">
             <h1 class="mb-4">{{ $title }}</h1>
             @if ($description)
@@ -89,7 +89,7 @@
                         @endforeach
                     </div>
                 @endif
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
                     <p class="mb-0 text-muted">{{ __('front/general.products_count', ['count' => $products->total()]) }}</p>
                     <form method="get" action="{{ request()->url() }}" id="category-sort-form" class="d-flex align-items-center gap-2">
                         <label for="category-sort" class="mb-0">{{ __('front/general.sort_by') }}:</label>

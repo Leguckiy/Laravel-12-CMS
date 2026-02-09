@@ -1,10 +1,15 @@
 /* Category page: category image (1:1) and product images (natural ratio, width-based) */
 
+.category-header-row {
+    padding-bottom: 1.5rem;
+}
+
 .category-header-image {
     aspect-ratio: 1 / 1;
     overflow: hidden;
     max-width: 240px;
     margin-left: auto;
+    background-color: #ffffff;
 }
 
 .category-header-image img {
@@ -28,10 +33,18 @@
     object-fit: contain;
 }
 
+.category-product-card .card-title {
+    font-size: 1rem;
+}
+
 /* Category filters (left column) */
 .category-filters .card-header {
     background-color: var(--bs-light, #f8f9fa);
     padding: 0.75rem 1rem;
+}
+
+.category-filters .card-header h2 {
+    font-size: 1.15rem;
 }
 
 .category-filters .card-body {

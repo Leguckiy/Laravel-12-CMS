@@ -10,7 +10,25 @@
 @section('body')
     <main>
         @include('front.common.header')
-    
+
+        @if(!empty($breadcrumbs))
+            <nav aria-label="{{ __('front/general.breadcrumb') }}" class="breadcrumb-wrapper">
+                <div class="container">
+                    <ol class="breadcrumb mb-0 py-2">
+                        @foreach ($breadcrumbs as $item)
+                            <li class="breadcrumb-item {{ $loop->last && $item['url'] === null ? 'active' : '' }}">
+                                @if($item['url'] !== null)
+                                    <a href="{{ $item['url'] }}">{{ $item['label'] }}</a>
+                                @else
+                                    <span>{{ $item['label'] }}</span>
+                                @endif
+                            </li>
+                        @endforeach
+                    </ol>
+                </div>
+            </nav>
+        @endif
+
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}

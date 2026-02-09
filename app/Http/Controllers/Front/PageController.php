@@ -32,6 +32,11 @@ class PageController extends FrontController
         $page->load(['translations']);
         $this->setLanguageUrlsFromTranslations($page->translations, $this->context->getLanguages(), 'front.page.show');
 
+        $this->setBreadcrumbs([
+            ['label' => __('front/general.breadcrumb_home'), 'url' => route('front.home', ['lang' => $this->context->language->code])],
+            ['label' => $translation->title, 'url' => null],
+        ]);
+
         return view('front.page.show', [
             'page' => $page,
             'title' => $translation->title,

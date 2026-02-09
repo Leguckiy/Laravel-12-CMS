@@ -15,6 +15,8 @@ return [
     'not_found' => 'Page not found',
     'not_found_message' => 'The page you are looking for does not exist or has been moved.',
     'back_to_home' => 'Back to home',
+    'breadcrumb' => 'Breadcrumb',
+    'breadcrumb_home' => 'Home',
     'no_products' => 'No products in this category.',
     'products_count' => 'There are :count products.',
     'sort_by' => 'Sort by',

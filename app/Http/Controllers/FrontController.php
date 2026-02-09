@@ -18,6 +18,13 @@ abstract class FrontController extends BaseController
      */
     protected array $languageUrls = [];
 
+    /**
+     * Breadcrumb items: list of ['label' => string, 'url' => string|null]. Last item with url null = current page.
+     *
+     * @var array<int, array{label: string, url: string|null}>
+     */
+    protected array $breadcrumbs = [];
+
     public function __construct(FrontContext $context)
     {
         $this->context = $context;
@@ -46,5 +53,23 @@ abstract class FrontController extends BaseController
             ->keyBy(fn ($t) => $languagesById[$t->language_id]->code)
             ->map(fn ($t) => route($routeName, ['lang' => $languagesById[$t->language_id]->code, 'slug' => $t->slug]))
             ->toArray();
+    }
+
+    /**
+     * Set breadcrumb items for the current page. Omit for home (no breadcrumbs).
+     *
+     * @param  array<int, array{label: string, url: string|null}>  $items
+     */
+    protected function setBreadcrumbs(array $items): void
+    {
+        $this->breadcrumbs = $items;
+    }
+
+    /**
+     * @return array<int, array{label: string, url: string|null}>
+     */
+    public function getBreadcrumbs(): array
+    {
+        return $this->breadcrumbs;
     }
 }

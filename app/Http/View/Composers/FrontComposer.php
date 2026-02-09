@@ -24,6 +24,9 @@ class FrontComposer
         $frontLanguageUrls = ($controller instanceof BaseFrontController && method_exists($controller, 'getLanguageUrls'))
             ? $controller->getLanguageUrls()
             : [];
+        $breadcrumbs = ($controller instanceof BaseFrontController && method_exists($controller, 'getBreadcrumbs'))
+            ? $controller->getBreadcrumbs()
+            : [];
 
         $view->with([
             'frontLanguage' => $this->context->language,
@@ -34,6 +37,7 @@ class FrontComposer
             'frontMenuItems' => $this->frontMenuService->getMenuItems(),
             'frontFooterColumns' => $this->frontFooterService->getColumns(),
             'frontLanguageUrls' => $frontLanguageUrls,
+            'breadcrumbs' => $breadcrumbs,
         ]);
     }
 }

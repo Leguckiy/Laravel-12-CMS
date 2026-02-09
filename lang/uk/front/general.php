@@ -15,6 +15,8 @@ return [
     'not_found' => 'Сторінку не знайдено',
     'not_found_message' => 'Сторінка, яку ви шукаєте, не існує або була переміщена.',
     'back_to_home' => 'На головну',
+    'breadcrumb' => 'Навігація',
+    'breadcrumb_home' => 'Головна',
     'no_products' => 'У цій категорії немає товарів.',
     'products_count' => 'Є :count товарів.',
     'sort_by' => 'Сортувати',
