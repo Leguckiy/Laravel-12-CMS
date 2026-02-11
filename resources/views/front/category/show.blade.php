@@ -102,19 +102,21 @@
                 </div>
                 <div class="row g-4 mb-4">
                     @foreach ($products as $product)
-                        @php
-                            $translation = $product->translations->first();
-                            $productName = $translation?->name ?? $product->reference ?? '#'.$product->id;
-                        @endphp
                         <div class="col-6 col-md-4">
                             <div class="card h-100 category-product-card">
                                 @if ($product->image_url)
                                     <div class="category-product-card__image card-img-top">
-                                        <img src="{{ $product->image_url }}" alt="{{ $productName }}">
+                                        <a class="w-100 h-100" href="{{ route('front.product.show', ['lang' => $languageCode, 'slug' => $product->translations->first()->slug]) }}">
+                                            <img src="{{ $product->image_url }}" alt="{{ $product->translations->first()->name}}">
+                                        </a>
                                     </div>
                                 @endif
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $productName }}</h5>
+                                    <h5 class="card-title">
+                                        <a href="{{ route('front.product.show', ['lang' => $languageCode, 'slug' => $product->translations->first()->slug]) }}" class="text-decoration-none">
+                                            {{ $product->translations->first()->name}}
+                                        </a>
+                                    </h5>
                                     <p class="card-text mb-0">
                                         <strong>{{ $currency->formatPriceFromBase($product->price) }}</strong>
                                     </p>

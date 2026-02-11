@@ -18,8 +18,6 @@ class CategoryController extends FrontController
 
     /**
      * Display the category by slug for the current language.
-     *
-     * @return View|RedirectResponse
      */
     public function show(
         CategoryProductService $categoryProductService,
@@ -86,7 +84,7 @@ class CategoryController extends FrontController
         $this->setLanguageUrlsFromTranslations($category->translations, $this->context->getLanguages(), 'front.category.show');
 
         $priceFilterLabel = $filterData->hasPriceFilter
-            ? $currency->formatPrice($filterPriceMin) . ' - ' . $currency->formatPrice($filterPriceMax)
+            ? $currency->formatPrice($filterPriceMin).' - '.$currency->formatPrice($filterPriceMax)
             : '';
         $activeFilters = $activeFilterBuilder->build(
             $filterData,
@@ -123,7 +121,7 @@ class CategoryController extends FrontController
             'products' => $products,
             'currentSort' => $filterData->sort,
             'sortOptions' => array_map(
-                fn (string $value) => ['value' => $value, 'label' => __('front/general.sort_' . $value)],
+                fn (string $value) => ['value' => $value, 'label' => __('front/general.sort_'.$value)],
                 CategoryFilterState::SORT_OPTIONS
             ),
             'filterInStock' => $filterData->inStock,
@@ -140,6 +138,7 @@ class CategoryController extends FrontController
             'sortInUrl' => request()->has('sort'),
             'hasPriceFilter' => $filterData->hasPriceFilter,
             'clearFiltersUrl' => CategoryFilterUrlBuilder::buildClearFiltersUrl(request()->url(), $filterData->sort, $includeSortInUrl),
+            'languageCode' => $this->context->language->code,
         ];
 
         return view('front.category.show', $viewData);

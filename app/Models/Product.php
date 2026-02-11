@@ -52,10 +52,29 @@ class Product extends Model
     }
 
     /**
+     * Find active product by slug for the given language, with relations for front show page.
+     */
+    public static function findForFrontShow(string $slug, int $languageId): self
+    {
+        return static::query()
+            ->where('status', true)
+            ->whereHas('translations', function ($query) use ($languageId, $slug): void {
+                $query->where('language_id', $languageId)->where('slug', $slug);
+            })
+            ->with([
+                'translations',
+                'categories.translations' => fn ($q) => $q->where('language_id', $languageId),
+                'stockStatus.translations' => fn ($q) => $q->where('language_id', $languageId),
+                'features' => fn ($q) => $q->orderBy('sort_order'),
+                'features.translations' => fn ($q) => $q->where('language_id', $languageId),
+                'features.values' => fn ($q) => $q->orderBy('sort_order'),
+                'features.values.translations' => fn ($q) => $q->where('language_id', $languageId),
+            ])
+            ->firstOrFail();
+    }
+
+    /**
      * Get translation for specific language.
-     * 
-     * @param int $languageId
-     * @return ProductLang|null
      */
     public function translation(int $languageId): ?ProductLang
     {
@@ -126,33 +145,29 @@ class Product extends Model
 
     /**
      * Get storage path for the product's image relative to the disk root.
-     * 
-     * @return string|null
      */
     public function getImagePathAttribute(): ?string
     {
-        if (!$this->image) {
+        if (! $this->image) {
             return null;
         }
 
-        return self::IMAGE_DIRECTORY . '/' . $this->image;
+        return self::IMAGE_DIRECTORY.'/'.$this->image;
     }
 
     /**
      * Get absolute URL to the product's image on the configured disk.
-     * 
-     * @return string|null
      */
     public function getImageUrlAttribute(): ?string
     {
-        if (!$this->image_path) {
+        if (! $this->image_path) {
             return null;
         }
 
         /** @var \Illuminate\Filesystem\FilesystemAdapter $disk */
         $disk = Storage::disk(config('media.disk'));
 
-        if (!$disk->exists($this->image_path)) {
+        if (! $disk->exists($this->image_path)) {
             return null;
         }
 
