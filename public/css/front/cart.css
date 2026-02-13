@@ -1,0 +1,32 @@
+/* Cart page */
+
+#cart-content .cart-table a {
+    text-decoration: none;
+}
+
+.cart-table__image {
+    width: 100px;
+}
+
+.cart-table__image img {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.cart-table__actions {
+    width: 100px;
+    white-space: nowrap;
+}
+
+.cart-quantity-input {
+    width: 4.5rem;
+}
+
+.cart-update-form .cart-quantity-input {
+    text-align: center;
+}
+
+.cart-totals table tr td:first-child {
+    padding-left: 1.25rem;
+}

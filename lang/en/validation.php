@@ -107,6 +107,14 @@ return [
     // Product feature validation
     'duplicate_feature_combination' => 'The combination of :attribute and value is already used.',
 
+    // Cart validation (front)
+    'product_id.required' => 'Please select a product.',
+    'product_id.integer' => 'The selected product is invalid.',
+    'product_id.exists' => 'The selected product does not exist.',
+    'quantity.required' => 'Quantity is required.',
+    'quantity.integer' => 'Quantity must be a number.',
+    'quantity.min' => 'Quantity must be at least :min.',
+
     // Settings validation
     'config_name.required' => 'Store name is required.',
     'config_owner.required' => 'Store owner is required.',

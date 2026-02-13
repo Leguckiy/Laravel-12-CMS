@@ -17,5 +17,6 @@
     <script src="{{ asset('js/library/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('js/library/bootstrap.bundle.min.js') }}"></script>
     @stack('scripts')
+    @stack('scripts-after')
 </body>
 </html>

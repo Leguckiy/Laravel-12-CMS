@@ -43,6 +43,8 @@
             </div>
         @endif
 
+        <div id="front-ajax-alerts" class="container"></div>
+
         @yield('content')
         
         @include('front.common.footer')

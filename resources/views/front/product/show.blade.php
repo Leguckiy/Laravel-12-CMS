@@ -41,7 +41,9 @@
             <div class="product-actions d-flex flex-wrap align-items-center gap-3 mb-4">
                 <label for="product-quantity" class="mb-0">{{ __('front/general.quantity') }}</label>
                 <input type="number" id="product-quantity" class="form-control form-control-sm" value="1" min="1" style="width: 5rem;">
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-primary js-add-to-cart" id="product-add-to-cart"
+                    data-product-id="{{ $product->id }}"
+                    data-cart-add-url="{{ route('front.cart.add', ['lang' => request()->route('lang')]) }}">
                     <i class="fa-solid fa-cart-shopping me-1"></i>{{ __('front/general.add_to_cart') }}
                 </button>
             </div>

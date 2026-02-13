@@ -107,6 +107,14 @@ return [
     // Product feature validation
     'duplicate_feature_combination' => 'Комбінація :attribute та значення вже використовується.',
 
+    // Cart validation (front)
+    'product_id.required' => 'Оберіть товар.',
+    'product_id.integer' => 'Обраний товар некоректний.',
+    'product_id.exists' => 'Обраного товару не існує.',
+    'quantity.required' => 'Кількість є обов\'язковою.',
+    'quantity.integer' => 'Кількість має бути числом.',
+    'quantity.min' => 'Кількість має бути не менше :min.',
+
     // Settings validation
     'config_name.required' => 'Назва магазину є обов\'язковою.',
     'config_owner.required' => 'Власник магазину є обов\'язковим.',

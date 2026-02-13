@@ -64,9 +64,10 @@
                             </div>
                             <div id="_desktop_cart">
                                 <div class="blockcart">
-                                    <a href="#" title="{{ __('front/general.cart_title') }}">
+                                    <a href="{{ route('front.cart.show', ['lang' => $frontLanguage?->code ?? config('app.locale')]) }}" title="{{ __('front/general.cart_title') }}">
                                         <i class="fa-solid fa-cart-shopping"></i>
                                         <span class="d-none d-md-inline">{{ __('front/general.cart') }}</span>
+                                        <span class="cart-products-count">({{ $frontCart?->items?->sum('quantity') ?? 0 }})</span>
                                     </a>
                                 </div>
                             </div>
@@ -105,11 +106,11 @@
                             </div>
                             <div id="_mobile_cart">
                                 <div class="blockcart cart-preview inactive">
-                                    <div class="header">
+                                    <a href="{{ route('front.cart.show', ['lang' => $frontLanguage?->code ?? config('app.locale')]) }}" class="header" title="{{ __('front/general.cart_title') }}">
                                         <i class="fa-solid fa-cart-shopping"></i>
                                         <span class="d-none d-sm-inline">{{ __('front/general.cart') }}</span>
-                                        <span class="cart-products-count">(0)</span>
-                                    </div>
+                                        <span class="cart-products-count">({{ $frontCart?->items?->sum('quantity') ?? 0 }})</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>

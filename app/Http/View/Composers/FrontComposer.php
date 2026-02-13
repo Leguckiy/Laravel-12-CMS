@@ -33,6 +33,7 @@ class FrontComposer
             'frontCurrency' => $this->context->currency,
             'frontLanguages' => $this->context->getLanguages(),
             'frontCurrencies' => $this->context->getCurrencies(),
+            'frontCart' => $this->context->cart,
             'frontSettings' => $this->settingService->all(),
             'frontMenuItems' => $this->frontMenuService->getMenuItems(),
             'frontFooterColumns' => $this->frontFooterService->getColumns(),

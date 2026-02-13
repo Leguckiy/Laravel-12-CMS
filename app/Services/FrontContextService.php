@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Cart;
 use App\Models\Currency;
 use App\Models\Language;
 use App\Support\FrontContext;
@@ -60,5 +61,9 @@ class FrontContextService
             $this->context->setCurrency($currency);
             $this->context->setCurrencies($currencies);
         }
+
+        $this->context->setCart(
+            Cart::findForSession($request->session()->getId())
+        );
     }
 }
