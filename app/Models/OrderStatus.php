@@ -11,12 +11,12 @@ class OrderStatus extends Model
      * The table associated with the model.
      */
     protected $table = 'order_statuses';
-    
+
     /**
      * Indicates if the model should be timestamped.
      */
     public $timestamps = false;
-    
+
     /**
      * The attributes that are mass assignable.
      */
@@ -32,7 +32,7 @@ class OrderStatus extends Model
 
     /**
      * Get all names for different languages.
-     * 
+     *
      * @return array [language_id => name]
      */
     public function getNames(): array
@@ -42,22 +42,9 @@ class OrderStatus extends Model
 
     /**
      * Get name for specific language.
-     * 
-     * @param int $languageId
-     * @return string|null
      */
     public function getName(int $languageId): ?string
     {
         return $this->translations()->where('language_id', $languageId)->value('name');
-    }
-
-    /**
-     * The "booted" method of the model.
-     */
-    protected static function booted(): void
-    {
-        static::deleting(function (OrderStatus $orderStatus) {
-            $orderStatus->translations()->delete();
-        });
     }
 }

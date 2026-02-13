@@ -85,7 +85,6 @@ class Category extends Model
             if ($category->image) {
                 Storage::disk(config('media.disk'))->delete($category->image_path);
             }
-            $category->translations()->delete();
         });
     }
 

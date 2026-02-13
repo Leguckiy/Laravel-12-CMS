@@ -18,18 +18,6 @@ class PageLang extends Model
     public $timestamps = false;
 
     /**
-     * The primary key for the model.
-     *
-     * @var array<int, string>
-     */
-    protected $primaryKey = ['page_id', 'language_id'];
-
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     */
-    public $incrementing = false;
-
-    /**
      * The attributes that are mass assignable.
      */
     protected $fillable = [

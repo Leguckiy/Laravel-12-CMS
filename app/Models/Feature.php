@@ -91,11 +91,7 @@ class Feature extends Model
     protected static function booted(): void
     {
         static::deleting(function (Feature $feature) {
-            $feature->values->each(function(FeatureValue $featureValues) {
-                $featureValues->translations()->delete();
-            });
             $feature->values()->delete();
-            $feature->translations()->delete();
         });
     }
 }

@@ -45,7 +45,7 @@ class Country extends Model
 
     /**
      * Get all names for different languages.
-     * 
+     *
      * @return array [language_id => name]
      */
     public function getNames(): array
@@ -55,22 +55,9 @@ class Country extends Model
 
     /**
      * Get name for specific language.
-     * 
-     * @param int $languageId
-     * @return string|null
      */
     public function getName(int $languageId): ?string
     {
         return $this->translations()->where('language_id', $languageId)->value('name');
-    }
-
-    /**
-     * The "booted" method of the model.
-     */
-    protected static function booted(): void
-    {
-        static::deleting(function (Country $country) {
-            $country->translations()->delete();
-        });
     }
 }

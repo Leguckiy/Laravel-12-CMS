@@ -110,14 +110,4 @@ class FeatureValue extends Model
     {
         return $this->translations()->where('language_id', $languageId)->first();
     }
-
-    /**
-     * The "booted" method of the model.
-     */
-    protected static function booted(): void
-    {
-        static::deleting(function (FeatureValue $value) {
-            $value->translations()->delete();
-        });
-    }
 }

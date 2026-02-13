@@ -137,7 +137,6 @@ class Product extends Model
             if ($product->image) {
                 Storage::disk(config('media.disk'))->delete($product->image_path);
             }
-            $product->translations()->delete();
             $product->categories()->detach();
             $product->features()->detach();
         });

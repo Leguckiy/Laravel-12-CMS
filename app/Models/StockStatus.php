@@ -11,12 +11,12 @@ class StockStatus extends Model
      * The table associated with the model.
      */
     protected $table = 'stock_statuses';
-    
+
     /**
      * Indicates if the model should be timestamped.
      */
     public $timestamps = false;
-    
+
     /**
      * The attributes that are mass assignable.
      */
@@ -40,7 +40,7 @@ class StockStatus extends Model
 
     /**
      * Get all names for different languages.
-     * 
+     *
      * @return array [language_id => name]
      */
     public function getNames(): array
@@ -50,22 +50,9 @@ class StockStatus extends Model
 
     /**
      * Get name for specific language.
-     * 
-     * @param int $languageId
-     * @return string|null
      */
     public function getName(int $languageId): ?string
     {
         return $this->translations()->where('language_id', $languageId)->value('name');
-    }
-
-    /**
-     * The "booted" method of the model.
-     */
-    protected static function booted(): void
-    {
-        static::deleting(function (StockStatus $stockStatus) {
-            $stockStatus->translations()->delete();
-        });
     }
 }

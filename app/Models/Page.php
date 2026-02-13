@@ -45,14 +45,4 @@ class Page extends Model
     {
         return $this->translations()->where('language_id', $languageId)->first();
     }
-
-    /**
-     * The "booted" method of the model.
-     */
-    protected static function booted(): void
-    {
-        static::deleting(function (Page $page) {
-            $page->translations()->delete();
-        });
-    }
 }
