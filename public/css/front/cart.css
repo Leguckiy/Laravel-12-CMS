@@ -1,9 +1,5 @@
 /* Cart page */
 
-#cart-content .cart-table a {
-    text-decoration: none;
-}
-
 .cart-table__image {
     width: 100px;
 }

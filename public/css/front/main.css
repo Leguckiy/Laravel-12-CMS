@@ -1,3 +1,14 @@
+/* Global: links without underline, smaller h1 */
+main a {
+    text-decoration: none;
+}
+main a:hover {
+    text-decoration: none;
+}
+main h1 {
+    font-size: 1.5rem;
+}
+
 /* Layout: make footer stick to bottom inside <main> */
 html,
 body {
@@ -37,11 +48,9 @@ main > * {
 }
 .breadcrumb-wrapper .breadcrumb-item a {
     color: #232323;
-    text-decoration: none;
 }
 .breadcrumb-wrapper .breadcrumb-item a:hover {
     color: #24b9d7;
-    text-decoration: none;
 }
 .breadcrumb-wrapper .breadcrumb-item.active {
     font-weight: 600;
@@ -52,13 +61,11 @@ main > * {
 }
 
 #header a {
-    text-decoration: none;
     color: #232323;
 }
 
 #header a:hover {
     color: #24b9d7;
-    text-decoration: none;
 }
 
 #header .user-info button[type="submit"] {
@@ -79,7 +86,6 @@ main > * {
 
 .dropdown-item:focus {
     color: #24b9d7;
-    text-decoration: none;
     background: none;
 }
 
@@ -171,7 +177,6 @@ main > * {
 
 #footer.footer .footer-links a {
     color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
 }
 
 #footer.footer .footer-links a:hover {
