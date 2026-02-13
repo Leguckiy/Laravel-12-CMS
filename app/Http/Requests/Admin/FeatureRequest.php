@@ -21,18 +21,18 @@ class FeatureRequest extends FormRequest
         ];
 
         $nameData = $this->input('name', []);
-        
+
         foreach ($nameData as $languageId => $value) {
-            $uniqueRule = Rule::unique('features_lang', 'name')
+            $uniqueRule = Rule::unique('feature_lang', 'name')
                 ->where('language_id', $languageId);
-            
+
             if ($featureId) {
                 $uniqueRule->where(function ($query) use ($featureId, $languageId) {
                     $query->where('feature_id', '!=', $featureId)
                         ->orWhere('language_id', '!=', $languageId);
                 });
             }
-            
+
             $rules["name.{$languageId}"] = [
                 'required',
                 'string',

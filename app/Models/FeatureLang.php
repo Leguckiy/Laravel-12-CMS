@@ -10,7 +10,7 @@ class FeatureLang extends Model
     /**
      * The table associated with the model.
      */
-    protected $table = 'features_lang';
+    protected $table = 'feature_lang';
 
     /**
      * Indicates if the model should be timestamped.

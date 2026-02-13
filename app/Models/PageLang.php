@@ -10,7 +10,7 @@ class PageLang extends Model
     /**
      * The table associated with the model.
      */
-    protected $table = 'pages_lang';
+    protected $table = 'page_lang';
 
     /**
      * Indicates if the model should be timestamped.

@@ -60,6 +60,6 @@ class CountrySeeder extends Seeder
             }
         }
 
-        DB::table('countries_lang')->insert($translationsInsert);
+        DB::table('country_lang')->insert($translationsInsert);
     }
 }

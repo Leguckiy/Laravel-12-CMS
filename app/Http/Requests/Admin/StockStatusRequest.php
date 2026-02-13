@@ -19,18 +19,18 @@ class StockStatusRequest extends FormRequest
         $rules = [];
 
         $nameData = $this->input('name', []);
-        
+
         foreach ($nameData as $languageId => $value) {
-            $uniqueRule = Rule::unique('stock_statuses_lang', 'name')
+            $uniqueRule = Rule::unique('stock_status_lang', 'name')
                 ->where('language_id', $languageId);
-            
+
             if ($stockStatusId) {
                 $uniqueRule->where(function ($query) use ($stockStatusId, $languageId) {
                     $query->where('stock_status_id', '!=', $stockStatusId)
-                          ->orWhere('language_id', '!=', $languageId);
+                        ->orWhere('language_id', '!=', $languageId);
                 });
             }
-            
+
             $rules["name.{$languageId}"] = [
                 'required',
                 'string',
@@ -57,5 +57,3 @@ class StockStatusRequest extends FormRequest
         return $messages;
     }
 }
-
-

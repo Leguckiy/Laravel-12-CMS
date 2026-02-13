@@ -9,13 +9,13 @@ class CountryLang extends Model
     /**
      * The table associated with the model.
      */
-    protected $table = 'countries_lang';
-    
+    protected $table = 'country_lang';
+
     /**
      * Indicates if the model should be timestamped.
      */
     public $timestamps = false;
-    
+
     /**
      * The primary key for the model.
      */
@@ -25,7 +25,7 @@ class CountryLang extends Model
      * Indicates if the IDs are auto-incrementing.
      */
     public $incrementing = false;
-    
+
     /**
      * The attributes that are mass assignable.
      */

@@ -10,7 +10,7 @@ class ProductLang extends Model
     /**
      * The table associated with the model.
      */
-    protected $table = 'products_lang';
+    protected $table = 'product_lang';
 
     /**
      * Indicates if the model should be timestamped.

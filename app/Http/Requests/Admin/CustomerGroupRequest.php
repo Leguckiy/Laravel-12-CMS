@@ -24,7 +24,7 @@ class CustomerGroupRequest extends FormRequest
         $nameData = $this->input('name', []);
 
         foreach ($nameData as $languageId => $value) {
-            $uniqueRule = Rule::unique('customer_groups_lang', 'name')
+            $uniqueRule = Rule::unique('customer_group_lang', 'name')
                 ->where('language_id', $languageId);
 
             if ($customerGroupId) {

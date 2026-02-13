@@ -10,7 +10,7 @@ class CategoryLang extends Model
     /**
      * The table associated with the model.
      */
-    protected $table = 'categories_lang';
+    protected $table = 'category_lang';
 
     /**
      * Indicates if the model should be timestamped.

@@ -9,7 +9,7 @@ class SettingLang extends Model
     /**
      * The table associated with the model.
      */
-    protected $table = 'settings_lang';
+    protected $table = 'setting_lang';
 
     /**
      * Indicates if the model should be timestamped.

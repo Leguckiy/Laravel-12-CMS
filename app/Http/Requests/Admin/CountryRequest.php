@@ -31,11 +31,11 @@ class CountryRequest extends FormRequest
 
         // Get all language IDs from request
         $nameData = $this->input('name', []);
-        
+
         foreach ($nameData as $languageId => $value) {
-            $uniqueRule = Rule::unique('countries_lang', 'name')
+            $uniqueRule = Rule::unique('country_lang', 'name')
                 ->where('language_id', $languageId);
-            
+
             if ($countryId) {
                 // When updating, exclude records with current country_id and language_id
                 // Since we have composite primary key, we need to exclude manually
@@ -44,7 +44,7 @@ class CountryRequest extends FormRequest
                         ->orWhere('language_id', '!=', $languageId);
                 });
             }
-            
+
             $rules["name.{$languageId}"] = [
                 'required',
                 'string',
@@ -83,5 +83,3 @@ class CountryRequest extends FormRequest
         return $messages;
     }
 }
-
-

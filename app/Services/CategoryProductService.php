@@ -111,7 +111,6 @@ class CategoryProductService
 
     /**
      * @param  int|null  $languageId  When set, eager loads translations for that language.
-     * @return BelongsToMany
      */
     protected function buildBaseQuery(Category $category, ?int $languageId = null): BelongsToMany
     {
@@ -166,14 +165,14 @@ class CategoryProductService
         }
 
         match ($sort) {
-            'name_asc' => $query->join('products_lang', function ($join) use ($languageId) {
-                $join->on('products.id', '=', 'products_lang.product_id')
-                    ->where('products_lang.language_id', '=', $languageId);
-            })->orderBy('products_lang.name', 'asc')->select('products.*'),
-            'name_desc' => $query->join('products_lang', function ($join) use ($languageId) {
-                $join->on('products.id', '=', 'products_lang.product_id')
-                    ->where('products_lang.language_id', '=', $languageId);
-            })->orderBy('products_lang.name', 'desc')->select('products.*'),
+            'name_asc' => $query->join('product_lang', function ($join) use ($languageId) {
+                $join->on('products.id', '=', 'product_lang.product_id')
+                    ->where('product_lang.language_id', '=', $languageId);
+            })->orderBy('product_lang.name', 'asc')->select('products.*'),
+            'name_desc' => $query->join('product_lang', function ($join) use ($languageId) {
+                $join->on('products.id', '=', 'product_lang.product_id')
+                    ->where('product_lang.language_id', '=', $languageId);
+            })->orderBy('product_lang.name', 'desc')->select('products.*'),
             'price_asc' => $query->orderBy('products.price', 'asc'),
             'price_desc' => $query->orderBy('products.price', 'desc'),
             'reference_asc' => $query->orderBy('products.reference', 'asc'),

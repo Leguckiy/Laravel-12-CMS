@@ -9,13 +9,13 @@ class OrderStatusLang extends Model
     /**
      * The table associated with the model.
      */
-    protected $table = 'order_statuses_lang';
-    
+    protected $table = 'order_status_lang';
+
     /**
      * Indicates if the model should be timestamped.
      */
     public $timestamps = false;
-    
+
     /**
      * The primary key for the model.
      */
@@ -25,7 +25,7 @@ class OrderStatusLang extends Model
      * Indicates if the IDs are auto-incrementing.
      */
     public $incrementing = false;
-    
+
     /**
      * The attributes that are mass assignable.
      */

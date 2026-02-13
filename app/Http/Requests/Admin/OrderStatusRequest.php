@@ -19,18 +19,18 @@ class OrderStatusRequest extends FormRequest
         $rules = [];
 
         $nameData = $this->input('name', []);
-        
+
         foreach ($nameData as $languageId => $value) {
-            $uniqueRule = Rule::unique('order_statuses_lang', 'name')
+            $uniqueRule = Rule::unique('order_status_lang', 'name')
                 ->where('language_id', $languageId);
-            
+
             if ($orderStatusId) {
                 $uniqueRule->where(function ($query) use ($orderStatusId, $languageId) {
                     $query->where('order_status_id', '!=', $orderStatusId)
                         ->orWhere('language_id', '!=', $languageId);
                 });
             }
-            
+
             $rules["name.{$languageId}"] = [
                 'required',
                 'string',
@@ -57,5 +57,3 @@ class OrderStatusRequest extends FormRequest
         return $messages;
     }
 }
-
-

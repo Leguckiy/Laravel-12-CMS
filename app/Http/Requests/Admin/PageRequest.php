@@ -32,7 +32,7 @@ class PageRequest extends FormRequest
         $titleData = $this->input('title', []);
 
         foreach ($titleData as $languageId => $value) {
-            $uniqueSlugRule = Rule::unique('pages_lang', 'slug')
+            $uniqueSlugRule = Rule::unique('page_lang', 'slug')
                 ->where('language_id', $languageId);
 
             if ($pageId) {
