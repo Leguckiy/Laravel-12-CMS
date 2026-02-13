@@ -33,6 +33,15 @@
     object-fit: contain;
 }
 
+.category-product-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-product-card .card-body .js-add-to-cart {
+    margin-top: auto !important;
+}
+
 .category-product-card .card-title {
     font-size: 1rem;
 }

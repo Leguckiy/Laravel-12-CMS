@@ -82,7 +82,12 @@
         var $btn = $(this);
         var url = $btn.data('cart-add-url');
         var productId = $btn.data('product-id');
-        var quantity = parseInt($('#product-quantity').val(), 10) || 1;
+        var quantity;
+        if ($('#product-quantity').length) {
+            quantity = parseInt($('#product-quantity').val(), 10);
+        } else {
+            quantity = 1;
+        }
         addToCart(url, productId, quantity);
     });
 

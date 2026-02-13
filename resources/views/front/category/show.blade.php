@@ -117,9 +117,14 @@
                                             {{ $product->translations->first()->name}}
                                         </a>
                                     </h5>
-                                    <p class="card-text mb-0">
+                                    <p class="card-text mb-1">
                                         <strong>{{ $currency->formatPriceFromBase($product->price) }}</strong>
                                     </p>
+                                    <button type="button" class="btn btn-sm btn-primary js-add-to-cart mt-2 w-100"
+                                        data-cart-add-url="{{ route('front.cart.add', ['lang' => $languageCode]) }}"
+                                        data-product-id="{{ $product->id }}">
+                                        <i class="fa-solid fa-cart-shopping me-1"></i>{{ __('front/general.add_to_cart') }}
+                                    </button>
                                 </div>
                             </div>
                         </div>
