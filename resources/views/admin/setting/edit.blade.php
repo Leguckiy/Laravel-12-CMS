@@ -33,6 +33,11 @@
                             {{ __('admin.tab_local') }}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#tab-customer" data-bs-toggle="tab" class="nav-link">
+                            {{ __('admin.tab_customer') }}
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab-general">
@@ -132,6 +137,14 @@
                             :label="__('admin.currency')"
                             :options="$currenciesOptions"
                             :value="$settings['config_currency_id'] ?? null"
+                        />
+                    </div>
+                    <div class="tab-pane" id="tab-customer">
+                        <x-admin.select-field
+                            name="config_customer_group_id"
+                            :label="__('admin.customer_group')"
+                            :options="$customerGroupsOptions"
+                            :value="$settings['config_customer_group_id'] ?? null"
                         />
                     </div>
                 </div>

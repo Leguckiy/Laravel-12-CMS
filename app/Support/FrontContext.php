@@ -4,6 +4,7 @@ namespace App\Support;
 
 use App\Models\Cart;
 use App\Models\Currency;
+use App\Models\Customer;
 use App\Models\Language;
 use Illuminate\Support\Collection;
 
@@ -18,6 +19,8 @@ class FrontContext
     public ?Collection $currencies = null;
 
     public ?Cart $cart = null;
+
+    public ?Customer $customer = null;
 
     public function setLanguage(Language $language): self
     {
@@ -77,5 +80,17 @@ class FrontContext
     public function getCart(): ?Cart
     {
         return $this->cart;
+    }
+
+    public function setCustomer(?Customer $customer): self
+    {
+        $this->customer = $customer;
+
+        return $this;
+    }
+
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
     }
 }

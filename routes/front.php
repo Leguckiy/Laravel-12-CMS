@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\AuthController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CategoryController;
 use App\Http\Controllers\Front\CurrencyController;
@@ -14,6 +15,11 @@ Route::middleware('front.locale')
     ->group(function () {
         Route::get('/', [HomeController::class, 'index'])->name('front.home');
         Route::post('/set-currency', [CurrencyController::class, 'set'])->name('front.currency.set');
+        Route::get('/login', [AuthController::class, 'showLoginForm'])->name('front.auth.login.show');
+        Route::post('/login', [AuthController::class, 'login'])->name('front.auth.login');
+        Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('front.auth.register.show');
+        Route::post('/register', [AuthController::class, 'register'])->name('front.auth.register');
+        Route::post('/logout', [AuthController::class, 'logout'])->name('front.auth.logout');
         Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('front.category.show');
         Route::get('/cart', [CartController::class, 'show'])->name('front.cart.show');
         Route::post('/cart/add', [CartController::class, 'add'])->name('front.cart.add');

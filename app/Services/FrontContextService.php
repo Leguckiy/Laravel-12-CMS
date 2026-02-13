@@ -8,6 +8,7 @@ use App\Models\Language;
 use App\Support\FrontContext;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class FrontContextService
 {
@@ -65,5 +66,7 @@ class FrontContextService
         $this->context->setCart(
             Cart::findForSession($request->session()->getId())
         );
+
+        $this->context->setCustomer(Auth::guard('web')->user());
     }
 }

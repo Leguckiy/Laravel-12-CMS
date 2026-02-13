@@ -9,8 +9,7 @@
 @endpush
 
 @section('content')
-<div class="container py-5">
-    <h1 class="mb-4">{{ __('front/general.cart_title') }}</h1>
+<h1 class="mb-4">{{ __('front/general.cart_title') }}</h1>
 
     @if (empty($cartRows))
         <p class="text-muted" id="cart-empty-message">{{ __('front/general.cart_empty') }}</p>
@@ -99,5 +98,4 @@
         </div>
         <p class="text-muted d-none" id="cart-empty-placeholder">{{ __('front/general.cart_empty') }}</p>
     @endif
-</div>
 @endsection

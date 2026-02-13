@@ -55,16 +55,27 @@
                                 </div>
                             </div>
                             <div id="_desktop_user_info">
-                                <div class="user-info">
-                                    <a href="#" title="{{ __('front/general.sign_in_title') }}" rel="nofollow">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span class="d-none d-md-inline">{{ __('front/general.sign_in') }}</span>
-                                    </a>
+                                <div class="user-info d-flex align-items-center">
+                                    @if ($frontCustomer)
+                                        <form method="post" action="{{ route('front.auth.logout', ['lang' => $frontLanguage?->code]) }}" class="d-inline">
+                                            @csrf
+                                            <button type="submit" class="btn btn-link p-0 border-0 text-decoration-none text-body d-flex align-items-center gap-1" title="{{ __('front/auth.logout') }}">
+                                                <i class="fa-solid fa-user"></i>
+                                                <span class="d-none d-md-inline">{{ __('front/auth.logout') }}</span>
+                                            </button>
+                                        </form>
+                                        <span class="d-none d-md-inline ms-2">{{ $frontCustomer->fullname }}</span>
+                                    @else
+                                        <a href="{{ route('front.auth.login.show', ['lang' => $frontLanguage->code]) }}?back={{ urlencode(url()->current()) }}" class="d-flex align-items-center gap-1" title="{{ __('front/general.sign_in_title') }}" rel="nofollow">
+                                            <i class="fa-solid fa-user"></i>
+                                            <span class="d-none d-md-inline">{{ __('front/general.sign_in') }}</span>
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                             <div id="_desktop_cart">
                                 <div class="blockcart">
-                                    <a href="{{ route('front.cart.show', ['lang' => $frontLanguage?->code ?? config('app.locale')]) }}" title="{{ __('front/general.cart_title') }}">
+                                    <a href="{{ route('front.cart.show', ['lang' => $frontLanguage->code]) }}" title="{{ __('front/general.cart_title') }}">
                                         <i class="fa-solid fa-cart-shopping"></i>
                                         <span class="d-none d-md-inline">{{ __('front/general.cart') }}</span>
                                         <span class="cart-products-count">({{ $frontCart?->items?->sum('quantity') ?? 0 }})</span>
@@ -97,11 +108,22 @@
                         </div>
                         <div class="d-flex align-items-center">
                             <div id="_mobile_user_info" class="me-2">
-                                <div class="user-info">
-                                    <a href="#" title="{{ __('front/general.sign_in_title') }}" rel="nofollow">
-                                        <i class="fa-solid fa-user"></i>
-                                        <span class="d-none d-sm-inline">{{ __('front/general.sign_in') }}</span>
-                                    </a>
+                                <div class="user-info d-flex align-items-center">
+                                    @if ($frontCustomer ?? null)
+                                        <form method="post" action="{{ route('front.auth.logout', ['lang' => $frontLanguage?->code]) }}" class="d-inline">
+                                            @csrf
+                                            <button type="submit" class="btn btn-link p-0 border-0 text-decoration-none text-body d-flex align-items-center gap-1" title="{{ __('front/auth.logout') }}">
+                                                <i class="fa-solid fa-user"></i>
+                                                <span class="d-none d-sm-inline">{{ __('front/auth.logout') }}</span>
+                                            </button>
+                                        </form>
+                                        <span class="d-none d-sm-inline ms-1">{{ $frontCustomer->fullname }}</span>
+                                    @else
+                                        <a href="{{ route('front.auth.login.show', ['lang' => $frontLanguage?->code ?? config('app.locale')]) }}?back={{ urlencode(url()->current()) }}" class="d-flex align-items-center gap-1" title="{{ __('front/general.sign_in_title') }}" rel="nofollow">
+                                            <i class="fa-solid fa-user"></i>
+                                            <span class="d-none d-sm-inline">{{ __('front/general.sign_in') }}</span>
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                             <div id="_mobile_cart">

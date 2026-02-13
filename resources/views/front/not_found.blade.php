@@ -4,8 +4,7 @@
 @php
     $lang = $frontLanguage?->code ?? config('app.locale');
 @endphp
-<div class="container py-5">
-    <div class="row justify-content-center">
+<div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6 text-center">
             <div class="not-found-block py-5 px-3">
                 <div class="not-found-code text-muted mb-3">404</div>
@@ -22,5 +21,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

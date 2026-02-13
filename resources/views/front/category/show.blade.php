@@ -5,8 +5,7 @@
 @endpush
 
 @section('content')
-<div class="container py-5">
-    <div class="row align-items-start mb-3 category-header-row">
+<div class="row align-items-start mb-3 category-header-row">
         <div class="col-lg-7 col-xl-8">
             <h1 class="mb-4">{{ $title }}</h1>
             @if ($description)
@@ -136,7 +135,6 @@
             @endif
         </div>
     </div>
-</div>
 
 @push('scripts')
     <script src="{{ asset('js/front/category.js') }}" defer></script>

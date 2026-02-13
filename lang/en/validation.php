@@ -18,6 +18,7 @@ return [
     'username.unique' => 'This username is already taken.',
     'password.required' => 'Password is required.',
     'password.min' => 'Password must be at least 6 characters.',
+    'password.confirmed' => 'The password confirmation does not match.',
     'confirm.required' => 'Password confirmation is required.',
     'confirm.same' => 'Password confirmation does not match.',
     'firstname.required' => 'First name is required.',

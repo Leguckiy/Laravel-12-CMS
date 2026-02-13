@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Requests\Admin\SettingRequest;
 use App\Models\Country;
 use App\Models\Currency;
+use App\Models\CustomerGroup;
 use App\Models\Setting;
 use App\Models\SettingLang;
 use App\Services\AdminImageUploader;
@@ -26,6 +27,7 @@ class SettingController extends AdminController
         'config_country_id',
         'config_language_id',
         'config_currency_id',
+        'config_customer_group_id',
     ];
 
     protected const IMAGE_SETTINGS = [
@@ -195,6 +197,19 @@ class SettingController extends AdminController
             ->values()
             ->toArray();
 
+        $customerGroupsOptions = CustomerGroup::with('translations')
+            ->orderBy('sort_order')
+            ->orderBy('id')
+            ->get()
+            ->map(function (CustomerGroup $group) {
+                return [
+                    'id' => $group->id,
+                    'name' => $this->translation($group->translations)?->name ?? (string) $group->id,
+                ];
+            })
+            ->values()
+            ->toArray();
+
         return compact(
             'settings',
             'translations',
@@ -202,6 +217,7 @@ class SettingController extends AdminController
             'countriesOptions',
             'languagesOptions',
             'currenciesOptions',
+            'customerGroupsOptions',
         );
     }
 
@@ -262,13 +278,13 @@ class SettingController extends AdminController
     private function recalculateCurrencyValues(?int $oldCurrencyId, int $newCurrencyId): void
     {
         $newDefaultCurrency = Currency::find($newCurrencyId);
-        
+
         if (! $newDefaultCurrency || ! $newDefaultCurrency->value) {
             return;
         }
 
         $newDefaultValue = (float) $newDefaultCurrency->value;
-        
+
         // Calculate conversion factor: 1 / newDefaultValue
         // Example: if new default currency has value = 0.85, factor = 1 / 0.85 = 1.176
         // This means all currencies should be multiplied by 1.176

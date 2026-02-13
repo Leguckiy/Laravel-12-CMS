@@ -61,6 +61,16 @@ main > * {
     text-decoration: none;
 }
 
+#header .user-info button[type="submit"] {
+    color: #232323;
+    background: none;
+    border: none;
+}
+
+#header .user-info button[type="submit"]:hover {
+    color: #24b9d7;
+}
+
 .dropdown-menu {
     top: 100% !important;
     transform: none !important;

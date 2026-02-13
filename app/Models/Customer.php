@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Customer extends Model
+class Customer extends Model implements AuthenticatableContract
 {
+    use Authenticatable;
+
     /**
      * The table associated with the model.
      */
@@ -30,6 +34,7 @@ class Customer extends Model
      */
     protected $hidden = [
         'password',
+        'remember_token',
     ];
 
     /**

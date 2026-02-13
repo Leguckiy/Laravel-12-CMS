@@ -275,4 +275,6 @@ return [
     'tab_image' => 'Image',
     'tab_store' => 'Store',
     'tab_local' => 'Local',
+    'tab_customer' => 'Customer',
+    'customer_group' => 'Customer Group',
 ];

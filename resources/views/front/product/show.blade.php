@@ -5,8 +5,7 @@
 @endpush
 
 @section('content')
-<div class="container py-5">
-    <div class="row g-4">
+<div class="row g-4">
         <div class="col-lg-5">
             <div class="product-main-image card">
                 @if ($product->image_url)
@@ -95,6 +94,5 @@
             </div>
         </div>
     </div>
-</div>
 @endsection
 

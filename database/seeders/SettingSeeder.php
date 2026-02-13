@@ -27,6 +27,7 @@ class SettingSeeder extends Seeder
             'config_country_id' => '201',
             'config_language_id' => '1',
             'config_currency_id' => '3',
+            'config_customer_group_id' => '1',
         ];
 
         foreach ($simpleSettings as $name => $value) {

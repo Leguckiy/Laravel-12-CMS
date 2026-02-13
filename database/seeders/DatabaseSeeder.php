@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             CurrencySeeder::class,
             CountrySeeder::class,
+            CustomerGroupSeeder::class,
             StockStatusSeeder::class,
             OrderStatusSeeder::class,
             CategorySeeder::class,

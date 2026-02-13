@@ -275,4 +275,6 @@ return [
     'tab_image' => 'Зображення',
     'tab_store' => 'Магазин',
     'tab_local' => 'Локалізація',
+    'tab_customer' => 'Клієнт',
+    'customer_group' => 'Група клієнта',
 ];

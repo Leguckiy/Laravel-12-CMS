@@ -25,6 +25,7 @@ class SettingRequest extends FormRequest
             'config_country_id' => 'nullable|exists:countries,id',
             'config_language_id' => 'nullable|exists:languages,id',
             'config_currency_id' => 'nullable|exists:currencies,id',
+            'config_customer_group_id' => 'nullable|exists:customer_groups,id',
         ];
 
         $titleData = $this->input('config_meta_title', []);

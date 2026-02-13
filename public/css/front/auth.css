@@ -1,0 +1,36 @@
+/* Auth forms: admin-style labels, required asterisk, input focus */
+
+.auth-form .required .form-label::before,
+.auth-form .required .col-form-label::before {
+    content: '* ';
+    color: #f00;
+    font-weight: bold;
+}
+
+.auth-form .form-label,
+.auth-form .col-form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.auth-form .form-control {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+}
+
+.auth-form .form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.auth-form .form-control::placeholder {
+    color: #6c757d;
+}
+
+.auth-form .row.mb-3 {
+    align-items: center;
+}
+
+.auth-form .col-form-label {
+    text-align: right;
+}
