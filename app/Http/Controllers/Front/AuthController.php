@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\FrontController;
 use App\Http\Requests\Front\LoginRequest;
 use App\Http\Requests\Front\RegisterRequest;
+use App\Models\Cart;
 use App\Models\Customer;
 use App\Models\CustomerGroup;
 use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -56,9 +56,21 @@ class AuthController extends FrontController
     public function login(LoginRequest $request): RedirectResponse
     {
         $credentials = $request->validated();
+        $sessionIdBeforeLogin = $request->session()->getId();
 
         if (Auth::guard('web')->attempt($credentials)) {
-            $request->session()->regenerate();
+            $customerId = (int) Auth::guard('web')->id();
+            $sessionIdAfterLogin = $request->session()->getId();
+
+            $sessionCart = Cart::findForSession($sessionIdBeforeLogin);
+            if ($sessionCart !== null) {
+                $sessionCart->delete();
+            }
+
+            $customerCart = Cart::findForCustomer($customerId);
+            if ($customerCart !== null) {
+                $customerCart->syncSessionId($sessionIdAfterLogin);
+            }
 
             $back = $request->input('back');
             if ($back && $this->isValidBackUrl($back)) {
@@ -87,17 +99,23 @@ class AuthController extends FrontController
             'status' => true,
         ]);
 
+        if ($this->context->cart !== null) {
+            $this->context->cart->attachToCustomer($customer->id);
+        }
+
         Auth::guard('web')->login($customer);
-        $request->session()->regenerate();
 
         return redirect()->route('front.home', ['lang' => $this->context->language->code])
             ->with('status', __('front/auth.registered'));
     }
 
-    public function logout(Request $request): RedirectResponse
+    public function logout(): RedirectResponse
     {
+        $customerId = Auth::guard('web')->id();
+        if ($customerId !== null) {
+            Cart::unbindSessionForCustomer((int) $customerId);
+        }
         Auth::guard('web')->logout();
-        $request->session()->regenerate();
 
         return redirect()->back();
     }

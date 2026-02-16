@@ -63,9 +63,14 @@ class FrontContextService
             $this->context->setCurrencies($currencies);
         }
 
-        $this->context->setCart(
-            Cart::findForSession($request->session()->getId())
-        );
+        $cart = null;
+        if (Auth::guard('web')->check()) {
+            $cart = Cart::findForCustomer((int) Auth::guard('web')->id());
+        }
+        if ($cart === null) {
+            $cart = Cart::findForSession($request->session()->getId());
+        }
+        $this->context->setCart($cart);
 
         $this->context->setCustomer(Auth::guard('web')->user());
     }

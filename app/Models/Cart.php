@@ -32,4 +32,43 @@ class Cart extends Model
             ->with(['items'])
             ->first();
     }
+
+    public static function findForCustomer(int $customerId): ?self
+    {
+        return static::query()
+            ->where('customer_id', $customerId)
+            ->with(['items'])
+            ->first();
+    }
+
+    public function attachToCustomer(int $customerId): void
+    {
+        $this->customer_id = $customerId;
+        $this->save();
+    }
+
+    public function syncSessionId(string $sessionId): void
+    {
+        $this->session_id = $sessionId;
+        $this->save();
+    }
+
+    public function unbindSession(): void
+    {
+        $this->session_id = null;
+        $this->save();
+    }
+
+    public static function unbindSessionForCustomer(int $customerId): void
+    {
+        $cart = static::query()->where('customer_id', $customerId)->first();
+        if ($cart !== null) {
+            $cart->unbindSession();
+        }
+    }
+
+    public static function deleteForCustomer(int $customerId): void
+    {
+        static::query()->where('customer_id', $customerId)->delete();
+    }
 }
