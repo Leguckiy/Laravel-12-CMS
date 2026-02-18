@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DTOs\CategoryFilterData;
+use App\DTO\CategoryFilterData;
 use App\Support\CategoryFilterUrlBuilder;
 
 class CategoryActiveFilterBuilder

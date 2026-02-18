@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DTOs\CategoryFilterData;
+use App\DTO\CategoryFilterData;
 use App\Models\Category;
 use App\Models\Feature;
 use App\Support\CategoryFilterState;
