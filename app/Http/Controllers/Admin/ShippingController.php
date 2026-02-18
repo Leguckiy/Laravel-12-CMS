@@ -54,7 +54,7 @@ class ShippingController extends AdminController
 
     public function index(): View
     {
-        $methodCodes = array_keys(config('shipping.methods', []));
+        $methodCodes = array_keys(config('shipping.drivers', []));
         $shippingMethods = ShippingMethod::query()
             ->whereIn('code', $methodCodes)
             ->get()
@@ -78,8 +78,8 @@ class ShippingController extends AdminController
 
     public function edit(string $code): View
     {
-        $methods = config('shipping.methods', []);
-        if (! array_key_exists($code, $methods)) {
+        $drivers = config('shipping.drivers', []);
+        if (! array_key_exists($code, $drivers)) {
             abort(404);
         }
 
@@ -121,8 +121,8 @@ class ShippingController extends AdminController
 
     public function update(ShippingMethodRequest $request, string $code): RedirectResponse
     {
-        $methods = config('shipping.methods');
-        if (! array_key_exists($code, $methods)) {
+        $drivers = config('shipping.drivers', []);
+        if (! array_key_exists($code, $drivers)) {
             abort(404);
         }
 

@@ -55,7 +55,7 @@ class PaymentController extends AdminController
 
     public function index(): View
     {
-        $methodCodes = array_keys(config('payment.methods'));
+        $methodCodes = array_keys(config('payment.drivers', []));
         $paymentMethods = PaymentMethod::query()
             ->whereIn('code', $methodCodes)
             ->get()
@@ -79,8 +79,8 @@ class PaymentController extends AdminController
 
     public function edit(string $code): View
     {
-        $methods = config('payment.methods');
-        if (! array_key_exists($code, $methods)) {
+        $drivers = config('payment.drivers', []);
+        if (! array_key_exists($code, $drivers)) {
             abort(404);
         }
 
@@ -134,8 +134,8 @@ class PaymentController extends AdminController
 
     public function update(PaymentMethodRequest $request, string $code): RedirectResponse
     {
-        $methods = config('payment.methods');
-        if (! array_key_exists($code, $methods)) {
+        $drivers = config('payment.drivers', []);
+        if (! array_key_exists($code, $drivers)) {
             abort(404);
         }
 

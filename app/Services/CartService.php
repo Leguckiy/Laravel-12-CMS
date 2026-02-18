@@ -105,7 +105,7 @@ class CartService
         $cart->touch();
 
         $rowTotal = (float) $cartProduct->price * $cartProduct->quantity;
-        $subtotal = $this->getCartSubtotal($cart);
+        $subtotal = $this->getSubtotal($cart);
 
         return new CartResult(
             success: true,
@@ -142,7 +142,7 @@ class CartService
         $cartProduct->delete();
         $cart->touch();
 
-        $subtotal = $this->getCartSubtotal($cart);
+        $subtotal = $this->getSubtotal($cart);
         $cartCount = $this->getCartCount($cart);
 
         return new CartResult(
@@ -226,7 +226,7 @@ class CartService
         return (int) $cart->items()->sum('quantity');
     }
 
-    private function getCartSubtotal(Cart $cart): float
+    public function getSubtotal(Cart $cart): float
     {
         return (float) $cart->items()->sum(DB::raw('price * quantity'));
     }
