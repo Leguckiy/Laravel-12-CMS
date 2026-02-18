@@ -277,4 +277,20 @@ return [
     'tab_local' => 'Local',
     'tab_customer' => 'Customer',
     'customer_group' => 'Customer Group',
+
+    // Shipping
+    'shipping_list' => 'Shipping',
+    'shipping_methods' => 'Shipping methods',
+    'shipping_methods_list' => 'Shipping methods list',
+    'shipping_method' => 'Shipping method',
+    'shipping_method_flat_rate' => 'Flat Rate',
+    'shipping_method_free' => 'Free Shipping',
+    'shipping_cost' => 'Cost',
+    'shipping_sub_total' => 'Sub-Total',
+    'shipping_sub_total_help' => 'Minimum order amount needed before free shipping becomes available.',
+    'shipping_countries' => 'Countries',
+    'shipping_countries_required' => 'Select at least one country.',
+    'shipping_countries_help' => 'Hold Ctrl (Windows) or Cmd (Mac) to select multiple. Empty = all countries.',
+    'menu_sales_shipping' => 'Shipping',
+    'shipping_config_placeholder' => 'Configuration form for this method will be implemented next.',
 ];

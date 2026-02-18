@@ -1,4 +1,4 @@
-@props(['type' => 'text', 'name', 'label', 'placeholder' => '', 'value' => '', 'required' => false])
+@props(['type' => 'text', 'name', 'label', 'placeholder' => '', 'value' => '', 'required' => false, 'hint' => null])
 
 <div class="row mb-3 {{ $required ? 'required' : '' }}">
     <label for="input-{{ $name }}" class="col-sm-2 col-form-label">
@@ -13,6 +13,9 @@
             id="input-{{ $name }}" 
             class="form-control @error($name) is-invalid @enderror"
         />
+        @if($hint)
+            <small class="form-text text-muted">{{ $hint }}</small>
+        @endif
         @error($name)
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror

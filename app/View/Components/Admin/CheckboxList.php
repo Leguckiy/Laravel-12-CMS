@@ -19,7 +19,8 @@ class CheckboxList extends Component
         public string $idField = 'id',
         public string $nameField = 'name',
         public ?string $emptyMessage = null,
-        public ?string $itemPrefix = null
+        public ?string $itemPrefix = null,
+        public int $height = 400
     ) {
         $this->itemPrefix = $this->itemPrefix ?? $this->extractPrefixFromName();
         $this->processedItems = $this->processItems();

@@ -43,6 +43,11 @@ return [
                     'route' => '',
                     'children' => [],
                 ],
+                [
+                    'name' => 'menu_sales_shipping',
+                    'route' => 'admin.shipping.index',
+                    'children' => [],
+                ],
             ],
         ],
         [
@@ -154,5 +159,6 @@ return [
         'customer_group' => 'customer/customer_group',
         'page' => 'content/page',
         'setting' => 'setting/setting',
+        'shipping' => 'extension/shipping',
     ],
 ];

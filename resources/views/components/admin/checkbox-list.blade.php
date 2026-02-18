@@ -3,7 +3,7 @@
         <label class="col-sm-2 col-form-label">{{ $label }}</label>
     @endif
     <div class="{{ $columnClass }}">
-        <div class="form-control" style="height: 400px; overflow: auto; padding: 0;">
+        <div class="form-control" style="height: {{ $height }}px; overflow: auto; padding: 0;">
             <table class="table table-borderless table-striped mb-0">
                 <tbody>
                     @forelse($processedItems as $item)

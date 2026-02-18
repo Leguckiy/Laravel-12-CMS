@@ -19,15 +19,18 @@ class AdminComposer
         $breadcrumbs = [];
         $title = '';
 
-        if ($route = $request->route()) {
-            $controller = $route->getController();
+        $viewsWithoutBreadcrumbsAndTitle = ['admin.not_found', 'admin.login'];
+        if (! in_array($view->name(), $viewsWithoutBreadcrumbsAndTitle, true)) {
+            if ($route = $request->route()) {
+                $controller = $route->getController();
 
-            if ($controller && method_exists($controller, 'getBreadcrumbs')) {
-                $breadcrumbs = $controller->getBreadcrumbs();
-            }
+                if ($controller && method_exists($controller, 'getBreadcrumbs')) {
+                    $breadcrumbs = $controller->getBreadcrumbs();
+                }
 
-            if ($controller && method_exists($controller, 'getTitle')) {
-                $title = $controller->getTitle();
+                if ($controller && method_exists($controller, 'getTitle')) {
+                    $title = $controller->getTitle();
+                }
             }
         }
 

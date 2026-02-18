@@ -277,4 +277,20 @@ return [
     'tab_local' => 'Локалізація',
     'tab_customer' => 'Клієнт',
     'customer_group' => 'Група клієнта',
+
+    // Shipping
+    'shipping_list' => 'Доставка',
+    'shipping_methods' => 'Способи доставки',
+    'shipping_methods_list' => 'Список способів доставки',
+    'shipping_method' => 'Спосіб доставки',
+    'shipping_method_flat_rate' => 'Фіксована ставка',
+    'shipping_method_free' => 'Безкоштовна доставка',
+    'shipping_cost' => 'Вартість',
+    'shipping_sub_total' => 'Підсумок',
+    'shipping_sub_total_help' => 'Мінімальна сума замовлення, після якої застосовується безкоштовна доставка.',
+    'shipping_countries' => 'Країни',
+    'shipping_countries_required' => 'Оберіть хоча б одну країну.',
+    'shipping_countries_help' => 'Утримуйте Ctrl (Windows) або Cmd (Mac) для вибору кількох. Порожньо = усі країни.',
+    'menu_sales_shipping' => 'Доставка',
+    'shipping_config_placeholder' => 'Форма налаштувань для цього методу буде реалізована далі.',
 ];
