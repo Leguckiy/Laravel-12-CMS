@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             CustomerGroupSeeder::class,
             StockStatusSeeder::class,
             OrderStatusSeeder::class,
+            PaymentMethodSeeder::class,
             CategorySeeder::class,
             PageSeeder::class,
             FeatureSeeder::class,

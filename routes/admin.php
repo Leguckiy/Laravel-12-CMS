@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\OrderStatusController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ShippingController;
 use App\Http\Controllers\Admin\StockStatusController;
 use App\Http\Controllers\Admin\UserController;
@@ -58,6 +59,9 @@ Route::prefix('admin')->group(function () {
             Route::get('shipping', [ShippingController::class, 'index'])->name('admin.shipping.index');
             Route::get('shipping/{code}/edit', [ShippingController::class, 'edit'])->name('admin.shipping.edit');
             Route::put('shipping/{code}', [ShippingController::class, 'update'])->name('admin.shipping.update');
+            Route::get('payment', [PaymentController::class, 'index'])->name('admin.payment.index');
+            Route::get('payment/{code}/edit', [PaymentController::class, 'edit'])->name('admin.payment.edit');
+            Route::put('payment/{code}', [PaymentController::class, 'update'])->name('admin.payment.update');
         });
 
         // Fallback for unknown admin routes (404 within admin area)

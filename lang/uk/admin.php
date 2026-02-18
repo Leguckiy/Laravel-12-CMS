@@ -293,4 +293,18 @@ return [
     'shipping_countries_help' => 'Утримуйте Ctrl (Windows) або Cmd (Mac) для вибору кількох. Порожньо = усі країни.',
     'menu_sales_shipping' => 'Доставка',
     'shipping_config_placeholder' => 'Форма налаштувань для цього методу буде реалізована далі.',
+
+    // Payment
+    'payment_methods' => 'Способи оплати',
+    'payment_methods_list' => 'Список способів оплати',
+    'payment_method' => 'Спосіб оплати',
+    'payment_method_free_checkout' => 'Безоплатне замовлення',
+    'payment_method_cod' => 'Готівка при отриманні',
+    'payment_method_cheque' => 'Чек / Грошовий переказ',
+    'payment_method_bank_transfer' => 'Банківський переказ',
+    'payment_bank_transfer_instructions' => 'Інструкції для банківського переказу',
+    'payment_payable_to' => 'Отримувач (на ім\'я кого виставляти)',
+    'payment_order_status' => 'Статус замовлення',
+    'payment_countries_required' => 'Оберіть хоча б одну країну.',
+    'menu_sales_payment' => 'Оплата',
 ];

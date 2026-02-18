@@ -48,6 +48,11 @@ return [
                     'route' => 'admin.shipping.index',
                     'children' => [],
                 ],
+                [
+                    'name' => 'menu_sales_payment',
+                    'route' => 'admin.payment.index',
+                    'children' => [],
+                ],
             ],
         ],
         [
@@ -160,5 +165,6 @@ return [
         'page' => 'content/page',
         'setting' => 'setting/setting',
         'shipping' => 'extension/shipping',
+        'payment' => 'extension/payment',
     ],
 ];

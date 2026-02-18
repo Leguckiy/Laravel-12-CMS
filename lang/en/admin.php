@@ -293,4 +293,18 @@ return [
     'shipping_countries_help' => 'Hold Ctrl (Windows) or Cmd (Mac) to select multiple. Empty = all countries.',
     'menu_sales_shipping' => 'Shipping',
     'shipping_config_placeholder' => 'Configuration form for this method will be implemented next.',
+
+    // Payment
+    'payment_methods' => 'Payment methods',
+    'payment_methods_list' => 'Payment methods list',
+    'payment_method' => 'Payment method',
+    'payment_method_free_checkout' => 'Free Checkout',
+    'payment_method_cod' => 'Cash On Delivery',
+    'payment_method_cheque' => 'Cheque / Money Order',
+    'payment_method_bank_transfer' => 'Bank Transfer',
+    'payment_bank_transfer_instructions' => 'Bank Transfer Instructions',
+    'payment_payable_to' => 'Payable To',
+    'payment_order_status' => 'Order Status',
+    'payment_countries_required' => 'Select at least one country.',
+    'menu_sales_payment' => 'Payment',
 ];
