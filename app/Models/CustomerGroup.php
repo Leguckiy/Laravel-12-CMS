@@ -8,6 +8,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class CustomerGroup extends Model
 {
     /**
+     * Default group for new customer registration (from config or first by sort_order).
+     * Returns null if no groups exist.
+     */
+    public static function getDefaultForRegistration(): ?self
+    {
+        $configId = (int) Setting::get('config_customer_group_id', '0');
+        $group = $configId > 0 ? static::query()->find($configId) : null;
+
+        return $group ?? static::query()->orderBy('sort_order')->orderBy('id')->first();
+    }
+    /**
      * The table associated with the model.
      */
     protected $table = 'customer_groups';

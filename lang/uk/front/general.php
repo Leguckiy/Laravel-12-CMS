@@ -37,6 +37,8 @@ return [
     'cart_remove' => 'Видалити',
     'cart_remove_confirm' => 'Видалити цей товар з кошика?',
     'cart_empty' => 'Кошик порожній.',
+    'cart_continue_shopping' => 'Продовжити покупки',
+    'cart_checkout' => 'Оформлення замовлення',
     'tab_description' => 'Опис',
     'stock_status' => 'Наявність',
     'tab_characteristics' => 'Характеристики',

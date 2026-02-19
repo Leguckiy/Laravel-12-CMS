@@ -95,6 +95,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row mt-4">
+                <div class="col-6">
+                    <a href="{{ route('front.home', ['lang' => request()->route('lang')]) }}" class="btn btn-secondary">{{ __('front/general.cart_continue_shopping') }}</a>
+                </div>
+                <div class="col-6 text-end">
+                    <a href="{{ route('front.checkout.index', ['lang' => request()->route('lang')]) }}" class="btn btn-primary">{{ __('front/general.cart_checkout') }}</a>
+                </div>
+            </div>
         </div>
         <p class="text-muted d-none" id="cart-empty-placeholder">{{ __('front/general.cart_empty') }}</p>
     @endif

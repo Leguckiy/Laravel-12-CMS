@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Customer extends Model implements AuthenticatableContract
 {
@@ -54,10 +56,29 @@ class Customer extends Model implements AuthenticatableContract
     }
 
     /**
+     * Get the customer's addresses (one customer can have many addresses).
+     *
+     * @return HasMany<Address, $this>
+     */
+    public function addresses(): HasMany
+    {
+        return $this->hasMany(Address::class, 'customer_id');
+    }
+
+    /**
+     * Addresses for checkout (ordered by id). Country name for display
+     * comes from controller (countryNames) in the template.
+     */
+    public function getAddressesForCheckout(): Collection
+    {
+        return $this->addresses()->orderBy('id')->get();
+    }
+
+    /**
      * Get the customer's full name.
      */
     public function getFullnameAttribute(): string
     {
-        return trim($this->firstname.' '.$this->lastname);
+        return trim($this->firstname . ' ' . $this->lastname);
     }
 }

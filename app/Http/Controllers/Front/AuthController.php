@@ -8,7 +8,6 @@ use App\Http\Requests\Front\RegisterRequest;
 use App\Models\Cart;
 use App\Models\Customer;
 use App\Models\CustomerGroup;
-use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -87,8 +86,12 @@ class AuthController extends FrontController
 
     public function register(RegisterRequest $request): RedirectResponse
     {
-        $defaultGroupId = (int) Setting::get('config_customer_group_id');
-        $defaultGroup = CustomerGroup::query()->find($defaultGroupId);
+        $defaultGroup = CustomerGroup::getDefaultForRegistration();
+        if ($defaultGroup === null) {
+            return redirect()->back()
+                ->withErrors(['email' => __('front/checkout.registration_unavailable')])
+                ->withInput($request->only('email', 'firstname', 'lastname'));
+        }
 
         $customer = Customer::query()->create([
             'customer_group_id' => $defaultGroup->id,

@@ -60,4 +60,45 @@ class Country extends Model
     {
         return $this->translations()->where('language_id', $languageId)->value('name');
     }
+
+    /**
+     * Whether postcode is required for the given country (for validation).
+     */
+    public static function isPostcodeRequired(?int $countryId): bool
+    {
+        if ($countryId === null || $countryId === 0) {
+            return false;
+        }
+
+        $country = static::query()->find($countryId);
+
+        return $country !== null && $country->postcode_required;
+    }
+
+    /**
+     * Get active countries as option arrays for checkout/forms.
+     * Each option: id, name (for given language), postcode_required.
+     *
+     * @return array<int, array{id: int, name: string, postcode_required: bool}>
+     */
+    public static function getOptionsForCheckout(int $languageId): array
+    {
+        $countries = static::query()
+            ->where('status', true)
+            ->with(['translations' => fn ($q) => $q->where('language_id', $languageId)])
+            ->orderBy('id')
+            ->get();
+
+        $options = [];
+        foreach ($countries as $country) {
+            $translation = $country->translations->firstWhere('language_id', $languageId);
+            $options[] = [
+                'id' => $country->id,
+                'name' => $translation->name,
+                'postcode_required' => (bool) $country->postcode_required,
+            ];
+        }
+
+        return $options;
+    }
 }

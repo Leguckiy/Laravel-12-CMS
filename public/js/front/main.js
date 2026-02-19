@@ -26,7 +26,8 @@
         });
     });
 
-    var FRONT_ALERT_AUTO_HIDE_MS = 4000;
+    const FRONT_ALERT_AUTO_HIDE_MS = 4000;
+    window.FRONT_ALERT_AUTO_HIDE_MS = FRONT_ALERT_AUTO_HIDE_MS;
 
     function showFrontAlert(message, type) {
         var $container = $('#front-ajax-alerts');

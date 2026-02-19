@@ -37,6 +37,8 @@ return [
     'cart_remove' => 'Remove',
     'cart_remove_confirm' => 'Remove this item from cart?',
     'cart_empty' => 'Your cart is empty.',
+    'cart_continue_shopping' => 'Continue Shopping',
+    'cart_checkout' => 'Checkout',
     'tab_description' => 'Description',
     'stock_status' => 'Stock status',
     'tab_characteristics' => 'Characteristics',
