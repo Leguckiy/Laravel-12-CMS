@@ -20,7 +20,7 @@ class CheckoutController extends FrontController
 {
     public function index(CartService $cartService): View|RedirectResponse
     {
-        if ($this->isCartEmpty()) {
+        if ($this->context->isCartEmpty()) {
             return redirect()
                 ->route('front.cart.show', ['lang' => $this->context->getLanguage()->code])
                 ->with('error', __('front/checkout.cart_empty'));
@@ -68,9 +68,11 @@ class CheckoutController extends FrontController
      */
     public function submitGuestStep(CheckoutGuestRequest $request, CheckoutService $checkoutService): JsonResponse
     {
-        $cartErrorResponse = $this->validateCartForCheckout();
-        if ($cartErrorResponse !== null) {
-            return $cartErrorResponse;
+        if ($this->context->isCartEmpty()) {
+            return response()->json([
+                'success' => false,
+                'message' => __('front/checkout.cart_empty'),
+            ], 422);
         }
 
         $validated = $request->validated();
@@ -103,9 +105,11 @@ class CheckoutController extends FrontController
      */
     public function setCustomerShippingAddress(CheckoutCustomerAddressRequest $request, CheckoutService $checkoutService): JsonResponse
     {
-        $cartErrorResponse = $this->validateCartForCheckout();
-        if ($cartErrorResponse !== null) {
-            return $cartErrorResponse;
+        if ($this->context->isCartEmpty()) {
+            return response()->json([
+                'success' => false,
+                'message' => __('front/checkout.cart_empty'),
+            ], 422);
         }
 
         $customer = $request->user('web');
@@ -169,28 +173,6 @@ class CheckoutController extends FrontController
 
         $request->session()->put('customer', $checkoutService->customerSessionFromCustomer($customer));
         $request->session()->put('shipping_address', $address->toCheckoutSessionArray());
-    }
-
-    private function isCartEmpty(): bool
-    {
-        $cart = $this->context->cart;
-
-        return $cart === null || $cart->items()->count() === 0;
-    }
-
-    /**
-     * Return 422 JSON response if cart is empty or missing; otherwise null.
-     */
-    private function validateCartForCheckout(): ?JsonResponse
-    {
-        if ($this->isCartEmpty()) {
-            return response()->json([
-                'success' => false,
-                'message' => __('front/checkout.cart_empty'),
-            ], 422);
-        }
-
-        return null;
     }
 
     /**

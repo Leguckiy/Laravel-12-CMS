@@ -25,6 +25,11 @@ class Cart extends Model
         return $this->hasMany(CartProduct::class, 'cart_id');
     }
 
+    public function isEmpty(): bool
+    {
+        return $this->items()->count() === 0;
+    }
+
     public static function findForSession(string $sessionId): ?self
     {
         return static::query()

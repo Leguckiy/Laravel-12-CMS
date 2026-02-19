@@ -82,6 +82,11 @@ class FrontContext
         return $this->cart;
     }
 
+    public function isCartEmpty(): bool
+    {
+        return $this->cart === null || $this->cart->isEmpty();
+    }
+
     public function setCustomer(?Customer $customer): self
     {
         $this->customer = $customer;
