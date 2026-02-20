@@ -40,6 +40,8 @@ return [
     'session_required' => 'Потрібна сесія.',
     'cart_continue_shopping' => 'Продовжити покупки',
     'cart_checkout' => 'Оформлення замовлення',
+    'loading' => 'Завантаження...',
+    'cancel' => 'Скасувати',
     'tab_description' => 'Опис',
     'stock_status' => 'Наявність',
     'tab_characteristics' => 'Характеристики',

@@ -2,15 +2,26 @@
 
 namespace App\Http\Requests\Front;
 
+use App\Http\Requests\Front\Concerns\FailsIfCartEmpty;
 use App\Models\Country;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\JsonResponse;
 
-class CheckoutCustomerAddressRequest extends FormRequest
+class CheckoutAddCustomerAddressRequest extends FormRequest
 {
+    use FailsIfCartEmpty;
+
     public function authorize(): bool
     {
-        return $this->user('web') !== null;
+        if ($this->user('web') === null) {
+            return false;
+        }
+
+        $this->failIfCartEmpty();
+
+        return true;
     }
 
     /**
@@ -18,19 +29,6 @@ class CheckoutCustomerAddressRequest extends FormRequest
      */
     public function rules(): array
     {
-        $customerId = (int) $this->user('web')->id;
-        $addressId = $this->input('address_id');
-
-        if ($addressId !== null && $addressId !== '') {
-            return [
-                'address_id' => [
-                    'required',
-                    'integer',
-                    Rule::exists('addresses', 'id')->where('customer_id', $customerId),
-                ],
-            ];
-        }
-
         $countryId = $this->filled('country_id') ? (int) $this->input('country_id') : null;
         $postcodeRequired = Country::isPostcodeRequired($countryId);
 
@@ -52,8 +50,6 @@ class CheckoutCustomerAddressRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'address_id.required' => __('front/checkout.validation_address_required'),
-            'address_id.exists' => __('front/checkout.validation_address_exists'),
             'firstname.required' => __('validation.firstname.required'),
             'lastname.required' => __('validation.lastname.required'),
             'address_1.required' => __('front/checkout.validation_address_1_required'),
@@ -62,5 +58,16 @@ class CheckoutCustomerAddressRequest extends FormRequest
             'country_id.required' => __('front/checkout.validation_country_required'),
             'country_id.exists' => __('front/checkout.validation_country_exists'),
         ];
+    }
+
+    protected function failedValidation(Validator $validator): void
+    {
+        throw new HttpResponseException(
+            new JsonResponse([
+                'success' => false,
+                'message' => $validator->errors()->first(),
+                'errors' => $validator->errors()->toArray(),
+            ], 422)
+        );
     }
 }

@@ -4,33 +4,29 @@ namespace App\Services\Shipping;
 
 use App\Contracts\Shipping\ShippingMethodInterface;
 use App\Models\Cart;
+use App\Models\Currency;
 use App\Models\ShippingMethod;
 use Illuminate\Support\Facades\App;
 
 class ShippingService
 {
     /**
-     * @return array<int, array{code: string, title: string, cost: float, sort_order: int}>
+     * Get shipping methods available for the given cart and country.
+     *
+     * @return array<int, array{id: string, name: string, cost: float, formatted: string}>
      */
-    public function getAvailableMethods(Cart $cart, int $countryId): array
+    public function getAvailableMethods(Cart $cart, int $countryId, Currency $currency): array
     {
         $drivers = config('shipping.drivers', []);
-        $methodCodes = array_keys($drivers);
-
         $models = ShippingMethod::query()
-            ->whereIn('code', $methodCodes)
-            ->get()
-            ->keyBy('code');
+            ->where('status', true)
+            ->whereIn('code', array_keys($drivers))
+            ->orderBy('sort_order')
+            ->get();
 
         $result = [];
-
-        foreach ($methodCodes as $code) {
-            $model = $models->get($code);
-            if ($model === null) {
-                continue;
-            }
-
-            $driverClass = $drivers[$code] ?? null;
+        foreach ($models as $model) {
+            $driverClass = $drivers[$model->code] ?? null;
             if ($driverClass === null) {
                 continue;
             }
@@ -40,17 +36,16 @@ class ShippingService
                 continue;
             }
 
+            $cost = $driver->getCost($cart);
             $result[] = [
-                'code' => $model->code,
-                'title' => __($driver->getTitle()),
-                'cost' => $driver->getCost($cart),
-                'sort_order' => (int) $model->sort_order,
+                'id' => $model->code,
+                'name' => __($driver->getTitle()),
+                'cost' => $cost,
+                'formatted' => $currency->formatPriceFromBase((string) $cost),
             ];
         }
 
-        usort($result, fn (array $a, array $b) => $a['sort_order'] <=> $b['sort_order']);
-
-        return array_values($result);
+        return $result;
     }
 
     private function resolveDriver(string $driverClass, ShippingMethod $model): ShippingMethodInterface

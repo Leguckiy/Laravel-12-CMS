@@ -2,14 +2,22 @@
 
 namespace App\Http\Requests\Front;
 
+use App\Http\Requests\Front\Concerns\FailsIfCartEmpty;
 use App\Models\Country;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\Rule;
 
 class CheckoutGuestRequest extends FormRequest
 {
+    use FailsIfCartEmpty;
+
     public function authorize(): bool
     {
+        $this->failIfCartEmpty();
+
         return true;
     }
 
@@ -69,5 +77,16 @@ class CheckoutGuestRequest extends FormRequest
             'country_id.required' => __('front/checkout.validation_country_required'),
             'country_id.exists' => __('front/checkout.validation_country_exists'),
         ];
+    }
+
+    protected function failedValidation(Validator $validator): void
+    {
+        throw new HttpResponseException(
+            new JsonResponse([
+                'success' => false,
+                'message' => $validator->errors()->first(),
+                'errors' => $validator->errors()->toArray(),
+            ], 422)
+        );
     }
 }

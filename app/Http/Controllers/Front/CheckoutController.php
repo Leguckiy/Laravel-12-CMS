@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Enums\CheckoutStep;
 use App\Http\Controllers\FrontController;
-use App\Http\Requests\Front\CheckoutCustomerAddressRequest;
+use App\Http\Requests\Front\CheckoutAddCustomerAddressRequest;
+use App\Http\Requests\Front\CheckoutGetShippingMethodsRequest;
 use App\Http\Requests\Front\CheckoutGuestRequest;
+use App\Http\Requests\Front\CheckoutSetCustomerAddressRequest;
+use App\Http\Requests\Front\CheckoutSetShippingMethodRequest;
 use App\Models\Address;
 use App\Models\Country;
 use App\Models\Customer;
 use App\Models\CustomerGroup;
 use App\Services\CartService;
 use App\Services\CheckoutService;
+use App\Services\Shipping\ShippingService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +55,9 @@ class CheckoutController extends FrontController
         $shippingAddress = session('shipping_address', []);
         $addresses = $customer?->getAddressesForCheckout() ?? collect();
 
+        $checkoutStep = session('checkout_step', CheckoutStep::PersonalAddress->value);
+        $shippingMethod = session('shipping_method');
+
         return view('front.checkout.index', [
             'cartRows' => $display['cartRows'],
             'subtotal' => $display['subtotal'],
@@ -59,7 +67,9 @@ class CheckoutController extends FrontController
             'customer' => $customer,
             'customerSession' => $customerSession,
             'shippingAddress' => $shippingAddress,
+            'shippingMethod' => $shippingMethod,
             'addresses' => $addresses,
+            'checkoutStep' => $checkoutStep,
         ]);
     }
 
@@ -68,15 +78,9 @@ class CheckoutController extends FrontController
      */
     public function submitGuestStep(CheckoutGuestRequest $request, CheckoutService $checkoutService): JsonResponse
     {
-        if ($this->context->isCartEmpty()) {
-            return response()->json([
-                'success' => false,
-                'message' => __('front/checkout.cart_empty'),
-            ], 422);
-        }
-
         $validated = $request->validated();
 
+        $sessionRegenerated = false;
         if ($validated['account_type'] === 'register') {
             $defaultGroup = CustomerGroup::getDefaultForRegistration();
             if ($defaultGroup === null) {
@@ -87,59 +91,55 @@ class CheckoutController extends FrontController
             }
             $this->handleGuestRegister($request, $validated, $checkoutService, $defaultGroup);
             $message = __('front/checkout.details_saved');
+            $sessionRegenerated = true;
         } else {
             $request->session()->put('customer', $checkoutService->guestCustomerSessionFromValidated($validated));
             $request->session()->put('shipping_address', $checkoutService->guestShippingAddressSessionFromValidated($validated));
             $message = __('front/checkout.guest_details_saved');
         }
 
-        return response()->json([
+        $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
+
+        $payload = [
             'success' => true,
             'message' => $message,
+        ];
+        if ($sessionRegenerated) {
+            $payload['csrf_token'] = $request->session()->token();
+        }
+
+        return response()->json($payload);
+    }
+
+    /**
+     * Logged-in customer: set shipping address for checkout (select existing address).
+     */
+    public function setCustomerShippingAddress(CheckoutSetCustomerAddressRequest $request, CheckoutService $checkoutService): JsonResponse
+    {
+        $customer = $request->user('web');
+        $address = $request->getAddress();
+
+        $request->session()->put('customer', $checkoutService->customerSessionFromCustomer($customer));
+        $request->session()->put('shipping_address', $address->toCheckoutSessionArray());
+        $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
+
+        return response()->json([
+            'success' => true,
+            'message' => __('front/checkout.shipping_address_changed'),
         ]);
     }
 
     /**
-     * Logged-in customer: set shipping address for checkout.
-     * Either select existing address (address_id in request) or create a new one (address fields).
+     * Logged-in customer: add new shipping address and set it for checkout.
      */
-    public function setCustomerShippingAddress(CheckoutCustomerAddressRequest $request, CheckoutService $checkoutService): JsonResponse
+    public function addCustomerShippingAddress(CheckoutAddCustomerAddressRequest $request, CheckoutService $checkoutService): JsonResponse
     {
-        if ($this->context->isCartEmpty()) {
-            return response()->json([
-                'success' => false,
-                'message' => __('front/checkout.cart_empty'),
-            ], 422);
-        }
-
         $customer = $request->user('web');
-        $validated = $request->validated();
-
-        // Select existing address (form sent address_id from dropdown).
-        if (! empty($validated['address_id'])) {
-            $addressId = (int) $validated['address_id'];
-            $address = $customer->addresses()->whereKey($addressId)->first();
-            if (! $address) {
-                return response()->json([
-                    'success' => false,
-                    'message' => __('front/checkout.shipping_address_not_found'),
-                ], 422);
-            }
-
-            $request->session()->put('customer', $checkoutService->customerSessionFromCustomer($customer));
-            $request->session()->put('shipping_address', $address->toCheckoutSessionArray());
-
-            return response()->json([
-                'success' => true,
-                'message' => __('front/checkout.shipping_address_changed'),
-            ]);
-        }
-
-        // Create new address and set it for checkout.
-        $address = $this->createAddress($customer, $validated);
+        $address = $this->createAddress($customer, $request->validated());
 
         $request->session()->put('customer', $checkoutService->customerSessionFromCustomer($customer));
         $request->session()->put('shipping_address', $address->toCheckoutSessionArray());
+        $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
 
         return response()->json([
             'success' => true,
@@ -148,9 +148,70 @@ class CheckoutController extends FrontController
     }
 
     /**
+     * AJAX: return available shipping methods for the address in session.
+     * Address is taken from session (set on step 1); nothing is passed in the request.
+     */
+    public function getShippingMethods(CheckoutGetShippingMethodsRequest $request, ShippingService $shippingService): JsonResponse
+    {
+        $cart = $this->context->cart;
+        $shippingAddress = $request->session()->get('shipping_address');
+        $countryId = (int) ($shippingAddress['country_id']);
+        $methods = $shippingService->getAvailableMethods($cart, $countryId, $this->context->currency);
+        $shippingMethod = $request->session()->get('shipping_method');
+        $selectedId = isset($shippingMethod['id']) ? $shippingMethod['id'] : null;
+
+        return response()->json([
+            'success' => true,
+            'methods' => $methods,
+            'selected_id' => $selectedId,
+        ]);
+    }
+
+    /**
+     * AJAX: save selected shipping method to session and advance to payment step.
+     */
+    public function setShippingMethod(CheckoutSetShippingMethodRequest $request, ShippingService $shippingService): JsonResponse
+    {
+        $cart = $this->context->cart;
+        $shippingAddress = $request->session()->get('shipping_address');
+        $countryId = (int) ($shippingAddress['country_id'] ?? 0);
+        $methods = $shippingService->getAvailableMethods($cart, $countryId, $this->context->currency);
+
+        if ($methods === []) {
+            return response()->json([
+                'success' => false,
+                'message' => __('front/checkout.shipping_methods_none_available'),
+            ], 422);
+        }
+
+        $methodId = $request->validated('method_id');
+        $selected = collect($methods)->firstWhere('id', $methodId);
+        if (! $selected) {
+            return response()->json([
+                'success' => false,
+                'message' => __('front/checkout.error_generic'),
+            ], 422);
+        }
+
+        $request->session()->put('shipping_method', [
+            'id' => $selected['id'],
+            'name' => $selected['name'],
+            'cost' => $selected['cost'],
+            'formatted' => $selected['formatted'],
+        ]);
+        $request->session()->put('checkout_step', CheckoutStep::Payment->value);
+
+        return response()->json([
+            'success' => true,
+            'message' => __('front/checkout.shipping_method_changed'),
+            'method' => $selected,
+        ]);
+    }
+
+    /**
      * Create customer + address, attach cart, login, store in session.
      *
-     * @param array<string, mixed> $validated
+     * @param  array<string, mixed>  $validated
      */
     private function handleGuestRegister(CheckoutGuestRequest $request, array $validated, CheckoutService $checkoutService, CustomerGroup $defaultGroup): void
     {
@@ -173,10 +234,11 @@ class CheckoutController extends FrontController
 
         $request->session()->put('customer', $checkoutService->customerSessionFromCustomer($customer));
         $request->session()->put('shipping_address', $address->toCheckoutSessionArray());
+        $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     private function createAddress(Customer $customer, array $data): Address
     {

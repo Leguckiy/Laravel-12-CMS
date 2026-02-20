@@ -5,10 +5,14 @@
 @endpush
 
 @section('content')
+    {{-- Messages for checkout.js: data-* keys (kebab-case) map to getCheckoutMessage('key'). Lang: front/checkout (snake_case). --}}
     <div id="checkout-js-messages" class="visually-hidden" aria-hidden="true"
          data-error-generic="{{ __('front/checkout.error_generic') }}"
          data-validation-form="{{ __('front/checkout.validation_form_errors') }}"
-         data-address-required="{{ __('front/checkout.shipping_address_not_found') }}"></div>
+         data-address-required="{{ __('front/checkout.shipping_address_not_found') }}"
+         data-shipping-address-required="{{ __('front/checkout.shipping_address_required') }}"
+         data-shipping-methods-none-available="{{ __('front/checkout.shipping_methods_none_available') }}"
+         data-payment-after-shipping="{{ __('front/checkout.payment_after_shipping') }}"></div>
     <h1 class="mb-4">{{ __('front/checkout.title') }}</h1>
 
     @guest
@@ -129,7 +133,7 @@
                     </div>
                     <div class="card-body">
                         @if ($addresses->isEmpty())
-                            <form id="checkout-customer-address-form" class="checkout-form" method="post" action="{{ route('front.checkout.customer_address', ['lang' => request()->route('lang')]) }}" data-validation-form-message="{{ __('front/checkout.validation_form_errors') }}">
+                            <form id="checkout-customer-address-form" class="checkout-form" method="post" action="{{ route('front.checkout.add_customer_address', ['lang' => request()->route('lang')]) }}" data-validation-form-message="{{ __('front/checkout.validation_form_errors') }}">
                                 <div class="row row-cols-1 row-cols-md-2 g-3">
                                     <div class="col mb-3 required">
                                         <label for="checkout-customer-firstname" class="form-label">{{ __('front/auth.firstname') }} <span class="text-danger">*</span></label>
@@ -192,7 +196,7 @@
                                     <label class="form-check-label" for="address-new">{{ __('front/checkout.use_new_address') }}</label>
                                 </div>
                             </div>
-                            <div id="checkout-shipping-address-wrap" class="mb-3" data-address-required-message="{{ __('front/checkout.shipping_address_not_found') }}">
+                            <div id="checkout-shipping-address-wrap" class="mb-3" data-address-required-message="{{ __('front/checkout.shipping_address_not_found') }}" data-set-address-url="{{ route('front.checkout.customer_address', ['lang' => request()->route('lang')]) }}">
                                 <label for="checkout-shipping-address-id" class="form-label">{{ __('front/checkout.shipping_address') }}</label>
                                 <select name="address_id" id="checkout-shipping-address-id" class="form-select">
                                     <option value="">{{ __('front/checkout.select_address') }}</option>
@@ -202,7 +206,7 @@
                                 </select>
                                 <div class="invalid-feedback js-checkout-error" data-field="address_id"></div>
                             </div>
-                            <form id="checkout-customer-new-address-form" class="checkout-form d-none" method="post" action="{{ route('front.checkout.customer_address', ['lang' => request()->route('lang')]) }}" data-validation-form-message="{{ __('front/checkout.validation_form_errors') }}">
+                            <form id="checkout-customer-new-address-form" class="checkout-form d-none" method="post" action="{{ route('front.checkout.add_customer_address', ['lang' => request()->route('lang')]) }}" data-validation-form-message="{{ __('front/checkout.validation_form_errors') }}">
                                 <div class="row row-cols-1 row-cols-md-2 g-3">
                                     <div class="col mb-3 required">
                                         <label for="checkout-customer-new-firstname" class="form-label">{{ __('front/auth.firstname') }} <span class="text-danger">*</span></label>
@@ -260,21 +264,34 @@
             @endguest
         </div>
 
-        <div class="col-lg-5">
-            <div class="card mb-4">
+        <div class="col-lg-5" id="checkout-step-container" data-checkout-step="{{ $checkoutStep }}"
+             data-shipping-methods-url="{{ route('front.checkout.shipping_methods', ['lang' => request()->route('lang')]) }}"
+             data-set-shipping-method-url="{{ route('front.checkout.set_shipping_method', ['lang' => request()->route('lang')]) }}">
+            <div class="card mb-4" id="checkout-shipping-method-card">
                 <div class="card-header">
                     <h2 class="h6 mb-0">{{ __('front/checkout.shipping_method') }}</h2>
                 </div>
                 <div class="card-body">
-                    <p class="text-muted mb-0">{{ __('front/checkout.choose_shipping_method') }}</p>
+                    <p class="text-muted mb-2">{{ __('front/checkout.choose_shipping_method') }}</p>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-truck"></i></span>
+                        <input type="text" name="shipping_method" id="checkout-shipping-method-input" class="form-control" placeholder="{{ __('front/checkout.choose_shipping_method') }}" readonly value="{{ isset($shippingMethod['name']) && isset($shippingMethod['formatted']) ? $shippingMethod['name'] . ' - ' . $shippingMethod['formatted'] : '' }}">
+                        <button type="button" id="checkout-shipping-method-choose-btn" class="btn btn-primary">{{ __('front/checkout.choose') }}</button>
+                    </div>
+                    <div class="text-danger small js-checkout-error" id="checkout-shipping-method-error" data-field="shipping_method" role="alert"></div>
                 </div>
             </div>
-            <div class="card mb-4">
+            <div class="card mb-4" id="checkout-payment-method-card">
                 <div class="card-header">
                     <h2 class="h6 mb-0">{{ __('front/checkout.payment_method') }}</h2>
                 </div>
                 <div class="card-body">
-                    <p class="text-muted mb-0">{{ __('front/checkout.choose_payment_method') }}</p>
+                    <p class="text-muted mb-2">{{ __('front/checkout.choose_payment_method') }}</p>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+                        <input type="text" name="payment_method" id="checkout-payment-method-input" class="form-control" placeholder="{{ __('front/checkout.choose_payment_method') }}" readonly>
+                        <button type="button" id="checkout-payment-method-choose-btn" class="btn btn-primary">{{ __('front/checkout.choose') }}</button>
+                    </div>
                 </div>
             </div>
             <div class="card mb-4">
@@ -313,6 +330,35 @@
                             </tr>
                         </tfoot>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="checkout-shipping-method-modal" tabindex="-1" aria-labelledby="checkout-shipping-method-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title h5 d-flex align-items-center gap-2" id="checkout-shipping-method-modal-label">
+                        <i class="fas fa-truck text-muted" aria-hidden="true"></i>
+                        {{ __('front/checkout.shipping_method_modal_title') }}
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="checkout-shipping-method-modal-loading" class="text-center py-4 d-none">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="ms-2">{{ __('front/general.loading') }}</span>
+                    </div>
+                    <div id="checkout-shipping-method-modal-content" class="d-none">
+                        <p class="text-muted mb-3">{{ __('front/checkout.shipping_method_modal_instruction') }}</p>
+                        <div id="checkout-shipping-method-modal-list"></div>
+                    </div>
+                    <div id="checkout-shipping-method-modal-error" class="alert alert-danger small mb-0 d-none" role="alert"></div>
+                </div>
+                <div class="modal-footer d-none" id="checkout-shipping-method-modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('front/general.cancel') }}</button>
+                    <button type="button" class="btn btn-primary" id="checkout-shipping-method-modal-confirm">{{ __('front/checkout.choose') }}</button>
                 </div>
             </div>
         </div>

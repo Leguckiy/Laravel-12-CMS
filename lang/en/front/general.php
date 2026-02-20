@@ -40,6 +40,8 @@ return [
     'session_required' => 'Session required.',
     'cart_continue_shopping' => 'Continue Shopping',
     'cart_checkout' => 'Checkout',
+    'loading' => 'Loading...',
+    'cancel' => 'Cancel',
     'tab_description' => 'Description',
     'stock_status' => 'Stock status',
     'tab_characteristics' => 'Characteristics',
