@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Front;
 
 use App\Enums\CheckoutStep;
 use App\Http\Controllers\FrontController;
-use App\Http\Requests\Front\CheckoutAddCustomerAddressRequest;
-use App\Http\Requests\Front\CheckoutGetShippingMethodsRequest;
-use App\Http\Requests\Front\CheckoutGuestRequest;
-use App\Http\Requests\Front\CheckoutSetCustomerAddressRequest;
-use App\Http\Requests\Front\CheckoutSetShippingMethodRequest;
+use App\Http\Requests\Front\Checkout\CheckoutAddCustomerAddressRequest;
+use App\Http\Requests\Front\Checkout\CheckoutGetShippingMethodsRequest;
+use App\Http\Requests\Front\Checkout\CheckoutGuestRequest;
+use App\Http\Requests\Front\Checkout\CheckoutSetCustomerAddressRequest;
+use App\Http\Requests\Front\Checkout\CheckoutSetShippingMethodRequest;
 use App\Models\Address;
 use App\Models\Country;
 use App\Models\Customer;

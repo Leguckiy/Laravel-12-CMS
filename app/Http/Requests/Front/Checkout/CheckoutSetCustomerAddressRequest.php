@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Front;
+namespace App\Http\Requests\Front\Checkout;
 
 use App\Http\Requests\Front\Concerns\FailsIfCartEmpty;
 use App\Models\Address;
