@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @stack('head-meta')
+    @isset($frontSettings['config_icon']['value'])
+        <link rel="icon" href="{{ asset('storage/' . $frontSettings['config_icon']['value']) }}" type="image/png">
+    @endisset
     <title>@yield('meta-title', 'My App')</title>
     @hasSection('meta-description')
         <meta name="description" content="@yield('meta-description')">
