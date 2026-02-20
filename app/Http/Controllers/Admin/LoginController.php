@@ -3,17 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class LoginController extends Controller
 {
-    public function showLoginForm()
+    public function showLoginForm(): View
     {
         return view('admin.login');
     }
 
-    public function login(Request $request)
+    public function login(Request $request): View|RedirectResponse
     {
         $сredentials = [
             'username' => $request->username,
@@ -21,8 +23,6 @@ class LoginController extends Controller
         ];
 
         if (Auth::guard('admin')->attempt($сredentials, $request->boolean('remember'))) {
-            $request->session()->regenerate();
-
             return redirect()->intended('/admin/dashboard');
         }
 
@@ -31,11 +31,9 @@ class LoginController extends Controller
         ]);
     }
 
-    public function logout(Request $request)
+    public function logout(): RedirectResponse
     {
         Auth::guard('admin')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
 
         return redirect('/admin');
     }

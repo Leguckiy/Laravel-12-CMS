@@ -37,6 +37,7 @@ return [
     'cart_remove' => 'Видалити',
     'cart_remove_confirm' => 'Видалити цей товар з кошика?',
     'cart_empty' => 'Кошик порожній.',
+    'session_required' => 'Потрібна сесія.',
     'cart_continue_shopping' => 'Продовжити покупки',
     'cart_checkout' => 'Оформлення замовлення',
     'tab_description' => 'Опис',

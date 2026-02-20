@@ -55,20 +55,19 @@ class AuthController extends FrontController
     public function login(LoginRequest $request): RedirectResponse
     {
         $credentials = $request->validated();
-        $sessionIdBeforeLogin = $request->session()->getId();
 
         if (Auth::guard('web')->attempt($credentials)) {
             $customerId = (int) Auth::guard('web')->id();
-            $sessionIdAfterLogin = $request->session()->getId();
-
-            $sessionCart = Cart::findForSession($sessionIdBeforeLogin);
-            if ($sessionCart !== null) {
-                $sessionCart->delete();
-            }
-
-            $customerCart = Cart::findForCustomer($customerId);
-            if ($customerCart !== null) {
-                $customerCart->syncSessionId($sessionIdAfterLogin);
+            $cartToken = $request->session()->get('cart_token');
+            if (is_string($cartToken)) {
+                $guestCart = Cart::findByToken($cartToken);
+                if ($guestCart !== null) {
+                    $guestCart->delete();
+                }
+                $customerCart = Cart::findForCustomer($customerId);
+                if ($customerCart !== null) {
+                    $customerCart->syncToken($cartToken);
+                }
             }
 
             $back = $request->input('back');
@@ -116,7 +115,7 @@ class AuthController extends FrontController
     {
         $customerId = Auth::guard('web')->id();
         if ($customerId !== null) {
-            Cart::unbindSessionForCustomer((int) $customerId);
+            Cart::unbindTokenForCustomer((int) $customerId);
         }
         Auth::guard('web')->logout();
 

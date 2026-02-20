@@ -9,6 +9,7 @@ use App\Support\FrontContext;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class FrontContextService
 {
@@ -64,11 +65,14 @@ class FrontContextService
         }
 
         $cart = null;
+        if ($hasSession && $request->session()->get('cart_token') === null) {
+            $request->session()->put('cart_token', Str::random(40));
+        }
         if (Auth::guard('web')->check()) {
             $cart = Cart::findForCustomer((int) Auth::guard('web')->id());
         }
-        if ($cart === null) {
-            $cart = Cart::findForSession($request->session()->getId());
+        if ($cart === null && $hasSession) {
+            $cart = Cart::findByToken($request->session()->get('cart_token'));
         }
         $this->context->setCart($cart);
 

@@ -40,16 +40,8 @@ class CartController extends FrontController
 
     public function add(CartRequest $request, CartService $cartService): JsonResponse
     {
-        $sessionId = $request->session()->getId();
-        if (! $sessionId) {
-            return response()->json(['success' => false, 'message' => 'Session required.'], 422);
-        }
-
-        $result = $cartService->add(
-            $request->validated(),
-            $sessionId,
-            $request->user('web')?->id
-        );
+        $validated = $request->validated();
+        $result = $cartService->add($validated, $request->user('web')?->id);
 
         return response()->json(
             ['success' => $result->success, 'message' => $result->message, ...$result->data],
@@ -59,20 +51,14 @@ class CartController extends FrontController
 
     public function update(CartRequest $request, CartService $cartService): JsonResponse
     {
-        $result = $cartService->update(
-            $request->validated(),
-            $request->session()->getId()
-        );
+        $result = $cartService->update($request->validated());
 
         return $this->cartResultToJsonResponse($result, ['row_total', 'subtotal']);
     }
 
     public function destroy(CartRequest $request, CartService $cartService): JsonResponse
     {
-        $result = $cartService->destroy(
-            $request->validated(),
-            $request->session()->getId()
-        );
+        $result = $cartService->destroy($request->validated());
 
         return $this->cartResultToJsonResponse($result, ['subtotal']);
     }

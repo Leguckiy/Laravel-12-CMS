@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class CartService
 {
-    public function add(array $validated, string $sessionId, ?int $customerId): CartResult
+    public function add(array $validated, ?int $customerId): CartResult
     {
         $product = Product::query()
             ->where('id', $validated['product_id'])
@@ -25,7 +25,7 @@ class CartService
             );
         }
 
-        $cart = $this->getOrCreateCart($sessionId, $customerId);
+        $cart = $this->getOrCreateCart($validated['cart_token'], $customerId);
         $cartProduct = $this->findCartProduct($cart, $product->id);
 
         $quantity = (int) $validated['quantity'];
@@ -61,9 +61,9 @@ class CartService
         );
     }
 
-    public function update(array $validated, string $sessionId): CartResult
+    public function update(array $validated): CartResult
     {
-        $cart = $this->getCartBySession($sessionId);
+        $cart = $this->getCartByToken($validated['cart_token']);
         if (! $cart) {
             return new CartResult(
                 success: false,
@@ -119,9 +119,9 @@ class CartService
         );
     }
 
-    public function destroy(array $validated, string $sessionId): CartResult
+    public function destroy(array $validated): CartResult
     {
-        $cart = $this->getCartBySession($sessionId);
+        $cart = $this->getCartByToken($validated['cart_token']);
         if (! $cart) {
             return new CartResult(
                 success: false,
@@ -192,9 +192,9 @@ class CartService
         return ['cartRows' => $cartRows, 'subtotal' => $subtotal];
     }
 
-    private function getOrCreateCart(string $sessionId, ?int $customerId): Cart
+    private function getOrCreateCart(string $cartToken, ?int $customerId): Cart
     {
-        $cart = Cart::query()->where('session_id', $sessionId)->first();
+        $cart = Cart::query()->where('cart_token', $cartToken)->first();
 
         if ($cart !== null) {
             if ($customerId !== null) {
@@ -206,14 +206,14 @@ class CartService
         }
 
         return Cart::create([
-            'session_id' => $sessionId,
+            'cart_token' => $cartToken,
             'customer_id' => $customerId,
         ]);
     }
 
-    private function getCartBySession(string $sessionId): ?Cart
+    private function getCartByToken(string $cartToken): ?Cart
     {
-        return Cart::query()->where('session_id', $sessionId)->first();
+        return Cart::query()->where('cart_token', $cartToken)->first();
     }
 
     private function findCartProduct(Cart $cart, int $productId): ?CartProduct

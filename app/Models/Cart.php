@@ -11,7 +11,7 @@ class Cart extends Model
     protected $table = 'carts';
 
     protected $fillable = [
-        'session_id',
+        'cart_token',
         'customer_id',
     ];
 
@@ -30,10 +30,10 @@ class Cart extends Model
         return $this->items()->count() === 0;
     }
 
-    public static function findForSession(string $sessionId): ?self
+    public static function findByToken(string $cartToken): ?self
     {
         return static::query()
-            ->where('session_id', $sessionId)
+            ->where('cart_token', $cartToken)
             ->with(['items'])
             ->first();
     }
@@ -52,23 +52,23 @@ class Cart extends Model
         $this->save();
     }
 
-    public function syncSessionId(string $sessionId): void
+    public function syncToken(string $cartToken): void
     {
-        $this->session_id = $sessionId;
+        $this->cart_token = $cartToken;
         $this->save();
     }
 
-    public function unbindSession(): void
+    public function unbindToken(): void
     {
-        $this->session_id = null;
+        $this->cart_token = null;
         $this->save();
     }
 
-    public static function unbindSessionForCustomer(int $customerId): void
+    public static function unbindTokenForCustomer(int $customerId): void
     {
         $cart = static::query()->where('customer_id', $customerId)->first();
         if ($cart !== null) {
-            $cart->unbindSession();
+            $cart->unbindToken();
         }
     }
 
