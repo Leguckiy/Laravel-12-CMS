@@ -7,12 +7,12 @@
             <div class="row align-items-center">
                 <div class="d-none d-md-block">
                     <div class="row">
-                        <div class="col-md-5 col-12">
+                        <div class="col-md-4 col-12">
                             <div id="contact-link">
                                 <a href="#">{{ __('front/general.contact_us') }}</a>
                             </div>
                         </div>
-                        <div class="col-md-7 d-flex justify-content-end gap-4">
+                        <div class="col-md-8 d-flex justify-content-end gap-4">
                             <div id="_desktop_language_selector">
                                 <div class="language-selector dropdown js-dropdown">
                                     <span class="language-selector-label">{{ __('front/general.language') }}:</span>
