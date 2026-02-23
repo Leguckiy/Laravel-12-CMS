@@ -48,6 +48,15 @@ class ShippingService
         return $result;
     }
 
+    /**
+     * Get translated title for a shipping method by code (current locale). No DB query.
+     * Lang key convention: admin.shipping_method_{code}
+     */
+    public function getMethodTitle(string $code): string
+    {
+        return __('admin.shipping_method_' . $code);
+    }
+
     private function resolveDriver(string $driverClass, ShippingMethod $model): ShippingMethodInterface
     {
         return App::make($driverClass, ['model' => $model]);

@@ -63,14 +63,91 @@
 
     var CHECKOUT_STEP_DELIVERY = 2;
     var CHECKOUT_STEP_PAYMENT = 3;
+    var CHECKOUT_STEP_CONFIRMATION = 4;
+
+    var CHECKOUT_METHOD_SHIPPING = 'shipping';
+    var CHECKOUT_METHOD_PAYMENT = 'payment';
 
     function getCheckoutStep() {
-        var step = $('#checkout-step-container').data('checkout-step');
+        var step = $('#checkout-step-container').attr('data-checkout-step');
         return parseInt(step, 10) || 1;
     }
 
     function setCheckoutStep(step) {
         $('#checkout-step-container').attr('data-checkout-step', step);
+        updateConfirmOrderButtonState();
+    }
+
+    function updateConfirmOrderButtonState() {
+        var $btn = $('#checkout-confirm-order-btn');
+        if (!$btn.length) {
+            return;
+        }
+        var step = getCheckoutStep();
+        $btn.prop('disabled', step < CHECKOUT_STEP_CONFIRMATION);
+    }
+
+    function clearCheckoutMethodsDisplay() {
+        var $shippingInput = $('#checkout-shipping-method-input');
+        var $paymentInput = $('#checkout-payment-method-input');
+        var $instructionsCard = $('#checkout-payment-instructions-card');
+        var $instructionsBody = $('#checkout-payment-instructions-body');
+        var $summaryTable = $('#checkout-order-summary-table');
+        var $shippingRow = $('#checkout-order-summary-shipping-row');
+        if ($shippingInput.length) {
+            $shippingInput.val('');
+        }
+        if ($paymentInput.length) {
+            $paymentInput.val('');
+        }
+        if ($instructionsCard.length) {
+            $instructionsCard.hide();
+        }
+        if ($instructionsBody.length) {
+            $instructionsBody.empty();
+        }
+        if ($shippingRow.length) {
+            $shippingRow.remove();
+        }
+        if ($summaryTable.length) {
+            var subtotalFormatted = $summaryTable.attr('data-subtotal-formatted');
+            if (subtotalFormatted) {
+                $('#checkout-order-summary-total-value').text(subtotalFormatted);
+            }
+        }
+    }
+
+    function clearPaymentMethodDisplay() {
+        var $paymentInput = $('#checkout-payment-method-input');
+        var $instructionsCard = $('#checkout-payment-instructions-card');
+        var $instructionsBody = $('#checkout-payment-instructions-body');
+        if ($paymentInput.length) {
+            $paymentInput.val('');
+        }
+        if ($instructionsCard.length) {
+            $instructionsCard.hide();
+        }
+        if ($instructionsBody.length) {
+            $instructionsBody.empty();
+        }
+    }
+
+    function updateOrderSummaryShipping(shippingName, shippingFormatted, orderTotalFormatted) {
+        var $totalRow = $('#checkout-order-summary-total-row');
+        var $shippingRow = $('#checkout-order-summary-shipping-row');
+        if (!$totalRow.length) {
+            return;
+        }
+        if ($shippingRow.length) {
+            $shippingRow.find('td:first').text(shippingName);
+            $shippingRow.find('td:last').text(shippingFormatted);
+        } else {
+            var $newRow = $('<tr id="checkout-order-summary-shipping-row"><td></td><td class="text-end"></td></tr>');
+            $newRow.find('td:first').text(shippingName);
+            $newRow.find('td:last').text(shippingFormatted);
+            $totalRow.before($newRow);
+        }
+        $('#checkout-order-summary-total-value').text(orderTotalFormatted);
     }
 
     function updateCsrfToken(newToken) {
@@ -92,6 +169,7 @@
             clearFormErrors($form);
             showResponseMessage(result);
             setCheckoutStep(CHECKOUT_STEP_DELIVERY);
+            clearCheckoutMethodsDisplay();
         } else {
             var errors = result.errors || {};
             showFormErrors($form, errors);
@@ -253,6 +331,7 @@
                         if (result.success) {
                             showResponseMessage(result);
                             setCheckoutStep(CHECKOUT_STEP_DELIVERY);
+                            clearCheckoutMethodsDisplay();
                         } else if (result.message) {
                             window.showFrontAlert(result.message, 'danger');
                         }
@@ -271,32 +350,87 @@
         });
     }
 
-    function openShippingMethodModal() {
+    var checkoutMethodModalConfig = {};
+    checkoutMethodModalConfig[CHECKOUT_METHOD_SHIPPING] = {
+            urlAttr: 'data-shipping-methods-url',
+            setUrlAttr: 'data-set-shipping-method-url',
+            modalId: 'checkout-shipping-method-modal',
+            listId: 'checkout-shipping-method-modal-list',
+            contentId: 'checkout-shipping-method-modal-content',
+            loadingId: 'checkout-shipping-method-modal-loading',
+            footerId: 'checkout-shipping-method-modal-footer',
+            chooseBtnId: 'checkout-shipping-method-choose-btn',
+            confirmBtnId: 'checkout-shipping-method-modal-confirm',
+            inputId: 'checkout-shipping-method-input',
+            radioName: 'checkout_shipping_method_radio',
+            radioIdPrefix: 'shipping-method-opt-',
+            emptyMessageKey: 'shipping-methods-none-available',
+            getLabel: function (m) { return (m.name || '') + ' - ' + (m.formatted || ''); },
+            getInputValue: function ($radio) { return ($radio.attr('data-name') || '') + ' - ' + ($radio.attr('data-formatted') || ''); },
+            getRadioData: function (m) { return { 'data-name': m.name || '', 'data-formatted': m.formatted || '' }; },
+            onConfirmSuccess: function (result) {
+                setCheckoutStep(CHECKOUT_STEP_PAYMENT);
+                clearPaymentMethodDisplay();
+                if (result.method && result.order_total_formatted) {
+                    updateOrderSummaryShipping(result.method.name || '', result.method.formatted || '', result.order_total_formatted);
+                }
+            }
+    };
+    checkoutMethodModalConfig[CHECKOUT_METHOD_PAYMENT] = {
+            urlAttr: 'data-payment-methods-url',
+            setUrlAttr: 'data-set-payment-method-url',
+            modalId: 'checkout-payment-method-modal',
+            listId: 'checkout-payment-method-modal-list',
+            contentId: 'checkout-payment-method-modal-content',
+            loadingId: 'checkout-payment-method-modal-loading',
+            footerId: 'checkout-payment-method-modal-footer',
+            chooseBtnId: 'checkout-payment-method-choose-btn',
+            confirmBtnId: 'checkout-payment-method-modal-confirm',
+            inputId: 'checkout-payment-method-input',
+            radioName: 'checkout_payment_method_radio',
+            radioIdPrefix: 'payment-method-opt-',
+            emptyMessageKey: 'payment-methods-none-available',
+            getLabel: function (m) { return m.name || ''; },
+            getInputValue: function ($radio) { return $radio.attr('data-name') || ''; },
+            getRadioData: function (m) { return { 'data-name': m.name || '' }; },
+            onConfirmSuccess: function (result) {
+                setCheckoutStep(CHECKOUT_STEP_CONFIRMATION);
+                var $card = $('#checkout-payment-instructions-card');
+                var $body = $('#checkout-payment-instructions-body');
+                if (result.hasOwnProperty('instructions')) {
+                    if (result.instructions) {
+                        $body.html(result.instructions);
+                        $card.show();
+                    } else {
+                        $body.empty();
+                        $card.hide();
+                    }
+                }
+            }
+    };
+
+    function openCheckoutMethodModal(type) {
+        var cfg = checkoutMethodModalConfig[type];
+        if (!cfg) { return; }
         var $container = $('#checkout-step-container');
-        var url = $container.attr('data-shipping-methods-url');
-        var $modal = $('#checkout-shipping-method-modal');
-        var $loading = $('#checkout-shipping-method-modal-loading');
-        var $list = $('#checkout-shipping-method-modal-list');
-        var $footer = $('#checkout-shipping-method-modal-footer');
-        var $chooseBtn = $('#checkout-shipping-method-choose-btn');
-        if (!url || !$modal.length) {
-            return;
-        }
-        var $content = $('#checkout-shipping-method-modal-content');
+        var url = $container.attr(cfg.urlAttr);
+        var $modal = $('#' + cfg.modalId);
+        var $loading = $('#' + cfg.loadingId);
+        var $list = $('#' + cfg.listId);
+        var $footer = $('#' + cfg.footerId);
+        var $chooseBtn = $('#' + cfg.chooseBtnId);
+        var $content = $('#' + cfg.contentId);
+        if (!url || !$modal.length) { return; }
         $list.empty();
         $content.addClass('d-none');
         $footer.addClass('d-none');
         $loading.removeClass('d-none');
         $chooseBtn.prop('disabled', true);
-
         $.ajax({
             url: url,
             type: 'POST',
             data: { _token: token },
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'Accept': 'application/json'
-            },
+            headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' },
             success: function (result) {
                 $chooseBtn.prop('disabled', false);
                 $loading.addClass('d-none');
@@ -308,28 +442,17 @@
                             var methodId = m.id != null ? String(m.id) : '';
                             return methodId === selectedId;
                         });
-                        if (found >= 0) {
-                            selectedIndex = found;
-                        }
+                        if (found >= 0) { selectedIndex = found; }
                     }
                     result.methods.forEach(function (m, index) {
                         var methodId = m.id != null ? String(m.id) : '';
-                        var id = 'shipping-method-opt-' + (methodId || '').replace(/\s/g, '_');
+                        var id = cfg.radioIdPrefix + (methodId || '').replace(/\s/g, '_');
                         var isChecked = (index === selectedIndex);
                         var $row = $('<div class="form-check"></div>');
-                        $row.append(
-                            $('<input>', {
-                                type: 'radio',
-                                class: 'form-check-input',
-                                name: 'checkout_shipping_method_radio',
-                                id: id,
-                                value: m.id || '',
-                                checked: isChecked,
-                                'data-name': m.name || '',
-                                'data-formatted': m.formatted || ''
-                            })
-                        );
-                        $row.append($('<label class="form-check-label"></label>').attr('for', id).text((m.name || '') + ' - ' + (m.formatted || '')));
+                        var radioData = { type: 'radio', class: 'form-check-input', name: cfg.radioName, id: id, value: m.id || '', checked: isChecked };
+                        $.extend(radioData, cfg.getRadioData(m));
+                        $row.append($('<input>', radioData));
+                        $row.append($('<label class="form-check-label"></label>').attr('for', id).text(cfg.getLabel(m)));
                         $list.append($row);
                     });
                     $content.removeClass('d-none');
@@ -337,7 +460,7 @@
                     var modalInstance = window.bootstrap && window.bootstrap.Modal ? new window.bootstrap.Modal($modal[0]) : ($modal.data('bs.modal') || $modal.modal());
                     modalInstance.show();
                 } else {
-                    var emptyMsg = getCheckoutMessage('shipping-methods-none-available');
+                    var emptyMsg = getCheckoutMessage(cfg.emptyMessageKey);
                     var msg = (result.methods && result.methods.length === 0 && emptyMsg) ? emptyMsg : (result.message || getCheckoutMessageOrFallback('error-generic'));
                     window.showFrontAlert(msg, 'danger');
                 }
@@ -350,45 +473,38 @@
         });
     }
 
-    function confirmShippingMethodSelection() {
+    function confirmCheckoutMethodSelection(type) {
+        var cfg = checkoutMethodModalConfig[type];
+        if (!cfg) { return; }
         var $container = $('#checkout-step-container');
-        var url = $container.attr('data-set-shipping-method-url');
-        var $modal = $('#checkout-shipping-method-modal');
-        var $input = $('#checkout-shipping-method-input');
-        var $confirmBtn = $('#checkout-shipping-method-modal-confirm');
-        var $radio = $('input[name="checkout_shipping_method_radio"]:checked');
-        if (!url || !$radio.length) {
-            return;
-        }
+        var url = $container.attr(cfg.setUrlAttr);
+        var $modal = $('#' + cfg.modalId);
+        var $input = $('#' + cfg.inputId);
+        var $confirmBtn = $('#' + cfg.confirmBtnId);
+        var $radio = $('input[name="' + cfg.radioName + '"]:checked');
+        if (!url || !$radio.length) { return; }
         var methodId = $radio.val();
-        var methodName = $radio.attr('data-name');
-        var methodFormatted = $radio.attr('data-formatted');
         $confirmBtn.prop('disabled', true);
         $.ajax({
             url: url,
             type: 'POST',
             data: { method_id: methodId, _token: token },
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'Accept': 'application/json'
-            },
+            headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' },
             success: function (result) {
                 $confirmBtn.prop('disabled', false);
                 if (result.success) {
                     if ($input.length) {
-                        $input.val((methodName || '') + ' - ' + (methodFormatted || ''));
+                        $input.val(cfg.getInputValue($radio));
                     }
-                    setCheckoutStep(CHECKOUT_STEP_PAYMENT);
                     if (window.bootstrap && window.bootstrap.Modal && $modal.length) {
                         var modalInstance = window.bootstrap.Modal.getInstance($modal[0]);
-                        if (modalInstance) {
-                            modalInstance.hide();
-                        }
+                        if (modalInstance) { modalInstance.hide(); }
                     } else if ($modal.length && $modal.data('bs.modal')) {
                         $modal.modal('hide');
                     }
-                    if (result.message) {
-                        showResponseMessage(result);
+                    if (result.message) { showResponseMessage(result); }
+                    if (typeof cfg.onConfirmSuccess === 'function') {
+                        cfg.onConfirmSuccess(result);
                     }
                 } else {
                     window.showFrontAlert(result.message || getCheckoutMessageOrFallback('error-generic'), 'danger');
@@ -421,7 +537,7 @@
                         return;
                     }
                 }
-                openShippingMethodModal();
+                openCheckoutMethodModal(CHECKOUT_METHOD_SHIPPING);
             });
         }
         if ($paymentBtn.length) {
@@ -430,11 +546,14 @@
                     window.showFrontAlert(getCheckoutMessageOrFallback('payment-after-shipping'), 'danger');
                     return;
                 }
-                // TODO: open payment methods modal/list
+                openCheckoutMethodModal(CHECKOUT_METHOD_PAYMENT);
             });
         }
         $('#checkout-shipping-method-modal-confirm').on('click', function () {
-            confirmShippingMethodSelection();
+            confirmCheckoutMethodSelection(CHECKOUT_METHOD_SHIPPING);
+        });
+        $('#checkout-payment-method-modal-confirm').on('click', function () {
+            confirmCheckoutMethodSelection(CHECKOUT_METHOD_PAYMENT);
         });
     }
 
@@ -443,6 +562,7 @@
         initLoggedinCheckout();
         initAddressSwitcher();
         initChooseButtons();
+        updateConfirmOrderButtonState();
     }
 
     $(function () {

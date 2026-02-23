@@ -30,4 +30,9 @@ class CodPaymentMethod implements PaymentMethodInterface
 
         return true;
     }
+
+    public function getInstructions(int $languageId): string
+    {
+        return '';
+    }
 }

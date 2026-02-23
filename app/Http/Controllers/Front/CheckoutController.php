@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Front;
 use App\Enums\CheckoutStep;
 use App\Http\Controllers\FrontController;
 use App\Http\Requests\Front\Checkout\CheckoutAddCustomerAddressRequest;
+use App\Http\Requests\Front\Checkout\CheckoutGetPaymentMethodsRequest;
 use App\Http\Requests\Front\Checkout\CheckoutGetShippingMethodsRequest;
 use App\Http\Requests\Front\Checkout\CheckoutGuestRequest;
 use App\Http\Requests\Front\Checkout\CheckoutSetCustomerAddressRequest;
+use App\Http\Requests\Front\Checkout\CheckoutSetPaymentMethodRequest;
 use App\Http\Requests\Front\Checkout\CheckoutSetShippingMethodRequest;
 use App\Models\Address;
 use App\Models\Country;
@@ -15,6 +17,7 @@ use App\Models\Customer;
 use App\Models\CustomerGroup;
 use App\Services\CartService;
 use App\Services\CheckoutService;
+use App\Services\Payment\PaymentService;
 use App\Services\Shipping\ShippingService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -23,7 +26,7 @@ use Illuminate\View\View;
 
 class CheckoutController extends FrontController
 {
-    public function index(CartService $cartService): View|RedirectResponse
+    public function index(CartService $cartService, PaymentService $paymentService, ShippingService $shippingService): View|RedirectResponse
     {
         if ($this->context->isCartEmpty()) {
             return redirect()
@@ -57,6 +60,20 @@ class CheckoutController extends FrontController
 
         $checkoutStep = session('checkout_step', CheckoutStep::PersonalAddress->value);
         $shippingMethod = session('shipping_method');
+        $paymentMethod = session('payment_method');
+        if (! empty($shippingMethod['id'])) {
+            $shippingMethod['name'] = $shippingService->getMethodTitle($shippingMethod['id']);
+        }
+        if (! empty($paymentMethod['id'])) {
+            $paymentMethod['name'] = $paymentService->getMethodTitle($paymentMethod['id']);
+        }
+        $paymentInstructions = '';
+        if (! empty($paymentMethod['id'])) {
+            $paymentInstructions = $paymentService->getInstructionsForMethod(
+                $paymentMethod['id'],
+                $this->context->language->id
+            );
+        }
 
         return view('front.checkout.index', [
             'cartRows' => $display['cartRows'],
@@ -68,6 +85,8 @@ class CheckoutController extends FrontController
             'customerSession' => $customerSession,
             'shippingAddress' => $shippingAddress,
             'shippingMethod' => $shippingMethod,
+            'paymentMethod' => $paymentMethod,
+            'paymentInstructions' => $paymentInstructions,
             'addresses' => $addresses,
             'checkoutStep' => $checkoutStep,
         ]);
@@ -98,6 +117,7 @@ class CheckoutController extends FrontController
             $message = __('front/checkout.guest_details_saved');
         }
 
+        $request->session()->forget(['shipping_method', 'payment_method']);
         $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
 
         $payload = [
@@ -121,6 +141,7 @@ class CheckoutController extends FrontController
 
         $request->session()->put('customer', $checkoutService->customerSessionFromCustomer($customer));
         $request->session()->put('shipping_address', $address->toCheckoutSessionArray());
+        $request->session()->forget(['shipping_method', 'payment_method']);
         $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
 
         return response()->json([
@@ -139,6 +160,7 @@ class CheckoutController extends FrontController
 
         $request->session()->put('customer', $checkoutService->customerSessionFromCustomer($customer));
         $request->session()->put('shipping_address', $address->toCheckoutSessionArray());
+        $request->session()->forget(['shipping_method', 'payment_method']);
         $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
 
         return response()->json([
@@ -170,7 +192,7 @@ class CheckoutController extends FrontController
     /**
      * AJAX: save selected shipping method to session and advance to payment step.
      */
-    public function setShippingMethod(CheckoutSetShippingMethodRequest $request, ShippingService $shippingService): JsonResponse
+    public function setShippingMethod(CheckoutSetShippingMethodRequest $request, CartService $cartService, ShippingService $shippingService): JsonResponse
     {
         $cart = $this->context->cart;
         $shippingAddress = $request->session()->get('shipping_address');
@@ -193,18 +215,89 @@ class CheckoutController extends FrontController
             ], 422);
         }
 
+        $request->session()->forget('payment_method');
         $request->session()->put('shipping_method', [
             'id' => $selected['id'],
-            'name' => $selected['name'],
             'cost' => $selected['cost'],
-            'formatted' => $selected['formatted'],
         ]);
         $request->session()->put('checkout_step', CheckoutStep::Payment->value);
+
+        $subtotal = $cartService->getSubtotal($cart);
+        $orderTotal = $subtotal + (float) $selected['cost'];
+        $orderTotalFormatted = $this->context->currency->formatPriceFromBase((string) $orderTotal);
 
         return response()->json([
             'success' => true,
             'message' => __('front/checkout.shipping_method_changed'),
             'method' => $selected,
+            'order_total_formatted' => $orderTotalFormatted,
+        ]);
+    }
+
+    /**
+     * AJAX: return available payment methods for the address in session.
+     */
+    public function getPaymentMethods(CheckoutGetPaymentMethodsRequest $request, PaymentService $paymentService): JsonResponse
+    {
+        $cart = $this->context->cart;
+        $shippingAddress = $request->session()->get('shipping_address');
+        $countryId = (int) ($shippingAddress['country_id']);
+        $rawMethods = $paymentService->getAvailableMethods($cart, $countryId);
+        $methods = array_map(fn (array $m) => [
+            'id' => $m['code'],
+            'name' => $m['title'],
+        ], $rawMethods);
+        $paymentMethod = $request->session()->get('payment_method');
+        $selectedId = isset($paymentMethod['id']) ? $paymentMethod['id'] : null;
+
+        return response()->json([
+            'success' => true,
+            'methods' => $methods,
+            'selected_id' => $selectedId,
+        ]);
+    }
+
+    /**
+     * AJAX: save selected payment method to session.
+     */
+    public function setPaymentMethod(CheckoutSetPaymentMethodRequest $request, PaymentService $paymentService): JsonResponse
+    {
+        $cart = $this->context->cart;
+        $shippingAddress = $request->session()->get('shipping_address');
+        $countryId = (int) ($shippingAddress['country_id'] ?? 0);
+        $rawMethods = $paymentService->getAvailableMethods($cart, $countryId);
+
+        if ($rawMethods === []) {
+            return response()->json([
+                'success' => false,
+                'message' => __('front/checkout.payment_methods_none_available'),
+            ], 422);
+        }
+
+        $methodId = $request->validated('method_id');
+        $selected = collect($rawMethods)->firstWhere('code', $methodId);
+        if (! $selected) {
+            return response()->json([
+                'success' => false,
+                'message' => __('front/checkout.error_generic'),
+            ], 422);
+        }
+
+        $request->session()->put('payment_method', [
+            'id' => $selected['code'],
+        ]);
+        $request->session()->put('checkout_step', CheckoutStep::Confirmation->value);
+
+        $instructions = $paymentService->getInstructionsForMethod(
+            $selected['code'],
+            $this->context->language->id
+        );
+
+        return response()->json([
+            'success' => true,
+            'message' => __('front/checkout.payment_method_changed'),
+            'method' => ['id' => $selected['code'], 'name' => $selected['title']],
+            'instructions' => $instructions,
         ]);
     }
 
@@ -234,6 +327,7 @@ class CheckoutController extends FrontController
 
         $request->session()->put('customer', $checkoutService->customerSessionFromCustomer($customer));
         $request->session()->put('shipping_address', $address->toCheckoutSessionArray());
+        $request->session()->forget(['shipping_method', 'payment_method']);
         $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
     }
 

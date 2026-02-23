@@ -12,6 +12,7 @@
          data-address-required="{{ __('front/checkout.shipping_address_not_found') }}"
          data-shipping-address-required="{{ __('front/checkout.shipping_address_required') }}"
          data-shipping-methods-none-available="{{ __('front/checkout.shipping_methods_none_available') }}"
+         data-payment-methods-none-available="{{ __('front/checkout.payment_methods_none_available') }}"
          data-payment-after-shipping="{{ __('front/checkout.payment_after_shipping') }}"></div>
     <h1 class="mb-4">{{ __('front/checkout.title') }}</h1>
 
@@ -266,7 +267,9 @@
 
         <div class="col-lg-5" id="checkout-step-container" data-checkout-step="{{ $checkoutStep }}"
              data-shipping-methods-url="{{ route('front.checkout.shipping_methods', ['lang' => request()->route('lang')]) }}"
-             data-set-shipping-method-url="{{ route('front.checkout.set_shipping_method', ['lang' => request()->route('lang')]) }}">
+             data-set-shipping-method-url="{{ route('front.checkout.set_shipping_method', ['lang' => request()->route('lang')]) }}"
+             data-payment-methods-url="{{ route('front.checkout.payment_methods', ['lang' => request()->route('lang')]) }}"
+             data-set-payment-method-url="{{ route('front.checkout.set_payment_method', ['lang' => request()->route('lang')]) }}">
             <div class="card mb-4" id="checkout-shipping-method-card">
                 <div class="card-header">
                     <h2 class="h6 mb-0">{{ __('front/checkout.shipping_method') }}</h2>
@@ -275,7 +278,7 @@
                     <p class="text-muted mb-2">{{ __('front/checkout.choose_shipping_method') }}</p>
                     <div class="input-group">
                         <span class="input-group-text"><i class="fas fa-truck"></i></span>
-                        <input type="text" name="shipping_method" id="checkout-shipping-method-input" class="form-control" placeholder="{{ __('front/checkout.choose_shipping_method') }}" readonly value="{{ isset($shippingMethod['name']) && isset($shippingMethod['formatted']) ? $shippingMethod['name'] . ' - ' . $shippingMethod['formatted'] : '' }}">
+                        <input type="text" name="shipping_method" id="checkout-shipping-method-input" class="form-control" placeholder="{{ __('front/checkout.choose_shipping_method') }}" readonly value="{{ !empty($shippingMethod['name']) ? $shippingMethod['name'] . ' - ' . $currency->formatPriceFromBase((string) ($shippingMethod['cost'] ?? 0)) : '' }}">
                         <button type="button" id="checkout-shipping-method-choose-btn" class="btn btn-primary">{{ __('front/checkout.choose') }}</button>
                     </div>
                     <div class="text-danger small js-checkout-error" id="checkout-shipping-method-error" data-field="shipping_method" role="alert"></div>
@@ -289,7 +292,7 @@
                     <p class="text-muted mb-2">{{ __('front/checkout.choose_payment_method') }}</p>
                     <div class="input-group">
                         <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
-                        <input type="text" name="payment_method" id="checkout-payment-method-input" class="form-control" placeholder="{{ __('front/checkout.choose_payment_method') }}" readonly>
+                        <input type="text" name="payment_method" id="checkout-payment-method-input" class="form-control" placeholder="{{ __('front/checkout.choose_payment_method') }}" readonly value="{{ isset($paymentMethod['name']) ? $paymentMethod['name'] : '' }}">
                         <button type="button" id="checkout-payment-method-choose-btn" class="btn btn-primary">{{ __('front/checkout.choose') }}</button>
                     </div>
                 </div>
@@ -302,9 +305,9 @@
                     <textarea class="form-control" rows="3" placeholder="{{ __('front/checkout.comment_order') }}"></textarea>
                 </div>
             </div>
-            <div class="card">
+            <div class="card mb-4">
                 <div class="card-body">
-                    <table class="table table-sm table-borderless mb-0">
+                    <table class="table table-sm table-bordered mb-0" id="checkout-order-summary-table" data-subtotal-formatted="{{ $currency->formatPriceFromBase((string) $subtotal) }}">
                         <thead>
                             <tr>
                                 <th>{{ __('front/checkout.product') }}</th>
@@ -324,12 +327,61 @@
                                 <td>{{ __('front/checkout.subtotal') }}</td>
                                 <td class="text-end">{{ $currency->formatPriceFromBase((string) $subtotal) }}</td>
                             </tr>
-                            <tr class="fw-bold">
+                            @if(!empty($shippingMethod['name']))
+                            <tr id="checkout-order-summary-shipping-row">
+                                <td>{{ $shippingMethod['name'] }}</td>
+                                <td class="text-end">{{ $currency->formatPriceFromBase((string) ($shippingMethod['cost'] ?? 0)) }}</td>
+                            </tr>
+                            @endif
+                            <tr class="fw-bold" id="checkout-order-summary-total-row">
                                 <td>{{ __('front/checkout.total') }}</td>
-                                <td class="text-end">{{ $currency->formatPriceFromBase((string) $subtotal) }}</td>
+                                <td class="text-end" id="checkout-order-summary-total-value">{{ $currency->formatPriceFromBase((string) ($subtotal + (isset($shippingMethod['cost']) ? (float) $shippingMethod['cost'] : 0))) }}</td>
                             </tr>
                         </tfoot>
                     </table>
+                </div>
+            </div>
+            <div class="card mb-4" id="checkout-payment-instructions-card" @if(empty($paymentInstructions)) style="display: none;" @endif>
+                <div class="card-header">
+                    <h2 class="h6 mb-0">{{ __('front/checkout.payment_instructions_title') }}</h2>
+                </div>
+                <div class="card-body" id="checkout-payment-instructions-body">
+                    @if(!empty($paymentInstructions))
+                        {!! $paymentInstructions !!}
+                    @endif
+                </div>
+            </div>
+            <div class="mb-4 text-end">
+                <button type="button" id="checkout-confirm-order-btn" class="btn btn-primary" @if($checkoutStep < 4) disabled @endif>
+                    {{ __('front/checkout.confirm_order') }}
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="checkout-payment-method-modal" tabindex="-1" aria-labelledby="checkout-payment-method-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title h5 d-flex align-items-center gap-2" id="checkout-payment-method-modal-label">
+                        <i class="fas fa-credit-card text-muted" aria-hidden="true"></i>
+                        {{ __('front/checkout.payment_method_modal_title') }}
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="checkout-payment-method-modal-loading" class="text-center py-4 d-none">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="ms-2">{{ __('front/general.loading') }}</span>
+                    </div>
+                    <div id="checkout-payment-method-modal-content" class="d-none">
+                        <p class="text-muted mb-3">{{ __('front/checkout.payment_method_modal_instruction') }}</p>
+                        <div id="checkout-payment-method-modal-list"></div>
+                    </div>
+                </div>
+                <div class="modal-footer d-none" id="checkout-payment-method-modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('front/general.cancel') }}</button>
+                    <button type="button" class="btn btn-primary" id="checkout-payment-method-modal-confirm">{{ __('front/checkout.choose') }}</button>
                 </div>
             </div>
         </div>

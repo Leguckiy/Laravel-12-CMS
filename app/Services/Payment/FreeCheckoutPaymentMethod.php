@@ -29,4 +29,9 @@ class FreeCheckoutPaymentMethod implements PaymentMethodInterface
 
         return $subtotal <= 0.0;
     }
+
+    public function getInstructions(int $languageId): string
+    {
+        return '';
+    }
 }

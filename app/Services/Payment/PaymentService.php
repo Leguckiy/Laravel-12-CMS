@@ -18,6 +18,7 @@ class PaymentService
         $methodCodes = array_keys($drivers);
 
         $models = PaymentMethod::query()
+            ->where('status', true)
             ->whereIn('code', $methodCodes)
             ->get()
             ->keyBy('code');
@@ -52,6 +53,39 @@ class PaymentService
         usort($result, fn (array $a, array $b) => $a['sort_order'] <=> $b['sort_order']);
 
         return array_values($result);
+    }
+
+    /**
+     * Get translated title for a payment method by code (current locale). No DB query.
+     * Lang key convention: admin.payment_method_{code}
+     */
+    public function getMethodTitle(string $code): string
+    {
+        return __('admin.payment_method_' . $code);
+    }
+
+    /**
+     * Get HTML instructions for the given payment method code and language.
+     * Returns empty string if method not found or has no instructions.
+     */
+    public function getInstructionsForMethod(string $code, int $languageId): string
+    {
+        $drivers = config('payment.drivers', []);
+        if (! array_key_exists($code, $drivers)) {
+            return '';
+        }
+
+        $model = PaymentMethod::query()->where('code', $code)->first();
+        if ($model === null) {
+            return '';
+        }
+
+        $driver = $this->resolveDriver($drivers[$code], $model);
+        if (! $driver instanceof PaymentMethodInterface) {
+            return '';
+        }
+
+        return $driver->getInstructions($languageId);
     }
 
     private function resolveDriver(string $driverClass, PaymentMethod $model): PaymentMethodInterface

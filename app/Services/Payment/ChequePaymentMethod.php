@@ -5,6 +5,8 @@ namespace App\Services\Payment;
 use App\Contracts\Payment\PaymentMethodInterface;
 use App\Models\Cart;
 use App\Models\PaymentMethod;
+use App\Models\Setting;
+use Illuminate\Support\Facades\View;
 
 class ChequePaymentMethod implements PaymentMethodInterface
 {
@@ -29,5 +31,17 @@ class ChequePaymentMethod implements PaymentMethodInterface
         }
 
         return true;
+    }
+
+    public function getInstructions(int $languageId): string
+    {
+        $config = $this->model->config ?? [];
+        $payableTo = $config['payable_to'] ?? '';
+        $sendTo = Setting::get('config_email');
+
+        return View::make('front.checkout.payment_instructions.cheque', [
+            'payableTo' => $payableTo,
+            'sendTo' => $sendTo,
+        ])->render();
     }
 }

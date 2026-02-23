@@ -5,6 +5,7 @@ namespace App\Services\Payment;
 use App\Contracts\Payment\PaymentMethodInterface;
 use App\Models\Cart;
 use App\Models\PaymentMethod;
+use Illuminate\Support\Facades\View;
 
 class BankTransferPaymentMethod implements PaymentMethodInterface
 {
@@ -29,5 +30,15 @@ class BankTransferPaymentMethod implements PaymentMethodInterface
         }
 
         return true;
+    }
+
+    public function getInstructions(int $languageId): string
+    {
+        $instructionsByLang = $this->model->config['instructions'] ?? [];
+        $text = $instructionsByLang[$languageId] ?? '';
+
+        return View::make('front.checkout.payment_instructions.bank_transfer', [
+            'instructionsText' => $text,
+        ])->render();
     }
 }
