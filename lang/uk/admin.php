@@ -283,7 +283,7 @@ return [
     'shipping_methods' => 'Способи доставки',
     'shipping_methods_list' => 'Список способів доставки',
     'shipping_method' => 'Спосіб доставки',
-    'shipping_method_flat_rate' => 'Фіксована ставка',
+    'shipping_method_flat_rate' => 'Доставка з фіксованою вартістю',
     'shipping_method_free' => 'Безкоштовна доставка',
     'shipping_cost' => 'Вартість',
     'shipping_sub_total' => 'Підсумок',

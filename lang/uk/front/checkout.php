@@ -27,7 +27,7 @@ return [
 
     'shipping_method' => 'Спосіб доставки',
     'choose_shipping_method' => 'Оберіть спосіб доставки...',
-    'shipping_flat_rate' => 'Фіксована ставка',
+    'shipping_flat_rate' => 'Доставка з фіксованою вартістю',
     'shipping_free' => 'Безкоштовна доставка',
     'shipping_method_modal_title' => 'Варіанти способу доставки',
     'shipping_method_modal_instruction' => 'Оберіть зручний спосіб доставки для цього замовлення.',

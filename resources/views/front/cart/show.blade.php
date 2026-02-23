@@ -81,15 +81,21 @@
 
             <div class="cart-totals mt-4">
                 <div class="row justify-content-end">
-                    <div class="col-md-5 col-lg-4">
-                        <table class="table table-borderless mb-0">
+                    <div class="col-md-5 col-lg-5">
+                        <table class="table table-sm table-bordered mb-0">
                             <tr>
                                 <td>{{ __('front/general.cart_subtotal') }}</td>
                                 <td class="text-end cart-subtotal">{{ $currency->formatPriceFromBase((string) $subtotal) }}</td>
                             </tr>
+                            @if(!empty($shippingMethod['name']))
+                            <tr>
+                                <td>{{ $shippingMethod['name'] }}</td>
+                                <td class="text-end">{{ $currency->formatPriceFromBase((string) ($shippingMethod['cost'] ?? 0)) }}</td>
+                            </tr>
+                            @endif
                             <tr class="fw-bold">
                                 <td>{{ __('front/general.cart_total_label') }}</td>
-                                <td class="text-end cart-total">{{ $currency->formatPriceFromBase((string) $subtotal) }}</td>
+                                <td class="text-end cart-total">{{ $currency->formatPriceFromBase((string) $orderTotal) }}</td>
                             </tr>
                         </table>
                     </div>

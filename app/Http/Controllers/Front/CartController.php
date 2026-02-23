@@ -6,12 +6,13 @@ use App\DTO\CartResult;
 use App\Http\Controllers\FrontController;
 use App\Http\Requests\Front\CartRequest;
 use App\Services\CartService;
+use App\Services\Shipping\ShippingService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\View\View;
 
 class CartController extends FrontController
 {
-    public function show(CartService $cartService): View
+    public function show(CartService $cartService, ShippingService $shippingService): View
     {
         $cart = $this->context->cart;
         $languageId = $this->context->language->id;
@@ -20,6 +21,13 @@ class CartController extends FrontController
         $display = $cartService->getCartRowsForDisplay($cart, $languageId);
         $cartRows = $display['cartRows'];
         $subtotal = $display['subtotal'];
+
+        $shippingMethod = session('shipping_method');
+        if (! empty($shippingMethod['id'])) {
+            $shippingMethod['name'] = $shippingService->getMethodTitle($shippingMethod['id']);
+        }
+        $shippingCost = isset($shippingMethod['cost']) ? (float) $shippingMethod['cost'] : 0.0;
+        $orderTotal = $subtotal + $shippingCost;
 
         $this->setBreadcrumbs([
             ['label' => __('front/general.breadcrumb_home'), 'url' => route('front.home', ['lang' => $this->context->getLanguage()?->code])],
@@ -35,6 +43,8 @@ class CartController extends FrontController
             'cartRows' => $cartRows,
             'subtotal' => $subtotal,
             'currency' => $currency,
+            'shippingMethod' => $shippingMethod,
+            'orderTotal' => $orderTotal,
         ]);
     }
 
