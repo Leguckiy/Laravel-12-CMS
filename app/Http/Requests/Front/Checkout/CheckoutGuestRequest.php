@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Front\Checkout;
 
-use App\Http\Requests\Front\Concerns\FailsIfCartEmpty;
+use App\Http\Requests\Front\Concerns\ValidatesCheckoutCart;
 use App\Models\Country;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
@@ -12,11 +12,11 @@ use Illuminate\Validation\Rule;
 
 class CheckoutGuestRequest extends FormRequest
 {
-    use FailsIfCartEmpty;
+    use ValidatesCheckoutCart;
 
     public function authorize(): bool
     {
-        $this->failIfCartEmpty();
+        $this->ensureCartValid();
 
         return true;
     }

@@ -13,8 +13,17 @@
          data-shipping-address-required="{{ __('front/checkout.shipping_address_required') }}"
          data-shipping-methods-none-available="{{ __('front/checkout.shipping_methods_none_available') }}"
          data-payment-methods-none-available="{{ __('front/checkout.payment_methods_none_available') }}"
-         data-payment-after-shipping="{{ __('front/checkout.payment_after_shipping') }}"></div>
+         data-payment-after-shipping="{{ __('front/checkout.payment_after_shipping') }}"
+         data-cart-url="{{ route('front.cart.show', ['lang' => request()->route('lang')]) }}"
+         data-redirect-to-cart-hint="{{ __('front/checkout.redirect_to_cart_hint') }}"></div>
     <h1 class="mb-4">{{ __('front/checkout.title') }}</h1>
+
+    @if ($hasInsufficientStockInCart)
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            {{ __('front/general.cart_insufficient_stock_notice') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
     @guest
         <p class="mb-4 text-muted">
@@ -269,7 +278,8 @@
              data-shipping-methods-url="{{ route('front.checkout.shipping_methods', ['lang' => request()->route('lang')]) }}"
              data-set-shipping-method-url="{{ route('front.checkout.set_shipping_method', ['lang' => request()->route('lang')]) }}"
              data-payment-methods-url="{{ route('front.checkout.payment_methods', ['lang' => request()->route('lang')]) }}"
-             data-set-payment-method-url="{{ route('front.checkout.set_payment_method', ['lang' => request()->route('lang')]) }}">
+             data-set-payment-method-url="{{ route('front.checkout.set_payment_method', ['lang' => request()->route('lang')]) }}"
+             data-confirm-order-url="{{ route('front.checkout.confirm', ['lang' => request()->route('lang')]) }}">
             <div class="card mb-4" id="checkout-shipping-method-card">
                 <div class="card-header">
                     <h2 class="h6 mb-0">{{ __('front/checkout.shipping_method') }}</h2>
@@ -302,7 +312,7 @@
                     <h2 class="h6 mb-0">{{ __('front/checkout.comment_order') }}</h2>
                 </div>
                 <div class="card-body">
-                    <textarea class="form-control" rows="3" placeholder="{{ __('front/checkout.comment_order') }}"></textarea>
+                    <textarea name="comment" id="checkout-order-comment" class="form-control" rows="3" placeholder="{{ __('front/checkout.comment_order') }}"></textarea>
                 </div>
             </div>
             <div class="card mb-4">
@@ -317,7 +327,7 @@
                         <tbody>
                             @foreach ($cartRows as $row)
                                 <tr>
-                                    <td>{{ $row['item']->quantity }}x {{ $row['name'] }}</td>
+                                    <td>{{ $row['item']->quantity }}x {{ $row['name'] }}{{ ($row['hasInsufficientStock'] ?? false) ? ' ***' : '' }}</td>
                                     <td class="text-end">{{ $currency->formatPriceFromBase((string) $row['rowTotal']) }}</td>
                                 </tr>
                             @endforeach

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Address extends Model
 {
@@ -34,6 +35,11 @@ class Address extends Model
         return $this->belongsTo(Country::class, 'country_id');
     }
 
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class, 'shipping_address_id');
+    }
+
     /**
      * Build shipping address array for checkout session.
      *
@@ -59,9 +65,9 @@ class Address extends Model
      */
     public function getFormattedAddress(string $countryName): string
     {
-        $line = trim($this->firstname . ' ' . $this->lastname) . ', ' . $this->address_1 . ', ' . $this->city;
+        $line = trim($this->firstname.' '.$this->lastname).', '.$this->address_1.', '.$this->city;
         if ($countryName !== '') {
-            $line .= ', ' . $countryName;
+            $line .= ', '.$countryName;
         }
 
         return $line;

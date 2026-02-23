@@ -47,4 +47,20 @@ class OrderStatus extends Model
     {
         return $this->translations()->where('language_id', $languageId)->value('name');
     }
+
+    /**
+     * Get orders with this status.
+     */
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class, 'order_status_id');
+    }
+
+    /**
+     * Get order history entries with this status.
+     */
+    public function orderHistories(): HasMany
+    {
+        return $this->hasMany(OrderHistory::class, 'order_status_id');
+    }
 }

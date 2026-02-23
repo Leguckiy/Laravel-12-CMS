@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Front\Checkout;
 
-use App\Http\Requests\Front\Concerns\FailsIfCartEmpty;
+use App\Http\Requests\Front\Concerns\ValidatesCheckoutCart;
 use App\Models\Address;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -12,7 +12,7 @@ use Illuminate\Http\JsonResponse;
 
 class CheckoutSetCustomerAddressRequest extends FormRequest
 {
-    use FailsIfCartEmpty;
+    use ValidatesCheckoutCart;
 
     private ?Address $resolvedAddress = null;
 
@@ -22,7 +22,7 @@ class CheckoutSetCustomerAddressRequest extends FormRequest
             return false;
         }
 
-        $this->failIfCartEmpty();
+        $this->ensureCartValid();
 
         return true;
     }

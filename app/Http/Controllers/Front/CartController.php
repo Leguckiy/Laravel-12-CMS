@@ -21,10 +21,11 @@ class CartController extends FrontController
         $display = $cartService->getCartRowsForDisplay($cart, $languageId);
         $cartRows = $display['cartRows'];
         $subtotal = $display['subtotal'];
+        $hasInsufficientStockInCart = $display['hasInsufficientStockInCart'];
 
         $shippingMethod = session('shipping_method');
-        if (! empty($shippingMethod['id'])) {
-            $shippingMethod['name'] = $shippingService->getMethodTitle($shippingMethod['id']);
+        if (! empty($shippingMethod['code'])) {
+            $shippingMethod['name'] = $shippingService->getMethodTitle($shippingMethod['code']);
         }
         $shippingCost = isset($shippingMethod['cost']) ? (float) $shippingMethod['cost'] : 0.0;
         $orderTotal = $subtotal + $shippingCost;
@@ -42,6 +43,7 @@ class CartController extends FrontController
         return view('front.cart.show', [
             'cartRows' => $cartRows,
             'subtotal' => $subtotal,
+            'hasInsufficientStockInCart' => $hasInsufficientStockInCart,
             'currency' => $currency,
             'shippingMethod' => $shippingMethod,
             'orderTotal' => $orderTotal,

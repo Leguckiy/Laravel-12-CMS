@@ -66,6 +66,14 @@ class Customer extends Model implements AuthenticatableContract
     }
 
     /**
+     * Get the customer's orders.
+     */
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class, 'customer_id');
+    }
+
+    /**
      * Addresses for checkout (ordered by id). Country name for display
      * comes from controller (countryNames) in the template.
      */
@@ -79,6 +87,6 @@ class Customer extends Model implements AuthenticatableContract
      */
     public function getFullnameAttribute(): string
     {
-        return trim($this->firstname . ' ' . $this->lastname);
+        return trim($this->firstname.' '.$this->lastname);
     }
 }

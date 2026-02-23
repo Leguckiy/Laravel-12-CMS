@@ -22,6 +22,7 @@ return [
     'add_to_cart' => 'В кошик',
     'quantity' => 'Кількість',
     'cart_insufficient_quantity' => 'Запитаної кількості немає в наявності. Доступно: :available.',
+    'cart_insufficient_stock_notice' => 'Товари, позначені ***, недоступні в запитаній кількості або відсутні на складі!',
     'cart_added_success' => 'Товар успішно додано в кошик.',
     'cart_updated' => 'Корзину оновлено.',
     'cart_item_removed' => 'Товар видалено з кошика.',

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\DTO\OrderFromCheckoutData;
 use App\Enums\CheckoutStep;
 use App\Http\Controllers\FrontController;
 use App\Http\Requests\Front\Checkout\CheckoutAddCustomerAddressRequest;
+use App\Http\Requests\Front\Checkout\CheckoutConfirmOrderRequest;
 use App\Http\Requests\Front\Checkout\CheckoutGetPaymentMethodsRequest;
 use App\Http\Requests\Front\Checkout\CheckoutGetShippingMethodsRequest;
 use App\Http\Requests\Front\Checkout\CheckoutGuestRequest;
@@ -17,12 +19,14 @@ use App\Models\Customer;
 use App\Models\CustomerGroup;
 use App\Services\CartService;
 use App\Services\CheckoutService;
+use App\Services\OrderService;
 use App\Services\Payment\PaymentService;
 use App\Services\Shipping\ShippingService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use InvalidArgumentException;
 
 class CheckoutController extends FrontController
 {
@@ -35,6 +39,15 @@ class CheckoutController extends FrontController
         }
 
         $cart = $this->context->cart;
+
+        try {
+            $cartService->validateCartStock($cart);
+        } catch (InvalidArgumentException $e) {
+            return redirect()
+                ->route('front.cart.show', ['lang' => $this->context->getLanguage()->code])
+                ->with('error', $e->getMessage());
+        }
+
         $languageId = $this->context->language->id;
         $currency = $this->context->currency;
         $display = $cartService->getCartRowsForDisplay($cart, $languageId);
@@ -61,16 +74,16 @@ class CheckoutController extends FrontController
         $checkoutStep = session('checkout_step', CheckoutStep::PersonalAddress->value);
         $shippingMethod = session('shipping_method');
         $paymentMethod = session('payment_method');
-        if (! empty($shippingMethod['id'])) {
-            $shippingMethod['name'] = $shippingService->getMethodTitle($shippingMethod['id']);
+        if (! empty($shippingMethod['code'])) {
+            $shippingMethod['name'] = $shippingService->getMethodTitle($shippingMethod['code']);
         }
-        if (! empty($paymentMethod['id'])) {
-            $paymentMethod['name'] = $paymentService->getMethodTitle($paymentMethod['id']);
+        if (! empty($paymentMethod['code'])) {
+            $paymentMethod['name'] = $paymentService->getMethodTitle($paymentMethod['code']);
         }
         $paymentInstructions = '';
-        if (! empty($paymentMethod['id'])) {
+        if (! empty($paymentMethod['code'])) {
             $paymentInstructions = $paymentService->getInstructionsForMethod(
-                $paymentMethod['id'],
+                $paymentMethod['code'],
                 $this->context->language->id
             );
         }
@@ -78,6 +91,7 @@ class CheckoutController extends FrontController
         return view('front.checkout.index', [
             'cartRows' => $display['cartRows'],
             'subtotal' => $display['subtotal'],
+            'hasInsufficientStockInCart' => $display['hasInsufficientStockInCart'],
             'currency' => $currency,
             'countryOptions' => $countryOptions,
             'countryNames' => $countryNames,
@@ -180,7 +194,7 @@ class CheckoutController extends FrontController
         $countryId = (int) ($shippingAddress['country_id']);
         $methods = $shippingService->getAvailableMethods($cart, $countryId, $this->context->currency);
         $shippingMethod = $request->session()->get('shipping_method');
-        $selectedId = isset($shippingMethod['id']) ? $shippingMethod['id'] : null;
+        $selectedId = $shippingMethod['code'] ?? null;
 
         return response()->json([
             'success' => true,
@@ -217,7 +231,7 @@ class CheckoutController extends FrontController
 
         $request->session()->forget('payment_method');
         $request->session()->put('shipping_method', [
-            'id' => $selected['id'],
+            'code' => $selected['id'],
             'cost' => $selected['cost'],
         ]);
         $request->session()->put('checkout_step', CheckoutStep::Payment->value);
@@ -248,7 +262,7 @@ class CheckoutController extends FrontController
             'name' => $m['title'],
         ], $rawMethods);
         $paymentMethod = $request->session()->get('payment_method');
-        $selectedId = isset($paymentMethod['id']) ? $paymentMethod['id'] : null;
+        $selectedId = $paymentMethod['code'] ?? null;
 
         return response()->json([
             'success' => true,
@@ -284,7 +298,7 @@ class CheckoutController extends FrontController
         }
 
         $request->session()->put('payment_method', [
-            'id' => $selected['code'],
+            'code' => $selected['code'],
         ]);
         $request->session()->put('checkout_step', CheckoutStep::Confirmation->value);
 
@@ -298,6 +312,72 @@ class CheckoutController extends FrontController
             'message' => __('front/checkout.payment_method_changed'),
             'method' => ['id' => $selected['code'], 'name' => $selected['title']],
             'instructions' => $instructions,
+        ]);
+    }
+
+    /**
+     * AJAX: confirm order, create Order + OrderProduct + OrderHistory, clear cart and checkout session.
+     */
+    public function confirmOrder(CheckoutConfirmOrderRequest $request, OrderService $orderService): JsonResponse
+    {
+        $cart = $this->context->cart;
+        $data = OrderFromCheckoutData::create(
+            session('customer', []),
+            session('shipping_address', []),
+            session('shipping_method', []),
+            session('payment_method', []),
+            $this->context->language->id,
+            $this->context->currency->id,
+            $request->validated('comment') ? (string) $request->validated('comment') : null,
+            $request->ip(),
+            $request->userAgent(),
+        );
+
+        try {
+            $order = $orderService->createOrderFromCheckout($cart, $data);
+        } catch (InvalidArgumentException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage(),
+            ], 422);
+        }
+
+        $cart->items()->delete();
+        $request->session()->forget(['shipping_method', 'payment_method']);
+        $request->session()->put('checkout_step', CheckoutStep::Delivery->value);
+
+        $request->session()->flash('success', __('front/checkout.order_placed_success'));
+        $request->session()->flash('order_id', $order->id);
+        $redirectUrl = route('front.checkout.success', ['lang' => $this->context->getLanguage()->code]);
+
+        return response()->json([
+            'success' => true,
+            'message' => __('front/checkout.order_placed_success'),
+            'order_id' => $order->id,
+            'redirect_url' => $redirectUrl,
+        ]);
+    }
+
+    /**
+     * Order success page (after confirmOrder redirect).
+     */
+    public function success(): View|RedirectResponse
+    {
+        if (! session()->has('order_id')) {
+            return redirect()
+                ->route('front.cart.show', ['lang' => $this->context->getLanguage()->code]);
+        }
+
+        $this->setBreadcrumbs([
+            ['label' => __('front/general.breadcrumb_home'), 'url' => route('front.home', ['lang' => $this->context->getLanguage()?->code])],
+            ['label' => __('front/general.cart_title'), 'url' => route('front.cart.show', ['lang' => $this->context->getLanguage()?->code])],
+            ['label' => __('front/checkout.title'), 'url' => route('front.checkout.index', ['lang' => $this->context->getLanguage()?->code])],
+            ['label' => __('front/checkout.success_title'), 'url' => null],
+        ]);
+
+        return view('front.checkout.success', [
+            'orderId' => session('order_id'),
+            'contactUrl' => '#',
         ]);
     }
 

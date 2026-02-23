@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Front\Checkout;
 
 use App\Enums\CheckoutStep;
-use App\Http\Requests\Front\Concerns\FailsIfCartEmpty;
+use App\Http\Requests\Front\Concerns\ValidatesCheckoutCart;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -11,11 +11,11 @@ use Illuminate\Http\JsonResponse;
 
 class CheckoutSetPaymentMethodRequest extends FormRequest
 {
-    use FailsIfCartEmpty;
+    use ValidatesCheckoutCart;
 
     public function authorize(): bool
     {
-        $this->failIfCartEmpty();
+        $this->ensureCartValid();
 
         $step = (int) $this->session()->get('checkout_step', 0);
         if ($step !== CheckoutStep::Payment->value) {

@@ -3,6 +3,7 @@
 return [
     'title' => 'Оформлення замовлення',
     'cart_empty' => 'Кошик порожній. Додайте товари перед оформленням.',
+    'order_placed_success' => 'Замовлення успішно оформлено.',
     'login_prompt' => 'Якщо у вас вже є обліковий запис, увійдіть на <a href=":url">сторінці входу</a>.',
 
     'account_type' => 'Тип облікового запису',
@@ -49,6 +50,14 @@ return [
     'confirm_order' => 'Підтвердити замовлення',
     'continue' => 'Продовжити',
 
+    'success_title' => 'Успіх',
+    'success_heading' => 'Ваше замовлення прийнято!',
+    'success_message' => 'Замовлення успішно оброблено.',
+    'success_contact_hint' => 'Якщо виникли питання, звертайтесь до :store_owner.',
+    'success_store_owner' => 'власника магазину',
+    'success_thanks' => 'Дякуємо за покупки!',
+    'success_continue' => 'Продовжити',
+
     'details_saved' => 'Дані збережено. Можна переходити до наступного кроку.',
     'guest_details_saved' => 'Успіх: Дані гостевого замовлення збережено!',
     'shipping_address_changed' => 'Успіх: Адресу доставки змінено!',
@@ -57,11 +66,14 @@ return [
     'shipping_address_required' => 'Потрібна адреса доставки!',
     'payment_after_shipping' => 'Спочатку оберіть спосіб доставки.',
     'shipping_methods_none_available' => 'Немає доступних способів доставки для обраної адреси.',
+    'shipping_method_no_longer_available' => 'Обраний спосіб доставки більше недоступний. Оберіть інший.',
     'payment_method_changed' => 'Успіх: Спосіб оплати змінено!',
     'payment_methods_none_available' => 'Немає доступних способів оплати для обраної адреси.',
+    'payment_method_no_longer_available' => 'Обраний спосіб оплати більше недоступний. Оберіть інший.',
     'registration_unavailable' => 'Реєстрація тимчасово недоступна.',
     'error_generic' => 'Виникла помилка.',
     'validation_form_errors' => 'Будь ласка, виправте помилки в формі.',
+    'redirect_to_cart_hint' => 'Вас буде перенаправлено на сторінку кошика.',
 
     'validation_account_type_required' => 'Оберіть тип облікового запису.',
     'validation_account_type_in' => 'Невірний тип облікового запису.',

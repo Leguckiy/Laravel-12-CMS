@@ -22,6 +22,7 @@ return [
     'add_to_cart' => 'Add to cart',
     'quantity' => 'Quantity',
     'cart_insufficient_quantity' => 'Requested quantity not available. In stock: :available.',
+    'cart_insufficient_stock_notice' => 'Products marked with *** are not available in the desired quantity or not in stock!',
     'cart_added_success' => 'Product has been added to cart.',
     'cart_updated' => 'Cart has been updated.',
     'cart_item_removed' => 'Product has been removed from cart.',

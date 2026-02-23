@@ -90,6 +90,14 @@ class Product extends Model
     }
 
     /**
+     * Get order line items for this product.
+     */
+    public function orderProducts(): HasMany
+    {
+        return $this->hasMany(OrderProduct::class, 'product_id');
+    }
+
+    /**
      * Get the features for the product.
      */
     public function features(): BelongsToMany

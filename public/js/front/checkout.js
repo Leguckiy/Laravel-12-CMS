@@ -24,6 +24,41 @@
         return (data && data.message) ? data.message : getCheckoutMessageOrFallback('error-generic');
     }
 
+    function getCartRedirectConfig() {
+        if (!$messages.length) {
+            return { url: '', hint: '' };
+        }
+        return {
+            url: $messages.attr('data-cart-url') || '',
+            hint: $messages.attr('data-redirect-to-cart-hint') || ''
+        };
+    }
+
+    var CART_REDIRECT_DELAY_MS = 2500;
+
+    /**
+     * Handles checkout AJAX errors. If response has redirect_to_cart, shows alert with message + hint and redirects to cart after delay.
+     * Otherwise shows generic error alert. Optional onBeforeShow callback (e.g. re-enable button) is always called so UI is not stuck.
+     */
+    function handleCheckoutCartError(xhr, onBeforeShow) {
+        if (typeof onBeforeShow === 'function') {
+            onBeforeShow();
+        }
+        var data = xhr.responseJSON;
+        if (data && data.redirect_to_cart) {
+            var cfg = getCartRedirectConfig();
+            var msg = (data.message ? data.message + ' ' : '') + (cfg.hint ? cfg.hint : '');
+            window.showFrontAlert(msg || getCheckoutMessageOrFallback('error-generic'), 'danger');
+            if (cfg.url) {
+                setTimeout(function () {
+                    window.location.href = cfg.url;
+                }, CART_REDIRECT_DELAY_MS);
+            }
+        } else {
+            window.showFrontAlert(getErrorMessageFromXhr(xhr), 'danger');
+        }
+    }
+
     function setAccountType(value) {
         var $hidden = $('#checkout-guest-account-type');
         var $passwordRow = $('.js-checkout-password-row');
@@ -184,6 +219,10 @@
     function handleCheckoutFormError($form, submitBtnId, xhr) {
         $('#' + submitBtnId).prop('disabled', false);
         var data = xhr.responseJSON;
+        if (data && data.redirect_to_cart) {
+            handleCheckoutCartError(xhr);
+            return;
+        }
         var errors = data && data.errors ? data.errors : {};
         if (Object.keys(errors).length > 0) {
             showFormErrors($form, errors);
@@ -337,7 +376,7 @@
                         }
                     },
                     error: function (xhr) {
-                        window.showFrontAlert(getErrorMessageFromXhr(xhr), 'danger');
+                        handleCheckoutCartError(xhr);
                     }
                 });
             });
@@ -466,9 +505,10 @@
                 }
             },
             error: function (xhr) {
-                $chooseBtn.prop('disabled', false);
-                $loading.addClass('d-none');
-                window.showFrontAlert(getErrorMessageFromXhr(xhr), 'danger');
+                handleCheckoutCartError(xhr, function () {
+                    $chooseBtn.prop('disabled', false);
+                    $loading.addClass('d-none');
+                });
             }
         });
     }
@@ -511,8 +551,9 @@
                 }
             },
             error: function (xhr) {
-                $confirmBtn.prop('disabled', false);
-                window.showFrontAlert(getErrorMessageFromXhr(xhr), 'danger');
+                handleCheckoutCartError(xhr, function () {
+                    $confirmBtn.prop('disabled', false);
+                });
             }
         });
     }
@@ -557,11 +598,52 @@
         });
     }
 
+    function initConfirmOrderButton() {
+        var $btn = $('#checkout-confirm-order-btn');
+        var $container = $('#checkout-step-container');
+        var url = $container.attr('data-confirm-order-url');
+        if (!$btn.length || !url) {
+            return;
+        }
+        $btn.on('click', function () {
+            if ($btn.prop('disabled')) {
+                return;
+            }
+            $btn.prop('disabled', true);
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    _token: token,
+                    comment: $('#checkout-order-comment').val() || ''
+                },
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json'
+                },
+                success: function (result) {
+                    if (result.success && result.redirect_url) {
+                        window.location.href = result.redirect_url;
+                    } else {
+                        $btn.prop('disabled', false);
+                        window.showFrontAlert(result.message || getCheckoutMessageOrFallback('error-generic'), 'danger');
+                    }
+                },
+                error: function (xhr) {
+                    handleCheckoutCartError(xhr, function () {
+                        $btn.prop('disabled', false);
+                    });
+                }
+            });
+        });
+    }
+
     function initCheckout() {
         initGuestCheckout();
         initLoggedinCheckout();
         initAddressSwitcher();
         initChooseButtons();
+        initConfirmOrderButton();
         updateConfirmOrderButtonState();
     }
 

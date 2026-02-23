@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\CartProduct;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
+use InvalidArgumentException;
 
 class CartService
 {
@@ -157,7 +158,7 @@ class CartService
     }
 
     /**
-     * @return array{cartRows: array<int, array{item: CartProduct, product: Product, slug: ?string, name: string, rowTotal: float}>, subtotal: float}
+     * @return array{cartRows: array<int, array{item: CartProduct, product: Product, slug: ?string, name: string, rowTotal: float, hasInsufficientStock: bool}>, subtotal: float, hasInsufficientStockInCart: bool}
      */
     public function getCartRowsForDisplay(?Cart $cart, int $languageId): array
     {
@@ -165,7 +166,7 @@ class CartService
         $subtotal = 0.0;
 
         if ($cart === null) {
-            return ['cartRows' => $cartRows, 'subtotal' => $subtotal];
+            return ['cartRows' => $cartRows, 'subtotal' => $subtotal, 'hasInsufficientStockInCart' => false];
         }
 
         $cart->load(['items.product.translations']);
@@ -186,10 +187,51 @@ class CartService
                 'slug' => $slug,
                 'name' => $name,
                 'rowTotal' => $rowTotal,
+                'hasInsufficientStock' => (int) $product->quantity < (int) $item->quantity,
             ];
         }
 
-        return ['cartRows' => $cartRows, 'subtotal' => $subtotal];
+        $hasInsufficientStockInCart = ! empty(array_filter($cartRows, fn ($r) => $r['hasInsufficientStock']));
+
+        return ['cartRows' => $cartRows, 'subtotal' => $subtotal, 'hasInsufficientStockInCart' => $hasInsufficientStockInCart];
+    }
+
+    /**
+     * Remove from cart only items whose product is disabled (status = 0). Then ensure no item has insufficient stock.
+     *
+     * @throws InvalidArgumentException when a product is missing or quantity in cart exceeds stock
+     */
+    public function validateCartStock(Cart $cart): void
+    {
+        $cart->load(['items.product']);
+
+        $anyDeleted = false;
+        foreach ($cart->items as $item) {
+            $product = $item->product;
+            if (! $product->status) {
+                $item->delete();
+                $anyDeleted = true;
+            }
+        }
+
+        if ($anyDeleted) {
+            $cart->load(['items.product']);
+        }
+
+        if ($cart->items->isEmpty()) {
+            throw new InvalidArgumentException(__('front/checkout.cart_empty'));
+        }
+
+        foreach ($cart->items as $item) {
+            $product = $item->product;
+            $requested = (int) $item->quantity;
+            $available = (int) $product->quantity;
+            if ($available < $requested) {
+                throw new InvalidArgumentException(
+                    __('front/general.cart_insufficient_quantity', ['available' => $available])
+                );
+            }
+        }
     }
 
     private function getOrCreateCart(string $cartToken, ?int $customerId): Cart

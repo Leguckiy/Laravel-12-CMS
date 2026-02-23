@@ -28,14 +28,14 @@ class CheckoutService
     /**
      * Build guest customer session array from validated data.
      *
-     * @param array<string, mixed> $validated
+     * @param  array<string, mixed>  $validated
      * @return array<string, mixed>
      */
     public function guestCustomerSessionFromValidated(array $validated): array
     {
         return [
             'account_type' => 'guest',
-            'customer_id' => 0,
+            'customer_id' => null,
             'firstname' => $validated['firstname'],
             'lastname' => $validated['lastname'],
             'email' => $validated['email'],
@@ -45,13 +45,13 @@ class CheckoutService
     /**
      * Build guest shipping_address session array from validated data.
      *
-     * @param array<string, mixed> $validated
+     * @param  array<string, mixed>  $validated
      * @return array<string, mixed>
      */
     public function guestShippingAddressSessionFromValidated(array $validated): array
     {
         return [
-            'address_id' => 0,
+            'address_id' => null,
             'firstname' => $validated['firstname'],
             'lastname' => $validated['lastname'],
             'company' => $validated['company'],
@@ -63,4 +63,3 @@ class CheckoutService
         ];
     }
 }
-

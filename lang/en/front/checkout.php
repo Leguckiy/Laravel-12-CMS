@@ -3,6 +3,7 @@
 return [
     'title' => 'Checkout',
     'cart_empty' => 'Your cart is empty. Add products before checkout.',
+    'order_placed_success' => 'Your order has been placed successfully.',
     'login_prompt' => 'If you already have an account, please login at the <a href=":url">login page</a>.',
 
     'account_type' => 'Account type',
@@ -49,6 +50,14 @@ return [
     'confirm_order' => 'Confirm order',
     'continue' => 'Continue',
 
+    'success_title' => 'Success',
+    'success_heading' => 'Your order has been placed!',
+    'success_message' => 'Your order has been successfully processed!',
+    'success_contact_hint' => 'Please direct any questions you have to the :store_owner.',
+    'success_store_owner' => 'store owner',
+    'success_thanks' => 'Thanks for shopping with us online!',
+    'success_continue' => 'Continue',
+
     'details_saved' => 'Details saved. You can proceed to the next step.',
     'guest_details_saved' => 'Success: Your guest account information has been saved!',
     'shipping_address_changed' => 'Success: You have changed shipping address!',
@@ -57,11 +66,14 @@ return [
     'shipping_address_required' => 'Shipping address required!',
     'payment_after_shipping' => 'Please choose shipping method first.',
     'shipping_methods_none_available' => 'No shipping methods available for the selected address.',
+    'shipping_method_no_longer_available' => 'The selected shipping method is no longer available. Please choose another.',
     'payment_method_changed' => 'Success: You have changed payment method!',
     'payment_methods_none_available' => 'No payment methods available for the selected address.',
+    'payment_method_no_longer_available' => 'The selected payment method is no longer available. Please choose another.',
     'registration_unavailable' => 'Registration is temporarily unavailable.',
     'error_generic' => 'An error occurred.',
     'validation_form_errors' => 'Please correct the errors in the form.',
+    'redirect_to_cart_hint' => 'You will be redirected to the cart page.',
 
     'validation_account_type_required' => 'Please choose account type.',
     'validation_account_type_in' => 'Invalid account type.',

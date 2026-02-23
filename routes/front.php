@@ -31,6 +31,8 @@ Route::middleware('front.locale')
         Route::post('/checkout/set-shipping-method', [CheckoutController::class, 'setShippingMethod'])->name('front.checkout.set_shipping_method');
         Route::post('/checkout/payment-methods', [CheckoutController::class, 'getPaymentMethods'])->name('front.checkout.payment_methods');
         Route::post('/checkout/set-payment-method', [CheckoutController::class, 'setPaymentMethod'])->name('front.checkout.set_payment_method');
+        Route::post('/checkout/confirm', [CheckoutController::class, 'confirmOrder'])->name('front.checkout.confirm');
+        Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('front.checkout.success');
         Route::post('/cart/add', [CartController::class, 'add'])->name('front.cart.add');
         Route::put('/cart', [CartController::class, 'update'])->name('front.cart.update');
         Route::delete('/cart', [CartController::class, 'destroy'])->name('front.cart.destroy');

@@ -2,18 +2,18 @@
 
 namespace App\Http\Requests\Front\Checkout;
 
-use App\Http\Requests\Front\Concerns\FailsIfCartEmpty;
+use App\Http\Requests\Front\Concerns\ValidatesCheckoutCart;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 
 class CheckoutGetPaymentMethodsRequest extends FormRequest
 {
-    use FailsIfCartEmpty;
+    use ValidatesCheckoutCart;
 
     public function authorize(): bool
     {
-        $this->failIfCartEmpty();
+        $this->ensureCartValid();
 
         if (empty($this->session()->get('shipping_address'))) {
             throw new HttpResponseException(
