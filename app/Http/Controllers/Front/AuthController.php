@@ -57,6 +57,7 @@ class AuthController extends FrontController
         $credentials = $request->validated();
 
         if (Auth::guard('web')->attempt($credentials)) {
+            $this->clearCheckoutSession();
             $customerId = (int) Auth::guard('web')->id();
             $cartToken = $request->session()->get('cart_token');
             if (is_string($cartToken)) {
@@ -107,12 +108,15 @@ class AuthController extends FrontController
 
         Auth::guard('web')->login($customer);
 
+        $this->clearCheckoutSession();
+
         return redirect()->route('front.home', ['lang' => $this->context->language->code])
             ->with('status', __('front/auth.registered'));
     }
 
     public function logout(): RedirectResponse
     {
+        $this->clearCheckoutSession();
         $customerId = Auth::guard('web')->id();
         if ($customerId !== null) {
             Cart::unbindTokenForCustomer((int) $customerId);
@@ -120,6 +124,17 @@ class AuthController extends FrontController
         Auth::guard('web')->logout();
 
         return redirect()->back();
+    }
+
+    private function clearCheckoutSession(): void
+    {
+        request()->session()->forget([
+            'customer',
+            'shipping_address',
+            'shipping_method',
+            'payment_method',
+            'checkout_step',
+        ]);
     }
 
     private function isValidBackUrl(string $url): bool
