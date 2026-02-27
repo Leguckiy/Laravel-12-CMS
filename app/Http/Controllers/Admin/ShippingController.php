@@ -95,17 +95,6 @@ class ShippingController extends AdminController
             ]);
         }
 
-        $currentLanguageId = $this->context->language->id;
-        $countries = Country::with(['translations' => fn ($q) => $q->where('language_id', $currentLanguageId)])
-            ->where('status', true)
-            ->orderBy('id')
-            ->get();
-        $countries->each(function (Country $country) use ($currentLanguageId): void {
-            $country->name = $country->getName($currentLanguageId);
-        });
-        $countryOptions = $countries->map(fn (Country $c) => ['id' => $c->id, 'name' => $c->name])->values()->all();
-        $selectedCountryIds = $shippingMethod->countries ?? [];
-
         $viewName = 'admin.shipping.' . $code;
 
         return view($viewName, [
@@ -114,8 +103,8 @@ class ShippingController extends AdminController
                 'code' => $code,
                 'name' => __('admin.shipping_method_' . $code),
             ],
-            'countryOptions' => $countryOptions,
-            'selectedCountryIds' => $selectedCountryIds,
+            'countryOptions' => Country::getOptions($this->context->language->id),
+            'selectedCountryIds' => $shippingMethod->countries ?? [],
         ]);
     }
 

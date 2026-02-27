@@ -111,15 +111,7 @@ class PaymentController extends AdminController
         ];
 
         if (in_array($code, ['cod', 'cheque', 'bank_transfer'], true)) {
-            $currentLanguageId = $this->context->language->id;
-            $countries = Country::with(['translations' => fn ($q) => $q->where('language_id', $currentLanguageId)])
-                ->where('status', true)
-                ->orderBy('id')
-                ->get();
-            $countries->each(function (Country $country) use ($currentLanguageId): void {
-                $country->name = $country->getName($currentLanguageId);
-            });
-            $viewData['countryOptions'] = $countries->map(fn (Country $c) => ['id' => $c->id, 'name' => $c->name])->values()->all();
+            $viewData['countryOptions'] = Country::getOptions($this->context->language->id);
             $viewData['selectedCountryIds'] = $paymentMethod->countries ?? [];
         }
 

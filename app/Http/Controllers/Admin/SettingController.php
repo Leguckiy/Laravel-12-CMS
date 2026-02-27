@@ -166,16 +166,7 @@ class SettingController extends AdminController
 
         $languages = $this->getLanguages();
 
-        $countriesOptions = Country::with('translations')
-            ->get()
-            ->map(function (Country $country) {
-                return [
-                    'id' => $country->id,
-                    'name' => $this->translation($country->translations)?->name ?? '',
-                ];
-            })
-            ->values()
-            ->toArray();
+        $countriesOptions = Country::getOptions($this->context->language->id);
 
         $languagesOptions = $languages
             ->map(function ($language) {

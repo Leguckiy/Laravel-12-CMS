@@ -76,27 +76,39 @@ class Country extends Model
     }
 
     /**
-     * Get active countries as option arrays for checkout/forms.
-     * Each option: id, name (for given language), postcode_required.
+     * Get active countries as option arrays for forms/selects.
+     * When $languageId is passed: one name per option (id, name, postcode_required).
+     * When $languageId is null: names for all languages (id, names as [language_id => name], postcode_required).
      *
-     * @return array<int, array{id: int, name: string, postcode_required: bool}>
+     * @return array<int, array{id: int, name?: string, names?: array<int, string>, postcode_required: bool}>
      */
-    public static function getOptionsForCheckout(int $languageId): array
+    public static function getOptions(?int $languageId = null): array
     {
-        $countries = static::query()
+        $query = static::query()
             ->where('status', true)
-            ->with(['translations' => fn ($q) => $q->where('language_id', $languageId)])
-            ->orderBy('id')
-            ->get();
+            ->orderBy('id');
 
+        if ($languageId !== null) {
+            $query->with(['translations' => fn ($q) => $q->where('language_id', $languageId)]);
+        } else {
+            $query->with('translations');
+        }
+
+        $countries = $query->get();
         $options = [];
+
         foreach ($countries as $country) {
-            $translation = $country->translations->firstWhere('language_id', $languageId);
-            $options[] = [
+            $option = [
                 'id' => $country->id,
-                'name' => $translation->name,
                 'postcode_required' => (bool) $country->postcode_required,
             ];
+            if ($languageId !== null) {
+                $translation = $country->translations->firstWhere('language_id', $languageId);
+                $option['name'] = $translation?->name ?? '';
+            } else {
+                $option['names'] = $country->getNames();
+            }
+            $options[] = $option;
         }
 
         return $options;

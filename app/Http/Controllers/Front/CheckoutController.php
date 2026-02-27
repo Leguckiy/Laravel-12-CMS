@@ -52,7 +52,7 @@ class CheckoutController extends FrontController
         $currency = $this->context->currency;
         $display = $cartService->getCartRowsForDisplay($cart, $languageId);
 
-        $countryOptions = Country::getOptionsForCheckout($languageId);
+        $countryOptions = Country::getOptions($languageId);
         $countryNames = collect($countryOptions)->pluck('name', 'id')->all();
 
         $this->setBreadcrumbs([

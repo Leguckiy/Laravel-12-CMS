@@ -23,7 +23,7 @@ class CustomerAddressController extends AdminController
     {
         $this->pushCustomerBreadcrumb($customer);
         $this->breadcrumbs[] = ['title' => 'add_address', 'route' => null, 'translate' => true];
-        $countryOptions = $this->getCountryOptions();
+        $countryOptions = Country::getOptions($this->context->language->id);
 
         return view('admin.customer.address.form', [
             'customer' => $customer,
@@ -59,7 +59,7 @@ class CustomerAddressController extends AdminController
         $this->ensureAddressBelongsToCustomer($customer, $address);
         $this->pushCustomerBreadcrumb($customer);
         $this->breadcrumbs[] = ['title' => 'edit_address', 'route' => null, 'translate' => true];
-        $countryOptions = $this->getCountryOptions();
+        $countryOptions = Country::getOptions($this->context->language->id);
 
         return view('admin.customer.address.form', [
             'customer' => $customer,
@@ -102,27 +102,5 @@ class CustomerAddressController extends AdminController
             'url' => route('admin.customer.edit', $customer->id),
             'translate' => false,
         ];
-    }
-
-    /**
-     * @return array<int, array{id: int, name: string}>
-     */
-    protected function getCountryOptions(): array
-    {
-        $languageId = $this->context->language->id;
-
-        return Country::with(['translations' => fn ($q) => $q->where('language_id', $languageId)])
-            ->where('status', true)
-            ->orderBy('id')
-            ->get()
-            ->map(function (Country $country) {
-                return [
-                    'id' => $country->id,
-                    'name' => $country->translations->first()?->name ?? '',
-                    'postcode_required' => (bool) $country->postcode_required,
-                ];
-            })
-            ->values()
-            ->toArray();
     }
 }
