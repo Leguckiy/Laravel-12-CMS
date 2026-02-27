@@ -33,52 +33,69 @@ class UserGroup extends Model
     ];
 
     /**
+     * Get user groups as options for selects.
+     *
+     * @return array<int, array{id: int, name: string}>
+     */
+    public static function getOptions(): array
+    {
+        return static::query()
+            ->orderBy('id')
+            ->get()
+            ->map(static fn (self $group) => [
+                'id' => $group->id,
+                'name' => $group->name,
+            ])
+            ->values()
+            ->toArray();
+    }
+
+    /**
      * Get the users for the user group.
      */
     public function users(): HasMany
     {
         return $this->hasMany(User::class, 'user_group_id');
     }
-    
+
     /**
      * Check if user group has permission for given module title
-     * 
-     * @param string $title Module title (e.g., 'user/user')
-     * @param string $type Permission type: 'view' or 'edit'
+     *
+     * @param  string  $title  Module title (e.g., 'user/user')
+     * @param  string  $type  Permission type: 'view' or 'edit'
      */
     public function hasPermission(string $title, string $type): bool
     {
         $storedPermissions = $this->permission[$type] ?? [];
-        
+
         return in_array($title, $storedPermissions);
     }
 
     /**
      * Check if user group has permission for given route name
-     * 
-     * @param string $routeName Route name (e.g., 'admin.user.index')
-     * @param string $ability Permission ability: 'view' or 'edit'
-     * @return bool
+     *
+     * @param  string  $routeName  Route name (e.g., 'admin.user.index')
+     * @param  string  $ability  Permission ability: 'view' or 'edit'
      */
     public function hasPermissionForRoute(string $routeName, string $ability): bool
     {
         // Extract module from route name (e.g., 'admin.user.index' => 'user')
         $parts = explode('.', $routeName);
-        
+
         if (count($parts) < 3 || $parts[0] !== 'admin') {
             return false;
         }
-        
+
         $module = $parts[1];
-        
+
         // Get title from permissions mapping config
         $permissionsMapping = config('admin.permissions_mapping', []);
         $title = $permissionsMapping[$module] ?? null;
-        
-        if (!$title) {
+
+        if (! $title) {
             return false;
         }
-        
+
         return $this->hasPermission($title, $ability);
     }
 }

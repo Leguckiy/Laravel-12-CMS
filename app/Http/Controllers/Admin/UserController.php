@@ -42,9 +42,7 @@ class UserController extends AdminController
     public function create(): View
     {
         $userGroups = UserGroup::all();
-        $userGroupsOptions = $userGroups->map(function ($group) {
-            return ['id' => $group->id, 'name' => $group->name];
-        })->toArray();
+        $userGroupsOptions = UserGroup::getOptions();
 
         $languagesOptions = Language::getActiveOptions();
 
@@ -87,9 +85,7 @@ class UserController extends AdminController
     public function edit(User $user): View
     {
         $userGroups = UserGroup::all();
-        $userGroupsOptions = $userGroups->map(function ($group) {
-            return ['id' => $group->id, 'name' => $group->name];
-        })->toArray();
+        $userGroupsOptions = UserGroup::getOptions();
 
         $languagesOptions = Language::getActiveOptions();
 
