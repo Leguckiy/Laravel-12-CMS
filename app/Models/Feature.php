@@ -86,6 +86,36 @@ class Feature extends Model
     }
 
     /**
+     * Get feature options with their values formatted for forms.
+     *
+     * @return array<int, array{id: int, name: string, values: array<int, array{id: int, value: string}>>>
+     */
+    public static function getOptionsWithValues(int $languageId): array
+    {
+        $features = static::query()
+            ->with([
+                'translations' => fn ($q) => $q->where('language_id', $languageId),
+                'values.translations' => fn ($q) => $q->where('language_id', $languageId),
+            ])
+            ->orderBy('sort_order')
+            ->orderBy('id')
+            ->get();
+
+        return $features->map(static function (self $feature) use ($languageId): array {
+            return [
+                'id' => $feature->id,
+                'name' => $feature->translations->firstWhere('language_id', $languageId)?->name ?? '',
+                'values' => $feature->values->map(static function (FeatureValue $value) use ($languageId): array {
+                    return [
+                        'id' => $value->id,
+                        'value' => $value->translations->firstWhere('language_id', $languageId)?->value ?? '',
+                    ];
+                })->values()->toArray(),
+            ];
+        })->values()->toArray();
+    }
+
+    /**
      * The "booted" method of the model.
      */
     protected static function booted(): void

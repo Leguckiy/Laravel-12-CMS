@@ -285,7 +285,7 @@ class ProductController extends AdminController
             $query->where('language_id', $currentLanguageId);
         }])->get();
 
-        $featureOptions = $this->getFeatureOptions($currentLanguageId);
+        $featureOptions = Feature::getOptionsWithValues($currentLanguageId);
 
         $translations = [
             'name' => [],
@@ -332,28 +332,6 @@ class ProductController extends AdminController
             'selectedCategories',
             'productFeatures'
         );
-    }
-
-    /**
-     * Get feature options with their values formatted for form.
-     */
-    private function getFeatureOptions(int $currentLanguageId): array
-    {
-        return Feature::with([
-            'translations',
-            'values.translations',
-        ])->get()->map(function (Feature $feature) use ($currentLanguageId) {
-            return [
-                'id' => $feature->id,
-                'name' => $this->translation($feature->translations, $currentLanguageId)?->name ?? '',
-                'values' => $feature->values->map(function ($value) use ($currentLanguageId) {
-                    return [
-                        'id' => $value->id,
-                        'value' => $this->translation($value->translations, $currentLanguageId)?->value ?? '',
-                    ];
-                })->values()->toArray(),
-            ];
-        })->values()->toArray();
     }
 
     /**
