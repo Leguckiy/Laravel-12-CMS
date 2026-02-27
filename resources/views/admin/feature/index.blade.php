@@ -1,14 +1,17 @@
 @extends('layouts.admin')
 
-@section('content')
-    <x-admin.delete-form />
-    
-    <div class="action mb-2">
-        <x-admin.action-button-add 
+@section('page-actions')
+    <div class="d-flex gap-2">
+        <x-admin.action-button-add
             permission="admin.feature.create"
-            :text="__('admin.add_feature')" 
+            :text="__('admin.add_feature')"
         />
     </div>
+@endsection
+
+@section('content')
+    <x-admin.delete-form />
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-list"></i>
