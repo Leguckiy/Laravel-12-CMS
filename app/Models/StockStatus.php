@@ -55,4 +55,26 @@ class StockStatus extends Model
     {
         return $this->translations()->where('language_id', $languageId)->value('name');
     }
+
+    /**
+     * Get stock statuses as options for selects in a specific language.
+     *
+     * @return array<int, array{id: int, name: string}>
+     */
+    public static function getOptions(int $languageId): array
+    {
+        return static::query()
+            ->with('translations')
+            ->orderBy('id')
+            ->get()
+            ->map(static function (self $status) use ($languageId): array {
+                return [
+                    'id' => $status->id,
+                    'name' => $status->translations
+                        ->firstWhere('language_id', $languageId)?->name ?? '',
+                ];
+            })
+            ->values()
+            ->toArray();
+    }
 }

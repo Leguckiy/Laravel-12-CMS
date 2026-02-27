@@ -279,7 +279,7 @@ class ProductController extends AdminController
         $languages = $this->getLanguages();
         $currentLanguageId = $this->context->language->id;
 
-        $stockStatusOptions = $this->getStockStatusOptions($currentLanguageId);
+        $stockStatusOptions = StockStatus::getOptions($currentLanguageId);
 
         $categories = Category::with(['translations' => function ($query) use ($currentLanguageId) {
             $query->where('language_id', $currentLanguageId);
@@ -332,19 +332,6 @@ class ProductController extends AdminController
             'selectedCategories',
             'productFeatures'
         );
-    }
-
-    /**
-     * Get stock status options formatted for select field.
-     */
-    private function getStockStatusOptions(int $currentLanguageId): array
-    {
-        return StockStatus::with('translations')->get()->map(function (StockStatus $status) use ($currentLanguageId) {
-            return [
-                'id' => $status->id,
-                'name' => $this->translation($status->translations, $currentLanguageId)?->name ?? '',
-            ];
-        })->values()->toArray();
     }
 
     /**
