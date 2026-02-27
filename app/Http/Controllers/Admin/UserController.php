@@ -46,10 +46,7 @@ class UserController extends AdminController
             return ['id' => $group->id, 'name' => $group->name];
         })->toArray();
 
-        $languages = Language::where('status', true)->orderBy('sort_order')->get();
-        $languagesOptions = $languages->map(function ($language) {
-            return ['id' => $language->id, 'name' => $language->name];
-        })->toArray();
+        $languagesOptions = Language::getActiveOptions();
 
         return view('admin.user.form', compact('userGroups', 'userGroupsOptions', 'languagesOptions'));
     }
@@ -94,10 +91,7 @@ class UserController extends AdminController
             return ['id' => $group->id, 'name' => $group->name];
         })->toArray();
 
-        $languages = Language::where('status', true)->orderBy('sort_order')->get();
-        $languagesOptions = $languages->map(function ($language) {
-            return ['id' => $language->id, 'name' => $language->name];
-        })->toArray();
+        $languagesOptions = Language::getActiveOptions();
 
         return view('admin.user.form', compact('user', 'userGroupsOptions', 'languagesOptions'));
     }

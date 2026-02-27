@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\SettingRequest;
 use App\Models\Country;
 use App\Models\Currency;
 use App\Models\CustomerGroup;
+use App\Models\Language;
 use App\Models\Setting;
 use App\Models\SettingLang;
 use App\Services\AdminImageUploader;
@@ -168,15 +169,7 @@ class SettingController extends AdminController
 
         $countriesOptions = Country::getOptions($this->context->language->id);
 
-        $languagesOptions = $languages
-            ->map(function ($language) {
-                return [
-                    'id' => $language->id,
-                    'name' => $language->name,
-                ];
-            })
-            ->values()
-            ->toArray();
+        $languagesOptions = Language::getActiveOptions();
 
         $currenciesOptions = Currency::all()
             ->map(function (Currency $currency) {

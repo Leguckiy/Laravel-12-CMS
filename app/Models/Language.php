@@ -32,4 +32,24 @@ class Language extends Model
     protected $casts = [
         'status' => 'boolean',
     ];
+
+    /**
+     * Get active languages as simple options for selects.
+     *
+     * @return array<int, array{id: int, name: string}>
+     */
+    public static function getActiveOptions(): array
+    {
+        return static::query()
+            ->where('status', true)
+            ->orderBy('sort_order')
+            ->orderBy('id')
+            ->get()
+            ->map(static fn (self $language) => [
+                'id' => $language->id,
+                'name' => $language->name,
+            ])
+            ->values()
+            ->toArray();
+    }
 }
