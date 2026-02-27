@@ -188,18 +188,7 @@ class SettingController extends AdminController
             ->values()
             ->toArray();
 
-        $customerGroupsOptions = CustomerGroup::with('translations')
-            ->orderBy('sort_order')
-            ->orderBy('id')
-            ->get()
-            ->map(function (CustomerGroup $group) {
-                return [
-                    'id' => $group->id,
-                    'name' => $this->translation($group->translations)?->name ?? (string) $group->id,
-                ];
-            })
-            ->values()
-            ->toArray();
+        $customerGroupsOptions = CustomerGroup::getOptions($this->context->language->id);
 
         return compact(
             'settings',

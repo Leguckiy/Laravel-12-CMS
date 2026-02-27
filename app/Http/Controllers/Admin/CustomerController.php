@@ -47,7 +47,7 @@ class CustomerController extends AdminController
      */
     public function create(): View
     {
-        $customerGroupsOptions = $this->getCustomerGroupOptions($this->context->language->id);
+        $customerGroupsOptions = CustomerGroup::getOptions($this->context->language->id);
         $customer = null;
 
         return view('admin.customer.form', compact('customer', 'customerGroupsOptions'));
@@ -87,7 +87,7 @@ class CustomerController extends AdminController
     public function edit(Customer $customer): View
     {
         $customer->load('addresses.country');
-        $customerGroupsOptions = $this->getCustomerGroupOptions($this->context->language->id);
+        $customerGroupsOptions = CustomerGroup::getOptions($this->context->language->id);
 
         return view('admin.customer.form', compact('customer', 'customerGroupsOptions'));
     }
@@ -120,23 +120,6 @@ class CustomerController extends AdminController
         $customer->delete();
 
         return redirect()->route('admin.customer.index')->with('success', __('admin.deleted_successfully'));
-    }
-
-    /**
-     * Get customer groups options for select fields in current language.
-     */
-    private function getCustomerGroupOptions(?int $languageId): array
-    {
-        return CustomerGroup::with('translations')
-            ->get()
-            ->map(function (CustomerGroup $group) use ($languageId) {
-                return [
-                    'id' => $group->id,
-                    'name' => $this->translation($group->translations, $languageId)?->name ?? '',
-                ];
-            })
-            ->values()
-            ->toArray();
     }
 
     /**

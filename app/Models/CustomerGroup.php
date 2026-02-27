@@ -18,6 +18,7 @@ class CustomerGroup extends Model
 
         return $group ?? static::query()->orderBy('sort_order')->orderBy('id')->first();
     }
+
     /**
      * The table associated with the model.
      */
@@ -43,6 +44,44 @@ class CustomerGroup extends Model
         'approval' => 'boolean',
         'sort_order' => 'integer',
     ];
+
+    /**
+     * Get customer groups as options for selects.
+     * When $languageId is provided: each option has id and single translated name for that language.
+     * When $languageId is null: each option has id and names array [language_id => name].
+     *
+     * @return array<int, array{id: int, name?: string, names?: array<int, string>}>
+     */
+    public static function getOptions(?int $languageId = null): array
+    {
+        $query = static::query()
+            ->orderBy('sort_order')
+            ->orderBy('id')
+            ->with('translations');
+
+        $groups = $query->get();
+
+        $options = [];
+
+        foreach ($groups as $group) {
+            $option = [
+                'id' => $group->id,
+            ];
+
+            if ($languageId !== null) {
+                $translation = $group->translations->firstWhere('language_id', $languageId);
+                $option['name'] = $translation?->name ?? (string) $group->id;
+            } else {
+                $option['names'] = $group->translations
+                    ->pluck('name', 'language_id')
+                    ->toArray();
+            }
+
+            $options[] = $option;
+        }
+
+        return $options;
+    }
 
     /**
      * Get all translations for the customer group.
