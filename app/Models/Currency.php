@@ -32,6 +32,25 @@ class Currency extends Model
     ];
 
     /**
+     * Get currencies as options for selects.
+     *
+     * @return array<int, array{id: int, name: string}>
+     */
+    public static function getOptions(): array
+    {
+        return static::query()
+            ->orderBy('title')
+            ->orderBy('id')
+            ->get()
+            ->map(static fn (self $currency) => [
+                'id' => $currency->id,
+                'name' => $currency->title,
+            ])
+            ->values()
+            ->toArray();
+    }
+
+    /**
      * Convert amount from base currency (value=1) to this currency.
      * Price in DB is in base currency. value = rate to base (1 base = value of this currency).
      */

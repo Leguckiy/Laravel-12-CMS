@@ -171,15 +171,7 @@ class SettingController extends AdminController
 
         $languagesOptions = Language::getActiveOptions();
 
-        $currenciesOptions = Currency::all()
-            ->map(function (Currency $currency) {
-                return [
-                    'id' => $currency->id,
-                    'name' => $currency->title,
-                ];
-            })
-            ->values()
-            ->toArray();
+        $currenciesOptions = Currency::getOptions();
 
         $customerGroupsOptions = CustomerGroup::getOptions($this->context->language->id);
 
