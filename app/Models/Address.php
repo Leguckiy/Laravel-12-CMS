@@ -23,7 +23,15 @@ class Address extends Model
         'city',
         'postcode',
         'country_id',
+        'default',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'default' => 'boolean',
+        ];
+    }
 
     public function customer(): BelongsTo
     {

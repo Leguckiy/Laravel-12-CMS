@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\CurrencyController;
+use App\Http\Controllers\Admin\CustomerAddressController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\CustomerGroupController;
 use App\Http\Controllers\Admin\FeatureController;
@@ -11,9 +12,9 @@ use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\OrderStatusController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ShippingController;
 use App\Http\Controllers\Admin\StockStatusController;
 use App\Http\Controllers\Admin\UserController;
@@ -53,6 +54,7 @@ Route::prefix('admin')->group(function () {
             Route::resource('product', ProductController::class)->names('admin.product');
             Route::resource('customer_group', CustomerGroupController::class)->names('admin.customer_group');
             Route::resource('customer', CustomerController::class)->names('admin.customer');
+            Route::resource('customer.address', CustomerAddressController::class)->names('admin.customer_address')->except(['index']);
             Route::resource('page', PageController::class)->names('admin.page');
             Route::get('settings', [SettingController::class, 'edit'])->name('admin.setting.edit');
             Route::put('settings', [SettingController::class, 'update'])->name('admin.setting.update');

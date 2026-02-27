@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$customer->id"
+        baseName="customer"
+        :itemName="__('admin.customer')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.customer')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
     
@@ -43,12 +52,6 @@
                     </table>
                 </div>
             </div>
-            <x-admin.detail-actions 
-                :id="$customer->id"
-                baseName="customer"
-                :itemName="__('admin.customer')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.customer')])"
-            />
         </div>
     </div>
 @endsection

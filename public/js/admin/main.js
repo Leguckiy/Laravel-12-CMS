@@ -116,6 +116,25 @@
         });
     }
 
+    function initializeAddressFormPostcode() {
+        const countrySelect = document.getElementById('input-country_id');
+        const postcodeRow = document.querySelector('.js-admin-address-postcode-row');
+        if (!countrySelect || !postcodeRow) {
+            return;
+        }
+        function update() {
+            const option = countrySelect.options[countrySelect.selectedIndex];
+            const required = option && option.getAttribute('data-postcode-required') === '1';
+            if (required) {
+                postcodeRow.classList.add('required');
+            } else {
+                postcodeRow.classList.remove('required');
+            }
+        }
+        countrySelect.addEventListener('change', update);
+        update();
+    }
+
     function initializeRichTextEditors() {
         if (!window.tinymce) {
             return;
@@ -165,6 +184,7 @@
         initializeAdminActions();
         initializeMultilangFields();
         initializeImageUploadFields();
+        initializeAddressFormPostcode();
         initializeRichTextEditors();
     }
 

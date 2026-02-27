@@ -37,6 +37,13 @@ return [
     // Customer validation
     'customer_group_id.exists' => 'Вибрана група клієнта не існує.',
 
+    // Customer address validation
+    'address_1.required' => 'Адреса є обов\'язковою.',
+    'city.required' => 'Місто є обов\'язковим.',
+    'postcode.required' => 'Поштовий індекс обов\'язковий для обраної країни.',
+    'country_id.required' => 'Оберіть країну.',
+    'country_id.exists' => 'Вибрана країна не існує.',
+
     // Customer group validation
     'customer_group_name.required' => 'Назва групи клієнтів є обов\'язковою.',
     'customer_group_name.string' => 'Назва групи клієнтів має бути рядком.',

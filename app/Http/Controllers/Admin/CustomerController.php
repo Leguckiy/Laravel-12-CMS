@@ -48,8 +48,9 @@ class CustomerController extends AdminController
     public function create(): View
     {
         $customerGroupsOptions = $this->getCustomerGroupOptions($this->context->language->id);
+        $customer = null;
 
-        return view('admin.customer.form', compact('customerGroupsOptions'));
+        return view('admin.customer.form', compact('customer', 'customerGroupsOptions'));
     }
 
     /**
@@ -85,6 +86,7 @@ class CustomerController extends AdminController
      */
     public function edit(Customer $customer): View
     {
+        $customer->load('addresses.country');
         $customerGroupsOptions = $this->getCustomerGroupOptions($this->context->language->id);
 
         return view('admin.customer.form', compact('customer', 'customerGroupsOptions'));

@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Http\View\Composers\AdminComposer;
 use App\Http\View\Composers\FrontComposer;
+use App\Models\Address;
 use App\Models\Setting;
 use App\Models\SettingLang;
+use App\Observers\AddressObserver;
 use App\Observers\SettingObserver;
 use App\Services\AdminMenuService;
 use Illuminate\Pagination\Paginator;
@@ -35,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
         // Use Bootstrap 5 pagination views
         Paginator::useBootstrapFive();
 
+        Address::observe(AddressObserver::class);
         Setting::observe(SettingObserver::class);
         SettingLang::observe(SettingObserver::class);
 

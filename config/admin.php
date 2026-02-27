@@ -161,6 +161,7 @@ return [
         'feature' => 'catalog/features',
         'feature_value' => 'catalog/feature_value',
         'customer' => 'customer/customer',
+        'customer_address' => 'customer/customer_address',
         'customer_group' => 'customer/customer_group',
         'page' => 'content/page',
         'setting' => 'setting/setting',

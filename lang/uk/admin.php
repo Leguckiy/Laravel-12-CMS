@@ -276,6 +276,7 @@ return [
     'tab_store' => 'Магазин',
     'tab_local' => 'Локалізація',
     'tab_customer' => 'Клієнт',
+    'tab_addresses' => 'Адреси',
     'customer_group' => 'Група клієнта',
 
     // Shipping
@@ -307,4 +308,18 @@ return [
     'payment_order_status' => 'Статус замовлення',
     'payment_countries_required' => 'Оберіть хоча б одну країну.',
     'menu_sales_payment' => 'Оплата',
+
+    // Address
+    'addresses' => 'Адреси',
+    'address' => 'Адреса',
+    'address_name' => 'Ім\'я',
+    'address_1' => 'Адреса 1',
+    'address_2' => 'Адреса 2',
+    'address_default' => 'За замовчуванням',
+    'no_addresses' => 'Немає адрес.',
+    'add_address' => 'Додати адресу',
+    'edit_address' => 'Редагувати адресу',
+    'company' => 'Компанія',
+    'city' => 'Місто',
+    'postcode' => 'Поштовий індекс',
 ];

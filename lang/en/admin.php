@@ -276,6 +276,7 @@ return [
     'tab_store' => 'Store',
     'tab_local' => 'Local',
     'tab_customer' => 'Customer',
+    'tab_addresses' => 'Addresses',
     'customer_group' => 'Customer Group',
 
     // Shipping
@@ -307,4 +308,18 @@ return [
     'payment_order_status' => 'Order Status',
     'payment_countries_required' => 'Select at least one country.',
     'menu_sales_payment' => 'Payment',
+
+    // Address
+    'addresses' => 'Addresses',
+    'address' => 'Address',
+    'address_name' => 'Name',
+    'address_1' => 'Address 1',
+    'address_2' => 'Address 2',
+    'address_default' => 'Default',
+    'no_addresses' => 'No addresses.',
+    'add_address' => 'Add address',
+    'edit_address' => 'Edit address',
+    'company' => 'Company',
+    'city' => 'City',
+    'postcode' => 'Postcode',
 ];

@@ -71,6 +71,14 @@ class CheckoutController extends FrontController
         $shippingAddress = session('shipping_address', []);
         $addresses = $customer?->getAddressesForCheckout() ?? collect();
 
+        if ($customer && $addresses->isNotEmpty() && empty($shippingAddress['address_id'])) {
+            $defaultAddress = $customer->addresses()->where('default', true)->first();
+            if ($defaultAddress !== null) {
+                $shippingAddress = $defaultAddress->toCheckoutSessionArray();
+                session()->put('shipping_address', $shippingAddress);
+            }
+        }
+
         $checkoutStep = session('checkout_step', CheckoutStep::PersonalAddress->value);
         $shippingMethod = session('shipping_method');
         $paymentMethod = session('payment_method');
@@ -416,6 +424,8 @@ class CheckoutController extends FrontController
      */
     private function createAddress(Customer $customer, array $data): Address
     {
+        $isFirstAddress = $customer->addresses()->count() === 0;
+
         return Address::query()->create([
             'customer_id' => $customer->id,
             'firstname' => $data['firstname'],
@@ -426,6 +436,7 @@ class CheckoutController extends FrontController
             'city' => $data['city'],
             'postcode' => $data['postcode'],
             'country_id' => $data['country_id'],
+            'default' => $isFirstAddress,
         ]);
     }
 }

@@ -37,6 +37,13 @@ return [
     // Customer validation
     'customer_group_id.exists' => 'Selected customer group does not exist.',
 
+    // Customer address validation
+    'address_1.required' => 'Address is required.',
+    'city.required' => 'City is required.',
+    'postcode.required' => 'Postcode is required for the selected country.',
+    'country_id.required' => 'Please select a country.',
+    'country_id.exists' => 'Selected country does not exist.',
+
     // Customer group validation
     'customer_group_name.required' => 'Customer group name is required.',
     'customer_group_name.string' => 'Customer group name must be a string.',

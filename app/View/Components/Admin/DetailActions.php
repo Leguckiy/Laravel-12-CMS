@@ -8,8 +8,8 @@ use Illuminate\View\Component;
 class DetailActions extends Component
 {
     public function __construct(
-        public $id,
-        public string $baseName,
+        public $id = null,
+        public ?string $baseName = null,
         public ?string $editRoute = null,
         public ?string $destroyRoute = null,
         public ?string $backRoute = null,
@@ -19,20 +19,20 @@ class DetailActions extends Component
         public ?string $itemName = null
     ) {
         if ($this->baseName && $this->id) {
-            $baseRoute = 'admin.' . $this->baseName;
+            $baseRoute = 'admin.'.$this->baseName;
 
-            $this->editRoute = $this->editRoute ?? route($baseRoute . '.edit', $this->id);
-            $this->destroyRoute = $this->destroyRoute ?? route($baseRoute . '.destroy', $this->id);
-            $this->backRoute = $this->backRoute ?? route($baseRoute . '.index');
+            $this->editRoute = $this->editRoute ?? route($baseRoute.'.edit', $this->id);
+            $this->destroyRoute = $this->destroyRoute ?? route($baseRoute.'.destroy', $this->id);
+            $this->backRoute = $this->backRoute ?? route($baseRoute.'.index');
 
-            $this->editPermission = $this->editPermission ?? $baseRoute . '.edit';
-            $this->destroyPermission = $this->destroyPermission ?? $baseRoute . '.destroy';
+            $this->editPermission = $this->editPermission ?? $baseRoute.'.edit';
+            $this->destroyPermission = $this->destroyPermission ?? $baseRoute.'.destroy';
 
             $this->itemName = $this->itemName ?? $this->baseName;
         }
 
         $this->itemName = $this->itemName ?? 'item';
-        $this->confirmText = $this->confirmText ?? 'Are you sure you want to delete this ' . $this->itemName . '?';
+        $this->confirmText = $this->confirmText ?? 'Are you sure you want to delete this '.$this->itemName.'?';
     }
 
     public function render(): View
@@ -40,5 +40,3 @@ class DetailActions extends Component
         return view('components.admin.detail-actions');
     }
 }
-
-
