@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($featureValue)"
+        :backRoute="route('admin.feature_value.index', ['feature' => $feature->id])"
+        formId="form-feature-value"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -42,11 +50,6 @@
                     name="sort_order"
                     :label="__('admin.sort_order')"
                     :value="old('sort_order', $featureValue->sort_order ?? 0)"
-                />
-
-                <x-admin.form-actions 
-                    :isEdit="isset($featureValue)"
-                    :backRoute="route('admin.feature_value.index', ['feature' => $feature->id])"
                 />
             </form>
         </div>

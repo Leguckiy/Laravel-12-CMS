@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($currency)"
+        :backRoute="route('admin.currency.index')"
+        formId="form-currency"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -26,10 +34,6 @@
                 <x-admin.input-field type="number" name="decimal_place" :label="__('admin.decimal_place')" :placeholder="__('admin.decimal_place')" :value="$currency->decimal_place ?? ''"/>
                 <x-admin.input-field type="text" name="value" :label="__('admin.value')" :placeholder="__('admin.value')" :value="$currency->value ?? ''"/>
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="$currency->status ?? false"/>
-                <x-admin.form-actions 
-                    :isEdit="isset($currency)"
-                    :backRoute="route('admin.currency.index')"
-                />
             </form>
         </div>
     </div>

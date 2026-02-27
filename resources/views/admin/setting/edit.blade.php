@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="true"
+        :backRoute="route('admin.dashboard')"
+        formId="form-setting"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ __('admin.edit_setting') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ route('admin.setting.update') }}" method="POST" enctype="multipart/form-data">
+            <form id="form-setting" action="{{ route('admin.setting.update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <ul class="nav nav-tabs">
@@ -148,10 +156,6 @@
                         />
                     </div>
                 </div>
-                <x-admin.form-actions 
-                    isEdit="true"
-                    :backRoute="route('admin.dashboard')"
-                />
             </form>
         </div>
     </div>

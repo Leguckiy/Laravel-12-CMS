@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($user)"
+        :backRoute="route('admin.user.index')"
+        formId="form-user"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -33,10 +41,6 @@
                 <x-admin.input-field type="password" name="password" :label="__('admin.password')" :placeholder="__('admin.password')" value="" :required="true"/>
                 <x-admin.input-field type="password" name="confirm" :label="__('admin.confirm')" :placeholder="__('admin.confirm')" value="" :required="true"/>
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="$user->status ?? false"/>
-                <x-admin.form-actions 
-                    :isEdit="isset($user)"
-                    :backRoute="route('admin.user.index')"
-                />
             </form>
         </div>
     </div>

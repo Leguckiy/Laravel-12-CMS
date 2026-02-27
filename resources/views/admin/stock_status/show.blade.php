@@ -1,8 +1,17 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$stockStatus->id"
+        baseName="stock_status"
+        :itemName="__('admin.stock_status')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.stock_status')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
-    
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
@@ -18,12 +27,6 @@
                     fieldName="stock_status_name"
                 />
             </div>
-            <x-admin.detail-actions 
-                :id="$stockStatus->id"
-                baseName="stock_status"
-                :itemName="__('admin.stock_status')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.stock_status')])"
-            />
         </div>
     </div>
 @endsection

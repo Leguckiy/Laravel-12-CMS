@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="true"
+        :backRoute="route('admin.shipping.index')"
+        formId="form-shipping"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ __('admin.edit') }}: {{ $method['name'] }}</span>
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.shipping.update', $method['code']) }}" method="POST">
+            <form id="form-shipping" action="{{ route('admin.shipping.update', $method['code']) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <x-admin.input-field
@@ -44,10 +52,6 @@
                     name="status"
                     :label="__('admin.status')"
                     :value="old('status', $shippingMethod->status ?? true)"
-                />
-                <x-admin.form-actions
-                    :isEdit="true"
-                    :backRoute="route('admin.shipping.index')"
                 />
             </form>
         </div>

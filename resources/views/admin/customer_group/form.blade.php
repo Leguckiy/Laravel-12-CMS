@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($customerGroup)"
+        :backRoute="route('admin.customer_group.index')"
+        formId="form-customer-group"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($customerGroup) ? __('admin.edit_customer_group') : __('admin.add_customer_group') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($customerGroup) ? route('admin.customer_group.update', $customerGroup->id) : route('admin.customer_group.store') }}" method="POST">
+            <form id="form-customer-group" action="{{ isset($customerGroup) ? route('admin.customer_group.update', $customerGroup->id) : route('admin.customer_group.store') }}" method="POST">
                 @csrf
                 @if(isset($customerGroup))
                     @method('PUT')
@@ -40,10 +48,6 @@
                 />
                 <x-admin.switch-field name="approval" :label="__('admin.customer_group_approval')" :value="$customerGroup->approval ?? false"/>
                 <x-admin.input-field type="number" name="sort_order" :label="__('admin.sort_order')" :value="$customerGroup->sort_order ?? '1'"/>
-                <x-admin.form-actions 
-                    :isEdit="isset($customerGroup)"
-                    :backRoute="route('admin.customer_group.index')"
-                />
             </form>
         </div>
     </div>

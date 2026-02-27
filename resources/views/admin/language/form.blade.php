@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($language)"
+        :backRoute="route('admin.language.index')"
+        formId="form-language"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($language) ? __('admin.edit_language') : __('admin.add_language') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($language) ? route('admin.language.update', $language->id) : route('admin.language.store') }}" method="POST">
+            <form id="form-language" action="{{ isset($language) ? route('admin.language.update', $language->id) : route('admin.language.store') }}" method="POST">
                 @csrf
                 @if(isset($language))
                     @method('PUT')
@@ -23,10 +31,6 @@
                 <x-admin.input-field type="text" name="code" :label="__('admin.code')" :placeholder="__('admin.code')" :value="$language->code ?? ''" :required="true"/>
                 <x-admin.input-field type="number" name="sort_order" :label="__('admin.sort_order')" :value="$language->sort_order ?? '0'"/>
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="$language->status ?? false"/>
-                <x-admin.form-actions 
-                    :isEdit="isset($language)"
-                    :backRoute="route('admin.language.index')"
-                />
             </form>
         </div>
     </div>

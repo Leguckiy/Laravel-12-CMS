@@ -1,8 +1,17 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$feature->id"
+        baseName="feature"
+        :itemName="__('admin.feature')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.feature')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
-    
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
@@ -26,12 +35,6 @@
                     <span>{{ $feature->sort_order }}</span>
                 </div>
             </div>
-            <x-admin.detail-actions 
-                :id="$feature->id"
-                baseName="feature"
-                :itemName="__('admin.feature')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.feature')])"
-            />
         </div>
     </div>
 @endsection

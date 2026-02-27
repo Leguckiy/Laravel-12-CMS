@@ -1,8 +1,17 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$language->id"
+        baseName="language"
+        :itemName="__('admin.language')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.language')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
-    
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
@@ -33,13 +42,6 @@
                     </table>
                 </div>
             </div>
-            
-            <x-admin.detail-actions 
-                :id="$language->id"
-                baseName="language"
-                :itemName="__('admin.language')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.language')])"
-            />
         </div>
     </div>
 @endsection

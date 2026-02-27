@@ -16,9 +16,16 @@
                 <x-admin.breadcrumb :items="$breadcrumbs ?? []" />
             </div>
             <div class="container-fluid">
-                <h1>
-                    @yield('title', $title)
-                </h1>
+                <div class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                    <h1 class="mb-0">
+                        @yield('title', $title)
+                    </h1>
+                    @hasSection('page-actions')
+                        <div class="page-actions">
+                            @yield('page-actions')
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
         <div class="container-fluid">

@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($product)"
+        :backRoute="route('admin.product.index')"
+        formId="form-product"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($product) ? __('admin.edit_product') : __('admin.add_product') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($product) ? route('admin.product.update', $product->id) : route('admin.product.store') }}" method="POST" enctype="multipart/form-data">
+            <form id="form-product" action="{{ isset($product) ? route('admin.product.update', $product->id) : route('admin.product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if(isset($product))
                     @method('PUT')
@@ -151,10 +159,6 @@
                         />
                     </div>
                 </div>
-                <x-admin.form-actions 
-                    :isEdit="isset($product)"
-                    :backRoute="route('admin.product.index')"
-                />
             </form>
         </div>
     </div>

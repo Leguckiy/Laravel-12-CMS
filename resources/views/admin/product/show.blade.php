@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$product->id"
+        baseName="product"
+        :itemName="__('admin.product')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.product')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
 
@@ -147,12 +156,6 @@
                     <x-admin.status-badge :status="$product->status" />
                 </div>
             </div>
-            <x-admin.detail-actions 
-                :id="$product->id"
-                baseName="product"
-                :itemName="__('admin.product')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.product')])"
-            />
         </div>
     </div>
 @endsection

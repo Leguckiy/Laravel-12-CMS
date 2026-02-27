@@ -8,7 +8,7 @@
     'confirmText',
 ])
 
-<div class="mt-4">
+<div class="d-flex gap-2">
     <x-admin.button-edit 
         :route="$editRoute" 
         :permission="$editPermission" 

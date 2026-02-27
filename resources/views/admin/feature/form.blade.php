@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($feature)"
+        :backRoute="route('admin.feature.index')"
+        formId="form-feature"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($feature) ? __('admin.edit_feature') : __('admin.add_feature') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($feature) ? route('admin.feature.update', $feature->id) : route('admin.feature.store') }}" method="POST">
+            <form id="form-feature" action="{{ isset($feature) ? route('admin.feature.update', $feature->id) : route('admin.feature.store') }}" method="POST">
                 @csrf
                 @if(isset($feature))
                     @method('PUT')
@@ -30,10 +38,6 @@
                     :required="true"
                 />
                 <x-admin.input-field type="number" name="sort_order" :label="__('admin.sort_order')" :value="$feature->sort_order ?? '0'"/>
-                <x-admin.form-actions 
-                    :isEdit="isset($feature)"
-                    :backRoute="route('admin.feature.index')"
-                />
             </form>
         </div>
     </div>

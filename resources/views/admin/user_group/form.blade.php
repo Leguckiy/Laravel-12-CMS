@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($userGroup)"
+        :backRoute="route('admin.user_group.index')"
+        formId="form-user-group"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -69,10 +77,6 @@
                     </div>
                 </div>
                 
-                <x-admin.form-actions 
-                    :isEdit="isset($userGroup)"
-                    :backRoute="route('admin.user_group.index')"
-                />
             </form>
         </div>
     </div>

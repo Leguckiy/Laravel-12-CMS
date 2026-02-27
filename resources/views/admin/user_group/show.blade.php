@@ -1,8 +1,17 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$userGroup->id"
+        baseName="user_group"
+        :itemName="__('admin.user_group')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.user_group')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
-    
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
@@ -19,13 +28,6 @@
                     </table>
                 </div>
             </div>
-            
-            <x-admin.detail-actions 
-                :id="$userGroup->id"
-                baseName="user_group"
-                :itemName="__('admin.user_group')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.user_group')])"
-            />
         </div>
     </div>
 @endsection

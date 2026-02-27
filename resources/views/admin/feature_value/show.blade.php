@@ -1,8 +1,20 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :editRoute="route('admin.feature_value.edit', ['feature' => $feature->id, 'feature_value' => $featureValue->id])"
+        :destroyRoute="route('admin.feature_value.destroy', ['feature' => $feature->id, 'feature_value' => $featureValue->id])"
+        :backRoute="route('admin.feature_value.index', $feature)"
+        editPermission="admin.feature_value.edit"
+        destroyPermission="admin.feature_value.destroy"
+        :itemName="__('admin.feature_value')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.feature_value')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
-    
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
@@ -26,15 +38,6 @@
                     <span>{{ $featureValue->sort_order }}</span>
                 </div>
             </div>
-            <x-admin.detail-actions 
-                :id="$featureValue->id"
-                baseName="feature_value"
-                :editRoute="route('admin.feature_value.edit', ['feature' => $feature->id, 'feature_value' => $featureValue->id])"
-                :destroyRoute="route('admin.feature_value.destroy', ['feature' => $feature->id, 'feature_value' => $featureValue->id])"
-                :backRoute="route('admin.feature_value.index', ['feature' => $feature->id, 'feature_value' => $featureValue->id])"
-                :itemName="__('admin.feature_value')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.feature_value')])"
-            />
         </div>
     </div>
 @endsection

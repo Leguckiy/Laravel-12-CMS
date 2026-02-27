@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($stockStatus)"
+        :backRoute="route('admin.stock_status.index')"
+        formId="form-stock-status"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($stockStatus) ? __('admin.edit_stock_status') : __('admin.add_stock_status') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($stockStatus) ? route('admin.stock_status.update', $stockStatus->id) : route('admin.stock_status.store') }}" method="POST">
+            <form id="form-stock-status" action="{{ isset($stockStatus) ? route('admin.stock_status.update', $stockStatus->id) : route('admin.stock_status.store') }}" method="POST">
                 @csrf
                 @if(isset($stockStatus))
                     @method('PUT')
@@ -28,10 +36,6 @@
                     :languages="$languages"
                     :currentLanguageId="$adminLanguage->id"
                     :required="true"
-                />
-                <x-admin.form-actions 
-                    :isEdit="isset($stockStatus)"
-                    :backRoute="route('admin.stock_status.index')"
                 />
             </form>
         </div>

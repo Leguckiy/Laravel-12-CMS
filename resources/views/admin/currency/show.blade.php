@@ -1,8 +1,17 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$currency->currency_id ?? $currency->id"
+        baseName="currency"
+        :itemName="__('admin.currency')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.currency')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
-    
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
@@ -55,13 +64,6 @@
                     </table>
                 </div>
             </div>
-            
-            <x-admin.detail-actions 
-                :id="$currency->currency_id ?? $currency->id"
-                baseName="currency"
-                :itemName="__('admin.currency')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.currency')])"
-            />
         </div>
     </div>
 @endsection

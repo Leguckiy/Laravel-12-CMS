@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($country)"
+        :backRoute="route('admin.country.index')"
+        formId="form-country"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($country) ? __('admin.edit_country') : __('admin.add_country') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($country) ? route('admin.country.update', $country->id) : route('admin.country.store') }}" method="POST">
+            <form id="form-country" action="{{ isset($country) ? route('admin.country.update', $country->id) : route('admin.country.store') }}" method="POST">
                 @csrf
                 @if(isset($country))
                     @method('PUT')
@@ -33,10 +41,6 @@
                 <x-admin.input-field type="text" name="iso_code_3" :label="__('admin.iso_code_3')" :placeholder="__('admin.iso_code_3')" :value="$country->iso_code_3 ?? ''" :required="true"/>
                 <x-admin.switch-field name="postcode_required" :label="__('admin.postcode_required')" :value="$country->postcode_required ?? false"/>
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="$country->status ?? false"/>
-                <x-admin.form-actions 
-                    :isEdit="isset($country)"
-                    :backRoute="route('admin.country.index')"
-                />
             </form>
         </div>
     </div>

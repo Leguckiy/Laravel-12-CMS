@@ -1,8 +1,17 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$customerGroup->id"
+        baseName="customer_group"
+        :itemName="__('admin.customer_group')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.customer_group')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
-    
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
@@ -48,12 +57,6 @@
                     <span>{{ $customerGroup->sort_order }}</span>
                 </div>
             </div>
-            <x-admin.detail-actions 
-                :id="$customerGroup->id"
-                baseName="customer_group"
-                :itemName="__('admin.customer_group')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.customer_group')])"
-            />
         </div>
     </div>
 @endsection

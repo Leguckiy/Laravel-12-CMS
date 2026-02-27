@@ -1,8 +1,17 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.detail-actions
+        :id="$category->id"
+        baseName="category"
+        :itemName="__('admin.category')"
+        :confirmText="__('admin.delete_confirm', ['item' => __('admin.category')])"
+    />
+@endsection
+
 @section('content')
     <x-admin.delete-form />
-    
+
     <div class="card">
         <div class="card-header">
             <i class="fa-solid fa-eye"></i>
@@ -83,12 +92,6 @@
                     <x-admin.status-badge :status="$category->status" />
                 </div>
             </div>
-            <x-admin.detail-actions 
-                :id="$category->id"
-                baseName="category"
-                :itemName="__('admin.category')"
-                :confirmText="__('admin.delete_confirm', ['item' => __('admin.category')])"
-            />
         </div>
     </div>
 @endsection

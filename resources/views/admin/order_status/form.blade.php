@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($orderStatus)"
+        :backRoute="route('admin.order_status.index')"
+        formId="form-order-status"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($orderStatus) ? __('admin.edit_order_status') : __('admin.add_order_status') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($orderStatus) ? route('admin.order_status.update', $orderStatus->id) : route('admin.order_status.store') }}" method="POST">
+            <form id="form-order-status" action="{{ isset($orderStatus) ? route('admin.order_status.update', $orderStatus->id) : route('admin.order_status.store') }}" method="POST">
                 @csrf
                 @if(isset($orderStatus))
                     @method('PUT')
@@ -28,10 +36,6 @@
                     :languages="$languages"
                     :currentLanguageId="$adminLanguage->id"
                     :required="true"
-                />
-                <x-admin.form-actions 
-                    :isEdit="isset($orderStatus)"
-                    :backRoute="route('admin.order_status.index')"
                 />
             </form>
         </div>

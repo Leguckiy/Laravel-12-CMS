@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($category)"
+        :backRoute="route('admin.category.index')"
+        formId="form-category"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($category) ? __('admin.edit_category') : __('admin.add_category') }}</span>
         </div>
         <div class="card-body">
-            <form id="form-user-group" action="{{ isset($category) ? route('admin.category.update', $category->id) : route('admin.category.store') }}" method="POST" enctype="multipart/form-data">
+            <form id="form-category" action="{{ isset($category) ? route('admin.category.update', $category->id) : route('admin.category.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if(isset($category))
                     @method('PUT')
@@ -77,10 +85,6 @@
                 />
                 <x-admin.input-field type="number" name="sort_order" :label="__('admin.sort_order')" :value="$category->sort_order ?? '0'"/>
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="$category->status ?? false"/>
-                <x-admin.form-actions 
-                    :isEdit="isset($category)"
-                    :backRoute="route('admin.category.index')"
-                />
             </form>
         </div>
     </div>

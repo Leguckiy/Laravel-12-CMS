@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('page-actions')
+    <x-admin.form-actions
+        :isEdit="isset($page)"
+        :backRoute="route('admin.page.index')"
+        formId="form-page"
+    />
+@endsection
+
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,7 +22,7 @@
             <span>{{ isset($page) ? __('admin.edit_page') : __('admin.add_page') }}</span>
         </div>
         <div class="card-body">
-            <form action="{{ isset($page) ? route('admin.page.update', $page->id) : route('admin.page.store') }}" method="POST">
+            <form id="form-page" action="{{ isset($page) ? route('admin.page.update', $page->id) : route('admin.page.store') }}" method="POST">
                 @csrf
                 @if (isset($page))
                     @method('PUT')
@@ -71,10 +79,6 @@
                 />
                 <x-admin.input-field type="number" name="sort_order" :label="__('admin.sort_order')" :value="isset($page) ? $page->sort_order : 0" />
                 <x-admin.switch-field name="status" :label="__('admin.status')" :value="isset($page) ? $page->status : true" />
-                <x-admin.form-actions
-                    :isEdit="isset($page)"
-                    :backRoute="route('admin.page.index')"
-                />
             </form>
         </div>
     </div>
