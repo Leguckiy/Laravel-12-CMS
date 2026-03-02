@@ -135,7 +135,8 @@ a {
 #content {
     left: 0px;
     margin-left: 235px;
-    flex: 1
+    flex: 1;
+    padding-bottom: 40px;
 }
 
 #footer {
