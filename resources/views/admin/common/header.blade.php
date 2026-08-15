@@ -36,7 +36,7 @@
                     </li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                        <a href="{{ url('/') }}" target="_blank" class="dropdown-item">
+                        <a href="{{ $storeUrl }}" target="_blank" class="dropdown-item">
                             <i class="fas fa-external-link-alt fa-fw"></i>
                             {{ __('admin.go_to_website') }}
                         </a>

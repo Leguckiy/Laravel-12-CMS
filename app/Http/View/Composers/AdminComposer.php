@@ -2,6 +2,8 @@
 
 namespace App\Http\View\Composers;
 
+use App\Models\Language;
+use App\Models\Setting;
 use App\Services\AdminMenuService;
 use App\Support\AdminContext;
 use Illuminate\View\View;
@@ -34,9 +36,13 @@ class AdminComposer
             }
         }
 
+        $storeLanguage = Language::find((int) Setting::get('config_language_id'));
+        $storeUrl = route('front.home', ['lang' => $storeLanguage->code]);
+
         $view->with([
             'adminUser' => $this->context->user,
             'adminLanguage' => $this->context->language,
+            'storeUrl' => $storeUrl,
             'menuItems' => $this->menuService->getMenuItems(),
             'breadcrumbs' => $breadcrumbs,
             'title' => $title,
