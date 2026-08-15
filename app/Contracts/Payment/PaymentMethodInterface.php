@@ -10,6 +10,8 @@ interface PaymentMethodInterface
 
     public function supports(Cart $cart, int $countryId): bool;
 
+    public function supportsItems(array $items, int $countryId): bool;
+
     /**
      * Return HTML instructions for the checkout page, or empty string if none.
      */

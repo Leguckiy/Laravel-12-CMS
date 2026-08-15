@@ -89,7 +89,7 @@ class OrderService
         if ($currency === null) {
             throw new InvalidArgumentException(__('front/checkout.error_generic'));
         }
-        $methods = $this->shippingService->getAvailableMethods($cart, $data->shippingCountryId, $currency);
+        $methods = $this->shippingService->getAvailableMethodsForCart($cart, $data->shippingCountryId, $currency);
         $found = collect($methods)->firstWhere('id', $data->shippingMethodCode);
         if ($found === null) {
             throw new InvalidArgumentException(__('front/checkout.shipping_method_no_longer_available'));
@@ -98,14 +98,14 @@ class OrderService
 
     protected function validatePaymentMethodAvailable(Cart $cart, OrderFromCheckoutData $data): void
     {
-        $methods = $this->paymentService->getAvailableMethods($cart, $data->shippingCountryId);
+        $methods = $this->paymentService->getAvailableMethodsForCart($cart, $data->shippingCountryId);
         $found = collect($methods)->firstWhere('code', $data->paymentMethodCode);
         if ($found === null) {
             throw new InvalidArgumentException(__('front/checkout.payment_method_no_longer_available'));
         }
     }
 
-    protected function getOrderStatusIdForPaymentCode(string $code): int
+    public function getOrderStatusIdForPaymentCode(string $code): int
     {
         $method = PaymentMethod::query()
             ->where('code', $code)

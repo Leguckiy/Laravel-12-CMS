@@ -200,7 +200,7 @@ class CheckoutController extends FrontController
         $cart = $this->context->cart;
         $shippingAddress = $request->session()->get('shipping_address');
         $countryId = (int) ($shippingAddress['country_id']);
-        $methods = $shippingService->getAvailableMethods($cart, $countryId, $this->context->currency);
+        $methods = $shippingService->getAvailableMethodsForCart($cart, $countryId, $this->context->currency);
         $shippingMethod = $request->session()->get('shipping_method');
         $selectedId = $shippingMethod['code'] ?? null;
 
@@ -219,7 +219,7 @@ class CheckoutController extends FrontController
         $cart = $this->context->cart;
         $shippingAddress = $request->session()->get('shipping_address');
         $countryId = (int) ($shippingAddress['country_id'] ?? 0);
-        $methods = $shippingService->getAvailableMethods($cart, $countryId, $this->context->currency);
+        $methods = $shippingService->getAvailableMethodsForCart($cart, $countryId, $this->context->currency);
 
         if ($methods === []) {
             return response()->json([
@@ -264,7 +264,7 @@ class CheckoutController extends FrontController
         $cart = $this->context->cart;
         $shippingAddress = $request->session()->get('shipping_address');
         $countryId = (int) ($shippingAddress['country_id']);
-        $rawMethods = $paymentService->getAvailableMethods($cart, $countryId);
+        $rawMethods = $paymentService->getAvailableMethodsForCart($cart, $countryId);
         $methods = array_map(fn (array $m) => [
             'id' => $m['code'],
             'name' => $m['title'],
@@ -287,7 +287,7 @@ class CheckoutController extends FrontController
         $cart = $this->context->cart;
         $shippingAddress = $request->session()->get('shipping_address');
         $countryId = (int) ($shippingAddress['country_id'] ?? 0);
-        $rawMethods = $paymentService->getAvailableMethods($cart, $countryId);
+        $rawMethods = $paymentService->getAvailableMethodsForCart($cart, $countryId);
 
         if ($rawMethods === []) {
             return response()->json([

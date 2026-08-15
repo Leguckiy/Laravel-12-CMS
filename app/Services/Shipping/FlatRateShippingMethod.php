@@ -17,14 +17,35 @@ class FlatRateShippingMethod implements ShippingMethodInterface
         return 'admin.shipping_method_flat_rate';
     }
 
-    public function getCost(Cart $cart): float
+    public function getCostForCart(Cart $cart): float
     {
         $cost = (float) ($this->model->config['cost']);
 
         return max(0, $cost);
     }
 
+    public function getCostForItems(array $items): float
+    {
+        $cost = (float) ($this->model->config['cost'] ?? 0);
+
+        return max(0, $cost);
+    }
+
     public function supports(Cart $cart, int $countryId): bool
+    {
+        if (! $this->model->status) {
+            return false;
+        }
+
+        $countries = $this->model->countries ?? [];
+        if ($countries === []) {
+            return true;
+        }
+
+        return in_array($countryId, $countries, true);
+    }
+
+    public function supportsItems(array $items, int $countryId): bool
     {
         if (! $this->model->status) {
             return false;

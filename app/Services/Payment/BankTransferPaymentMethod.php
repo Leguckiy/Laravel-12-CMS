@@ -32,6 +32,20 @@ class BankTransferPaymentMethod implements PaymentMethodInterface
         return true;
     }
 
+    public function supportsItems(array $items, int $countryId): bool
+    {
+        if (! $this->model->status) {
+            return false;
+        }
+
+        $countries = $this->model->countries ?? [];
+        if ($countries !== [] && ! in_array($countryId, $countries, true)) {
+            return false;
+        }
+
+        return true;
+    }
+
     public function getInstructions(int $languageId): string
     {
         $instructionsByLang = $this->model->config['instructions'] ?? [];

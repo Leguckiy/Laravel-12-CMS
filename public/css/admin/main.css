@@ -311,3 +311,49 @@ p {
     cursor: not-allowed;
     opacity: 0.6;
 }
+
+.order-customer-dropdown,
+.order-product-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    max-height: 240px;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    margin-top: 2px;
+    display: none;
+}
+
+.order-customer-dropdown.is-open,
+.order-product-dropdown.is-open {
+    display: block;
+}
+
+.order-customer-dropdown-item,
+.order-product-dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border: 0;
+    background: none;
+    font-size: 1rem;
+    color: #212529;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.order-customer-dropdown-item:hover,
+.order-customer-dropdown-item:focus,
+.order-product-dropdown-item:hover,
+.order-product-dropdown-item:focus {
+    background-color: #f8f9fa;
+    outline: 0;
+}

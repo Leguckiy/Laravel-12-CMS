@@ -180,6 +180,68 @@
         });
     }
 
+    var ADMIN_ALERT_AUTO_HIDE_MS = 4000;
+
+    function ensureAdminAlertContainer() {
+        var existing = document.getElementById('admin-ajax-alerts');
+        if (existing) {
+            return window.jQuery ? window.jQuery(existing) : null;
+        }
+
+        if (!window.jQuery) {
+            return null;
+        }
+
+        var content = document.getElementById('content');
+        if (!content) {
+            return null;
+        }
+
+        var containers = content.querySelectorAll('.container-fluid');
+        if (!containers.length) {
+            return null;
+        }
+
+        // Use the main content container inside #content
+        var container = containers[containers.length - 1];
+
+        var div = document.createElement('div');
+        div.id = 'admin-ajax-alerts';
+        container.insertBefore(div, container.firstChild);
+
+        return window.jQuery(div);
+    }
+
+    function showAdminAlert(message, type) {
+        var $container = ensureAdminAlertContainer();
+        if (!$container) {
+            window.alert(message);
+            return;
+        }
+
+        $container.empty();
+
+        var alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
+        var $alert = window.jQuery(
+            '<div class="alert ' + alertClass + ' alert-dismissible fade show" role="alert">' +
+            message +
+            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+            '</div>'
+        );
+
+        $container.append($alert);
+
+        window.jQuery('html, body').animate({ scrollTop: $container.offset().top - 20 }, 300);
+
+        window.setTimeout(function () {
+            if (typeof $alert.alert === 'function') {
+                $alert.alert('close');
+            } else {
+                $alert.remove();
+            }
+        }, ADMIN_ALERT_AUTO_HIDE_MS);
+    }
+
     function initializeAll() {
         initializeAdminActions();
         initializeMultilangFields();
@@ -197,6 +259,11 @@
     window.AdminUI = Object.freeze({
         deleteViaForm: function (url) {
             submitDelete(url);
+        },
+        showAlert: function (message, type) {
+            showAdminAlert(message, type);
         }
     });
+
+    window.showAdminAlert = showAdminAlert;
 })();

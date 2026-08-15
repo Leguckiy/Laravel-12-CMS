@@ -6,6 +6,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Requests\Admin\CustomerRequest;
 use App\Models\Customer;
 use App\Models\CustomerGroup;
+use App\Services\CustomerSearchService;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -120,6 +123,21 @@ class CustomerController extends AdminController
         $customer->delete();
 
         return redirect()->route('admin.customer.index')->with('success', __('admin.deleted_successfully'));
+    }
+
+    /**
+     * Search customers by name or email for admin order form.
+     */
+    public function search(Request $request, CustomerSearchService $searchService): JsonResponse
+    {
+        $query = (string) $request->query('q', '');
+        $languageId = $this->context->language->id;
+
+        $results = $searchService->search($query, $languageId);
+
+        return response()->json([
+            'data' => $results,
+        ]);
     }
 
     /**

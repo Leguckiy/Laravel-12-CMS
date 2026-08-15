@@ -149,6 +149,32 @@ return [
     'order_status_name' => 'Назва статусу замовлення',
     'order_status_details' => 'Деталі статусу замовлення',
 
+    // Orders
+    'order' => 'Замовлення',
+    'orders' => 'Замовлення',
+    'order_list' => 'Список замовлень',
+    'add_order' => 'Додати замовлення',
+    'edit_order' => 'Редагувати замовлення',
+    'order_id' => 'ID замовлення',
+    'total' => 'Сума',
+    'date_modified' => 'Дата зміни',
+    'order_created' => 'Замовлення успішно створено',
+    'order_updated' => 'Замовлення успішно оновлено',
+    'order_deleted' => 'Замовлення успішно видалено',
+
+    // Order details
+    'order_details' => 'Деталі замовлення',
+    'shipping_address' => 'Адреса доставки',
+    'please_select' => '--- Оберіть ---',
+    'history' => 'Історія',
+    'comment' => 'Коментар',
+    'customer_notified' => 'Клієнта повідомлено',
+
+    // Order history
+    'add_history' => 'Додати історію',
+    'history_added' => 'Історію успішно додано',
+    'order_status_not_changed' => 'Статус замовлення не змінено',
+
     // Country
     'country' => 'Країна',
     'countries' => 'Країни',
@@ -185,6 +211,7 @@ return [
     'product_cover_image' => 'Зображення товара',
     'product_cover_image_help' => 'Основне зображення, що відображається на сторінці товару.',
     'product_details' => 'Деталі товару',
+    'available' => 'В наявності',
 
     // Feature
     'feature' => 'Характеристика',
@@ -207,6 +234,8 @@ return [
 
     // Customer
     'customer' => 'Клієнт',
+    'customer_none' => '--- Немає ---',
+    'customer_has_no_addresses' => 'У цього клієнта немає адрес. Додайте хоча б одну адресу.',
     'customers' => 'Клієнти',
     'customer_list' => 'Список клієнтів',
     'add_customer' => 'Додати клієнта',
@@ -224,6 +253,9 @@ return [
     'customer_group_approval' => 'Підтвердження нових клієнтів',
     'customer_group_details' => 'Деталі групи клієнта',
     'customer_group_cannot_delete' => 'Неможливо видалити групу клієнтів, бо до неї прив’язано :count клієнтів.',
+
+    'order_product_not_found' => 'Товар не знайдено!',
+    'order_product_quantity_not_available' => 'Запитана кількість товару недоступна.',
 
     // Setting
     'settings' => 'Налаштування',

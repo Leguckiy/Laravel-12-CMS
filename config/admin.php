@@ -40,7 +40,7 @@ return [
             'children' => [
                 [
                     'name' => 'menu_sales_orders',
-                    'route' => '',
+                    'route' => 'admin.order.index',
                     'children' => [],
                 ],
                 [
@@ -155,6 +155,7 @@ return [
         'currency' => 'localisation/currency',
         'stock_status' => 'localisation/stock_status',
         'order_status' => 'localisation/order_status',
+        'order' => 'sale/order',
         'country' => 'localisation/country',
         'category' => 'catalog/category',
         'product' => 'catalog/product',

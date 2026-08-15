@@ -19,7 +19,12 @@ class FreeShippingMethod implements ShippingMethodInterface
         return 'admin.shipping_method_free';
     }
 
-    public function getCost(Cart $cart): float
+    public function getCostForCart(Cart $cart): float
+    {
+        return 0.0;
+    }
+
+    public function getCostForItems(array $items): float
     {
         return 0.0;
     }
@@ -39,5 +44,35 @@ class FreeShippingMethod implements ShippingMethodInterface
         $subtotal = $this->cartService->getSubtotal($cart);
 
         return $subtotal >= $subTotalRequired;
+    }
+
+    public function supportsItems(array $items, int $countryId): bool
+    {
+        if (! $this->model->status) {
+            return false;
+        }
+
+        $countries = $this->model->countries ?? [];
+        if ($countries !== [] && ! in_array($countryId, $countries, true)) {
+            return false;
+        }
+
+        $requiredSubtotal = (float) ($this->model->config['sub_total'] ?? 0);
+        if ($requiredSubtotal <= 0) {
+            return true;
+        }
+
+        $subtotal = 0.0;
+        foreach ($items as $item) {
+            $price = (float) ($item['price'] ?? 0);
+            $quantity = (int) ($item['quantity'] ?? 0);
+            if ($quantity <= 0 || $price < 0) {
+                continue;
+            }
+
+            $subtotal += $price * $quantity;
+        }
+
+        return $subtotal >= $requiredSubtotal;
     }
 }

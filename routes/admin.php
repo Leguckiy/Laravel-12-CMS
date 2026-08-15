@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\FeatureValueController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\OrderStatusController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PaymentController;
@@ -45,6 +46,14 @@ Route::prefix('admin')->group(function () {
             Route::resource('currency', CurrencyController::class)->names('admin.currency');
             Route::resource('stock_status', StockStatusController::class)->names('admin.stock_status');
             Route::resource('order_status', OrderStatusController::class)->names('admin.order_status');
+            Route::resource('order', OrderController::class)->names('admin.order');
+            Route::post('orders/change-currency', [OrderController::class, 'changeCurrency'])->name('admin.order.change_currency');
+            Route::post('orders/check-quantity', [OrderController::class, 'checkQuantity'])->name('admin.order.check_quantity');
+            Route::post('orders/shipping-methods', [OrderController::class, 'getShippingMethodsForOrder'])->name('admin.order.shipping_methods');
+            Route::post('orders/set-shipping-method', [OrderController::class, 'setShippingMethodForOrder'])->name('admin.order.set_shipping_method');
+            Route::post('orders/payment-methods', [OrderController::class, 'getPaymentMethodsForOrder'])->name('admin.order.payment_methods');
+            Route::post('orders/set-payment-method', [OrderController::class, 'setPaymentMethodForOrder'])->name('admin.order.set_payment_method');
+            Route::post('/order/{order}/history', [OrderController::class, 'storeHistory'])->name('admin.order.history.store');
             Route::resource('country', CountryController::class)->names('admin.country');
             Route::resource('category', CategoryController::class)->names('admin.category');
             Route::resource('feature', FeatureController::class)->names('admin.feature');
@@ -52,8 +61,10 @@ Route::prefix('admin')->group(function () {
                 ->names('admin.feature_value')
                 ->parameters(['value' => 'feature_value']);
             Route::resource('product', ProductController::class)->names('admin.product');
+            Route::get('products/search', [ProductController::class, 'search'])->name('admin.product.search');
             Route::resource('customer_group', CustomerGroupController::class)->names('admin.customer_group');
             Route::resource('customer', CustomerController::class)->names('admin.customer');
+            Route::get('customers/search', [CustomerController::class, 'search'])->name('admin.customer.search');
             Route::resource('customer.address', CustomerAddressController::class)->names('admin.customer_address')->except(['index']);
             Route::resource('page', PageController::class)->names('admin.page');
             Route::get('settings', [SettingController::class, 'edit'])->name('admin.setting.edit');

@@ -63,4 +63,28 @@ class OrderStatus extends Model
     {
         return $this->hasMany(OrderHistory::class, 'order_status_id');
     }
+
+    /**
+     * Get options for select field for specific language.
+     *
+     * @return array<int, array{id: int, name: string}>
+     */
+    public static function getOptions(int $languageId): array
+    {
+        return static::query()
+            ->with([
+                'translations' => function ($query) use ($languageId) {
+                    $query->where('language_id', $languageId);
+                },
+            ])
+            ->get()
+            ->map(function (self $status) {
+                return [
+                    'id' => $status->id,
+                    'name' => $status->translations->first()?->name ?? '',
+                ];
+            })
+            ->values()
+            ->toArray();
+    }
 }

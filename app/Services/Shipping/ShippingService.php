@@ -15,7 +15,7 @@ class ShippingService
      *
      * @return array<int, array{id: string, name: string, cost: float, formatted: string}>
      */
-    public function getAvailableMethods(Cart $cart, int $countryId, Currency $currency): array
+    public function getAvailableMethodsForCart(Cart $cart, int $countryId, Currency $currency): array
     {
         $drivers = config('shipping.drivers', []);
         $models = ShippingMethod::query()
@@ -36,7 +36,49 @@ class ShippingService
                 continue;
             }
 
-            $cost = $driver->getCost($cart);
+            $cost = $driver->getCostForCart($cart);
+            $result[] = [
+                'id' => $model->code,
+                'name' => __($driver->getTitle()),
+                'cost' => $cost,
+                'formatted' => $currency->formatPriceFromBase((string) $cost),
+            ];
+        }
+
+        return $result;
+    }
+
+    /**
+     * Get shipping methods available for a manual order described by raw items and country.
+     * Used in admin order form where we operate on a manual order rather than a session cart.
+     *
+     * @param array<int, array{price: float|int|string, quantity: int|string}> $items
+     * @return array<int, array{id: string, name: string, cost: float, formatted: string}>
+     */
+    public function getAvailableMethodsForItems(array $items, int $countryId, Currency $currency): array
+    {
+        $drivers = config('shipping.drivers', []);
+        $models = ShippingMethod::query()
+            ->where('status', true)
+            ->whereIn('code', array_keys($drivers))
+            ->orderBy('sort_order')
+            ->get();
+
+        $result = [];
+
+        foreach ($models as $model) {
+            $driverClass = $drivers[$model->code] ?? null;
+            if ($driverClass === null) {
+                continue;
+            }
+
+            $driver = $this->resolveDriver($driverClass, $model);
+            if (! $driver instanceof ShippingMethodInterface || ! $driver->supportsItems($items, $countryId)) {
+                continue;
+            }
+
+            $cost = $driver->getCostForItems($items);
+
             $result[] = [
                 'id' => $model->code,
                 'name' => __($driver->getTitle()),

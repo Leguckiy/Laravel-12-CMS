@@ -10,6 +10,8 @@ use App\Models\Product;
 use App\Models\ProductLang;
 use App\Models\StockStatus;
 use App\Services\AdminImageUploader;
+use App\Services\ProductSearchService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
@@ -204,6 +206,21 @@ class ProductController extends AdminController
         $product->delete();
 
         return redirect()->route('admin.product.index')->with('success', __('admin.deleted_successfully'));
+    }
+
+    /**
+     * Search products by name or reference for admin order form.
+     */
+    public function search(ProductSearchService $searchService): JsonResponse
+    {
+        $query = (string) request()->query('q', '');
+        $languageId = $this->context->language->id;
+
+        $results = $searchService->search($query, $languageId);
+
+        return response()->json([
+            'data' => $results,
+        ]);
     }
 
     /**

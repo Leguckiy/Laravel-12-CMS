@@ -149,6 +149,32 @@ return [
     'order_status_name' => 'Order status name',
     'order_status_details' => 'Order status details',
 
+    // Orders
+    'order' => 'Order',
+    'orders' => 'Orders',
+    'order_list' => 'Order list',
+    'add_order' => 'Add Order',
+    'edit_order' => 'Edit Order',
+    'order_id' => 'Order ID',
+    'total' => 'Total',
+    'date_modified' => 'Date modified',
+    'order_created' => 'Order created successfully',
+    'order_updated' => 'Order updated successfully',
+    'order_deleted' => 'Order deleted successfully',
+
+    // Order details
+    'order_details' => 'Order details',
+    'shipping_address' => 'Shipping address',
+    'please_select' => '--- Please Select ---',
+    'history' => 'History',
+    'comment' => 'Comment',
+    'customer_notified' => 'Customer notified',
+
+    // Order history
+    'add_history' => 'Add history',
+    'history_added' => 'History added successfully',
+    'order_status_not_changed' => 'Order status has not been changed',
+
     // Country
     'country' => 'Country',
     'countries' => 'Countries',
@@ -185,6 +211,7 @@ return [
     'product_cover_image' => 'Product cover image',
     'product_cover_image_help' => 'Main image displayed on the product page.',
     'product_details' => 'Product details',
+    'available' => 'Available',
 
     // Feature
     'feature' => 'Feature',
@@ -207,6 +234,8 @@ return [
 
     // Customer
     'customer' => 'Customer',
+    'customer_none' => '--- None ---',
+    'customer_has_no_addresses' => 'This customer has no addresses. Please add at least one address.',
     'customers' => 'Customers',
     'customer_list' => 'Customer list',
     'add_customer' => 'Add Customer',
@@ -224,6 +253,9 @@ return [
     'customer_group_approval' => 'Approve New Customers',
     'customer_group_details' => 'Customer group details',
     'customer_group_cannot_delete' => 'Cannot delete customer group because it is assigned to :count customer(s).',
+
+    'order_product_not_found' => 'Product could not be found!',
+    'order_product_quantity_not_available' => 'The requested quantity is not available in this amount.',
 
     // Setting
     'settings' => 'Settings',
