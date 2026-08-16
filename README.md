@@ -50,7 +50,21 @@ Ensure the public storage link exists so images are served correctly:
 php artisan storage:link
 ```
 
-### 5. Run the application
+### 5. Generate demo data
+
+Generate demo customers and orders for development and testing:
+
+```bash
+php artisan demo:generate
+```
+
+By default, creates 20 customers and 50 orders. The amounts can be changed independently:
+
+```bash
+php artisan demo:generate --customers=20 --orders=50
+```
+
+### 6. Run the application
 
 ```bash
 php artisan serve

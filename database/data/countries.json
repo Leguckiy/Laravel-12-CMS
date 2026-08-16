@@ -26,7 +26,7 @@
         "iso_code_2": "BE",
         "iso_code_3": "BEL",
         "postcode_required": 0,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "Belgium",
             "uk": "Бельгія"
@@ -213,7 +213,7 @@
         "iso_code_2": "CA",
         "iso_code_3": "CAN",
         "postcode_required": 0,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "Canada",
             "uk": "Канада"
@@ -598,7 +598,7 @@
         "iso_code_2": "FR",
         "iso_code_3": "FRA",
         "postcode_required": 1,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "France, Metropolitan",
             "uk": "Франція"
@@ -675,7 +675,7 @@
         "iso_code_2": "DE",
         "iso_code_3": "DEU",
         "postcode_required": 1,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "Germany",
             "uk": "Німеччина"
@@ -939,7 +939,7 @@
         "iso_code_2": "IT",
         "iso_code_3": "ITA",
         "postcode_required": 0,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "Italy",
             "uk": "Італія"
@@ -1434,7 +1434,7 @@
         "iso_code_2": "NL",
         "iso_code_3": "NLD",
         "postcode_required": 0,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "Netherlands",
             "uk": "Нідерланди"
@@ -1665,7 +1665,7 @@
         "iso_code_2": "PT",
         "iso_code_3": "PRT",
         "postcode_required": 0,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "Portugal",
             "uk": "Португалія"
@@ -1929,7 +1929,7 @@
         "iso_code_2": "ES",
         "iso_code_3": "ESP",
         "postcode_required": 0,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "Spain",
             "uk": "Іспанія"
@@ -2226,7 +2226,7 @@
         "iso_code_2": "GB",
         "iso_code_3": "GBR",
         "postcode_required": 1,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "United Kingdom",
             "uk": "Велика Британія"
@@ -2237,7 +2237,7 @@
         "iso_code_2": "US",
         "iso_code_3": "USA",
         "postcode_required": 0,
-        "status": 0,
+        "status": 1,
         "names": {
             "en": "United States",
             "uk": "Сполучені Штати Америки"
